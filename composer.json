@@ -1,0 +1,13 @@
+{
+    "name": "mzh/hyperf-ui-plugin",
+    "type": "library",
+    "license": "MIT",
+    "description": "目前支持element",
+    "authors": [
+        {
+            "name": "Smile",
+            "email": "4213509@qq.com"
+        }
+    ],
+    "require": {}
+}
