@@ -1,13 +1,56 @@
 {
-    "name": "mzh/hyperf-ui-plugin",
-    "type": "library",
-    "license": "MIT",
-    "description": "目前支持element",
-    "authors": [
-        {
-            "name": "Smile",
-            "email": "4213509@qq.com"
-        }
-    ],
-    "require": {}
+  "name": "mzh/hyperf-admin-plugin",
+  "description": "开箱即用的Hyperf后台扩展，laravel-admin用法",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "毛自豪",
+      "email": "4213509@qq.com"
+    }
+  ],
+  "homepage": "https://github.com/lphkxd/hyperf-admin",
+  "keywords": [
+    "hyperf",
+    "Admin",
+    "Vue"
+  ],
+  "require": {
+    "php": ">=7.3",
+    "ext-swoole": ">=4.5",
+    "hyperf/http-message": "~2.0.0",
+    "hyperf/http-server": "~2.0.0",
+    "hyperf/config": "~2.0.0",
+    "hyperf/di": "~2.0.1",
+    "hyperf/framework": "~2.0.0",
+    "mzh/hyperf-helper": "^0.1.7",
+    "hyperf/db-connection": "~2.0.0",
+    "hyperf/model-cache": "~2.0.0",
+    "hyperf/filesystem": "^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mzh\\UI\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mzh\\UI\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mzh\\UI\\ConfigProvider"
+      ],
+      "aliases": {
+        "UI": "Mzh\\UI\\Facades\\UI"
+      }
+    }
+  }
 }
