@@ -1,5 +1,5 @@
-## 开发中，请勿用于生产使用，全新hyperf-admin 对标laravel-admin并兼容laravel-admin用法
-## 设计思路 将UI拆出，做为UI支持模块
+### 开发中，请勿用于生产使用，全新hyperf-admin 对标laravel-admin并兼容laravel-admin用法
+### 设计思路 将UI拆出，做为UI支持模块,其他功能以插件形式接入，基于此ui实现页面功能开发
 - UI插件  composer mzh/hyperf-ui-plugin
 - 权限插件（开发中） composer mzh/hyperf-permissions-plugin
 - 更多开发中...
