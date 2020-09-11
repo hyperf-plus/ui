@@ -1,6 +1,6 @@
 <?php
 
-namespace HPlus\UI\Install;
+namespace HPlus\UI\Commands;
 
 use Hyperf\Command\Annotation\Command;
 use Hyperf\Command\Command as HyperfCommand;
