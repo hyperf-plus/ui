@@ -72,8 +72,8 @@ class UISettingEntity extends EntityBean
      */
     public $menuList = [];
     /**
-     * 当前URL
-     * @var array
+     * 头部URL链接列表
+     * @var array[]
      */
     public $url = [];
 

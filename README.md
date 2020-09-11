@@ -15,6 +15,7 @@
 
   public function index()
     {
+        #创建测试菜单
         $menuList = [
             [
                 "id" => 2,
@@ -47,14 +48,23 @@
             ]
         ];
         $menu = new MenuEntity($menuList);
+
+        //创建测试用户信息
         $user = new UserEntity();
+
+        #创建UI配置文件
         $setting = new UISettingEntity();
+        #设置用户信息
         $setting->setUser($user);
+        #设置菜单信息
         $setting->setMenu($menu);
-        $setting->setFooterLinks([
+
+        #设置底部链接
+        $setting->setUrl([
             'logout' => route('admin/logout'),
             'setting' => route('admin/setting')
         ]);
+
         return UI::view($setting);
     }
 ```
