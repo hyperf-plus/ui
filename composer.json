@@ -1,5 +1,5 @@
 {
-  "name": "HPlus/ui",
+  "name": "hyperf-plus/ui",
   "description": "hyperf UI 插件，用php代码写element组件神器，无需修改vue文件即可快速实现各种复杂的element页面搭建",
   "license": "MIT",
   "authors": [
