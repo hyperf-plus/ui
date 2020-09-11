@@ -1,5 +1,4 @@
-### 开发中，请勿用于生产使用，全新hyperf-admin 对标laravel-admin并兼容laravel-admin用法
-### 其功能以插件形式接入，基于此ui实现页面功能开发 ，也可以自定义组件、
+### 以插件形式接入，基于此ui插件可实现各种页面功能开发 ，也可以自定义组件、
 - UI插件  composer require hyperf-plus/ui:~1.0
 - 权限插件（开发中） composer require hyperf-plus/permissions:~1.0
 - 更多开发中...
@@ -59,9 +58,8 @@
         return UI::view($setting);
     }
 ```
-### 例子 
-
-
+### 例子
+<a href="https://github.com/lphkxd/hyperf-ui-plugin/blob/master/demo.php">查看例子源码</a>
 
 官网： http://hyperf.plus（建设中）
 
