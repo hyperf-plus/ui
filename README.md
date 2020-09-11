@@ -21,12 +21,11 @@
    **/
   public function index()
     {
-        #创建测试菜单
+        #创建测试菜单  可以从你自己的数据库拉出菜单结构，但必须是以下结构
         $menuList = [
             [
                 "id" => 2,
                 "parent_id" => 0,
-                "is_menu" => 1,
                 "order" => 0,
                 "title" => "系统",
                 "icon" => "el-icon-setting",
