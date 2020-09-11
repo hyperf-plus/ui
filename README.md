@@ -7,7 +7,9 @@
 ```php
     composer require hyperf-plus/ui:~1.0
 
-    php bin/hyperf.php ui:init  初始化静态文件。vue文件部署（有特殊订单制用户可以修改，如有只需要基本页面可以忽略vue文件）
+    php bin/hyperf.php ui:init  初始化静态文件。
+
+    有特殊定制用户可以修改 根目录下的resources/vue项目文件，如有只需要基本页面可以忽略vue文件
 
 ```
 
