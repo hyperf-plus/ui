@@ -6,13 +6,17 @@
 ### 安装方法：
 ```php
     composer require hyperf-plus/ui:~1.0
+
     php bin/hyperf.php ui:init  初始化静态文件。vue文件部署（有特殊订单制用户可以修改，如有只需要基本页面可以忽略vue文件）
+
 ```
 
-### 创建入口文件
+### 创建请求入口
 
 ```php
-
+  /**
+   可以用注解路由、配置路由注册此方法
+   **/
   public function index()
     {
         #创建测试菜单
@@ -64,7 +68,6 @@
             'logout' => route('admin/logout'),
             'setting' => route('admin/setting')
         ]);
-
         return UI::view($setting);
     }
 ```
