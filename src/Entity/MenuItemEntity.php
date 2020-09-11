@@ -30,12 +30,12 @@ class MenuItemEntity extends EntityBean
         return $this->icon;
     }
 
-    public function getUri(): string
+    public function getUri()
     {
         return $this->uri;
     }
 
-    public function getRoute(): string
+    public function getRoute()
     {
         return $this->route;
     }
