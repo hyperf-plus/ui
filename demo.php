@@ -76,6 +76,7 @@ class IndexController extends AbstractController
             'logout' => route('admin/logout'),
             'setting' => route('admin/setting')
         ]);
+        return UI::view($setting);
     }
 
 

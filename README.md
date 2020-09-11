@@ -73,10 +73,11 @@
         return UI::view($setting);
     }
 ```
+### 访问 http://127.0.0.1:9501/index/index#/index/system
+
 ### 例子
 <a href="https://github.com/lphkxd/hyperf-ui-plugin/blob/master/demo.php">查看例子源码</a>
 ##### 通过以上代码实现如下界面
-
 ![Image 注解](./screenshot/1.png)
 
 官网： http://hyperf.plus（建设中）
