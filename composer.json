@@ -47,8 +47,8 @@
     }
   },
   "extra": {
-    "laravel": {
-      "providers": [
+    "hyperf": {
+      "config": [
         "HPlus\\UI\\ConfigProvider"
       ],
       "aliases": {
@@ -58,10 +58,10 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "@php bin/hyperf.php ui:init"
+      "@php ./bin/hyperf.php ui:init"
     ],
     "post-update-cmd": [
-      "@php bin/hyperf.php ui:publish"
+      "@php ./bin/hyperf.php ui:publish"
     ]
   }
 }
