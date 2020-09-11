@@ -7,11 +7,11 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Grid\Actions;
+namespace HPlus\UI\Grid\Actions;
 
 
-use Mzh\UI\Components\Attrs\ElLink;
-use Mzh\UI\Components\Component;
+use HPlus\UI\Components\Attrs\ElLink;
+use HPlus\UI\Components\Component;
 
 class ActionLink extends Component
 {

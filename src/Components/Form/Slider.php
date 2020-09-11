@@ -7,10 +7,10 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Components\Form;
+namespace HPlus\UI\Components\Form;
 
 
-use Mzh\UI\Components\Component;
+use HPlus\UI\Components\Component;
 
 class Slider extends Component
 {

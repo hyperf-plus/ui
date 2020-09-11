@@ -7,14 +7,14 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Form;
+namespace HPlus\UI\Form;
 
 use \Hyperf\Database\Model\Relations\BelongsToMany;
 use Hyperf\Utils\Arr;
 use Hyperf\Utils\Str;
-use Mzh\UI\Components\Component;
-use Mzh\UI\Components\Form\Input;
-use Mzh\UI\Form;
+use HPlus\UI\Components\Component;
+use HPlus\UI\Components\Form\Input;
+use HPlus\UI\Form;
 
 class FormItem extends Component
 {

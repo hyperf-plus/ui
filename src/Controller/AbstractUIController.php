@@ -7,13 +7,13 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Controller;
+namespace HPlus\UI\Controller;
 
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface;
 use Hyperf\HttpServer\Request;
-use Mzh\UI\Components\Widgets\Html;
-use Mzh\UI\Layout\Content;
+use HPlus\UI\Components\Widgets\Html;
+use HPlus\UI\Layout\Content;
 use Psr\Container\ContainerInterface;
 
 abstract class AbstractUIController

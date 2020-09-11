@@ -7,15 +7,15 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Components\Widgets;
+namespace HPlus\UI\Components\Widgets;
 
 
-use Mzh\UI\Actions\BaseAction;
-use Mzh\UI\Exception\BusinessException;
+use HPlus\UI\Actions\BaseAction;
+use HPlus\UI\Exception\BusinessException;
 
 class Button extends BaseAction
 {
-    use \Mzh\UI\Components\Attrs\Button;
+    use \HPlus\UI\Components\Attrs\Button;
 
     protected $componentName = "Button";
 

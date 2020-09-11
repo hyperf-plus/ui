@@ -7,12 +7,12 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Grid\Concerns;
+namespace HPlus\UI\Grid\Concerns;
 
 
-use Mzh\UI\Grid\Column;
-use Mzh\UI\Grid\Model;
-use Mzh\UI\Grid\Tools\QuickSearch;
+use HPlus\UI\Grid\Column;
+use HPlus\UI\Grid\Model;
+use HPlus\UI\Grid\Tools\QuickSearch;
 
 /**
  * @method  Model model()

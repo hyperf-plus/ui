@@ -7,10 +7,10 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Grid\Actions;
+namespace HPlus\UI\Grid\Actions;
 
 
-use Mzh\UI\Actions\BaseRowAction;
+use HPlus\UI\Actions\BaseRowAction;
 
 class VueRouteAction extends BaseRowAction
 {

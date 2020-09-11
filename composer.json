@@ -1,5 +1,5 @@
 {
-  "name": "mzh/hyperf-ui-plugin",
+  "name": "HPlus/ui",
   "description": "hyperf UI 插件，用php代码写element组件神器，无需修改vue文件即可快速实现各种复杂的element页面搭建",
   "license": "MIT",
   "authors": [
@@ -35,7 +35,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Mzh\\UI\\": "src/"
+      "HPlus\\UI\\": "src/"
     },
     "files": [
       "src/helpers.php"
@@ -43,16 +43,16 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Mzh\\UI\\Tests\\": "tests"
+      "HPlus\\UI\\Tests\\": "tests"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Mzh\\UI\\ConfigProvider"
+        "HPlus\\UI\\ConfigProvider"
       ],
       "aliases": {
-        "UI": "Mzh\\UI\\Facades\\UI"
+        "UI": "HPlus\\UI\\Facades\\UI"
       }
     }
   }

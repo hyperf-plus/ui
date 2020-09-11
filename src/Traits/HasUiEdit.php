@@ -8,9 +8,9 @@ declare(strict_types=1);
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
 
-namespace Mzh\UI\Traits;
+namespace HPlus\UI\Traits;
 
-use Mzh\UI\Layout\Content;
+use HPlus\UI\Layout\Content;
 
 trait HasUiEdit
 {

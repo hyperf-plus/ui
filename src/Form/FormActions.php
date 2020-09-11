@@ -7,11 +7,11 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Form;
+namespace HPlus\UI\Form;
 
 
-use Mzh\UI\Components\Widgets\Button;
-use Mzh\UI\Form;
+use HPlus\UI\Components\Widgets\Button;
+use HPlus\UI\Form;
 
 class FormActions
 {

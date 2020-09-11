@@ -7,19 +7,19 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Components\Widgets;
+namespace HPlus\UI\Components\Widgets;
 
 use Hyperf\Utils\Arr;
-use Mzh\UI\Components\Component;
-use Mzh\UI\Form\FormAttrs;
-use Mzh\UI\Form\FormItem;
-use Mzh\UI\Form\TraitFormAttrs;
+use HPlus\UI\Components\Component;
+use HPlus\UI\Form\FormAttrs;
+use HPlus\UI\Form\FormItem;
+use HPlus\UI\Form\TraitFormAttrs;
 
 /**
  * 基础表单，已废弃，直接使用Form组件即可
  * @deprecated
  * Class BaseForm
- * @package Mzh\UI\Components\Widgets
+ * @package HPlus\UI\Components\Widgets
  */
 class BaseForm extends Component
 {

@@ -7,13 +7,13 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Traits;
+namespace HPlus\UI\Traits;
 
 
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface;
-use Mzh\UI\Components\Widgets\Html;
+use HPlus\UI\Components\Widgets\Html;
 use Psr\Container\ContainerInterface;
 
 trait HasUiBase

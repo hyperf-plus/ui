@@ -7,16 +7,16 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Controller;
+namespace HPlus\UI\Controller;
 
 use Hyperf\HttpMessage\Stream\SwooleStream;
 use Hyperf\HttpServer\Annotation\AutoController;
-use Mzh\UI\Facades\Admin;
+use HPlus\UI\Facades\Admin;
 
 /**
  * @AutoController(prefix="/admin")
  * Class IndexAdminController
- * @package Mzh\UI\Controller
+ * @package HPlus\UI\Controller
  */
 class Index extends AbstractUIController
 {

@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
 
-namespace Mzh\UI\Components\Antv;
+namespace HPlus\UI\Components\Antv;
 
 class Column extends Line
 {

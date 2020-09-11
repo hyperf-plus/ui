@@ -7,7 +7,7 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Grid;
+namespace HPlus\UI\Grid;
 
 
 use \Hyperf\Database\Model\Builder;
@@ -20,11 +20,11 @@ use Hyperf\HttpServer\Request;
 use Hyperf\Paginator\LengthAwarePaginator;
 use Hyperf\Utils\Arr;
 use Hyperf\Utils\Str;
-use Mzh\UI\Grid;
+use HPlus\UI\Grid;
 
 /**
  * Class Model
- * @package Mzh\UI\Grid
+ * @package HPlus\UI\Grid
  */
 class Model
 {

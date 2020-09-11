@@ -8,10 +8,10 @@ declare(strict_types=1);
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
 
-namespace Mzh\UI\Components\Grid;
+namespace HPlus\UI\Components\Grid;
 
 
-use Mzh\UI\Components\GridComponent;
+use HPlus\UI\Components\GridComponent;
 
 class Image extends GridComponent
 {

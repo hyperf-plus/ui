@@ -7,12 +7,12 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Grid;
+namespace HPlus\UI\Grid;
 
 use Closure;
-use Mzh\UI\Components\GridComponent;
-use Mzh\UI\Grid;
-use Mzh\UI\Grid\Column\Attributes;
+use HPlus\UI\Components\GridComponent;
+use HPlus\UI\Grid;
+use HPlus\UI\Grid\Column\Attributes;
 
 
 class Column

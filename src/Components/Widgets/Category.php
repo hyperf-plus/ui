@@ -7,22 +7,22 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Components\Widgets;
+namespace HPlus\UI\Components\Widgets;
 
 use Hyperf\Database\Model\Model as Eloquent;
-use Mzh\UI\Components\Component;
-use Mzh\UI\Grid\BatchActions;
-use Mzh\UI\Grid\Column;
-use Mzh\UI\Grid\Concerns\HasDefaultSort;
-use Mzh\UI\Grid\Concerns\HasFilter;
-use Mzh\UI\Grid\Concerns\HasGridAttributes;
-use Mzh\UI\Grid\Concerns\HasPageAttributes;
-use Mzh\UI\Grid\Concerns\HasQuickSearch;
-use Mzh\UI\Grid\Filter;
-use Mzh\UI\Grid\Model;
-use Mzh\UI\Grid\Table\Attributes;
-use Mzh\UI\Grid\Toolbars;
-use Mzh\UI\Layout\Content;
+use HPlus\UI\Components\Component;
+use HPlus\UI\Grid\BatchActions;
+use HPlus\UI\Grid\Column;
+use HPlus\UI\Grid\Concerns\HasDefaultSort;
+use HPlus\UI\Grid\Concerns\HasFilter;
+use HPlus\UI\Grid\Concerns\HasGridAttributes;
+use HPlus\UI\Grid\Concerns\HasPageAttributes;
+use HPlus\UI\Grid\Concerns\HasQuickSearch;
+use HPlus\UI\Grid\Filter;
+use HPlus\UI\Grid\Model;
+use HPlus\UI\Grid\Table\Attributes;
+use HPlus\UI\Grid\Toolbars;
+use HPlus\UI\Layout\Content;
 
 class Category extends Component
 {

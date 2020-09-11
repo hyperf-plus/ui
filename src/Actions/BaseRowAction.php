@@ -8,10 +8,10 @@ declare(strict_types=1);
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
 
-namespace Mzh\UI\Actions;
+namespace HPlus\UI\Actions;
 
 
-use Mzh\UI\Components\Attrs\Button;
+use HPlus\UI\Components\Attrs\Button;
 
 class BaseRowAction extends BaseAction
 {

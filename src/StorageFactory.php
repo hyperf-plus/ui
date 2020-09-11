@@ -9,7 +9,7 @@ declare(strict_types=1);
  */
 
 
-namespace Mzh\UI;
+namespace HPlus\UI;
 
 use Hyperf\Config\Annotation\Value;
 use Hyperf\Filesystem\FilesystemFactory;

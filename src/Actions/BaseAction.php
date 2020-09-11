@@ -8,11 +8,11 @@ declare(strict_types=1);
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
 
-namespace Mzh\UI\Actions;
+namespace HPlus\UI\Actions;
 use \JsonSerializable;
-use Mzh\UI\Components\Component;
-use Mzh\UI\Grid\BatchActions\BatchAction;
-use Mzh\UI\Grid\Concerns\HasDialog;
+use HPlus\UI\Components\Component;
+use HPlus\UI\Grid\BatchActions\BatchAction;
+use HPlus\UI\Grid\Concerns\HasDialog;
 
 class BaseAction extends Component implements JsonSerializable
 {

@@ -7,11 +7,11 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Grid\Filter;
+namespace HPlus\UI\Grid\Filter;
 
 use Hyperf\Utils\Arr;
 use ReflectionFunction;
-use Mzh\UI\Components\Form\Input;
+use HPlus\UI\Components\Form\Input;
 
 class Where extends AbstractFilter
 {

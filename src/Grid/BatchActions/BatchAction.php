@@ -7,9 +7,9 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Grid\BatchActions;
+namespace HPlus\UI\Grid\BatchActions;
 
-use Mzh\UI\Actions\BaseAction;
+use HPlus\UI\Actions\BaseAction;
 
 class BatchAction extends BaseAction
 {

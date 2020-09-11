@@ -7,10 +7,10 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Layout;
+namespace HPlus\UI\Layout;
 
 use Closure;
-use Mzh\UI\Components\Component;
+use HPlus\UI\Components\Component;
 
 class Content extends Component
 {

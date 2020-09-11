@@ -7,7 +7,7 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Exception;
+namespace HPlus\UI\Exception;
 
 use App\Constants\ErrorCode;
 use Hyperf\Server\Exception\ServerException;

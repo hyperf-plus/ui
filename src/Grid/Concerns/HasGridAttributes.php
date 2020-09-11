@@ -7,9 +7,9 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Grid\Concerns;
+namespace HPlus\UI\Grid\Concerns;
 
-use Mzh\UI\Grid\Table\Attributes;
+use HPlus\UI\Grid\Table\Attributes;
 
 trait HasGridAttributes
 {

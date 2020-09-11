@@ -8,8 +8,8 @@ declare(strict_types=1);
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
 
-namespace Mzh\UI\Components\Attrs;
-use Mzh\UI\Traits\AdminJsonBuilder;
+namespace HPlus\UI\Components\Attrs;
+use HPlus\UI\Traits\AdminJsonBuilder;
 class Step extends AdminJsonBuilder
 {
 

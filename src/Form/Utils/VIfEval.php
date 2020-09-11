@@ -7,9 +7,9 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Form\Utils;
+namespace HPlus\UI\Form\Utils;
 
-use Mzh\UI\Exception\BusinessException;
+use HPlus\UI\Exception\BusinessException;
 
 class VIfEval
 {

@@ -7,12 +7,12 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Facades;
+namespace HPlus\UI\Facades;
 
-use Mzh\UI\Form;
-use Mzh\UI\Grid;
-use Mzh\UI\Layout\Content;
-use Mzh\UI\Tree;
+use HPlus\UI\Form;
+use HPlus\UI\Grid;
+use HPlus\UI\Layout\Content;
+use HPlus\UI\Tree;
 
 /**
  * Class Admin.
@@ -24,7 +24,7 @@ use Mzh\UI\Tree;
  * @method static string title()
  * @method static void route()
  *
- * @see \Mzh\UI\UI
+ * @see \HPlus\UI\UI
  */
 class UI extends Facade
 {
@@ -35,6 +35,6 @@ class UI extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Mzh\UI\UI::class;
+        return \HPlus\UI\UI::class;
     }
 }

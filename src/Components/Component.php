@@ -7,15 +7,15 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Components;
+namespace HPlus\UI\Components;
 
 
-use Mzh\UI\Traits\AdminJsonBuilder;
+use HPlus\UI\Traits\AdminJsonBuilder;
 
 /**
  * 组件基类
  * Class Component
- * @package Mzh\UI\Components
+ * @package HPlus\UI\Components
  */
 class Component extends AdminJsonBuilder
 {

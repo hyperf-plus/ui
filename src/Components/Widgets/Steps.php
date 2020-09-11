@@ -7,11 +7,11 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Components\Widgets;
+namespace HPlus\UI\Components\Widgets;
 
 
-use Mzh\UI\Components\Attrs\Step;
-use Mzh\UI\Components\Component;
+use HPlus\UI\Components\Attrs\Step;
+use HPlus\UI\Components\Component;
 
 class Steps extends Component
 {

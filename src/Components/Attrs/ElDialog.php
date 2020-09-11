@@ -7,10 +7,10 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Components\Attrs;
+namespace HPlus\UI\Components\Attrs;
 
 
-use Mzh\UI\Layout\Content;
+use HPlus\UI\Layout\Content;
 
 trait ElDialog
 {

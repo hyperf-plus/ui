@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf-cloud/hyperf/blob/master/LICENSE
  */
 
-namespace Mzh\UI\Exception;
+namespace HPlus\UI\Exception;
 
 use Hyperf\Server\Exception\ServerException;
 use Throwable;

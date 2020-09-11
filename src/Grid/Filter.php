@@ -7,14 +7,14 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Grid;
+namespace HPlus\UI\Grid;
 
 
 use Hyperf\Utils\Arr;
 use Hyperf\Utils\Collection;
 use Hyperf\Utils\Str;
-use Mzh\UI\Grid\Filter\AbstractFilter;
-use Mzh\UI\Grid\Filter\Scope;
+use HPlus\UI\Grid\Filter\AbstractFilter;
+use HPlus\UI\Grid\Filter\Scope;
 
 /**
  * Class Filter

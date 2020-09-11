@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
 
-namespace Mzh\UI;
+namespace HPlus\UI;
 
 use Hyperf\Database\Schema\Schema;
 use Hyperf\DbConnection\Db;
@@ -19,16 +19,16 @@ use \Hyperf\Database\Model\Relations\Relation;
 use Hyperf\HttpMessage\Server\Response;
 use Hyperf\Utils\Arr;
 use Hyperf\Utils\Str;
-use Mzh\UI\Components\Component;
-use Mzh\UI\Components\Form\Upload;
-use Mzh\UI\Exception\ValidateException;
-use Mzh\UI\Form\FormActions;
-use Mzh\UI\Form\FormAttrs;
-use Mzh\UI\Form\FormItem;
-use Mzh\UI\Form\HasHooks;
-use Mzh\UI\Form\HasRef;
-use Mzh\UI\Form\TraitFormAttrs;
-use Mzh\UI\Layout\Content;
+use HPlus\UI\Components\Component;
+use HPlus\UI\Components\Form\Upload;
+use HPlus\UI\Exception\ValidateException;
+use HPlus\UI\Form\FormActions;
+use HPlus\UI\Form\FormAttrs;
+use HPlus\UI\Form\FormItem;
+use HPlus\UI\Form\HasHooks;
+use HPlus\UI\Form\HasRef;
+use HPlus\UI\Form\TraitFormAttrs;
+use HPlus\UI\Layout\Content;
 use Mzh\Validate\Validate\Validate;
 
 class Form extends Component

@@ -7,13 +7,13 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
-namespace Mzh\UI\Tree;
+namespace HPlus\UI\Tree;
 
 
-use Mzh\UI\Grid;
-use Mzh\UI\Grid\Tools\CreateButton;
-use Mzh\UI\Traits\AdminJsonBuilder;
-use Mzh\UI\Tree;
+use HPlus\UI\Grid;
+use HPlus\UI\Grid\Tools\CreateButton;
+use HPlus\UI\Traits\AdminJsonBuilder;
+use HPlus\UI\Tree;
 
 class Toolbars extends AdminJsonBuilder
 {
