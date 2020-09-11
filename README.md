@@ -7,10 +7,7 @@
 ### 安装方法：
 ```php
     composer require hyperf-plus/ui:~1.0
-
-    php bin/hyperf.php ui:init (如果composer自动执行失败，需要手动执行)
 ```
-
 
 官网： http://hyperf.plus（建设中）
 

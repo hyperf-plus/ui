@@ -12,13 +12,13 @@ use Phper666\GenerateFile\GenerateFile;
  * @Command()
  * @package App\Install
  */
-class InstallCommand extends HyperfCommand
+class publishCommand extends HyperfCommand
 {
-    protected $name = 'ui:init';
+    protected $name = 'ui:publish';
 
     protected function configure()
     {
-        $this->setDescription('install ui plus.');
+        $this->setDescription('ui plus publish.');
     }
 
     public function handle()

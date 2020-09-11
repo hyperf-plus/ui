@@ -57,8 +57,11 @@
     }
   },
   "scripts": {
-    "post-root-package-install": [
+    "post-package-install": [
       "@php bin/hyperf.php ui:init"
+    ],
+    "post-update-cmd": [
+      "@php bin/hyperf.php ui:publish"
     ]
   }
 }
