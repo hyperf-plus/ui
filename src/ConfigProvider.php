@@ -18,18 +18,7 @@ class ConfigProvider
                         __DIR__
                     ],
                 ],
-            ],
-            'dependencies' => [
-                AuthInterface::class => Auth::class,
-            ],
-            'publish' => [
-                [
-                    'id' => 'admin',
-                    'description' => 'hyperf-admin',
-                    'source' => __DIR__ . '/../publish/admin.php',
-                    'destination' => BASE_PATH . '/config/autoload/admin.php',
-                ],
-            ],
+            ]
         ];
     }
 }

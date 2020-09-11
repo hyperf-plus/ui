@@ -1,4 +1,12 @@
 <?php
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.plus
+ * @link     https://www.hyperf.plus
+ * @document https://doc.hyperf.plus
+ * @contact  4213509@qq.com
+ * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
+ */
 
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\HttpMessage\Server\Response;
@@ -6,7 +14,6 @@ use Hyperf\HttpServer\Contract\ResponseInterface;
 use Hyperf\HttpServer\Request;
 use Hyperf\Utils\ApplicationContext;
 use Hyperf\Utils\Context;
-use Hyperf\Utils\MessageBag;
 use Mzh\UI\Components\Widgets\Html;
 use Mzh\UI\Layout\Content;
 use Mzh\UI\StorageFactory;

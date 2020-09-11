@@ -1,7 +1,14 @@
 <?php
 declare(strict_types=1);
-namespace Mzh\UI;
+/**
+ * This file is part of Hyperf.plus
+ * @link     https://www.hyperf.plus
+ * @document https://doc.hyperf.plus
+ * @contact  4213509@qq.com
+ * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
+ */
 
+namespace Mzh\UI;
 
 use \Hyperf\Database\Model\Builder;
 use \Hyperf\Database\Model\Model as Eloquent;
