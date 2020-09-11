@@ -55,5 +55,10 @@
         "UI": "HPlus\\UI\\Facades\\UI"
       }
     }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php bin/hyperf.php ui:init"
+    ]
   }
 }
