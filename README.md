@@ -1,6 +1,7 @@
 ## 喜欢的请点个star！
+## HPlus，基于hyperf、element UI 插件式快速开发框架
 
-### 以插件形式接入，基于此ui插件可实现各种页面功能开发 ，也可以自定义组件、
+### HPlus UI 以插件形式接入，基于此插件可实现各种页面功能开发 ，也可以自定义组件、
 - UI插件  composer require hyperf-plus/ui:~1.0
 - 权限插件（开发中） composer require hyperf-plus/permissions:~1.0
 - 更多开发中...
