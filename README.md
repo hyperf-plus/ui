@@ -1,14 +1,14 @@
 ### 开发中，请勿用于生产使用，全新hyperf-admin 对标laravel-admin并兼容laravel-admin用法
 ### 设计思路 将UI拆出，做为UI支持模块,其他功能以插件形式接入，基于此ui实现页面功能开发
-- UI插件  composer require hyperf-plus/ui~1.0
-- 权限插件（开发中） composer require hyperf-plus/permissions~1.0
+- UI插件  composer require hyperf-plus/ui:~1.0
+- 权限插件（开发中） composer require hyperf-plus/permissions:~1.0
 - 更多开发中...
 
 ### 安装方法：
 ```php
-    composer require hyperf-plus/ui~1.0
+    composer require hyperf-plus/ui:~1.0
 
-    php bin/hyperf.php ui:init
+    php bin/hyperf.php ui:init (如果composer自动执行失败，需要手动执行)
 ```
 
 
