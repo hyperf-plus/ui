@@ -46,7 +46,7 @@ class MenuEntity
     {
         $menus = [];
         foreach ($this->menus as $menu) {
-            $menus[] = $this->getItem($menu,$menus);
+            $menus[] = $this->getItem($menu, $menus);
         }
         return $menus;
     }
@@ -62,6 +62,11 @@ class MenuEntity
             $menus[] = $this->getItem($child, $menus);
         }
         return $menus;
+    }
+
+    public function addMenu(MenuItemEntity $menuItemEntity)
+    {
+        $this->menus[] = $menuItemEntity;
     }
 
     /**

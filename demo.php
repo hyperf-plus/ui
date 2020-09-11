@@ -11,6 +11,7 @@ use HPlus\UI\Components\Antv\StepLine;
 use HPlus\UI\Components\Widgets\Alert;
 use HPlus\UI\Components\Widgets\Card;
 use HPlus\UI\Entity\MenuEntity;
+use HPlus\UI\Entity\MenuItemEntity;
 use HPlus\UI\Entity\UISettingEntity;
 use HPlus\UI\Entity\UserEntity;
 use HPlus\UI\Layout\Content;
@@ -61,8 +62,20 @@ class IndexController extends AbstractController
         ];
         $menu = new MenuEntity($menuList);
 
+        # 可以用以上方法添加，也可以用对象方式添加
+        $user = new UserEntity();
+        $menuItem = new MenuItemEntity();
+        $menuItem->setIcon('el-icon');
+        $menuItem->setRoute('/index/test');
+        $menuItem->setTitle('测试3');
+        $menu->addMenu($menuItem);
+        # ....添加更多
         //创建测试用户信息
         $user = new UserEntity();
+        $user->setId(1);
+        $user->setUsername('admin');
+        $user->setName('毛自豪');
+        $user->setAvatar('https://wx.qlogo.cn/mmopen/vi_32/ajNVdqHZLLBpqXMk6kUC4PeB5VrIVtHyUqrcPg65sjKdPxlkBINiaQ1NG6nZC9iaWOh9qdO6VaApJzgWA1wu5h8Q/132');
 
         #创建UI配置文件
         $setting = new UISettingEntity();
