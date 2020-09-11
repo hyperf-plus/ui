@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+
 namespace HPlus\UI;
 
 use HPlus\UI\Contracts\AuthInterface;
@@ -15,7 +16,7 @@ class ConfigProvider
             'annotations' => [
                 'scan' => [
                     'paths' => [
-                        __DIR__
+                        __DIR__ . "/src"
                     ],
                 ],
             ]
