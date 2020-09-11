@@ -57,7 +57,7 @@
     }
   },
   "scripts": {
-    "post-package-install": [
+    "post-install-cmd": [
       "@php bin/hyperf.php ui:init"
     ],
     "post-update-cmd": [
