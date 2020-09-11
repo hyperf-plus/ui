@@ -1,5 +1,5 @@
 {
-  "name": "mzh/hyperf-admin-plugin",
+  "name": "mzh/hyperf-ui-plugin",
   "description": "开箱即用的Hyperf后台扩展，laravel-admin用法",
   "license": "MIT",
   "authors": [
