@@ -4,7 +4,6 @@ namespace HPlus\UI\Commands;
 
 use Hyperf\Command\Annotation\Command;
 use Hyperf\Command\Command as HyperfCommand;
-use Hyperf\DbConnection\Db;
 use Phper666\GenerateFile\GenerateFile;
 
 /**

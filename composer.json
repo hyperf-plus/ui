@@ -50,10 +50,7 @@
     "hyperf": {
       "config": [
         "HPlus\\UI\\ConfigProvider"
-      ],
-      "aliases": {
-        "UI": "HPlus\\UI\\Facades\\UI"
-      }
+      ]
     }
   },
   "scripts": {

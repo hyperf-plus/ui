@@ -10,8 +10,12 @@ declare(strict_types=1);
 
 namespace HPlus\UI;
 
+use HPlus\UI\Entity\MenuEntity;
+use HPlus\UI\Entity\UISettingEntity;
+use HPlus\UI\Entity\UserEntity;
 use Hyperf\HttpMessage\Server\Response;
 use Hyperf\HttpMessage\Stream\SwooleStream;
+use Psr\Http\Message\ResponseInterface;
 
 class UI
 {
@@ -54,4 +58,43 @@ class UI
             'type' => $type
         ], $message, 301);
     }
+
+    public static function view(UISettingEntity $setting)
+    {
+        $pageData = json_encode($setting->toArray(), 256);
+        $apiRoot = $setting->getApiRoot();
+        $token = $setting->getUser()->getToken();
+        $html = <<<EOF
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HyperfVueAdmin</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        </head>
+<body>
+<div id="app"><root :page_data='$pageData'></root></div>
+<script>
+    Admin = {};
+    Admin.token = "$token";
+    window.config = {
+        'apiRoot': "$apiRoot"
+    }
+</script>
+<script src="/static/manifest.js?id=8991394a854ee5cdffc3"></script>
+<script src="/static/vendor.js?id=19cf768af01908eb256c"></script>
+<script src="/static/app.js?id=beb2afa4a0bcd20be1f4"></script>
+<script>
+    window.VueAdmin = new CreateVueAdmin(config)
+</script>
+<script>
+    VueAdmin.liftOff()
+</script>
+</body>
+</html>
+EOF;
+        return \Hyperf\Utils\Context::get(ResponseInterface::class)->withBody(new SwooleStream($html))->withHeader('content-type', 'text/html; charset=utf8');
+    }
+
 }

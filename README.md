@@ -1,5 +1,5 @@
 ### 开发中，请勿用于生产使用，全新hyperf-admin 对标laravel-admin并兼容laravel-admin用法
-### 设计思路 将UI拆出，做为UI支持模块,其他功能以插件形式接入，基于此ui实现页面功能开发
+### 其功能以插件形式接入，基于此ui实现页面功能开发 ，也可以自定义组件、
 - UI插件  composer require hyperf-plus/ui:~1.0
 - 权限插件（开发中） composer require hyperf-plus/permissions:~1.0
 - 更多开发中...
@@ -7,7 +7,61 @@
 ### 安装方法：
 ```php
     composer require hyperf-plus/ui:~1.0
+    php bin/hyperf.php ui:init  初始化静态文件。vue文件部署（有特殊订单制用户可以修改，如有只需要基本页面可以忽略vue文件）
 ```
+
+### 创建入口文件
+
+```php
+
+  public function index()
+    {
+        $menuList = [
+            [
+                "id" => 2,
+                "parent_id" => 0,
+                "is_menu" => 1,
+                "order" => 0,
+                "title" => "系统",
+                "icon" => "el-icon-setting",
+                "uri" => "system",
+                "route" => "/index",
+                "children" => [
+                    [
+                        "id" => 2,
+                        "parent_id" => 0,
+                        "order" => 0,
+                        "title" => "测试1",
+                        "icon" => "el-icon-setting",
+                        "uri" => "system",
+                        "route" => "/index/system"
+                    ], [
+                        "id" => 3,
+                        "parent_id" => 0,
+                        "order" => 0,
+                        "title" => "测试2",
+                        "icon" => "el-icon-setting",
+                        "uri" => "system",
+                        "route" => "/index/test"
+                    ],
+                ]
+            ]
+        ];
+        $menu = new MenuEntity($menuList);
+        $user = new UserEntity();
+        $setting = new UISettingEntity();
+        $setting->setUser($user);
+        $setting->setMenu($menu);
+        $setting->setFooterLinks([
+            'logout' => route('admin/logout'),
+            'setting' => route('admin/setting')
+        ]);
+        return UI::view($setting);
+    }
+```
+### 例子 
+
+
 
 官网： http://hyperf.plus（建设中）
 
