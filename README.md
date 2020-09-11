@@ -57,8 +57,8 @@
         $user = new UserEntity();
         $menuItem = new MenuItemEntity();
         $menuItem->setIcon('el-icon');
-        $menuItem->setRoute('/index/test');
-        $menuItem->setTitle('测试3');
+        $menuItem->setRoute('/index/button');
+        $menuItem->setTitle('各种按钮');
         $menu->addMenu($menuItem);
         # ....添加更多
         //创建测试用户信息
