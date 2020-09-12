@@ -35,7 +35,7 @@ To enable server static file processing, please refer to:
              ');
             return;
         }
-        if (is_dir(BASE_PATH . "/resources/vue")) {
+        if (is_dir(BASE_PATH . "/resources/ui")) {
             $this->output->warning('初始化完成，您的vue文件似乎已经部署，请手动将' . realpath(__DIR__ . '/../../resources') . '目录拷贝到' . realpath(BASE_PATH . '/resources') . " 目录下，注意修改的文件请自行备份处理");
             $this->output->success('
 vue文件部署成功，如需定制vue文件请进入项目根目录的resources执行 npm install执行npm依赖安装：
@@ -45,7 +45,7 @@ The Vue file is successfully deployed. To customize the Vue file, please go to t
         }
         $gf = new GenerateFile();
         $gf->setReplaceDir(__DIR__ . '/../../resources') // 设置处理的目录
-        ->setNewProjectDir(BASE_PATH . "/resources")
+        ->setNewProjectDir(BASE_PATH . "/resources/ui")
             ->setReplaceFileName(false)
             ->setReplaceFileExt(['*']) // 设置支持替换文件的后缀，默认替换项目下的所有的文件
             ->run();

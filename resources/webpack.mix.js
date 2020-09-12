@@ -13,7 +13,7 @@ mix
   .webpackConfig({
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "vue/"),
+        "@": path.resolve(__dirname, "/ui/vue/"),
       },
     },
     module: {
