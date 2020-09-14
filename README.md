@@ -7,17 +7,28 @@
 - 更多开发中...
 
 ### 安装方法：
-```php
+``` bash
     composer require hyperf-plus/ui:~1.0
 
     php bin/hyperf.php ui:init  初始化静态文件。
 
     有特殊定制用户可以修改 根目录下的resources/vue项目文件，如有只需要基本页面可以忽略vue文件
-
 ```
 
-### 创建请求入口
+在该命令会将resources/ui/vue文件拷贝到您的项目根目录（方便特殊定制），static资源拷贝到web 目录：
+### 使用
 
+#### 1、使用快速开始使用
+下面是一个简单使用的代码示例
+
+##### 1、创建资源控制器入口（一个项目只需创建一次即可）
+可以用命令gen:ui-demo
+```php
+    php bin/hyperf.php gen:ui-demo  创建UI控制器演示文件。
+```
+##### 2、启动hyperf 访问 http://127.0.0.1:9501/ui/index#/index/system
+
+#### 2、或者手动创建请求入口
 ```php
   /**
    可以用注解路由、配置路由注册此方法
