@@ -1,5 +1,7 @@
 ## 喜欢的请点个star！
 ## HPlus，基于hyperf、element UI 插件式快速开发框架
+## UI插件文档
+    https://www.yuque.com/hyperf-plus/ui/hplus-ui
 
 ### HPlus UI 以插件形式接入，基于此插件可实现各种页面功能开发 ，也可以自定义组件、
 - UI插件  composer require hyperf-plus/ui:~1.0
@@ -125,4 +127,6 @@
 
 #### 以插件形式开箱即用
 #### 喜欢的帮忙点个star
+## 鸣谢：
+-  https://github.com/SmallRuralDog/laravel-vue-admin
 
