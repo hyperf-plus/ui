@@ -21,12 +21,12 @@
 #### 1、使用快速开始使用
 下面是一个简单使用的代码示例
 
-##### 1、创建资源控制器入口（一个项目只需创建一次即可）
+##### (1)、创建资源控制器入口（一个项目只需创建一次即可）
 可以用命令gen:ui-demo
 ```php
     php bin/hyperf.php gen:ui-demo  创建UI控制器演示文件。
 ```
-##### 2、启动hyperf 访问 http://127.0.0.1:9501/ui/index#/index/system
+##### (2)、启动hyperf 访问 http://127.0.0.1:9501/ui/index#/index/system
 
 #### 2、或者手动创建请求入口
 ```php
