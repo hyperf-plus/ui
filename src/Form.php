@@ -29,6 +29,7 @@ use HPlus\UI\Form\HasHooks;
 use HPlus\UI\Form\HasRef;
 use HPlus\UI\Form\TraitFormAttrs;
 use HPlus\UI\Layout\Content;
+use Mzh\Admin\Exception\BusinessException;
 use Mzh\Validate\Validate\Validate;
 
 class Form extends Component
@@ -300,6 +301,15 @@ class Form extends Component
         return $this->isEdit;
     }
 
+    /**
+     * 获取表单是否是编辑模式
+     * @param bool $isEdit
+     * @return void
+     */
+    public function setEdit($isEdit = false)
+    {
+        $this->isEdit = $isEdit;
+    }
 
     /**
      * 添加表单验证规则
@@ -442,7 +452,7 @@ class Form extends Component
         $data = request()->all();
 
         if ($validationMessages = $this->validatorData($data)) {
-            return Admin::responseError($validationMessages);
+            return UI::responseError($validationMessages);
         }
 
         if (($response = $this->prepare($data)) instanceof Response) {
@@ -457,13 +467,13 @@ class Form extends Component
             $this->model->save();
             $this->updateRelation($this->relations);
             if (($result = $this->callDbTransaction()) instanceof Response) {
-                throw new BusinessException(400,$result->getBody()->getContents());
+                throw new BusinessException(400, $result->getBody()->getContents());
             }
         });
         if (($result = $this->callSaved()) instanceof Response) {
             return $result;
         }
-        return Admin::responseMessage('保存成功');
+        return UI::responseMessage('保存成功');
     }
 
     /**
@@ -519,9 +529,9 @@ class Form extends Component
             if (($ret = $this->callDeleted()) instanceof Response) {
                 return $ret;
             }
-            return Admin::responseMessage('删除成功');
+            return UI::responseMessage('删除成功');
         } catch (\Exception $exception) {
-            return Admin::responseError($exception->getMessage() ?: '删除成功');
+            return UI::responseError($exception->getMessage() ?: '删除成功');
         }
     }
 
@@ -557,14 +567,14 @@ class Form extends Component
             $this->model->save();
             $this->updateRelation($this->relations);
             if (($result = $this->callDbTransaction()) instanceof Response) {
-                throw new BusinessException(400,$result->getBody()->getContents());
+                throw new BusinessException(400, $result->getBody()->getContents());
             }
         });
 
         if (($result = $this->callSaved()) instanceof Response) {
             return $result;
         }
-        return Admin::responseMessage('修改成功');
+        return UI::responseMessage('修改成功');
     }
 
     protected function prepareUpdate(array $updates, $oneToOneRelation = false)
@@ -658,7 +668,7 @@ class Form extends Component
                     $parent->save();
 
                     // When in creating, associate two models
-                   // $foreignKeyMethod = version_compare(app()->version(), '5.8.0', '<') ? 'getForeignKey' : 'getForeignKeyName';
+                    // $foreignKeyMethod = version_compare(app()->version(), '5.8.0', '<') ? 'getForeignKey' : 'getForeignKeyName';
                     if (!$this->model->{$relation->getForeignKey()}) {
                         $this->model->{$relation->getForeignKey()} = $parent->getKey();
 

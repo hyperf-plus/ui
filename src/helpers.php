@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+
 /**
  * This file is part of Hyperf.plus
  * @link     https://www.hyperf.plus
@@ -246,7 +247,7 @@ if (!function_exists('admin_api_url')) {
      */
     function admin_api_url($path = '', $parameters = [], $secure = null)
     {
-        return str_replace('/list', '', $path);
+        return '/' . str_replace('/list', '', $path);
     }
 }
 
@@ -262,5 +263,18 @@ if (!function_exists('instance_content')) {
         } else {
             return $content;
         }
+    }
+}
+
+
+if (!function_exists('admin_asset')) {
+    /**
+     * @param $path
+     *
+     * @return string
+     */
+    function admin_asset($path)
+    {
+        return $path;
     }
 }

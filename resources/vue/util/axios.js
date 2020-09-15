@@ -1,8 +1,6 @@
 import axios from "axios";
 import router from "../router";
 import {Notification, Message} from 'element-ui';
-
-
 axios.interceptors.request.use(
     config => {
         config.headers["X-Requested-With"] = "XMLHttpRequest";
