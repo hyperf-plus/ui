@@ -46,7 +46,7 @@ class MenuEntity
     {
         $menus = [];
         foreach ($this->menus as $menu) {
-            $menus[] = $this->getItem($menu, $menus);
+            $this->getItem($menu, $menus);
         }
         return $menus;
     }
@@ -59,7 +59,7 @@ class MenuEntity
             'route' => $menu->getRoute()
         ];
         foreach ($menu->getChildren() as $child) {
-            $menus[] = $this->getItem($child, $menus);
+            $this->getItem($child, $menus);
         }
         return $menus;
     }

@@ -49,9 +49,7 @@
   },
   "extra": {
     "hyperf": {
-      "config": [
-        "HPlus\\UI\\ConfigProvider"
-      ]
+      "config":"HPlus\\UI\\ConfigProvider"
     }
   },
   "scripts": {

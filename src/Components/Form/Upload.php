@@ -7,8 +7,10 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
+
 namespace HPlus\UI\Components\Form;
 
+use HPlus\UI\Exception\BusinessException;
 use Hyperf\Utils\Arr;
 use HPlus\UI\Components\Component;
 use HPlus\UI\Form;
@@ -41,8 +43,8 @@ class Upload extends Component
 
     public function __construct($value = null)
     {
-        $this->action = route('upload/image');
-        $this->host = config('admin.upload.host',route('/'));
+        $this->action = route('/upload/image');
+        $this->host = config('admin.upload.host', route('/'));
         $this->componentValue($value);
     }
 
@@ -59,14 +61,15 @@ class Upload extends Component
         } else {
             $files[] = $formItem->original;
         }
-        $storage = Storage()->getDriver();
 
+        $storage = Storage()->getDriver();
         collect($files)->each(function ($file) use ($storage) {
             if (!empty($this->valueName)) {
                 $file = $file[$this->valueName];
             }
-            if ($storage->exists($file)) {
-                $storage->delete($file);
+            $path = parse_url($file)['path'] ?? '';
+            if ($storage->has($path)) {
+                $storage->delete($path);
             }
         });
     }

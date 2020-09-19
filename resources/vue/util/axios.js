@@ -1,9 +1,13 @@
 import axios from "axios";
 import router from "../router";
 import {Notification, Message} from 'element-ui';
+
 axios.interceptors.request.use(
     config => {
         config.headers["X-Requested-With"] = "XMLHttpRequest";
+        if (Admin.token !== ''){
+            config.headers["Authorization"] = "Bearer " + Admin.token;
+        }
         return config;
     },
     error => {
@@ -81,5 +85,4 @@ axios.interceptors.response.use(
         return Promise.reject(response);
     }
 );
-
 export default axios;

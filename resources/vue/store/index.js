@@ -49,7 +49,6 @@ const store = new Vuex.Store({
     },
     actions: {
         getCenten(context, { path, contentUrl, params }) {
-
             return http.get(contentUrl, {
                 params: params
             }).then(data => {

@@ -272,7 +272,7 @@ class Form extends Component
         if ($slice !== 0) {
             $segments = array_slice($segments, 0, $slice);
         }
-        return implode('/', $segments);
+        return '/' . implode('/', $segments);
     }
 
     /**

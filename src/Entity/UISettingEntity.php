@@ -78,6 +78,11 @@ class UISettingEntity extends EntityBean
     public $url = [];
 
     /**
+     * 默认首页
+     * @var string
+     */
+    public $homeUrl = 'index';
+    /**
      * API根地址
      * @var string
      */
@@ -310,5 +315,21 @@ class UISettingEntity extends EntityBean
     public function getUser(): UserEntity
     {
         return $this->user;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHomeUrl(): string
+    {
+        return $this->homeUrl;
+    }
+
+    /**
+     * @param string $homeUrl
+     */
+    public function setHomeUrl(string $homeUrl): void
+    {
+        $this->homeUrl = $homeUrl;
     }
 }

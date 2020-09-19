@@ -9,6 +9,7 @@ class EntityBean
 {
     public function __construct($array = [])
     {
+        $array = (array)$array;
         foreach ($array as $item => $value) {
             $method = 'set' . $this->convert_under_line($item);
             if (method_exists($this, $method)) {

@@ -70,10 +70,15 @@ export default {
         this.reload = false;
       } else {
         this.$Progress.start();
+        let contentUrl = window.config.apiRoot + this.path
+        contentUrl = contentUrl.replace('//','/')
+        if (contentUrl === '/'){
+          contentUrl = window.config.homeUrl;
+        }
         this.$store
           .dispatch("getCenten", {
             path: this.pathKey,
-            contentUrl: window.config.apiRoot + this.path,
+            contentUrl: contentUrl,
             params: {
               ...this.query,
             },

@@ -8,12 +8,12 @@ mix
   .extract(["axios", "vue", "vuex", "vue-router", "element-ui"])
   .setResourceRoot("/static")
   .setPublicPath("public")
-  .copy("public", "../public/static")
+  .copy("public", "../../public/static")
   .sourceMaps()
   .webpackConfig({
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "/ui/vue/"),
+        "@": path.resolve(__dirname, "./vue/"),
       },
     },
     module: {

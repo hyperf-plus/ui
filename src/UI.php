@@ -61,9 +61,28 @@ class UI
 
     public static function view(UISettingEntity $setting)
     {
-        $pageData = json_encode($setting->toArray(), 256);
         $apiRoot = $setting->getApiRoot();
+        $homeUrl = $setting->getHomeUrl();
         $token = $setting->getUser()->getToken();
+        if ($setting->getUser()->getId() > 0) {
+            $root = 'root';
+            $pageData = $setting->toArray();
+        } else {
+            $root = 'login';
+            $config = config('admin');
+            $pageData = [];
+            $pageData['copyright'] = $config['copyright'];
+            $pageData['logoShow'] = $config['logo_show'];
+            $pageData['logo'] = $config['logo'];
+            $pageData['name'] = $config['name'];
+            $pageData['desc'] = $config['loginDesc'];
+            $pageData['backgroundImage'] = $config['login_background_image'];
+            $pageData['url'] = [
+                'postLogin' => $config['auth']['login_api']??''
+            ];
+            $pageData['auto_user'] = $config['auto_user'];
+        }
+        $pageData = json_encode($pageData, 256);
         $html = <<<EOF
 <!DOCTYPE html>
 <html lang="en">
@@ -74,12 +93,13 @@ class UI
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         </head>
 <body>
-<div id="app"><root :page_data='$pageData'></root></div>
+<div id="app"><{$root} :page_data='$pageData'></{$root}></div>
 <script>
     Admin = {};
     Admin.token = "$token";
     window.config = {
-        'apiRoot': "$apiRoot"
+        'apiRoot': "$apiRoot",
+        'homeUrl': "$homeUrl"
     }
 </script>
 <script src="/static/manifest.js?id=8991394a854ee5cdffc3"></script>

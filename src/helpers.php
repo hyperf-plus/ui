@@ -172,13 +172,18 @@ if (!function_exists('route')) {
         if (is_validURL($url)) {
             return $url;
         }
+        $prefix = config('admin.route.prefix');
         $uri = request()->getUri();
         $param = http_build_query($param);
         $uri->withQuery($param);
+        if (substr($url, 0, 1) !== '/') {
+            $url = '/' . $prefix . '/' . $url;
+        }
         return $uri->withPath($url)->__toString();
     }
-
 }
+
+
 if (!function_exists('request')) {
     /**
      * Get admin path.

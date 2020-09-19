@@ -98,7 +98,7 @@
             </div>
             <div class="layout-header-breadcrumb">
               <el-breadcrumb separator="/">
-                <el-breadcrumb-item :to="{ path: '/' }"
+                <el-breadcrumb-item :to="{ path: this.homeUrl }"
                   >首页</el-breadcrumb-item
                 >
                 <template v-for="menu in page_data.menuList">
@@ -261,6 +261,7 @@ export default {
         : true,
       showAdminSet: false,
       route: "/",
+      homeUrl: window.config.homeUrl,
       query: {},
     };
   },

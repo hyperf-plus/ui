@@ -17,6 +17,7 @@ const options = {
     autoFinish:false,
 }
 Vue.use(VueProgressBar, options);
+axios.defaults.withCredentials = false;
 Vue.prototype.$http = axios;
 Vue.prototype.axios = axios;
 Vue.prototype._ = lodash;
