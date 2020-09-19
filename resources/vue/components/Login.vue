@@ -1,19 +1,19 @@
 <template>
   <div
     class="page-account"
-    :style="{ 'background-image': 'url(' + page_data.backgroundImage + ')' }"
+    :style="{ 'background-image': 'url(' + pageData.backgroundImage + ')' }"
   >
     <div class="page-account-container">
       <div class="page-account-top">
         <div class="page-account-top-logo">
-          <template v-if="page_data.logoShow">
-            <img :src="page_data.logo" v-if="page_data.logo" alt="logo" />
+          <template v-if="pageData.logoShow">
+            <img :src="pageData.logo" v-if="pageData.logo" alt="logo" />
             <img src="../assets/logo.svg" v-else alt="logo" />
           </template>
-          <h1 v-if="page_data.name">{{ page_data.name }}</h1>
+          <h1 v-if="pageData.name">{{ pageData.name }}</h1>
         </div>
 
-        <div class="page-account-top-desc">{{ page_data.desc }}</div>
+        <div class="page-account-top-desc">{{ pageData.desc }}</div>
       </div>
       <div class="login-form">
         <el-form
@@ -63,14 +63,14 @@
       </div>
     </div>
     <footer class="global-footer i-copyright">
-      <div class="global-footer-copyright">{{ page_data.copyright }}</div>
+      <div class="global-footer-copyright">{{ pageData.copyright }}</div>
     </footer>
   </div>
 </template>
 <script>
 export default {
   props: {
-    page_data: Object,
+    pageData: Object,
   },
   data() {
     return {
@@ -89,8 +89,8 @@ export default {
     };
   },
   mounted() {
-    this.form.username = this.page_data.auto_user.username;
-    this.form.password = this.page_data.auto_user.password;
+    this.form.username = this.pageData.auto_user.username;
+    this.form.password = this.pageData.auto_user.password;
     this.$nextTick(() => {});
   },
   methods: {
@@ -103,7 +103,7 @@ export default {
           this.loading = true;
 
           this.$http
-            .post(this.page_data.url.postLogin, this.form)
+            .post(this.pageData.url.postLogin, this.form)
              .then((res) => {
                     if(res.status === 200){
                       window.location.href = res.redirect;

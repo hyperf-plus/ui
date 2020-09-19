@@ -93,7 +93,7 @@ class UI
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         </head>
 <body>
-<div id="app"><{$root} :page_data='$pageData'></{$root}></div>
+<div id="app"><{$root} :page-data='$pageData'></{$root}></div>
 <script>
     Admin = {};
     Admin.token = "$token";

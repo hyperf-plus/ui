@@ -490,7 +490,7 @@ class FormItem extends Component
     public function vueRule(bool $required = true, $type = "string", $message = null, $trigger = "blur")
     {
         $rule = ['type' => $type, 'required' => true, "message" => $message, "trigger" => $trigger];
-        $this->rules = collect($this->rules)->add($rule)->all();
+        $this->rules = collect($this->rules)->push($rule)->all();
         return $this;
     }
 
@@ -501,7 +501,7 @@ class FormItem extends Component
      */
     public function vueRuleRaw(array $raw)
     {
-        $this->rules = collect($this->rules)->add($raw)->all();
+        $this->rules = collect($this->rules)->push($raw)->all();
         return $this;
     }
 
