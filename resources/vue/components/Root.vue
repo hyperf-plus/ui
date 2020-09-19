@@ -8,11 +8,11 @@
         :width="isCollapsed ? '64px' : '200px'"
       >
         <div class="content-side-logo">
-          <template v-if="page_data.logoShow">
+          <template v-if="pageData.logoShow">
             <template v-if="isDark">
-              <template v-if="page_data.logoLight">
-                <img v-if="isCollapsed" :src="page_data.logoMiniLight" />
-                <img v-else :src="page_data.logoLight" />
+              <template v-if="pageData.logoLight">
+                <img v-if="isCollapsed" :src="pageData.logoMiniLight" />
+                <img v-else :src="pageData.logoLight" />
               </template>
               <template v-else>
                 <img v-if="isCollapsed" src="../assets/logo-mini-light.svg" />
@@ -20,9 +20,9 @@
               </template>
             </template>
             <template v-else>
-              <template v-if="page_data.logo">
-                <img v-if="isCollapsed" :src="page_data.logoMini" />
-                <img v-else :src="page_data.logo" />
+              <template v-if="pageData.logo">
+                <img v-if="isCollapsed" :src="pageData.logoMini" />
+                <img v-else :src="pageData.logo" />
               </template>
               <template v-else>
                 <img v-if="isCollapsed" src="../assets/logo-mini.svg" />
@@ -30,7 +30,7 @@
               </template>
             </template>
           </template>
-          <h1 v-if="!isCollapsed && page_data.name">{{ page_data.name }}</h1>
+          <h1 v-if="!isCollapsed && pageData.name">{{ pageData.name }}</h1>
         </div>
         <el-scrollbar wrap-class="scrollbar-wrapper">
           <el-menu
@@ -39,10 +39,10 @@
             :background-color="isDark ? '#1d1e23' : ''"
             :text-color="isDark ? '#ffffff' : ''"
             :collapse-transition="false"
-            :unique-opened="page_data.uniqueOpened"
+            :unique-opened="pageData.uniqueOpened"
             :router="true"
           >
-            <template v-for="menu in page_data.menu">
+            <template v-for="menu in pageData.menu">
               <el-submenu
                 :index="menu.route"
                 :key="menu.id"
@@ -53,19 +53,10 @@
                   <span slot="title">{{ menu.title }}</span>
                 </template>
                 <template v-for="children in menu.children">
-                  <MenuItem
-                    :menu="children"
-                    :key="children.id"
-                    :is_collapsed="isCollapsed"
-                  />
+                  <MenuItem :menu="children" :key="children.id" :is_collapsed="isCollapsed" />
                 </template>
               </el-submenu>
-              <el-menu-item
-                :index="menu.route"
-                :key="menu.id"
-                :route="menu.route"
-                v-else
-              >
+              <el-menu-item :index="menu.route" :key="menu.id" :route="menu.route" v-else>
                 <i :class="menu.icon" v-if="menu.icon" size="16"></i>
                 <span slot="title">{{ menu.title }}</span>
               </el-menu-item>
@@ -91,22 +82,13 @@
         >
           <div class="layout-header-l">
             <div class="layout-header-trigger hover" @click="collapsedSide">
-              <i
-                class="el-icon-s-fold fs-20 menu-icon"
-                :class="{ 'rotate-icon': isCollapsed }"
-              />
+              <i class="el-icon-s-fold fs-20 menu-icon" :class="{ 'rotate-icon': isCollapsed }" />
             </div>
             <div class="layout-header-breadcrumb">
               <el-breadcrumb separator="/">
-                <el-breadcrumb-item :to="{ path: this.homeUrl }"
-                  >首页</el-breadcrumb-item
-                >
-                <template v-for="menu in page_data.menuList">
-                  <el-breadcrumb-item
-                    v-if="menu.route == route"
-                    :key="menu.route"
-                    >{{ menu.title }}</el-breadcrumb-item
-                  >
+                <el-breadcrumb-item :to="{ path: this.homeUrl  }">首页</el-breadcrumb-item>
+                <template v-for="menu in pageData.menuList">
+                  <el-breadcrumb-item v-if="menu.route == route" :key="menu.route">{{ menu.title }}</el-breadcrumb-item>
                 </template>
               </el-breadcrumb>
             </div>
@@ -124,10 +106,12 @@
             <div class="layout-header-trigger layout-header-trigger-min hover">
               <el-dropdown>
                 <div class="layout-header-user">
-                  <el-avatar :src="page_data.user.avatar" :size="25" />
-                  <span class="layout-header-user-name">{{
-                    page_data.user.name
-                  }}</span>
+                  <el-avatar :src="pageData.user.avatar" :size="25" />
+                  <span class="layout-header-user-name">
+                    {{
+                    pageData.user.name
+                    }}
+                  </span>
                 </div>
                 <el-dropdown-menu slot="dropdown">
                   <a @click="onLogout">
@@ -147,7 +131,7 @@
             </div>
           </div>
         </el-header>
-        <el-main :class="{ 'el-main-fixed': fixedHeader }">
+        <el-main :class="{ 'el-main-fixed': fixedHeader }" ref="mainView">
           <div class="layout-content-main">
             <router-view></router-view>
           </div>
@@ -156,17 +140,15 @@
           <div ref="rootFooter">
             <div class="footer-links">
               <el-link
-               
-                v-for="(item, index) in page_data.footerLinks"
+                v-for="(item, index) in pageData.footerLinks"
                 :key="index"
                 type="text"
                 :href="item.href"
                 target="_blank"
                 :underline="false"
-                >{{ item.title }}</el-link
-              >
+              >{{ item.title }}</el-link>
             </div>
-            <div v-html="page_data.copyright"></div>
+            <div v-html="pageData.copyright"></div>
           </div>
         </el-footer>
       </el-container>
@@ -179,22 +161,14 @@
           <el-badge type="success" is-dot :hidden="isDark">
             <div>
               <el-tooltip content="亮色菜单风格" placement="top">
-                <img
-                  @click="isDark = false"
-                  class="hover"
-                  src="../assets/menu-light.svg"
-                />
+                <img @click="isDark = false" class="hover" src="../assets/menu-light.svg" />
               </el-tooltip>
             </div>
           </el-badge>
           <el-badge type="success" is-dot :hidden="!isDark">
             <div class="ml-20">
               <el-tooltip content="暗色菜单风格" placement="top">
-                <img
-                  @click="isDark = true"
-                  class="hover"
-                  src="../assets/menu-dark.svg"
-                />
+                <img @click="isDark = true" class="hover" src="../assets/menu-dark.svg" />
               </el-tooltip>
             </div>
           </el-badge>
@@ -240,7 +214,7 @@ import { flattenDeepChild } from "../utils";
 
 export default {
   props: {
-    page_data: Object,
+    pageData: Object,
   },
   data() {
     return {
@@ -271,7 +245,7 @@ export default {
       this.route = to.path;
       this.query = to.query;
       let queryKey = [];
-      _.forEach(this.query, function(value, key) {
+      _.forEach(this.query, function (value, key) {
         queryKey.push(key + "=" + value);
       });
       this.route =
@@ -292,7 +266,7 @@ export default {
       this.$message[type](message);
     });
     this.$nextTick(() => {
-      window.rootFooterHeight = this.$refs.rootFooter.offsetHeight + 60;
+      window.rootFooterHeight = this.$refs.rootFooter.offsetHeight +20;
     });
   },
   destroyed() {
@@ -304,7 +278,7 @@ export default {
       return ["menu-item", this.isCollapsed ? "collapsed-menu" : ""];
     },
     menuRoutes() {
-      return flattenDeepChild(this.page_data.menu, "children", "route");
+      return flattenDeepChild(this.pageData.menu, "children", "route");
     },
   },
   methods: {
@@ -316,7 +290,7 @@ export default {
     },
     onLogout() {
       this.$confirm("您确定退出登录当前账户吗？", "退出登陆确认").then(() => {
-        window.location.href = this.page_data.url.logout;
+        window.location.href = this.pageData.url.logout;
       });
     },
   },

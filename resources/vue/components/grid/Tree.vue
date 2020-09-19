@@ -1,6 +1,6 @@
 <template>
   <div class="grid-container">
-    <el-card v-if="attrs.top" shadow="never" :body-style="{ padding: 0 }">
+    <el-card shadow="never" :body-style="{ padding: 0 }">
       <div class="grid-top-container">
         <div class="grid-top-container-left">
           <div class="search-view mr-10" v-if="attrs.quickSearch">
@@ -10,7 +10,7 @@
               :placeholder="attrs.quickSearch.placeholder"
               :clearable="true"
               @clear="getData"
-
+              
               @focus="onQuickSearchFocus"
               @blur="onQuickSearchBlur"
             >
@@ -57,16 +57,12 @@
       <div style="padding:10px;">
         <el-tree
           :data="tableData"
-          :node-key="attrs.keyName"
-          :ref="attrs.ref || 'tree'"
           :draggable="attrs.attributes.draggable"
-          :showCheckbox="attrs.showCheckbox"
           default-expand-all
           v-loading="loading"
           :empty-text="attrs.attributes.emptyText"
-          :indent="16"
+          :indent="10"
           @node-drop="onNodeDrop"
-          @node-click	="onNodeClick"
         >
           <div class="custom-tree-node" slot-scope="{ data, node }">
             <div class="custom-tree-node-item">
@@ -81,7 +77,7 @@
               </template>
             </div>
             <div class="flex-c">
-              <Actions v-if="attrs.actions"
+              <Actions
                 :action_list="attrs.actions.data"
                 :scope="node"
                 :key_name="attrs.keyName"
@@ -106,7 +102,6 @@ export default {
   },
   data() {
     return {
-      keys:{},
       loading: false,
       page: 1,
       sort: {},
@@ -124,25 +119,19 @@ export default {
   },
   mounted() {
     this.getData();
-    this.$bus.on("treeReload", () => {
+    this.$bus.on("tableReload", () => {
       this.getData();
     });
     this.path = this.$route.path;
   },
   destroyed() {
     try {
-      this.$bus.off("treeReload");
+      this.$bus.off("tableReload");
       window.removeEventListener("keydown", this.onEnt);
     } catch (e) {}
   },
   methods: {
     //获取数据
-    saveChecked(){
-      this.$store.commit("setGridData", {
-        key: "treeSelectionKeys",
-        data: this.keys,
-      });
-    },
     getData() {
       this.loading = true;
       this.$http
@@ -166,14 +155,6 @@ export default {
         )
         .finally(() => {
           this.loading = false;
-          let checked = this.attrs.checkedKeys || [];
-          // this.$refs.roleTree.setCheckedKeys(checked);
-          if (checked.length > 0){
-            console.log(checked)
-            this.keys = checked
-            this.$bus.emit("treeTableChecked", checked);
-            this.saveChecked();
-          }
         });
     },
     onNodeDrop(node, before, after, inner) {
@@ -191,24 +172,6 @@ export default {
       console.log(before);
       console.log(after);
       console.log(inner);
-    },
-    onNodeClick( data,node,inner) {
-      // this.keys = this.$refs.roleTree.getCheckedKeys()
-      // this.saveChecked();
-      if (this.attrs.refData) {
-        try {
-            // this.$bus.emit(this.attrs.refData.ref, {
-            //     data: this.attrs.refData.data,
-            //     self: this,
-            // });
-            this.$bus.emit(this.attrs.refData.ref, data);
-            this.$bus.emit("treeTableReload", data);
-            return;
-        } catch (e) {
-          console.log(e)
-        }
-        return;
-      }
     }
   }
 };

@@ -9,13 +9,16 @@ import store from '@/store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI, { size: 'small' });
+
 import VueProgressBar from 'vue-progressbar'
+
 const options = {
     color: "#409EFF",
     failedColor:"#F56C6C",
     thickness: '4px',
     autoFinish:false,
 }
+
 Vue.use(VueProgressBar, options);
 axios.defaults.withCredentials = false;
 Vue.prototype.$http = axios;
@@ -24,18 +27,23 @@ Vue.prototype._ = lodash;
 window._ = lodash;
 Vue.use(VueBus);
 
+
+
 export default class VueAdmin {
     constructor(config) {
         this.bootingCallbacks = [];
         this.config = config
     }
+
     booting(callback) {
         this.bootingCallbacks.push(callback)
     }
+
     boot() {
         this.bootingCallbacks.forEach(callback => callback(Vue, router));
         this.bootingCallbacks = []
     }
+
     liftOff() {
         let _this = this;
         this.boot();

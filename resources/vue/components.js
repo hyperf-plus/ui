@@ -11,6 +11,7 @@ Vue.component("Form", require("@/components/form/Form").default);
 Vue.component("BaseForm", require("@/components/form/BaseForm").default);
 Vue.component("MenuItem", require("@/components/layout/MenuItem").default);
 Vue.component("GSwitch", require("@/components/widgets/grid/Switch").default);
+Vue.component("FormItem", require("@/components/form/FormItem").default);
 
 //Form
 Vue.component("Input", require("@/components/widgets/Form/Input").default);

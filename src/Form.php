@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace HPlus\UI;
 
+use HPlus\UI\Layout\Row;
 use Hyperf\Database\Schema\Schema;
 use Hyperf\DbConnection\Db;
 use \Hyperf\Database\Model\Builder;
@@ -51,6 +52,8 @@ class Form extends Component
     protected $formRules = [];
     protected $formItemRows = [];
     protected $formItems = [];
+    protected $formItemLayout = [];
+    protected $ignoreEmptyProps = [];
 
     protected $tabs = [];
 
@@ -114,7 +117,7 @@ class Form extends Component
     }
 
     /**
-     * 生成字段
+     * 快捷生成字段
      * @param $prop
      * @param string $label
      * @param string $field
@@ -122,12 +125,35 @@ class Form extends Component
      */
     public function item($prop, $label = '', $field = '')
     {
+        $item = $this->addItem($prop, $label, $field);
+        $this->row(function (Row $row) use ($item) {
+            $row->item($item);
+        });
+        return $item;
+    }
+
+    /**
+     * 多列布局字段
+     * @param $prop
+     * @param string $label
+     * @param string $field
+     * @return FormItem
+     */
+    public function rowItem($prop, $label = '', $field = '')
+    {
         return $this->addItem($prop, $label, $field);
     }
 
-    public function row()
+    /**
+     * 表单自定义布局
+     * @param \Closure $closure
+     * @return $this
+     */
+    public function row(\Closure $closure)
     {
-
+        $row = new Row();
+        call_user_func($closure, $row, $this);
+        $this->formItemLayout[] = $row;
         return $this;
     }
 
@@ -154,6 +180,12 @@ class Form extends Component
         $this->tabs = collect($items)->map(function (FormItem $item) {
             return $item->getTab();
         })->unique()->all();
+
+        $this->ignoreEmptyProps = collect($items)->filter(function (FormItem $item) {
+            return $item->isIgnoreEmpty();
+        })->map(function (FormItem $item) {
+            return $item->getProp();
+        })->flatten()->all();
 
         // 根据所处模式抛弃组件
         $this->formItemsAttr = collect($items)->filter(function (FormItem $item) {
@@ -797,10 +829,12 @@ class Form extends Component
             'dataUrl' => $this->dataUrl,
             'mode' => $this->getMode(),
             'attrs' => $this->attrs,
-            'formItems' => $this->formItemsAttr,
+            //'formItems' => $this->formItemsAttr,
+            'ignoreEmptyProps' => $this->ignoreEmptyProps,
+            'formItemLayout' => $this->formItemLayout,
             'tabs' => $this->tabs,
-            'defaultValues' => $this->formItemsValue,
-            'formRules' => $this->formRules,
+            'defaultValues' => (object)$this->formItemsValue,
+            'formRules' => (object)$this->formRules,
             'ref' => $this->ref,
             'refData' => $this->refData,
             'formRefData' => $this->FormRefDataBuild(),

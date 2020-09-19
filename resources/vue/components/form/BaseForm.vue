@@ -128,6 +128,7 @@ export default {
   computed: {
     actionUrl() {
       const keys = this.$store.getters.thisPage.grids.selectionKeys;
+
       return this._.replace(this.attrs.action, "selectionKeys", keys);
     },
   },
@@ -136,6 +137,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           this.loading = true;
+
           this.$http
             .post(this.actionUrl, this.formData)
             .then(({ data, code, message }) => {

@@ -7,6 +7,7 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
+
 namespace HPlus\UI\Form;
 
 use \Hyperf\Database\Model\Relations\BelongsToMany;
@@ -18,6 +19,8 @@ use HPlus\UI\Form;
 
 class FormItem extends Component
 {
+    protected $componentName = "FormItem";
+
     protected $prop;
     protected $label;
     protected $hideLabel = false;
@@ -103,7 +106,7 @@ class FormItem extends Component
             return $label;
         }
         $label = ucfirst($this->prop);
-        return $label;
+        return str_replace(['.', '_'], ' ', $label);
     }
 
     public function setOriginal($data)
@@ -487,7 +490,7 @@ class FormItem extends Component
     public function vueRule(bool $required = true, $type = "string", $message = null, $trigger = "blur")
     {
         $rule = ['type' => $type, 'required' => true, "message" => $message, "trigger" => $trigger];
-        $this->rules = collect($this->rules)->push($rule)->all();
+        $this->rules = collect($this->rules)->add($rule)->all();
         return $this;
     }
 
@@ -498,7 +501,7 @@ class FormItem extends Component
      */
     public function vueRuleRaw(array $raw)
     {
-        $this->rules =collect($this->rules)->push($raw)->all();
+        $this->rules = collect($this->rules)->add($raw)->all();
         return $this;
     }
 
@@ -599,9 +602,10 @@ class FormItem extends Component
 
 
     /**
-     * 设置字段所属tab名称
      * @param string $tab
      * @return FormItem
+     * @deprecated 已抛弃，设置无效
+     * 设置字段所属tab名称
      */
     public function tab(string $tab)
     {
@@ -626,6 +630,15 @@ class FormItem extends Component
         $this->ignoreEmpty = true;
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function isIgnoreEmpty(): bool
+    {
+        return $this->ignoreEmpty;
+    }
+
 
     /**
      * 传递当前组件所在模式
@@ -667,6 +680,7 @@ class FormItem extends Component
     public function getAttrs()
     {
         return [
+            'componentName' => $this->componentName,
             'prop' => $this->prop,
             'label' => $this->label,
             'field' => $this->field,
@@ -699,4 +713,8 @@ class FormItem extends Component
         ];
     }
 
+    public function jsonSerialize()
+    {
+        return $this->getAttrs();
+    }
 }

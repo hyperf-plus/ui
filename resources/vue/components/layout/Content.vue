@@ -1,5 +1,5 @@
 <template>
-  <div :style="attrs.style" :class="attrs.className" :ref="attrs.ref || 'content'">
+  <div :style="attrs.style" :class="attrs.className">
     <div class="layout-page-header" v-if="attrs.showHeader">
       <div class="layout-page-header-title" v-html="attrs.title"></div>
       <div
@@ -13,7 +13,7 @@
         :key="index"
         :is="row.componentName"
         :attrs="row"
-        v-bind="$props"
+        v-bind="$attrs"
       />
     </div>
   </div>

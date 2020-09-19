@@ -16,7 +16,7 @@
       </template>
     </el-submenu>
     <el-menu-item :index="menu.route" :route="menu.route" v-else>
-      <i :class="menu.icon" v-if="menu.icon" size="17"></i>
+      <i :class="menu.icon" v-if="menu.icon" size="16"></i>
       <span slot="title">{{ menu.title }}</span>
     </el-menu-item>
 </template>

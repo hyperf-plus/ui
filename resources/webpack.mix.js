@@ -24,7 +24,7 @@ mix
     extractVueStyles: false,
     processCssUrls: false,
   })
-  .disableNotifications()
+    .disableNotifications().version();
 
 if (mix.inProduction()) {
   mix.version();

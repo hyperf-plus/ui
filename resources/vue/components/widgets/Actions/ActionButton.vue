@@ -21,7 +21,7 @@
       >
     </el-popconfirm>
     <el-tooltip :content="action.tooltip" placement="top" :disabled="!action.tooltip" v-else>
-      <el-button v-if="action.circle"
+      <el-button
         :type="action.type"
         :size="action.size"
         :plain="action.plain"
@@ -32,20 +32,8 @@
         :autofocus="action.autofocus"
         :loading="loading"
         @click="onClick"
-        ></el-button>
-      <el-button v-else="!action.circle"
-        :type="action.type"
-        :size="action.size"
-        :plain="action.plain"
-        :round="action.round"
-        :circle="action.circle"
-        :disabled="action.disabled"
-        :icon="action.icon"
-        :autofocus="action.autofocus"
-        :loading="loading"
-        @click="onClick"
-        >{{ action.content }}</el-button>
-
+        >{{ action.content }}</el-button
+      >
     </el-tooltip>
     <el-dialog
       v-if="action.dialog"

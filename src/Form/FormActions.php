@@ -128,18 +128,10 @@ class FormActions
     }
 
 
-
-
     public function builderActions()
     {
         $addLeftActions = collect($this->addLeftActions);
         $addRightActions = collect($this->addRightActions);
-        foreach ($this->addLeftActions as $addLeftAction) {
-            $addLeftActions->add($addLeftAction);
-        }
-        foreach ($this->addRightActions as $addRightAction) {
-            $addRightActions->add($addRightAction);
-        }
 
         $cancelButton = null;
 

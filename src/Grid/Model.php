@@ -183,7 +183,7 @@ class Model
             return $query['method'] == 'paginate';
         });
 
-        if (!$this->usePaginate) {
+        if ($this->grid->isHidePage()) {
             $query = [
                 'method' => 'get',
                 'arguments' => [],
@@ -487,7 +487,11 @@ class Model
         $data = $this->model;
 
         if ($this->model instanceof Collection) {
-            return $this->displayData($data);
+            if ($data->count() > 0) {
+                return $this->displayData($data);
+            } else {
+                return $data;
+            }
         }
 
         if ($this->model instanceof LengthAwarePaginator) {
