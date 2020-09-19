@@ -6,7 +6,7 @@
 
 ### HPlus UI 以插件形式接入，基于此插件可实现各种页面功能开发 ，也可以自定义组件、
 - UI插件  composer require hyperf-plus/ui:~1.0
-- 权限插件（开发中） composer require hyperf-plus/permissions:~1.0
+- 后台插件 composer require hyperf-plus/admin:~2.0
 - 更多开发中...
 
 ### 安装方法：
