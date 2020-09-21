@@ -1,18 +1,18 @@
 <?php
+
 declare(strict_types=1);
 /**
  * This file is part of Hyperf.plus
+ *
  * @link     https://www.hyperf.plus
  * @document https://doc.hyperf.plus
  * @contact  4213509@qq.com
- * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
+ * @license  https://github.com/hyperf-plus/blob/master/LICENSE
  */
 
 namespace HPlus\UI;
 
-use HPlus\UI\Entity\MenuEntity;
 use HPlus\UI\Entity\UISettingEntity;
-use HPlus\UI\Entity\UserEntity;
 use Hyperf\HttpMessage\Server\Response;
 use Hyperf\HttpMessage\Stream\SwooleStream;
 use Psr\Http\Message\ResponseInterface;
@@ -55,7 +55,7 @@ class UI
         return self::response([
             'url' => $url,
             'isVueRoute' => $isVueRoute,
-            'type' => $type
+            'type' => $type,
         ], $message, 301);
     }
 
@@ -64,6 +64,7 @@ class UI
         $apiRoot = $setting->getApiRoot();
         $homeUrl = $setting->getHomeUrl();
         $token = $setting->getUser()->getToken();
+        $title = $setting->getTitle();
         if ($setting->getUser()->getId() > 0) {
             $root = 'root';
             $pageData = $setting->toArray();
@@ -78,7 +79,7 @@ class UI
             $pageData['desc'] = $config['loginDesc'];
             $pageData['backgroundImage'] = $config['login_background_image'];
             $pageData['url'] = [
-                'postLogin' => $config['auth']['login_api']??''
+                'postLogin' => $config['auth']['login_api'] ?? '',
             ];
             $pageData['auto_user'] = $config['auto_user'];
         }
@@ -89,17 +90,17 @@ class UI
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>HyperfVueAdmin</title>
+    <title>{$title}</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         </head>
 <body>
-<div id="app"><{$root} :page-data='$pageData'></{$root}></div>
+<div id="app"><{$root} :page-data='{$pageData}'></{$root}></div>
 <script>
     Admin = {};
-    Admin.token = "$token";
+    Admin.token = "{$token}";
     window.config = {
-        'apiRoot': "$apiRoot",
-        'homeUrl': "$homeUrl"
+        'apiRoot': "{$apiRoot}",
+        'homeUrl': "{$homeUrl}"
     }
 </script>
 <script src="/static/manifest.js?id=8991394a854ee5cdffc3"></script>
@@ -116,5 +117,4 @@ class UI
 EOF;
         return \Hyperf\Utils\Context::get(ResponseInterface::class)->withBody(new SwooleStream($html))->withHeader('content-type', 'text/html; charset=utf8');
     }
-
 }
