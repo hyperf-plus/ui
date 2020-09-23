@@ -166,7 +166,6 @@ if (!function_exists('is_validURL')) {
 }
 
 
-
 if (!function_exists('route')) {
     function route($url, $param = [])
     {
@@ -178,7 +177,7 @@ if (!function_exists('route')) {
         $uri = request()->getUri();
         $param = http_build_query($param);
         if ($https) {
-            $uri->withScheme('https');
+            $uri = $uri->withScheme('https');
         }
         $uri->withQuery($param);
         if (substr($url, 0, 1) !== '/') {
