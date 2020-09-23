@@ -3,33 +3,33 @@
     <div ref="topView">
       <component v-if="attrs.top" :is="attrs.top.componentName" :attrs="attrs.top" />
       <el-card
-        shadow="never"
-        :body-style="{ padding: 0 }"
-        class="margin-bottom-sm"
-        v-if="attrs.filter.filters.length > 0"
+          shadow="never"
+          :body-style="{ padding: 0 }"
+          class="margin-bottom-sm"
+          v-if="attrs.filter.filters.length > 0"
       >
         <div class="filter-form">
           <el-form :inline="true" :model="filterFormData" v-if="filterFormData">
             <el-form-item v-if="attrs.quickSearch">
               <el-input
-                v-model="quickSearch"
-                :placeholder="attrs.quickSearch.placeholder"
-                :clearable="true"
-                @clear="getData"
-                @keyup.enter.native="getData"
+                  v-model="quickSearch"
+                  :placeholder="attrs.quickSearch.placeholder"
+                  :clearable="true"
+                  @clear="getData"
+                  @keyup.enter.native="getData"
               ></el-input>
             </el-form-item>
 
             <el-form-item
-              v-for="(item, index) in attrs.filter.filters"
-              :key="index"
-              :label="item.label"
+                v-for="(item, index) in attrs.filter.filters"
+                :key="index"
+                :label="item.label"
             >
               <ItemDiaplsy
-                v-model="filterFormData[item.column]"
-                :form-item="item"
-                :form-items="attrs.filters"
-                :form-data="filterFormData"
+                  v-model="filterFormData[item.column]"
+                  :form-item="item"
+                  :form-items="attrs.filters"
+                  :form-data="filterFormData"
               />
             </el-form-item>
             <el-form-item>
@@ -45,41 +45,41 @@
         <div class="grid-top-container">
           <div class="grid-top-container-left">
             <BatchActions
-              :routers="attrs.routers"
-              :key_name="attrs.keyName"
-              :rows="selectionRows"
-              :actions="attrs.batchActions"
-              v-if="attrs.selection"
+                :routers="attrs.routers"
+                :key_name="attrs.keyName"
+                :rows="selectionRows"
+                :actions="attrs.batchActions"
+                v-if="attrs.selection"
             />
             <div
-              class="search-view mr-10"
-              v-if="attrs.quickSearch && attrs.filter.filters.length <= 0"
+                class="search-view mr-10"
+                v-if="attrs.quickSearch && attrs.filter.filters.length <= 0"
             >
               <el-input
-                v-model="quickSearch"
-                :placeholder="attrs.quickSearch.placeholder"
-                :clearable="true"
-                @clear="getData"
-                @keyup.enter.native="getData"
+                  v-model="quickSearch"
+                  :placeholder="attrs.quickSearch.placeholder"
+                  :clearable="true"
+                  @clear="getData"
+                  @keyup.enter.native="getData"
               >
                 <el-button @click="getData" :loading="loading" slot="append">搜索</el-button>
               </el-input>
             </div>
             <div class="flex-c">
               <component
-                v-for="(component, index) in attrs.toolbars.left"
-                :key="component.componentName + index"
-                :is="component.componentName"
-                :attrs="component"
+                  v-for="(component, index) in attrs.toolbars.left"
+                  :key="component.componentName + index"
+                  :is="component.componentName"
+                  :attrs="component"
               />
             </div>
           </div>
           <div class="grid-top-container-right">
             <component
-              v-for="(component, index) in attrs.toolbars.right"
-              :key="component.componentName + index"
-              :is="component.componentName"
-              :attrs="component"
+                v-for="(component, index) in attrs.toolbars.right"
+                :key="component.componentName + index"
+                :is="component.componentName"
+                :attrs="component"
             />
             <el-divider direction="vertical" v-if="!attrs.attributes.hideCreateButton"></el-divider>
             <div class="icon-actions">
@@ -112,39 +112,39 @@
       </div>
       <div>
         <el-table
-          :ref="attrs.ref || 'table'"
-          :data="tableData"
-          :row-key="attrs.attributes.rowKey"
-          :default-sort="default_sort_get"
-          :height="gridHeight"
-          :max-height="attrs.attributes.maxHeight"
-          :stripe="attrs.attributes.stripe"
-          :border="attrs.attributes.border"
-          :size="attrs.attributes.size"
-          :fit="attrs.attributes.fit"
-          :show-header="attrs.attributes.showHeader"
-          :highlight-current-row="attrs.attributes.highlightCurrentRow"
-          :empty-text="attrs.attributes.emptyText"
-          :tooltip-effect="attrs.attributes.tooltipEffect"
-          :default-expand-all="attrs.attributes.defaultExpandAll"
-          @sort-change="onTableSortChange"
-          @selection-change="onTableselectionChange"
+            :ref="attrs.ref || 'table'"
+            :data="tableData"
+            :row-key="attrs.attributes.rowKey"
+            :default-sort="default_sort_get"
+            :height="gridHeight"
+            :max-height="attrs.attributes.maxHeight"
+            :stripe="attrs.attributes.stripe"
+            :border="attrs.attributes.border"
+            :size="attrs.attributes.size"
+            :fit="attrs.attributes.fit"
+            :show-header="attrs.attributes.showHeader"
+            :highlight-current-row="attrs.attributes.highlightCurrentRow"
+            :empty-text="attrs.attributes.emptyText"
+            :tooltip-effect="attrs.attributes.tooltipEffect"
+            :default-expand-all="attrs.attributes.defaultExpandAll"
+            @sort-change="onTableSortChange"
+            @selection-change="onTableselectionChange"
         >
           <el-table-column v-if="attrs.attributes.selection" align="center" type="selection"></el-table-column>
           <el-table-column v-if="attrs.tree" align="center" width="50"></el-table-column>
           <template v-for="column in attrs.columnAttributes">
             <el-table-column
-              :type="column.type"
-              :key="column.prop"
-              :column-key="column.columnKey"
-              :prop="column.prop"
-              :label="column.label"
-              :width="column.width"
-              :sortable="column.sortable"
-              :help="column.help"
-              :align="column.align"
-              :fixed="column.fixed"
-              :header-align="column.headerAlign"
+                :type="column.type"
+                :key="column.prop"
+                :column-key="column.columnKey"
+                :prop="column.prop"
+                :label="column.label"
+                :width="column.width"
+                :sortable="column.sortable"
+                :help="column.help"
+                :align="column.align"
+                :fixed="column.fixed"
+                :header-align="column.headerAlign"
             >
               <template slot="header" slot-scope="scope">
                 <span>{{ scope.column.label }}</span>
@@ -158,20 +158,20 @@
             </el-table-column>
           </template>
           <el-table-column
-            v-if="!attrs.attributes.hideActions"
-            :label="attrs.attributes.actionLabel"
-            prop="grid_actions"
-            :fixed="attrs.attributes.actionFixed"
-            :min-width="attrs.attributes.actionWidth"
-            :align="attrs.attributes.actionAlign"
+              v-if="!attrs.attributes.hideActions"
+              :label="attrs.attributes.actionLabel"
+              prop="grid_actions"
+              :fixed="attrs.attributes.actionFixed"
+              :min-width="attrs.attributes.actionWidth"
+              :align="attrs.attributes.actionAlign"
           >
             <template slot="header"></template>
             <template slot-scope="scope">
               <Actions
-                v-if="scope.row.grid_actions && !scope.row.grid_actions.hide"
-                :action_list="scope.row.grid_actions.data"
-                :scope="scope"
-                :key_name="attrs.keyName"
+                  v-if="scope.row.grid_actions && !scope.row.grid_actions.hide"
+                  :action_list="scope.row.grid_actions.data"
+                  :scope="scope"
+                  :key_name="attrs.keyName"
               />
             </template>
           </el-table-column>
@@ -179,15 +179,15 @@
       </div>
       <div ref="pageView" class="table-page padding-xs" v-if="!attrs.hidePage">
         <el-pagination
-          :layout="attrs.pageLayout"
-          :hide-on-single-page="false"
-          :total="pageData.total"
-          :page-size="pageData.pageSize"
-          :current-page="pageData.currentPage"
-          :page-sizes="attrs.pageSizes"
-          :background="attrs.pageBackground"
-          @size-change="onPageSizeChange"
-          @current-change="onPageCurrentChange"
+            :layout="attrs.pageLayout"
+            :hide-on-single-page="false"
+            :total="pageData.total"
+            :page-size="pageData.pageSize"
+            :current-page="pageData.currentPage"
+            :page-sizes="attrs.pageSizes"
+            :background="attrs.pageBackground"
+            @size-change="onPageSizeChange"
+            @current-change="onPageCurrentChange"
         />
       </div>
     </el-card>
@@ -196,11 +196,11 @@
     </div>
 
     <DialogForm
-      ref="DialogGridFrom"
-      v-if="attrs.dialogForm"
-      :dialogFormWidth="attrs.dialogFormWidth"
-      :dialogForm="attrs.dialogForm"
-      :dialogTitle="attrs.dialogTitle"
+        ref="DialogGridFrom"
+        v-if="attrs.dialogForm"
+        :dialogFormWidth="attrs.dialogFormWidth"
+        :dialogForm="attrs.dialogForm"
+        :dialogTitle="attrs.dialogTitle"
     />
   </div>
 </template>
@@ -248,42 +248,33 @@ export default {
       bottomComponentViewHeight: 0,
     };
   },
-
   mounted() {
     //初始化默认设置值
     this.filterFormData = this._.cloneDeep(this.attrs.filter.filterFormData);
     this.sort = this._.cloneDeep(this.attrs.defaultSort);
-
     //初始化vuex状态值
     if (this.$store.getters.thisPage.grids.page) {
       this.page = this._.cloneDeep(this.$store.getters.thisPage.grids.page);
-
       if (this.attrs.attributes.dataVuex) {
         this.tableData = this._.cloneDeep(
-          this.$store.getters.thisPage.grids.tableData
+            this.$store.getters.thisPage.grids.tableData
         );
       }
-
       this.pageData = this._.cloneDeep(
-        this.$store.getters.thisPage.grids.pageData
+          this.$store.getters.thisPage.grids.pageData
       );
-
       this.quickSearch = this._.cloneDeep(
-        this.$store.getters.thisPage.grids.quickSearch
+          this.$store.getters.thisPage.grids.quickSearch
       );
-
       this.filterFormData = this._.cloneDeep(
-        this.$store.getters.thisPage.grids.filterFormData
+          this.$store.getters.thisPage.grids.filterFormData
       );
-
       this.sort = this._.cloneDeep(this.$store.getters.thisPage.grids.sort);
     }
-
     //加载数据
     if (this.tableData.length <= 0 || !this.attrs.attributes.dataVuex) {
       this.getData();
     }
-
     //监听事件
     this.$bus.on("tableReload", () => {
       this.getData();
@@ -291,18 +282,15 @@ export default {
     this.$bus.on("tableSetLoading", (status) => {
       this.loading = status;
     });
-
     this.$bus.on("showDialogGridFrom", ({ isShow, key }) => {
       this.$refs["DialogGridFrom"].dialogVisible = isShow;
       this.$refs["DialogGridFrom"].key = key;
     });
-
     this.$nextTick(() => {
       this.topViewHeight = this.$refs.topView.offsetHeight;
-
       this.toolbarsViewHeight = this.$refs.toolbarsView.offsetHeight;
+      this.pageViewHeight = this.$refs.pageView?this.$refs.pageView.offsetHeight:0;
 
-      this.pageViewHeight = this.$refs.pageView.offsetHeight;
       this.bottomComponentViewHeight = this.$refs.bottomComponentView.offsetHeight;
     });
   },
@@ -318,7 +306,6 @@ export default {
     onTabClick(e) {
       const name = this._.split(e.name, "----");
       this.tabsSelectdata[name[0]] = name[1];
-
       this.getData();
     },
     //表单过滤提交
@@ -346,45 +333,42 @@ export default {
           ...this.$route.query,
         },
       })
-        .then(({ data }) => {
-          if (!this.attrs.hidePage) {
-            this.tableData = data.data;
-            this.pageData.pageSize = data.per_page;
-            this.pageData.currentPage = data.current_page;
-            this.pageData.total = data.total;
-            this.pageData.lastPage = data.last_page;
-
-            this.$store.commit("setGridData", { key: "sort", data: this.sort });
-            this.$store.commit("setGridData", { key: "page", data: this.page });
+          .then(({ data }) => {
+            if (!this.attrs.hidePage) {
+              this.tableData = data.data;
+              this.pageData.pageSize = data.per_page;
+              this.pageData.currentPage = data.current_page;
+              this.pageData.total = data.total;
+              this.pageData.lastPage = data.last_page;
+              this.$store.commit("setGridData", { key: "sort", data: this.sort });
+              this.$store.commit("setGridData", { key: "page", data: this.page });
+              this.$store.commit("setGridData", {
+                key: "pageData",
+                data: this.pageData,
+              });
+            } else {
+              this.tableData = data;
+            }
+            //**保存 Grid状态 */
+            if (this.attrs.attributes.dataVuex) {
+              this.$store.commit("setGridData", {
+                key: "tableData",
+                data: this.tableData,
+              });
+            }
             this.$store.commit("setGridData", {
-              key: "pageData",
-              data: this.pageData,
+              key: "quickSearch",
+              data: this.quickSearch,
             });
-          } else {
-            this.tableData = data;
-          }
-
-          //**保存 Grid状态 */
-          if (this.attrs.attributes.dataVuex) {
             this.$store.commit("setGridData", {
-              key: "tableData",
-              data: this.tableData,
+              key: "filterFormData",
+              data: this.filterFormData,
             });
-          }
-
-          this.$store.commit("setGridData", {
-            key: "quickSearch",
-            data: this.quickSearch,
+            /** */
+          })
+          .finally(() => {
+            this.loading = false;
           });
-          this.$store.commit("setGridData", {
-            key: "filterFormData",
-            data: this.filterFormData,
-          });
-          /** */
-        })
-        .finally(() => {
-          this.loading = false;
-        });
     },
     //当表格的排序条件发生变化的时候会触发该事件
     onTableSortChange({ column, prop, order }) {
@@ -420,10 +404,10 @@ export default {
   computed: {
     keys() {
       return this.selectionRows
-        .map((item) => {
-          return item[this.attrs.keyName];
-        })
-        .join(",");
+          .map((item) => {
+            return item[this.attrs.keyName];
+          })
+          .join(",");
     },
     //当前路径
     path() {
@@ -438,30 +422,30 @@ export default {
     //默认排序
     default_sort_get() {
       return this.sort
-        ? {
+          ? {
             prop: this.sort.sort_prop,
             order: this.sort.sort_order == "asc" ? "ascending" : "descending",
           }
-        : {};
+          : {};
     },
     //搜索处理
     q_search() {
       const q_search = new Object();
       this.attrs.quickSearch &&
-        (q_search[this.attrs.quickSearch.searchKey] = this.quickSearch);
+      (q_search[this.attrs.quickSearch.searchKey] = this.quickSearch);
       return q_search;
     },
     gridHeight() {
       if (this.attrs.attributes.height == "auto") {
         return (
-          window.innerHeight -
-          55 -
-          20 -
-          window.rootFooterHeight -
-          this.topViewHeight -
-          (this.toolbarsViewHeight > 0 ? this.toolbarsViewHeight + 12 : 0) -
-          this.pageViewHeight -
-          this.bottomComponentViewHeight
+            window.innerHeight -
+            55 -
+            20 -
+            window.rootFooterHeight -
+            this.topViewHeight -
+            (this.toolbarsViewHeight > 0 ? this.toolbarsViewHeight + 12 : 0) -
+            this.pageViewHeight -
+            this.bottomComponentViewHeight
         );
       }
       return this.attrs.attributes.height;
