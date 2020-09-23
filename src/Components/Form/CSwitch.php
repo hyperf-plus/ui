@@ -20,8 +20,8 @@ class CSwitch extends Component
     protected $inactiveIconClass;
     protected $activeText;
     protected $inactiveText;
-    protected $activeValue = true;
-    protected $inactiveValue = false;
+    protected $activeValue = 1;
+    protected $inactiveValue = 0;
     protected $activeColor = "#409EFF";
     protected $inactiveColor = "#C0CCDA";
     protected $name = "#C0CCDA";
@@ -34,7 +34,7 @@ class CSwitch extends Component
 
     public function getValue($value)
     {
-        return boolval($value);
+        return $value;//boolval($value == $this->activeValue);
     }
 
     /**
