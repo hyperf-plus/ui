@@ -166,6 +166,7 @@ if (!function_exists('is_validURL')) {
 }
 
 
+
 if (!function_exists('route')) {
     function route($url, $param = [])
     {
@@ -173,8 +174,12 @@ if (!function_exists('route')) {
             return $url;
         }
         $prefix = config('admin.route.prefix');
+        $https = config('admin.https');
         $uri = request()->getUri();
         $param = http_build_query($param);
+        if ($https) {
+            $uri->withScheme('https');
+        }
         $uri->withQuery($param);
         if (substr($url, 0, 1) !== '/') {
             $url = '/' . $prefix . '/' . $url;
