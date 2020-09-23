@@ -40,7 +40,8 @@ To enable server static file processing, please refer to:
             return;
         }
         if (is_dir(BASE_PATH . "/resources/ui")) {
-            $this->output->success('更多文档请参阅:https://doc.hyperf.plus');
+            $this->output->warning('您的vue文件已经存在，请手动将' . realpath(__DIR__ . '/../../resources') . '目录拷贝到' . realpath(BASE_PATH . '/resources') . " 目录下，注意修改的文件请自行备份处理");
+            $this->output->text('更多文档请参阅:https://doc.hyperf.plus');
             return;
         }
         $gf = new GenerateFile();
@@ -50,7 +51,7 @@ To enable server static file processing, please refer to:
             ->setReplaceFileExt(['*']) // 设置支持替换文件的后缀，默认替换项目下的所有的文件
             ->run();
         $this->output->success('更新成功');
-        $this->output->success('更多文档请参阅:https://doc.hyperf.plus');
+        $this->output->text('更多文档请参阅:https://doc.hyperf.plus');
         return;
     }
 }
