@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace HPlus\UI;
 
 use HPlus\UI\Layout\Row;
+use HPlus\Validate\Validate;
 use Hyperf\Database\Schema\Schema;
 use Hyperf\DbConnection\Db;
 use \Hyperf\Database\Model\Builder;
@@ -30,8 +31,6 @@ use HPlus\UI\Form\HasHooks;
 use HPlus\UI\Form\HasRef;
 use HPlus\UI\Form\TraitFormAttrs;
 use HPlus\UI\Layout\Content;
-use Mzh\Admin\Exception\BusinessException;
-use Mzh\Validate\Validate\Validate;
 
 class Form extends Component
 {
@@ -499,7 +498,7 @@ class Form extends Component
             $this->model->save();
             $this->updateRelation($this->relations);
             if (($result = $this->callDbTransaction()) instanceof Response) {
-                throw new BusinessException(400, $result->getBody()->getContents());
+                throw new \Exception(400, $result->getBody()->getContents());
             }
         });
         if (($result = $this->callSaved()) instanceof Response) {
@@ -599,7 +598,7 @@ class Form extends Component
             $this->model->save();
             $this->updateRelation($this->relations);
             if (($result = $this->callDbTransaction()) instanceof Response) {
-                throw new BusinessException(400, $result->getBody()->getContents());
+                throw new \Exception(400, $result->getBody()->getContents());
             }
         });
 
