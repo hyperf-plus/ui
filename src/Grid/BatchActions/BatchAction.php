@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace HPlus\UI\Grid\BatchActions;
 
 use HPlus\UI\Actions\BaseAction;
+use HPlus\UI\Exception\BusinessException;
 
 class BatchAction extends BaseAction
 {
@@ -64,6 +65,7 @@ class BatchAction extends BaseAction
         return $this;
     }
 
+
     /**
      * 批量操作响应事件类型
      * @param string $handler 响应类型 request|route|link
@@ -71,8 +73,9 @@ class BatchAction extends BaseAction
      */
     public function handler($handler)
     {
-        abort_if(!in_array($handler, [self::HANDLER_LINK, self::HANDLER_REQUEST, self::HANDLER_ROUTE]), 400, "ActionButton 事件类型错误");
-
+        if (!in_array($handler, [self::HANDLER_LINK, self::HANDLER_REQUEST, self::HANDLER_ROUTE])) {
+            throw new BusinessException(400, "ActionButton 事件类型错误");
+        }
         $this->handler = $handler;
         return $this;
     }

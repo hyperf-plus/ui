@@ -7,11 +7,13 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
+
 namespace HPlus\UI\Grid\Actions;
 
 
 use HPlus\UI\Actions\BaseRowAction;
 use HPlus\UI\Components\Attrs\Button;
+use HPlus\UI\Exception\BusinessException;
 use HPlus\UI\Grid\Concerns\HasDialog;
 
 class ActionButton extends BaseRowAction
@@ -22,6 +24,7 @@ class ActionButton extends BaseRowAction
     const HANDLER_REQUEST = "request";
 
     use Button;
+
     protected $uri;
     protected $componentName = "ActionButton";
     protected $handler;
@@ -60,13 +63,15 @@ class ActionButton extends BaseRowAction
      */
     public function handler($handler)
     {
-        abort_if(!in_array($handler, [self::HANDLER_LINK, self::HANDLER_REQUEST, self::HANDLER_ROUTE]), 400, "ActionButton 事件类型错误");
-
+        if (!in_array($handler, [self::HANDLER_LINK, self::HANDLER_REQUEST, self::HANDLER_ROUTE])) {
+            throw new BusinessException(400, "ActionButton 事件类型错误");
+        };
         $this->handler = $handler;
         return $this;
     }
 
-    public function route($uri){
+    public function route($uri)
+    {
         $this->uri = $uri;
         $this->handler = self::HANDLER_ROUTE;
         return $this;
