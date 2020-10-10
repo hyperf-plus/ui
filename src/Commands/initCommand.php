@@ -50,7 +50,7 @@ The Vue file is successfully deployed. To customize the Vue file, please go to t
             ->setReplaceFileExt(['*']) // 设置支持替换文件的后缀，默认替换项目下的所有的文件
             ->run();
         $gf->setDefaultParams();
-        $gf->setReplaceDir(__DIR__ . '/../../public') // 设置处理的目录
+        $gf->setReplaceDir(__DIR__ . '/../../resources/public') // 设置处理的目录
         ->setNewProjectDir(BASE_PATH . "/public/static")
             ->setReplaceFileName(false)
             ->setReplaceFileExt(['*']) // 设置支持替换文件的后缀，默认替换项目下的所有的文件

@@ -44,7 +44,7 @@ To enable server static file processing, please refer to:
             $this->output->text('更多文档请参阅:https://doc.hyperf.plus');
         }
         $gf = new GenerateFile();
-        $gf->setReplaceDir(__DIR__ . '/../../public') // 设置处理的目录
+        $gf->setReplaceDir(__DIR__ . '/../../resources/public') // 设置处理的目录
         ->setNewProjectDir(BASE_PATH . "/public/static")
             ->setReplaceFileName(false)
             ->setReplaceFileExt(['*']) // 设置支持替换文件的后缀，默认替换项目下的所有的文件
