@@ -54,7 +54,7 @@
                 <el-row>
                   <el-col :span="item.inputWidth">
                     <template v-if="item.relationName">
-                      <ItemDiaplsy
+                      <ItemDisplay
                           v-model="
                           formData[item.relationName][item.relationValueKey]
                         "
@@ -64,7 +64,7 @@
                       />
                     </template>
                     <template v-else>
-                      <ItemDiaplsy
+                      <ItemDisplay
                           v-model="formData[item.prop]"
                           :form_item="item"
                           :form_data="formData"
@@ -104,11 +104,11 @@
   </el-form>
 </template>
 <script>
-import ItemDiaplsy from "./ItemDisplay";
+import ItemDisplay from "./ItemDisplay";
 import ItemIf from "./ItemIf";
 export default {
   components: {
-    ItemDiaplsy,
+    ItemDisplay,
     ItemIf,
   },
   props: {

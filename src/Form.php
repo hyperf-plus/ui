@@ -331,17 +331,15 @@ class Form extends Component
         return $this->id;
     }
 
-    public function resource($slice = -2): string
+    public function resource($slice = -1): string
     {
-
         $segments = explode('/', trim(admin_api_url(request()->path()), '/'));
-
         if ($slice !== 0) {
             $segments = array_slice($segments, 0, $slice);
         }
-
-        return implode('/', $segments);
+        return '/' . implode('/', $segments);
     }
+
 
     /**
      * @return string
@@ -369,6 +367,15 @@ class Form extends Component
         return $this->isEdit;
     }
 
+    /**
+     * 获取表单是否是编辑模式
+     * @param bool $isEdit
+     * @return void
+     */
+    public function setEdit($isEdit = false)
+    {
+        $this->isEdit = $isEdit;
+    }
 
     /**
      * 添加表单验证规则
@@ -390,37 +397,30 @@ class Form extends Component
      */
     protected function validatorData($data)
     {
+        $rules = [];
+        $ruleMessages = [];
+        /* @var FormItem $formItem */
+        foreach ($this->formItems as $formItem) {
+            if (empty($formItem->getServeRole())) {
+                continue;
+            }
+            $rules[$formItem->getField()] = $formItem->getServeRole();
+            $messages = $formItem->getServeRulesMessage();
+            if (is_array($messages)) {
+                foreach ($messages as $key => $message) {
+                    $ruleMessages[$formItem->getField() . '.' . $key] = $message;
+                }
+            }
+        }
+        $rules = array_merge($rules, $this->addRule);
+        $ruleMessages = array_merge($ruleMessages, $this->addRuleMessage);
+        $validator = new Validate();
+        $validator->message($ruleMessages);
+        $validator->failException(true);
         try {
-            $rules = [];
-            $ruleMessages = [];
-            /* @var FormItem $formItem */
-            foreach ($this->formItems as $formItem) {
-                if (empty($formItem->getServeRole())) {
-                    continue;
-                }
-
-                $rules[$formItem->getField()] = $formItem->getServeRole();
-                $messages = $formItem->getServeRulesMessage();
-                if (is_array($messages)) {
-                    foreach ($messages as $key => $message) {
-                        $ruleMessages[$formItem->getField() . '.' . $key] = $message;
-                    }
-                }
-            }
-
-            $rules = array_merge($rules, $this->addRule);
-            $ruleMessages = array_merge($ruleMessages, $this->addRuleMessage);
-
-            $this->validator = \Validator::make($data, $rules, $ruleMessages);
-
-            $this->callValidating($this->validator);
-
-            if ($this->validator->fails()) {
-                abort(400, $this->validator->errors()->first());
-            }
-            return false;
-        } catch (\Exception $exception) {
-            return $exception->getMessage(); //\Admin::responseError();
+            $validator->check($data, $rules);
+        } catch (\Throwable $exception) {
+            throw new ValidateException((int)$exception->getCode(), (string)$exception->getMessage());
         }
     }
 
@@ -461,7 +461,7 @@ class Form extends Component
         $relations = [];
 
         foreach ($inputs as $column => $value) {
-            $column = \Illuminate\Support\Str::camel($column);
+            $column = Str::camel($column);
             if (!method_exists($this->model, $column)) {
                 continue;
             }
@@ -473,11 +473,11 @@ class Form extends Component
         return $relations;
     }
 
+
     protected function prepareInsert($inserts)
     {
         $prepared = [];
-
-        $columns = \Schema::getColumnListing($this->model()->getTable());
+        $columns = Schema::getColumnListing($this->model()->getTable());
         foreach ($inserts as $key => $value) {
             if (in_array($key, $columns)) {
                 Arr::set($prepared, $key, $value);
@@ -513,7 +513,6 @@ class Form extends Component
 
     public function store()
     {
-
         if (($result = $this->callSubmitted()) instanceof Response) {
             return $result;
         }
@@ -521,7 +520,7 @@ class Form extends Component
         $data = request()->all();
 
         if ($validationMessages = $this->validatorData($data)) {
-            return Admin::responseError($validationMessages);
+            return UI::responseError($validationMessages);
         }
 
         if (($response = $this->prepare($data)) instanceof Response) {
@@ -530,20 +529,19 @@ class Form extends Component
 
         DB::transaction(function () use ($data) {
             $inserts = $this->prepareInsert($this->updates);
-
             foreach ($inserts as $key => $value) {
                 $this->model->setAttribute($key, $value);
             }
             $this->model->save();
             $this->updateRelation($this->relations);
             if (($result = $this->callDbTransaction()) instanceof Response) {
-                abort(400, $result);
+                throw new \Exception(400, $result->getBody()->getContents());
             }
         });
         if (($result = $this->callSaved()) instanceof Response) {
             return $result;
         }
-        return Admin::responseMessage(trans('admin::admin.save_succeeded'));
+        return UI::responseMessage('保存成功');
     }
 
     /**
@@ -599,9 +597,9 @@ class Form extends Component
             if (($ret = $this->callDeleted()) instanceof Response) {
                 return $ret;
             }
-            return \Admin::responseMessage(trans('admin::admin.delete_succeeded'));
+            return UI::responseMessage('删除成功');
         } catch (\Exception $exception) {
-            return \Admin::responseError($exception->getMessage() ?: trans('admin::admin.delete_failed'));
+            return UI::responseError($exception->getMessage() ?: '删除成功');
         }
     }
 
@@ -625,9 +623,8 @@ class Form extends Component
         $builder = $this->model();
         $this->model = $builder->findOrFail($id);
 
-        if ($validationMessages = $this->validatorData($data)) {
-            return Admin::responseError($validationMessages);
-        }
+
+        $this->validatorData($data);
 
         if (($response = $this->prepare($data)) instanceof Response) {
             return $response;
@@ -640,7 +637,7 @@ class Form extends Component
             $this->model->save();
             $this->updateRelation($this->relations);
             if (($result = $this->callDbTransaction()) instanceof Response) {
-                abort(400, $result);
+                throw new \Exception(400, $result->getBody()->getContents());
             }
         });
 
@@ -648,13 +645,13 @@ class Form extends Component
             return $result;
         }
 
-        return Admin::responseMessage(trans('admin::admin.update_succeeded'));
+        return UI::responseMessage('修改成功');
     }
 
     protected function prepareUpdate(array $updates, $oneToOneRelation = false)
     {
         $prepared = [];
-        $columns = \Schema::getColumnListing($this->model()->getTable());
+        $columns = Schema::getColumnListing($this->model()->getTable());
         foreach ($updates as $key => $value) {
             if (in_array($key, $columns)) {
                 Arr::set($prepared, $key, $value);
@@ -783,7 +780,7 @@ class Form extends Component
                         }
                         //过滤不存在的字段
                         foreach ($related as $key => $value) {
-                            if (\Schema::hasColumn($instance->getTable(), $key)) {
+                            if (Schema::hasColumn($instance->getTable(), $key)) {
                                 $instance->setAttribute($key, $value);
                             }
 
