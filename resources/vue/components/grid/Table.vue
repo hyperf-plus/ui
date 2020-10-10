@@ -1,7 +1,7 @@
 <template>
   <div class="grid-container">
     <div ref="topView">
-      <component v-if="attrs.top" :is="attrs.top.componentName" :attrs="attrs.top" />
+      <component v-if="attrs.top" :is="attrs.top.componentName" :attrs="attrs.top"/>
       <el-card
           shadow="never"
           :body-style="{ padding: 0 }"
@@ -25,7 +25,7 @@
                 :key="index"
                 :label="item.label"
             >
-              <ItemDiaplsy
+              <ItemDisplay
                   v-model="filterFormData[item.column]"
                   :form-item="item"
                   :form-items="attrs.filters"
@@ -130,7 +130,8 @@
             @sort-change="onTableSortChange"
             @selection-change="onTableselectionChange"
         >
-          <el-table-column v-if="attrs.attributes.selection" align="center" type="selection"></el-table-column>
+          <el-table-column v-if="attrs.attributes.selection" align="center"
+                           type="selection"></el-table-column>
           <el-table-column v-if="attrs.tree" align="center" width="50"></el-table-column>
           <template v-for="column in attrs.columnAttributes">
             <el-table-column
@@ -145,6 +146,7 @@
                 :align="column.align"
                 :fixed="column.fixed"
                 :header-align="column.headerAlign"
+                :show-overflow-tooltip="column.showOverflowTooltip"
             >
               <template slot="header" slot-scope="scope">
                 <span>{{ scope.column.label }}</span>
@@ -153,7 +155,7 @@
                 </el-tooltip>
               </template>
               <template slot-scope="scope">
-                <ColumnDisplay :scope="scope" :columns="attrs.columnAttributes" />
+                <ColumnDisplay :scope="scope" :columns="attrs.columnAttributes"/>
               </template>
             </el-table-column>
           </template>
@@ -192,7 +194,7 @@
       </div>
     </el-card>
     <div ref="bottomComponentView">
-      <component v-if="attrs.bottom" :is="attrs.bottom.componentName" :attrs="attrs.bottom" />
+      <component v-if="attrs.bottom" :is="attrs.bottom.componentName" :attrs="attrs.bottom"/>
     </div>
 
     <DialogForm
@@ -206,19 +208,18 @@
 </template>
 
 <script>
-import { BaseComponent } from "@/mixins.js";
-import { mapState } from "vuex";
+import {BaseComponent} from "@/mixins.js";
 import ColumnDisplay from "./ColumnDisplay";
 import Actions from "./Actions/Index";
 import BatchActions from "./BatchActions/Index";
-import ItemDiaplsy from "../form/ItemDiaplsy";
+import ItemDisplay from "../form/ItemDisplay";
 import DialogForm from "./DialogForm";
 export default {
   mixins: [BaseComponent],
   components: {
     ColumnDisplay,
     Actions,
-    ItemDiaplsy,
+    ItemDisplay,
     BatchActions,
     DialogForm,
   },
@@ -282,15 +283,14 @@ export default {
     this.$bus.on("tableSetLoading", (status) => {
       this.loading = status;
     });
-    this.$bus.on("showDialogGridFrom", ({ isShow, key }) => {
+    this.$bus.on("showDialogGridFrom", ({isShow, key}) => {
       this.$refs["DialogGridFrom"].dialogVisible = isShow;
       this.$refs["DialogGridFrom"].key = key;
     });
     this.$nextTick(() => {
       this.topViewHeight = this.$refs.topView.offsetHeight;
       this.toolbarsViewHeight = this.$refs.toolbarsView.offsetHeight;
-      this.pageViewHeight = this.$refs.pageView?this.$refs.pageView.offsetHeight:0;
-
+      this.pageViewHeight = this.$refs.pageView ? this.$refs.pageView.offsetHeight : 0;
       this.bottomComponentViewHeight = this.$refs.bottomComponentView.offsetHeight;
     });
   },
@@ -300,7 +300,8 @@ export default {
       this.$bus.off("tableReload");
       this.$bus.off("tableSetLoading");
       this.$bus.off("showDialogGridFrom");
-    } catch (e) {}
+    } catch (e) {
+    }
   },
   methods: {
     onTabClick(e) {
@@ -333,15 +334,15 @@ export default {
           ...this.$route.query,
         },
       })
-          .then(({ data }) => {
+          .then(({data}) => {
             if (!this.attrs.hidePage) {
               this.tableData = data.data;
               this.pageData.pageSize = data.per_page;
               this.pageData.currentPage = data.current_page;
               this.pageData.total = data.total;
               this.pageData.lastPage = data.last_page;
-              this.$store.commit("setGridData", { key: "sort", data: this.sort });
-              this.$store.commit("setGridData", { key: "page", data: this.page });
+              this.$store.commit("setGridData", {key: "sort", data: this.sort});
+              this.$store.commit("setGridData", {key: "page", data: this.page});
               this.$store.commit("setGridData", {
                 key: "pageData",
                 data: this.pageData,
@@ -371,11 +372,11 @@ export default {
           });
     },
     //当表格的排序条件发生变化的时候会触发该事件
-    onTableSortChange({ column, prop, order }) {
+    onTableSortChange({column, prop, order}) {
       if (order) {
         this.sort.sort_field = column.columnKey; //后端排序字段
         this.sort.sort_prop = column.property; //表格排序字段
-        this.sort.sort_order = order == "ascending" ? "asc" : "desc";
+        this.sort.sort_order = order === "ascending" ? "asc" : "desc";
       } else {
         this.sort = {};
       }
@@ -424,19 +425,19 @@ export default {
       return this.sort
           ? {
             prop: this.sort.sort_prop,
-            order: this.sort.sort_order == "asc" ? "ascending" : "descending",
+            order: this.sort.sort_order === "asc" ? "ascending" : "descending",
           }
           : {};
     },
     //搜索处理
     q_search() {
-      const q_search = new Object();
+      const q_search = {};
       this.attrs.quickSearch &&
       (q_search[this.attrs.quickSearch.searchKey] = this.quickSearch);
       return q_search;
     },
     gridHeight() {
-      if (this.attrs.attributes.height == "auto") {
+      if (this.attrs.attributes.height === "auto") {
         return (
             window.innerHeight -
             55 -
@@ -508,5 +509,10 @@ export default {
       }
     }
   }
+}
+// showOverflowTooltip
+.el-tooltip__popper.is-null {
+  background: #303133;
+  color: #fff;
 }
 </style>

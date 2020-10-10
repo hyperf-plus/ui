@@ -1,6 +1,6 @@
 <template>
   <div class="form-page">
-    <component v-if="attrs.top" :is="attrs.top.componentName" :attrs="attrs.top" />
+    <component v-if="attrs.top" :is="attrs.top.componentName" :attrs="attrs.top"/>
     <component
         :is="attrs.attrs.isDialog ? 'div' : 'el-card'"
         shadow="never"
@@ -26,21 +26,19 @@
           :size="attrs.attrs.size"
           :disabled="attrs.attrs.disabled"
       >
-        <component :is="attrs.attrs.hideTab ? 'div' : 'el-tabs'">
+        <component :is="attrs.attrs.hideTab ? 'div' : 'el-tabs'" :tab-position="attrs.tabPosition">
           <component
               :is="attrs.attrs.hideTab ? 'div' : 'el-tab-pane'"
-              :label="tab"
-              v-for="tab in attrs.tabs"
-              :key="tab"
+              :label="tab.name"
+              v-for="tab in attrs.formItemLayout"
+              :key="tab.name"
           >
             <component
-                v-for="(row, index) in attrs.formItemLayout"
+                v-for="(row, index) in tab.rows"
                 :key="index"
                 :is="row.componentName"
                 :attrs="row"
-                :formData="formData"
-                :formItems="attrs.formItems"
-                :tab="tab"
+                :form-data="formData"
             />
           </component>
         </component>
@@ -112,12 +110,12 @@
         </component>
       </el-form>
     </component>
-    <component v-if="attrs.bottom" :is="attrs.bottom.componentName" :attrs="attrs.bottom" />
+    <component v-if="attrs.bottom" :is="attrs.bottom.componentName" :attrs="attrs.bottom"/>
   </div>
 </template>
 <script>
-import { BaseComponent } from "@/mixins.js";
-import { isNull } from "../../utils";
+import {BaseComponent} from "@/mixins.js";
+import {isNull} from "../../utils";
 import Affix from "../widgets/common/affix";
 export default {
   mixins: [BaseComponent],
@@ -129,7 +127,7 @@ export default {
   },
   computed: {
     isEdit() {
-      return this.attrs.mode == "edit";
+      return this.attrs.mode === "edit";
     },
   },
   data() {
@@ -151,7 +149,8 @@ export default {
     //取消监听
     try {
       this.$bus.off("resetFormData");
-    } catch (e) {}
+    } catch (e) {
+    }
   },
   methods: {
     getEditData() {
@@ -163,7 +162,7 @@ export default {
               get_data: true,
             },
           })
-          .then(({ data }) => {
+          .then(({data}) => {
             this.formData = data;
             this.init = true;
             //发送表单编辑数据加载完毕事件
@@ -188,8 +187,8 @@ export default {
           if (this.isEdit) {
             this.$http
                 .put(this.attrs.action, formatData)
-                .then(({ data, code, message }) => {
-                  if (code == 200) {
+                .then(({data, code, message}) => {
+                  if (code === 200) {
                     if (this.attrs.attrs.isDialog) {
                       this.closeDialog();
                       this.$bus.emit("tableReload");
@@ -204,8 +203,8 @@ export default {
           } else {
             this.$http
                 .post(this.attrs.action, formatData)
-                .then(({ data, code, message }) => {
-                  if (code == 200) {
+                .then(({data, code, message}) => {
+                  if (code === 200) {
                     if (this.attrs.attrs.isDialog) {
                       this.closeDialog();
                       this.$bus.emit("tableReload");
@@ -240,7 +239,7 @@ export default {
       this.attrs.attrs.isDialog ? this.closeDialog() : this.$router.go(-1);
     },
     closeDialog() {
-      this.$bus.emit("showDialogGridFrom", { isShow: false });
+      this.$bus.emit("showDialogGridFrom", {isShow: false});
     },
   },
 };

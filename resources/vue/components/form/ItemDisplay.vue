@@ -1,36 +1,36 @@
 <template>
   <div>
     <component
-      v-if="formItem.componentTopComponent"
-      :is="formItem.componentTopComponent.componentName"
-      :attrs="formItem.componentTopComponent"
+        v-if="formItem.componentTopComponent"
+        :is="formItem.componentTopComponent.componentName"
+        :attrs="formItem.componentTopComponent"
     />
     <div class="flex align-center input-view">
       <component
-        v-if="formItem.componentLeftComponent"
-        :is="formItem.componentLeftComponent.componentName"
-        :attrs="formItem.componentLeftComponent"
+          v-if="formItem.componentLeftComponent"
+          :is="formItem.componentLeftComponent.componentName"
+          :attrs="formItem.componentLeftComponent"
       />
       <component
-        v-if="attrs"
-        :value="value"
-        :is="attrs.componentName"
-        :attrs="attrs"
-        :form-data="formData"
-        :form-items="formItems"
-        :form-item="formItem"
-        @change="onChange"
+          v-if="attrs"
+          :value="value"
+          :is="attrs.componentName"
+          :attrs="attrs"
+          :form-data="formData"
+          :form-items="formItems"
+          :form-item="formItem"
+          @change="onChange"
       />
       <component
-        v-if="formItem.componentRightComponent"
-        :is="formItem.componentRightComponent.componentName"
-        :attrs="formItem.componentRightComponent"
+          v-if="formItem.componentRightComponent"
+          :is="formItem.componentRightComponent.componentName"
+          :attrs="formItem.componentRightComponent"
       />
     </div>
     <component
-      v-if="formItem.componentBottomComponent"
-      :is="formItem.componentBottomComponent.componentName"
-      :attrs="formItem.componentBottomComponent"
+        v-if="formItem.componentBottomComponent"
+        :is="formItem.componentBottomComponent.componentName"
+        :attrs="formItem.componentBottomComponent"
     />
   </div>
 </template>
@@ -64,7 +64,6 @@ export default {
   methods: {
     onChange(value) {
       this.$emit("change", value);
-
       //触发动态注入
       this.$nextTick(() => {
         if (this.formItem.refData) {

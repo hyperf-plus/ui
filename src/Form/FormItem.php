@@ -120,7 +120,7 @@ class FormItem extends Component
      */
     public function hideLabel()
     {
-        $this->labelWidth("auto");
+        $this->labelWidth("0px");
         $this->hideLabel = true;
         return $this;
     }
@@ -430,6 +430,7 @@ class FormItem extends Component
      */
     public function labelWidth($labelWidth)
     {
+        if ($labelWidth == "auto") return $this;
         $this->labelWidth = $labelWidth;
         return $this;
     }

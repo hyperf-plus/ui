@@ -35,7 +35,6 @@ use HPlus\UI\Layout\Content;
 class Form extends Component
 {
     use TraitFormAttrs, HasHooks, HasRef;
-
     protected $componentName = "Form";
 
     const REMOVE_FLAG_NAME = '_remove_';
@@ -53,8 +52,8 @@ class Form extends Component
     protected $formItems = [];
     protected $formItemLayout = [];
     protected $ignoreEmptyProps = [];
+    protected $tabPosition = "top";
 
-    protected $tabs = [];
 
     const MODE_EDIT = 'edit';
     const MODE_CREATE = 'create';
@@ -95,7 +94,7 @@ class Form extends Component
     protected $addRuleMessage = [];
 
     /**
-     * @var Validate
+     * @var \Validator
      */
     protected $validator;
 
@@ -143,6 +142,7 @@ class Form extends Component
         return $this->addItem($prop, $label, $field);
     }
 
+
     /**
      * 表单自定义布局
      * @param \Closure $closure
@@ -150,9 +150,47 @@ class Form extends Component
      */
     public function row(\Closure $closure)
     {
+
         $row = new Row();
         call_user_func($closure, $row, $this);
-        $this->formItemLayout[] = $row;
+
+        $this->tab("default", function (FormTab $formTab) use ($row) {
+            $formTab->row($row);
+        });
+
+        return $this;
+    }
+
+    /**
+     * 自定义tab布局
+     * @param $tabName
+     * @param \Closure $closure
+     * @return $this
+     */
+    public function tab($tabName, \Closure $closure)
+    {
+
+        $tab = collect($this->formItemLayout)->filter(function (FormTab $formTab) use ($tabName) {
+            return $formTab->getName() == $tabName;
+        })->first();
+        if (empty($tab)) {
+            $tab = new FormTab($tabName, $this);
+            call_user_func($closure, $tab, $this);
+            $this->formItemLayout[] = $tab;
+        } else {
+            call_user_func($closure, $tab, $this);
+        }
+        return $this;
+    }
+
+    /**
+     * tab位置
+     * @param $tabPosition
+     * @return $this
+     */
+    public function tabPosition($tabPosition)
+    {
+        $this->tabPosition = $tabPosition;
         return $this;
     }
 
@@ -175,10 +213,6 @@ class Form extends Component
      */
     protected function items($items = [])
     {
-
-        $this->tabs = collect($items)->map(function (FormItem $item) {
-            return $item->getTab();
-        })->unique()->all();
 
         $this->ignoreEmptyProps = collect($items)->filter(function (FormItem $item) {
             return $item->isIgnoreEmpty();
@@ -297,13 +331,16 @@ class Form extends Component
         return $this->id;
     }
 
-    public function resource($slice = -1): string
+    public function resource($slice = -2): string
     {
+
         $segments = explode('/', trim(admin_api_url(request()->path()), '/'));
+
         if ($slice !== 0) {
             $segments = array_slice($segments, 0, $slice);
         }
-        return '/' . implode('/', $segments);
+
+        return implode('/', $segments);
     }
 
     /**
@@ -332,15 +369,6 @@ class Form extends Component
         return $this->isEdit;
     }
 
-    /**
-     * 获取表单是否是编辑模式
-     * @param bool $isEdit
-     * @return void
-     */
-    public function setEdit($isEdit = false)
-    {
-        $this->isEdit = $isEdit;
-    }
 
     /**
      * 添加表单验证规则
@@ -362,30 +390,37 @@ class Form extends Component
      */
     protected function validatorData($data)
     {
-        $rules = [];
-        $ruleMessages = [];
-        /* @var FormItem $formItem */
-        foreach ($this->formItems as $formItem) {
-            if (empty($formItem->getServeRole())) {
-                continue;
-            }
-            $rules[$formItem->getField()] = $formItem->getServeRole();
-            $messages = $formItem->getServeRulesMessage();
-            if (is_array($messages)) {
-                foreach ($messages as $key => $message) {
-                    $ruleMessages[$formItem->getField() . '.' . $key] = $message;
+        try {
+            $rules = [];
+            $ruleMessages = [];
+            /* @var FormItem $formItem */
+            foreach ($this->formItems as $formItem) {
+                if (empty($formItem->getServeRole())) {
+                    continue;
+                }
+
+                $rules[$formItem->getField()] = $formItem->getServeRole();
+                $messages = $formItem->getServeRulesMessage();
+                if (is_array($messages)) {
+                    foreach ($messages as $key => $message) {
+                        $ruleMessages[$formItem->getField() . '.' . $key] = $message;
+                    }
                 }
             }
-        }
-        $rules = array_merge($rules, $this->addRule);
-        $ruleMessages = array_merge($ruleMessages, $this->addRuleMessage);
-        $validator = new Validate();
-        $validator->message($ruleMessages);
-        $validator->failException(true);
-        try {
-            $validator->check($data, $rules);
-        } catch (\Throwable $exception) {
-            throw new ValidateException((int)$exception->getCode(), (string)$exception->getMessage());
+
+            $rules = array_merge($rules, $this->addRule);
+            $ruleMessages = array_merge($ruleMessages, $this->addRuleMessage);
+
+            $this->validator = \Validator::make($data, $rules, $ruleMessages);
+
+            $this->callValidating($this->validator);
+
+            if ($this->validator->fails()) {
+                abort(400, $this->validator->errors()->first());
+            }
+            return false;
+        } catch (\Exception $exception) {
+            return $exception->getMessage(); //\Admin::responseError();
         }
     }
 
@@ -399,10 +434,11 @@ class Form extends Component
 
     protected function prepare($data = [])
     {
+
+
         //处理要过滤的字段
         $this->inputs = array_merge($this->removeIgnoredFields($data), $this->inputs);
         //处理表单提交时事件
-
         if (($response = $this->callSaving()) instanceof Response) {
             return $response;
         }
@@ -425,7 +461,7 @@ class Form extends Component
         $relations = [];
 
         foreach ($inputs as $column => $value) {
-            $column = Str::camel($column);
+            $column = \Illuminate\Support\Str::camel($column);
             if (!method_exists($this->model, $column)) {
                 continue;
             }
@@ -440,7 +476,8 @@ class Form extends Component
     protected function prepareInsert($inserts)
     {
         $prepared = [];
-        $columns = Schema::getColumnListing($this->model()->getTable());
+
+        $columns = \Schema::getColumnListing($this->model()->getTable());
         foreach ($inserts as $key => $value) {
             if (in_array($key, $columns)) {
                 Arr::set($prepared, $key, $value);
@@ -476,6 +513,7 @@ class Form extends Component
 
     public function store()
     {
+
         if (($result = $this->callSubmitted()) instanceof Response) {
             return $result;
         }
@@ -483,7 +521,7 @@ class Form extends Component
         $data = request()->all();
 
         if ($validationMessages = $this->validatorData($data)) {
-            return UI::responseError($validationMessages);
+            return Admin::responseError($validationMessages);
         }
 
         if (($response = $this->prepare($data)) instanceof Response) {
@@ -492,19 +530,20 @@ class Form extends Component
 
         DB::transaction(function () use ($data) {
             $inserts = $this->prepareInsert($this->updates);
+
             foreach ($inserts as $key => $value) {
                 $this->model->setAttribute($key, $value);
             }
             $this->model->save();
             $this->updateRelation($this->relations);
             if (($result = $this->callDbTransaction()) instanceof Response) {
-                throw new \Exception(400, $result->getBody()->getContents());
+                abort(400, $result);
             }
         });
         if (($result = $this->callSaved()) instanceof Response) {
             return $result;
         }
-        return UI::responseMessage('保存成功');
+        return Admin::responseMessage(trans('admin::admin.save_succeeded'));
     }
 
     /**
@@ -560,15 +599,16 @@ class Form extends Component
             if (($ret = $this->callDeleted()) instanceof Response) {
                 return $ret;
             }
-            return UI::responseMessage('删除成功');
+            return \Admin::responseMessage(trans('admin::admin.delete_succeeded'));
         } catch (\Exception $exception) {
-            return UI::responseError($exception->getMessage() ?: '删除成功');
+            return \Admin::responseError($exception->getMessage() ?: trans('admin::admin.delete_failed'));
         }
     }
 
     /**
      * @param $id
      * @param null $data
+     * @return \Illuminate\Http\JsonResponse
      * @throws \Throwable
      */
     public function update($id, $data = null)
@@ -585,7 +625,9 @@ class Form extends Component
         $builder = $this->model();
         $this->model = $builder->findOrFail($id);
 
-        $this->validatorData($data);
+        if ($validationMessages = $this->validatorData($data)) {
+            return Admin::responseError($validationMessages);
+        }
 
         if (($response = $this->prepare($data)) instanceof Response) {
             return $response;
@@ -598,20 +640,21 @@ class Form extends Component
             $this->model->save();
             $this->updateRelation($this->relations);
             if (($result = $this->callDbTransaction()) instanceof Response) {
-                throw new \Exception(400, $result->getBody()->getContents());
+                abort(400, $result);
             }
         });
 
         if (($result = $this->callSaved()) instanceof Response) {
             return $result;
         }
-        return UI::responseMessage('修改成功');
+
+        return Admin::responseMessage(trans('admin::admin.update_succeeded'));
     }
 
     protected function prepareUpdate(array $updates, $oneToOneRelation = false)
     {
         $prepared = [];
-        $columns = Schema::getColumnListing($this->model()->getTable());
+        $columns = \Schema::getColumnListing($this->model()->getTable());
         foreach ($updates as $key => $value) {
             if (in_array($key, $columns)) {
                 Arr::set($prepared, $key, $value);
@@ -699,9 +742,9 @@ class Form extends Component
                     $parent->save();
 
                     // When in creating, associate two models
-                    // $foreignKeyMethod = version_compare(app()->version(), '5.8.0', '<') ? 'getForeignKey' : 'getForeignKeyName';
-                    if (!$this->model->{$relation->getForeignKey()}) {
-                        $this->model->{$relation->getForeignKey()} = $parent->getKey();
+                    $foreignKeyMethod = version_compare(app()->version(), '5.8.0', '<') ? 'getForeignKey' : 'getForeignKeyName';
+                    if (!$this->model->{$relation->{$foreignKeyMethod}()}) {
+                        $this->model->{$relation->{$foreignKeyMethod}()} = $parent->getKey();
 
                         $this->model->save();
                     }
@@ -740,13 +783,14 @@ class Form extends Component
                         }
                         //过滤不存在的字段
                         foreach ($related as $key => $value) {
-                            if (Schema::hasColumn($instance->getTable(), $key)) {
+                            if (\Schema::hasColumn($instance->getTable(), $key)) {
                                 $instance->setAttribute($key, $value);
                             }
 
                         }
                         $instance->save();
                     }
+
                     break;
             }
         }
@@ -761,6 +805,7 @@ class Form extends Component
     {
 
         $this->isEdit = true;
+
         if (($result = $this->callEditing($id)) instanceof Response) {
             return $result;
         }
@@ -811,6 +856,7 @@ class Form extends Component
         return $this;
     }
 
+
     /**
      * @inheritDoc
      */
@@ -828,10 +874,9 @@ class Form extends Component
             'dataUrl' => $this->dataUrl,
             'mode' => $this->getMode(),
             'attrs' => $this->attrs,
-            //'formItems' => $this->formItemsAttr,
             'ignoreEmptyProps' => $this->ignoreEmptyProps,
             'formItemLayout' => $this->formItemLayout,
-            'tabs' => $this->tabs,
+            'tabPosition' => $this->tabPosition,
             'defaultValues' => (object)$this->formItemsValue,
             'formRules' => (object)$this->formRules,
             'ref' => $this->ref,
@@ -841,7 +886,6 @@ class Form extends Component
             'bottom' => $this->bottom,
             'actions' => $this->actions->builderActions()
         ]);
-
     }
 
     public function __get($name)
