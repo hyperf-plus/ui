@@ -55,9 +55,9 @@ class FormTab extends AdminJsonBuilder
         if ($closure instanceof \Closure) {
             $row = new Row();
             call_user_func($closure, $row, $this->form);
-            $this->rows = collect($this->rows)->add($row);
+            $this->rows = collect($this->rows)->push($row);
         } else {
-            $this->rows = collect($this->rows)->add($closure);
+            $this->rows = collect($this->rows)->push($closure);
         }
         return $this;
     }

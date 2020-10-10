@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace HPlus\UI;
 
+use HPlus\UI\Form\FormTab;
 use HPlus\UI\Layout\Row;
 use HPlus\Validate\Validate;
 use Hyperf\Database\Schema\Schema;
