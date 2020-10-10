@@ -105,10 +105,10 @@ export default {
     },
     onRequest(uri) {
       this.loading = true;
-      this.$http
-        .get(uri)
+      this.$http[this.action.requestMethod](uri)
         .then(res => {
           if (res.code == 200) {
+            this.$bus.emit('tableReload');
           }
         })
         .finally(() => {

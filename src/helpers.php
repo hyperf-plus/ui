@@ -179,7 +179,7 @@ if (!function_exists('route')) {
         if ($https) {
             $uri = $uri->withScheme('https');
         }
-        $uri->withQuery($param);
+        $uri = $uri->withQuery($param);
         if (substr($url, 0, 1) !== '/') {
             $url = '/' . $prefix . '/' . $url;
         }
