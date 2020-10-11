@@ -48,6 +48,7 @@ class Form extends Component
 
     protected $formItemsAttr = [];
     protected $formItemsValue = [];
+    protected $formValue = [];
     protected $formRules = [];
     protected $formItemRows = [];
     protected $formItems = [];
@@ -875,7 +876,7 @@ class Form extends Component
             'ignoreEmptyProps' => $this->ignoreEmptyProps,
             'formItemLayout' => $this->formItemLayout,
             'tabPosition' => $this->tabPosition,
-            'defaultValues' => (object)$this->formItemsValue,
+            'defaultValues' => (object)array_merge($this->formItemsValue, $this->formValue),
             'formRules' => (object)$this->formRules,
             'ref' => $this->ref,
             'refData' => $this->refData,
@@ -884,6 +885,26 @@ class Form extends Component
             'bottom' => $this->bottom,
             'actions' => $this->actions->builderActions()
         ]);
+    }
+
+    /**
+     * 填充表单默认值
+     * @param $name
+     * @param string $value
+     * @return $this
+     */
+    public function setFormValue($name, $value = '')
+    {
+        if (is_array($name)) {
+            $this->formValue = $name;
+            return $this;
+        }
+        if ($value === null) {
+            unset($this->formValue[$name]);
+            return $this;
+        }
+        $this->formValue[$name] = $value;
+        return $this;
     }
 
     public function __get($name)
