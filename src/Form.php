@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace HPlus\UI;
 
+use HPlus\UI\Exception\BusinessException;
 use HPlus\UI\Form\FormTab;
 use HPlus\UI\Layout\Row;
 use HPlus\Validate\Validate;
@@ -36,6 +37,7 @@ use HPlus\UI\Layout\Content;
 class Form extends Component
 {
     use TraitFormAttrs, HasHooks, HasRef;
+
     protected $componentName = "Form";
 
     const REMOVE_FLAG_NAME = '_remove_';
@@ -236,6 +238,7 @@ class Form extends Component
 
     }
 
+
     /**
      * 自定义表单动作
      * @param $closure
@@ -401,11 +404,13 @@ class Form extends Component
     {
         $rules = [];
         $ruleMessages = [];
+        $field = [];
         /* @var FormItem $formItem */
         foreach ($this->formItems as $formItem) {
             if (empty($formItem->getServeRole())) {
                 continue;
             }
+            $field[$formItem->getField()] =$formItem->getLabel();
             $rules[$formItem->getField()] = $formItem->getServeRole();
             $messages = $formItem->getServeRulesMessage();
             if (is_array($messages)) {
@@ -416,13 +421,9 @@ class Form extends Component
         }
         $rules = array_merge($rules, $this->addRule);
         $ruleMessages = array_merge($ruleMessages, $this->addRuleMessage);
-        $validator = new Validate();
-        $validator->message($ruleMessages);
-        $validator->failException(true);
-        try {
-            $validator->check($data, $rules);
-        } catch (\Throwable $exception) {
-            throw new ValidateException((int)$exception->getCode(), (string)$exception->getMessage());
+        $validator = new Validate($rules, $ruleMessages, $field);
+        if ($validator->check($data) !== true) {
+            throw new ValidateException(422, (string)$validator->getError());
         }
     }
 
@@ -867,6 +868,7 @@ class Form extends Component
         if ($this->isGetData) {
             return $this->editData($this->getResourceId());
         }
+
         return array_filter([
             'componentName' => $this->componentName,
             'action' => $this->getAction(),

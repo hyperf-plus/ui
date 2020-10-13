@@ -23,6 +23,7 @@ class FormItem extends Component
 
     protected $prop;
     protected $label;
+
     protected $hideLabel = false;
     protected $field;
     protected $labelWidth;
@@ -98,6 +99,15 @@ class FormItem extends Component
         }
 
         $this->component = Input::make();
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getLabel()
+    {
+        return $this->label;
     }
 
     protected function formatLabel($label)
