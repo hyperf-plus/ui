@@ -7,6 +7,7 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
+
 namespace HPlus\UI\Grid;
 
 
@@ -21,6 +22,7 @@ use Hyperf\Paginator\LengthAwarePaginator;
 use Hyperf\Utils\Arr;
 use Hyperf\Utils\Str;
 use HPlus\UI\Grid;
+use Mzh\Helper\RunTimes;
 
 /**
  * Class Model
@@ -428,7 +430,11 @@ class Model
                         data_set($item, $column->getName(), $c_value);
                     }
                 } else {
-                    $n_value = $column->customValueUsing($row, data_get($row, $column->getName(), $column->getDefaultValue()));
+                    $dataValue = data_get($row, $column->getName(), $column->getDefaultValue());
+                    if ($this->sModel != null && $dataValue instanceof \Carbon\Carbon) {
+                        $dataValue = $dataValue->format($this->sModel->getDateFormat());
+                    }
+                    $n_value = $column->customValueUsing($row, $dataValue);
                     data_set($item, $column->getName(), $n_value);
                 }
             }
@@ -483,9 +489,7 @@ class Model
         $this->queries->unique()->each(function ($query) {
             $this->model = call_user_func_array([$this->model, $query['method']], $query['arguments']);
         });
-
         $data = $this->model;
-
         if ($this->model instanceof Collection) {
             if ($data->count() > 0) {
                 return $this->displayData($data);
@@ -493,7 +497,6 @@ class Model
                 return $data;
             }
         }
-
         if ($this->model instanceof LengthAwarePaginator) {
             return [
                 'current_page' => $this->model->currentPage(),
