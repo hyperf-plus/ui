@@ -7,6 +7,7 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
+
 namespace HPlus\UI\Traits;
 
 
@@ -20,15 +21,16 @@ class AdminJsonBuilder implements \JsonSerializable
         $data = null;
         $hide = collect($this->hideAttrs)->push("hideAttrs")->toArray();
         foreach ($this as $key => $val) {
-            if (!in_array($key, $hide)) {
+            if (!in_array($key, $hide) && $val !== null) {
                 $data[$key] = $val;
             }
         }
-        return array_filter($data);
+        return $data;
     }
-    public function __toString():string
+
+    public function __toString(): string
     {
         // TODO: Implement __toString() method.
-        return json_encode($this->jsonSerialize(),JSON_UNESCAPED_UNICODE);
+        return json_encode($this->jsonSerialize(), JSON_UNESCAPED_UNICODE);
     }
 }
