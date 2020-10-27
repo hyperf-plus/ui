@@ -67,9 +67,11 @@ class Upload extends Component
             if (!empty($this->valueName)) {
                 $file = $file[$this->valueName];
             }
-            $path = parse_url($file)['path'] ?? '';
-            if ($storage->has($path)) {
-                $storage->delete($path);
+            if (!empty($file)){
+                $path = parse_url($file)['path'] ?? '';
+                if ($storage->has($path)) {
+                    $storage->delete($path);
+                }
             }
         });
     }
