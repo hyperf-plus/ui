@@ -60,7 +60,7 @@ export default {
 .display-column {
   vertical-align: middle;
   display: inline-block;
-  line-height: 1;
+  line-height: 1.6;
   .el-tag {
     margin-bottom: 2px;
     margin-top: 2px;

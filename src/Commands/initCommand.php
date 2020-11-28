@@ -38,7 +38,7 @@ To enable server static file processing, please refer to:
         if (is_dir(BASE_PATH . "/resources/ui")) {
             $this->output->warning('初始化完成，您的vue文件似乎已经部署，请手动将' . realpath(__DIR__ . '/../../resources') . '目录拷贝到' . realpath(BASE_PATH . '/resources') . " 目录下，注意修改的文件请自行备份处理");
             $this->output->success('
-vue文件部署成功，如需定制vue文件请进入项目根目录的resources执行 npm install执行npm依赖安装：
+vue文件部署成功，[*可选*]如需定制vue文件请进入项目根目录的resources执行 npm install执行npm依赖安装：
 The Vue file is successfully deployed. To customize the Vue file, please go to the resources of the project root directory and execute NPM install  NPM dependent installation');
             $this->output->success('更多文档请参阅:https://doc.hyperf.plus');
             return;
@@ -56,7 +56,7 @@ The Vue file is successfully deployed. To customize the Vue file, please go to t
             ->setReplaceFileExt(['*']) // 设置支持替换文件的后缀，默认替换项目下的所有的文件
             ->run();
         $this->output->success('
-vue文件部署成功，请进入项目根目录的resources 执行 npm install 执行npm依赖安装：
+vue文件部署成功，[*可选*]如需定制vue文件请进入项目根目录的resources执行 npm install执行npm依赖安装：
 The Vue file is successfully deployed. Please enter the resources of the project root directory to execute npm install  NPM dependent installation');
         $this->output->success('更多文档请参阅:https://doc.hyperf.plus');
         return;

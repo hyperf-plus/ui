@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <item-if :form-data="formData" :form-item="item">
     <component
         v-if="item.topComponent"
         :is="item.topComponent.componentName"
@@ -38,7 +38,7 @@
         :is="item.footerComponent.componentName"
         :attrs="item.footerComponent"
     />
-  </div>
+  </item-if>
 </template>
 <script>
 import ItemDisplay from "./ItemDisplay";
