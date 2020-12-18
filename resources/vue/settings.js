@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'HYPERF Vue Admin',
+  title: 'Hyperf Vue Admin',
 
   /**
    * @type {boolean} true | false
