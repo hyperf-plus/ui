@@ -5,7 +5,7 @@ import {Notification, Message} from 'element-ui';
 axios.interceptors.request.use(
     config => {
         config.headers["X-Requested-With"] = "XMLHttpRequest";
-        if (Admin.token !== ''){
+        if (Admin.token !== '') {
             config.headers["Authorization"] = "Bearer " + Admin.token;
         }
         return config;
@@ -61,19 +61,30 @@ axios.interceptors.response.use(
                 break;
             case 422:
                 Message.error({
-                    message: response.data.error || '系统错误'
+                    "title": "参数错误",
+                    "message": response.data.error || '系统错误'
                 });
                 break;
             case 401:
                 Message.error({
+                    title: "登录信息已过期",
                     message: response.data.error || '系统错误'
                 });
+                location.reload();
                 break;
             case 403:
                 Message.error({
                     message: response.data.error || '系统错误'
                 });
                 break;
+            case 419:
+                Notification.error({
+                    title: "页面已过期",
+                    message: response.data.message
+                });
+                location.reload();
+                break;
+
             default:
                 Notification.error({
                     title: "请求错误",

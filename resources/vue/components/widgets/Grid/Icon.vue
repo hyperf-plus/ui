@@ -1,5 +1,5 @@
 <template>
-  <i :style="attrs.style" :class="value" />
+  <i :style="attrs.style" :class="'iconfont icon' + value" />
 </template>
 <script>
 export default {

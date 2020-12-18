@@ -49,7 +49,7 @@
                 v-if="menu.children && menu.children.length > 0"
               >
                 <template slot="title">
-                  <i :class="menu.icon" v-if="menu.icon" size="16"></i>
+                  <i :class="'iconfont icon' + menu.icon" v-if="menu.icon"></i>
                   <span slot="title">{{ menu.title }}</span>
                 </template>
                 <template v-for="children in menu.children">
@@ -57,7 +57,7 @@
                 </template>
               </el-submenu>
               <el-menu-item :index="menu.route" :key="menu.id" :route="menu.route" v-else>
-                <i :class="menu.icon" v-if="menu.icon" size="16"></i>
+                <i :class="'iconfont icon' + menu.icon" v-if="menu.icon"></i>
                 <span slot="title">{{ menu.title }}</span>
               </el-menu-item>
             </template>
@@ -328,6 +328,7 @@ $header-bar-height: 55px;
     margin-top: -0.1px;
   }
 }
+
 .content-side {
   min-height: 100vh;
   background: #fff;
@@ -339,7 +340,17 @@ $header-bar-height: 55px;
   flex-direction: column;
   .el-menu {
     border-right: none;
+
+    [class^=iconfont] {
+      margin-right: 5px;
+      width: 24px;
+      text-align: center;
+      font-size: 22px;
+      vertical-align: middle;
+    }
+
   }
+
   .content-side-logo {
     height: $header-bar-height;
     display: flex;

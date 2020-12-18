@@ -1,304 +1,147 @@
 <template>
-  <el-select :value="value" @change="onChange" filterable>
-    <el-option v-for="item in options" :key="item" :label="item" :value="item">
-      <div class="flex align-center">
-        <i :class="item" style="font-size:20px;" class="mr-10"></i>
-        <small>{{ item }}</small>
+  <span>
+    <el-popover
+        ref="pop"
+        v-model="pop"
+        :placement="attrs.placement"
+        width="330"
+        trigger="click">
+      <el-row type="flex" justify="end" class="cs-mb-10" v-if="attrs.clearable">
+        <el-button type="danger" icon="el-icon-delete" size="mini" class="cs-fr" @click="selectIcon()">清空</el-button>
+      </el-row>
+      <el-input
+          v-model="searchText"
+          :clearable="true"
+          style="margin: 10px; width: 90%;"
+          placeholder="搜索 比如 'plus'"
+          prefix-icon="el-icon-search">
+      </el-input>
+      <el-collapse v-if="!searchMode" class="group" v-model="collapseActive">
+        <el-collapse-item v-for="(item, index) in icon.glyphs" :key="index" :title="item.name" :name="index"
+                          class="class">
+          <el-row class="class-row">
+            <el-col class="class-col" v-for="(iconItem, iconIndex) in item.item" :key="iconIndex" :span="4"
+                    @click.native="selectIcon(iconItem.font_class)">
+              <i :class="'iconfont icon' + iconItem.font_class" :title="iconItem.name"/>
+            </el-col>
+          </el-row>
+        </el-collapse-item>
+      </el-collapse>
+      <div v-if="searchMode" class="group">
+        <div class="class" v-for="(item, index) in iconFilted" :key="index">
+          <div class="class-title">{{ item.name }}</div>
+          <el-row class="class-row">
+            <el-col class="class-col" v-for="(iconItem, iconIndex) in item.item" :key="iconIndex" :span="4"
+                    @click.native="selectIcon(iconItem.font_class)">
+              <i :class="'iconfont icon' + iconItem.font_class" :title="iconItem.name"/>
+            </el-col>
+          </el-row>
+        </div>
       </div>
-    </el-option>
-  </el-select>
-</template>
+    </el-popover>
+      <el-input
+          :style="attrs.style"
+          :class="attrs.className"
+          :placeholder="attrs.placeholder"
+          :disabled="attrs.disabled"
+          :readonly="!attrs.userInput"
+          :value="value"
+          @input="onChange"
+      >
+              <i v-if="value" slot="prefix" class="el-input__icon icon-view" :class="'iconfont icon' + value"/>
+              <el-button icon="el-icon-menu" v-popover:pop slot="append"/>
+      </el-input>
 
+  </span>
+</template>
 <script>
-import { FormItemComponent } from "@/mixins.js";
+import icon from './libs/iconfont.json'
+import {FormItemComponent} from "@/mixins.js";
+
 export default {
   mixins: [FormItemComponent],
-  props: {
-    // 选项数据，图标类名数组
-    options: {
-      type: Array,
-      default: () => [
-        "el-icon-ice-cream-round",
-        "el-icon-ice-cream-square",
-        "el-icon-lollipop",
-        "el-icon-potato-strips",
-        "el-icon-milk-tea",
-        "el-icon-ice-drink",
-        "el-icon-ice-tea",
-        "el-icon-coffee",
-        "el-icon-orange",
-        "el-icon-pear",
-        "el-icon-apple",
-        "el-icon-cherry",
-        "el-icon-watermelon",
-        "el-icon-grape",
-        "el-icon-refrigerator",
-        "el-icon-goblet-square-full",
-        "el-icon-goblet-square",
-        "el-icon-goblet-full",
-        "el-icon-goblet",
-        "el-icon-cold-drink",
-        "el-icon-coffee-cup",
-        "el-icon-water-cup",
-        "el-icon-hot-water",
-        "el-icon-ice-cream",
-        "el-icon-dessert",
-        "el-icon-sugar",
-        "el-icon-tableware",
-        "el-icon-burger",
-        "el-icon-knife-fork",
-        "el-icon-fork-spoon",
-        "el-icon-chicken",
-        "el-icon-food",
-        "el-icon-dish-1",
-        "el-icon-dish",
-        "el-icon-moon-night",
-        "el-icon-moon",
-        "el-icon-cloudy-and-sunny",
-        "el-icon-partly-cloudy",
-        "el-icon-cloudy",
-        "el-icon-sunny",
-        "el-icon-sunset",
-        "el-icon-sunrise-1",
-        "el-icon-sunrise",
-        "el-icon-heavy-rain",
-        "el-icon-lightning",
-        "el-icon-light-rain",
-        "el-icon-wind-power",
-        "el-icon-baseball",
-        "el-icon-soccer",
-        "el-icon-football",
-        "el-icon-basketball",
-        "el-icon-ship",
-        "el-icon-truck",
-        "el-icon-bicycle",
-        "el-icon-mobile-phone",
-        "el-icon-service",
-        "el-icon-key",
-        "el-icon-unlock",
-        "el-icon-lock",
-        "el-icon-watch",
-        "el-icon-watch-1",
-        "el-icon-timer",
-        "el-icon-alarm-clock",
-        "el-icon-map-location",
-        "el-icon-delete-location",
-        "el-icon-add-location",
-        "el-icon-location-information",
-        "el-icon-location-outline",
-        "el-icon-location",
-        "el-icon-place",
-        "el-icon-discover",
-        "el-icon-first-aid-kit",
-        "el-icon-trophy-1",
-        "el-icon-trophy",
-        "el-icon-medal",
-        "el-icon-medal-1",
-        "el-icon-stopwatch",
-        "el-icon-mic",
-        "el-icon-copy-document",
-        "el-icon-full-screen",
-        "el-icon-switch-button",
-        "el-icon-aim",
-        "el-icon-crop",
-        "el-icon-odometer",
-        "el-icon-time",
-        "el-icon-bangzhu",
-        "el-icon-close-notification",
-        "el-icon-microphone",
-        "el-icon-turn-off-microphone",
-        "el-icon-position",
-        "el-icon-postcard",
-        "el-icon-message",
-        "el-icon-chat-line-square",
-        "el-icon-chat-dot-square",
-        "el-icon-chat-dot-round",
-        "el-icon-chat-square",
-        "el-icon-chat-line-round",
-        "el-icon-chat-round",
-        "el-icon-set-up",
-        "el-icon-turn-off",
-        "el-icon-open",
-        "el-icon-connection",
-        "el-icon-link",
-        "el-icon-cpu",
-        "el-icon-thumb",
-        "el-icon-female",
-        "el-icon-male",
-        "el-icon-guide",
-        "el-icon-news",
-        "el-icon-price-tag",
-        "el-icon-discount",
-        "el-icon-wallet",
-        "el-icon-coin",
-        "el-icon-money",
-        "el-icon-bank-card",
-        "el-icon-box",
-        "el-icon-present",
-        "el-icon-sell",
-        "el-icon-sold-out",
-        "el-icon-shopping-bag-2",
-        "el-icon-shopping-bag-1",
-        "el-icon-shopping-cart-2",
-        "el-icon-shopping-cart-1",
-        "el-icon-shopping-cart-full",
-        "el-icon-smoking",
-        "el-icon-no-smoking",
-        "el-icon-house",
-        "el-icon-table-lamp",
-        "el-icon-school",
-        "el-icon-office-building",
-        "el-icon-toilet-paper",
-        "el-icon-notebook-2",
-        "el-icon-notebook-1",
-        "el-icon-files",
-        "el-icon-collection",
-        "el-icon-receiving",
-        "el-icon-suitcase-1",
-        "el-icon-suitcase",
-        "el-icon-film",
-        "el-icon-collection-tag",
-        "el-icon-data-analysis",
-        "el-icon-pie-chart",
-        "el-icon-data-board",
-        "el-icon-data-line",
-        "el-icon-reading",
-        "el-icon-magic-stick",
-        "el-icon-coordinate",
-        "el-icon-mouse",
-        "el-icon-brush",
-        "el-icon-headset",
-        "el-icon-umbrella",
-        "el-icon-scissors",
-        "el-icon-mobile",
-        "el-icon-attract",
-        "el-icon-monitor",
-        "el-icon-search",
-        "el-icon-takeaway-box",
-        "el-icon-paperclip",
-        "el-icon-printer",
-        "el-icon-document-add",
-        "el-icon-document",
-        "el-icon-document-checked",
-        "el-icon-document-copy",
-        "el-icon-document-delete",
-        "el-icon-document-remove",
-        "el-icon-tickets",
-        "el-icon-folder-checked",
-        "el-icon-folder-delete",
-        "el-icon-folder-remove",
-        "el-icon-folder-add",
-        "el-icon-folder-opened",
-        "el-icon-folder",
-        "el-icon-edit-outline",
-        "el-icon-edit",
-        "el-icon-date",
-        "el-icon-c-scale-to-original",
-        "el-icon-view",
-        "el-icon-loading",
-        "el-icon-rank",
-        "el-icon-sort-down",
-        "el-icon-sort-up",
-        "el-icon-sort",
-        "el-icon-finished",
-        "el-icon-refresh-left",
-        "el-icon-refresh-right",
-        "el-icon-refresh",
-        "el-icon-video-play",
-        "el-icon-video-pause",
-        "el-icon-d-arrow-right",
-        "el-icon-d-arrow-left",
-        "el-icon-arrow-up",
-        "el-icon-arrow-down",
-        "el-icon-arrow-right",
-        "el-icon-arrow-left",
-        "el-icon-top-right",
-        "el-icon-top-left",
-        "el-icon-top",
-        "el-icon-bottom",
-        "el-icon-right",
-        "el-icon-back",
-        "el-icon-bottom-right",
-        "el-icon-bottom-left",
-        "el-icon-caret-top",
-        "el-icon-caret-bottom",
-        "el-icon-caret-right",
-        "el-icon-caret-left",
-        "el-icon-d-caret",
-        "el-icon-share",
-        "el-icon-menu",
-        "el-icon-s-grid",
-        "el-icon-s-check",
-        "el-icon-s-data",
-        "el-icon-s-opportunity",
-        "el-icon-s-custom",
-        "el-icon-s-claim",
-        "el-icon-s-finance",
-        "el-icon-s-comment",
-        "el-icon-s-flag",
-        "el-icon-s-marketing",
-        "el-icon-s-shop",
-        "el-icon-s-open",
-        "el-icon-s-management",
-        "el-icon-s-ticket",
-        "el-icon-s-release",
-        "el-icon-s-home",
-        "el-icon-s-promotion",
-        "el-icon-s-operation",
-        "el-icon-s-unfold",
-        "el-icon-s-fold",
-        "el-icon-s-platform",
-        "el-icon-s-order",
-        "el-icon-s-cooperation",
-        "el-icon-bell",
-        "el-icon-message-solid",
-        "el-icon-video-camera",
-        "el-icon-video-camera-solid",
-        "el-icon-camera",
-        "el-icon-camera-solid",
-        "el-icon-download",
-        "el-icon-upload2",
-        "el-icon-upload",
-        "el-icon-picture-outline-round",
-        "el-icon-picture-outline",
-        "el-icon-picture",
-        "el-icon-close",
-        "el-icon-check",
-        "el-icon-plus",
-        "el-icon-minus",
-        "el-icon-help",
-        "el-icon-s-help",
-        "el-icon-circle-close",
-        "el-icon-circle-check",
-        "el-icon-circle-plus-outline",
-        "el-icon-remove-outline",
-        "el-icon-zoom-out",
-        "el-icon-zoom-in",
-        "el-icon-error",
-        "el-icon-success",
-        "el-icon-circle-plus",
-        "el-icon-remove",
-        "el-icon-info",
-        "el-icon-question",
-        "el-icon-warning-outline",
-        "el-icon-warning",
-        "el-icon-goods",
-        "el-icon-s-goods",
-        "el-icon-star-off",
-        "el-icon-star-on",
-        "el-icon-more-outline",
-        "el-icon-more",
-        "el-icon-phone-outline",
-        "el-icon-phone",
-        "el-icon-user",
-        "el-icon-user-solid",
-        "el-icon-setting",
-        "el-icon-s-tools",
-        "el-icon-delete",
-        "el-icon-delete-solid",
-        "el-icon-eleme"
-      ]
+  data() {
+    return {
+// 绑定弹出框
+      pop: false,
+// 所有图标
+      icon,
+// 搜索的文字
+      searchText: '',
+// 不是搜索的时候显示的折叠面板绑定的展开数据
+      collapseActive: [0]
+    }
+  },
+  computed: {
+// 输入框上绑定的设置
+
+// 是否在搜索
+    searchMode() {
+      return !!this.searchText
+    },
+// 过滤后的图标
+    iconFilted() {
+      return this.icon.glyphs.map(iconClass => ({
+        name: iconClass.name,
+        item: iconClass.item.filter(icon => icon.font_class.indexOf(this.searchText) >= 0)
+      })).filter(iconClass => iconClass.item.length > 0)
+    }
+  },
+  methods: {
+    selectIcon(iconName = '') {
+      this.$emit("change", iconName);
+      if (iconName && this.attrs.autoClose) {
+        this.pop = false
+      }
     }
   }
-};
+}
 </script>
+
+<style lang="scss" scoped>
+.icon-view {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.group {
+  max-height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-top: none;
+  border-bottom: none;
+
+  .class {
+    .class-title {
+      line-height: 30px;
+      text-align: center;
+      background-color: #F8F8F9;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+
+    .class-row {
+      .class-col {
+        text-align: center;
+        color: #909399;
+
+        .iconfont {
+          line-height: 40px;
+          font-size: 24px;
+        }
+
+        &:hover {
+          color: #303133;
+          background-color: #F8F8F9;
+          border-radius: 4px;
+          box-shadow: inset 0 0 0 1px #DCDFE6;
+
+          .iconfont {
+            font-size: 38px;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

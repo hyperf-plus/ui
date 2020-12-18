@@ -76,3 +76,5 @@ Vue.component("AntvLine", () => import("@/components/antv/AntvLine"));
 Vue.component("AntvArea", () => import("@/components/antv/AntvArea"));
 Vue.component("AntvStepLine", () => import("@/components/antv/AntvStepLine"));
 Vue.component("AntvColumn", () => import("@/components/antv/AntvColumn"));
+
+Vue.component("Scaffold", () => import("@/components/devtool/Scaffold"));
