@@ -29,7 +29,7 @@ class InputNumber extends Component
     protected $max = 999999999;
 
     /**
-     * @var int
+     * @var int|float
      */
     protected $step = 1;
     protected $stepStrictly = false;
@@ -64,10 +64,10 @@ class InputNumber extends Component
 
     /**
      * 设置计数器允许的最小值
-     * @param int $min
+     * @param int|float $min
      * @return $this
      */
-    public function min(int $min)
+    public function min($min)
     {
         $this->min = $min;
         return $this;
@@ -75,10 +75,10 @@ class InputNumber extends Component
 
     /**
      * 设置计数器允许的最大值
-     * @param int $max
+     * @param int|float $max
      * @return $this
      */
-    public function max(int $max)
+    public function max($max)
     {
         $this->max = $max;
         return $this;
@@ -86,10 +86,10 @@ class InputNumber extends Component
 
     /**
      * 计数器步长
-     * @param int $step
+     * @param int|float $step
      * @return $this
      */
-    public function step(int $step)
+    public function step($step)
     {
         $this->step = $step;
         return $this;
