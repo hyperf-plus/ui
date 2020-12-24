@@ -583,15 +583,17 @@ class FormItem extends Component
 
     /**
      * @param $key
-     * @param $value
+     * @param string|array $values
      * @param bool $anyValue
      * @return $this
      */
-    public function vif($key, $value, $anyValue = false)
+    public function vif($key, $values, $anyValue = false)
     {
+        $values = is_string($values) ? [$values] : $values;
+        
         $this->vif = [
             'key' => $key,
-            'value' => $value,
+            'value' => $values,
             'anyValue' => $anyValue,
         ];
         return $this;
