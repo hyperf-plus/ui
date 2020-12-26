@@ -3,7 +3,7 @@
     <el-popconfirm
       placement="top"
       :title="action.message"
-      @onConfirm="onClick"
+      @confirm="onClick"
       v-if="action.message"
     >
       <el-button

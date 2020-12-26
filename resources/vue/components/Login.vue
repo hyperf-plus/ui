@@ -1,7 +1,7 @@
 <template>
   <div
     class="page-account"
-    :style="{ 'background-image': 'url(' + pageData.backgroundImage + ')' }"
+    :style="{ 'background-image': 'url(' + pageData.loginBackgroundImage + ')' }"
   >
     <div class="page-account-container">
       <div class="page-account-top">
@@ -13,7 +13,7 @@
           <h1 v-if="pageData.name">{{ pageData.name }}</h1>
         </div>
 
-        <div class="page-account-top-desc">{{ pageData.desc }}</div>
+        <div class="page-account-top-desc">{{ pageData.loginDesc }}</div>
       </div>
       <div class="login-form">
         <el-form
@@ -89,8 +89,8 @@ export default {
     };
   },
   mounted() {
-    this.form.username = this.pageData.auto_user.username;
-    this.form.password = this.pageData.auto_user.password;
+    this.form.username = this.pageData.autoUser.username;
+    this.form.password = this.pageData.autoUser.password;
     this.$nextTick(() => {});
   },
   methods: {
@@ -101,9 +101,8 @@ export default {
       this.$refs[name].validate((valid) => {
         if (valid) {
           this.loading = true;
-
           this.$http
-            .post(this.pageData.url.postLogin, this.form)
+            .post(this.pageData.auth.login_api, this.form)
              .then((res) => {
                     if(res.status === 200){
                       window.location.href = res.redirect;

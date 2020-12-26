@@ -68,7 +68,21 @@ function isNull(argument) {
             return argument === "" || argument === null || argument === undefined
     }
 }
+// 初始化查询参数
+export const initQueryParams = params => {
+    const defParams = {
+        size: 10,
+        current: 1,
+        sort: 'id',
+        order: 'descending',
+        model: {
 
+        },
+        extra: {},
+        timeRange: null
+    };
+    return params ? { ...defParams, ...params } : defParams;
+}
 export {
     getArrayValue,
     flattenDeepChild,

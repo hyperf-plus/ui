@@ -3,10 +3,10 @@
     <el-popover
         ref="pop"
         v-model="pop"
-        :placement="attrs.placement"
+        :placement="attrs.placement||'right'"
         width="330"
         trigger="click">
-      <el-row type="flex" justify="end" class="cs-mb-10" v-if="attrs.clearable">
+      <el-row type="flex" justify="end" class="cs-mb-10" v-if="attrs.clearable||true">
         <el-button type="danger" icon="el-icon-delete" size="mini" class="cs-fr" @click="selectIcon()">清空</el-button>
       </el-row>
       <el-input
@@ -40,11 +40,11 @@
       </div>
     </el-popover>
       <el-input
-          :style="attrs.style"
-          :class="attrs.className"
-          :placeholder="attrs.placeholder"
-          :disabled="attrs.disabled"
-          :readonly="!attrs.userInput"
+          :style="attrs.style||''"
+          :class="attrs.className||''"
+          :placeholder="attrs.placeholder||''"
+          :disabled="attrs.disabled||false"
+          :readonly="!attrs.userInput||true"
           :value="value"
           @input="onChange"
       >

@@ -2,7 +2,7 @@
   <el-popconfirm
     placement="top"
     :title="action.message"
-    @onConfirm="onHandle"
+    @confirm="onHandle"
   >
     <el-button
       slot="reference"

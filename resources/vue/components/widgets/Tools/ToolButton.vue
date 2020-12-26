@@ -8,7 +8,7 @@
       <el-popconfirm
         placement="top"
         :title="attrs.message"
-        @onConfirm="onClick"
+        @confirm="onClick"
         v-if="attrs.message"
       >
         <el-button

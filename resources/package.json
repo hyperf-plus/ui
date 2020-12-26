@@ -16,7 +16,7 @@
         "babel-plugin-component": "^1.1.1",
         "babel-plugin-import": "^1.13.0",
         "cross-env": "^5.1",
-        "element-ui": "^2.13.2",
+        "element-ui": "^2.14.1",
         "laravel-mix": "^5.0.4",
         "lodash": "^4.17.15",
         "popper.js": "^1.16.1",
@@ -40,6 +40,7 @@
     },
     "dependencies": {
         "flat": "^5.0.2",
+        "cartesian": "^1.0.1",
         "js-cookie": "^2.2.1",
         "mavon-editor": "^2.9.0",
         "vue-progressbar": "^0.7.5"

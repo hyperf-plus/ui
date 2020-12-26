@@ -3,7 +3,7 @@
     v-if="action.confirm"
     placement="top"
     :title="action.confirm"
-    @onConfirm="onHandle"
+    @confirm="onHandle"
   >
     <el-button
       slot="reference"

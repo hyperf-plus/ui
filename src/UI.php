@@ -67,22 +67,10 @@ class UI
         $title = $setting->getTitle();
         if ($setting->getUser()->getId() > 0) {
             $root = 'root';
-            $pageData = $setting->toArray();
         } else {
             $root = 'login';
-            $config = config('admin');
-            $pageData = [];
-            $pageData['copyright'] = $config['copyright'];
-            $pageData['logoShow'] = $config['logo_show'];
-            $pageData['logo'] = $config['logo'];
-            $pageData['name'] = $config['name'];
-            $pageData['desc'] = $config['loginDesc'];
-            $pageData['backgroundImage'] = $config['login_background_image'];
-            $pageData['url'] = [
-                'postLogin' => $config['auth']['login_api'] ?? '',
-            ];
-            $pageData['auto_user'] = $config['auto_user'];
         }
+        $pageData = $setting->toArray();
         $pageData = json_encode($pageData, 256);
         $html = <<<EOF
 <!DOCTYPE html>

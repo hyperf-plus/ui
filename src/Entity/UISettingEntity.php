@@ -63,6 +63,27 @@ class UISettingEntity extends EntityBean
     public $title = 'HPlus Admin 后台管理系统';
 
     /**
+     * 登录背景图片
+     * @var
+     */
+    public $loginBackgroundImage;
+    /**
+     * @return mixed
+     */
+    public function getLoginBackgroundImage()
+    {
+        return $this->loginBackgroundImage;
+    }
+
+    /**
+     * @param mixed $loginBackgroundImage
+     */
+    public function setLoginBackgroundImage($loginBackgroundImage): void
+    {
+        $this->loginBackgroundImage = $loginBackgroundImage;
+    }
+
+    /**
      * 版权信息.
      * @var string
      */
@@ -85,6 +106,17 @@ class UISettingEntity extends EntityBean
      * @var UserEntity
      */
     public $user = [];
+
+    /**
+     * 授权配置
+     * @var array
+     */
+    public $auth = [];
+    /**
+     * 默认表单用户名密码
+     * @var array
+     */
+    public $autoUser = [];
 
     /**
      * 菜单数据.
@@ -141,37 +173,37 @@ class UISettingEntity extends EntityBean
         return $this->logo;
     }
 
-    public function setLogo(string $logo): void
+    public function setLogo($logo): void
     {
         $this->logo = $logo;
     }
 
-    public function getLogoLight(): string
+    public function getLogoLight()
     {
         return $this->logoLight;
     }
 
-    public function setLogoLight(string $logoLight): void
+    public function setLogoLight( $logoLight): void
     {
         $this->logoLight = $logoLight;
     }
 
-    public function getLogoMini(): string
+    public function getLogoMini()
     {
         return $this->logoMini;
     }
 
-    public function setLogoMini(string $logoMini): void
+    public function setLogoMini($logoMini): void
     {
         $this->logoMini = $logoMini;
     }
 
-    public function getLogoMiniLight(): string
+    public function getLogoMiniLight()
     {
         return $this->logoMiniLight;
     }
 
-    public function setLogoMiniLight(string $logoMiniLight): void
+    public function setLogoMiniLight( $logoMiniLight): void
     {
         $this->logoMiniLight = $logoMiniLight;
     }
@@ -280,5 +312,25 @@ class UISettingEntity extends EntityBean
     public function setTitle(string $title): void
     {
         $this->title = $title;
+    }
+
+    public function getAuth(): array
+    {
+        return $this->auth;
+    }
+
+    public function setAuth(array $auth): void
+    {
+        $this->auth = $auth;
+    }
+
+    public function getAutoUser(): array
+    {
+        return $this->autoUser;
+    }
+
+    public function setAutoUser(array $autoUser): void
+    {
+        $this->autoUser = $autoUser;
     }
 }
