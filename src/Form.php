@@ -740,15 +740,11 @@ class Form extends Component
                     }
 
                     $parent->save();
-
                     // When in creating, associate two models
-                    $foreignKeyMethod = version_compare(app()->version(), '5.8.0', '<') ? 'getForeignKey' : 'getForeignKeyName';
-                    if (!$this->model->{$relation->{$foreignKeyMethod}()}) {
-                        $this->model->{$relation->{$foreignKeyMethod}()} = $parent->getKey();
-
+                    if (!$this->model->{$relation->getForeignKeyName()}) {
+                        $this->model->{$relation->getForeignKeyName()} = $parent->getKey();
                         $this->model->save();
                     }
-
                     break;
                 case $relation instanceof Relations\MorphOne:
                     $related = $this->model->$name;
