@@ -74,7 +74,7 @@ class UI
          
         #兼容老入口文件的未导入admin配置问题
         if (empty($setting->getAuth())) {
-            $pageData = array_merge($pageData, config('admin'));
+            $pageData = array_merge($pageData, config('admin',[]));
         }
         $pageData = json_encode($pageData, 256);
         $html = <<<EOF
