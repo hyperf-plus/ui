@@ -73,8 +73,10 @@ class UI
         $pageData = $setting->toArray();
          
         #兼容老入口文件的未导入admin配置问题
-        if (empty($setting->getAuth())) {
-            $pageData = array_merge($pageData, config('admin',[]));
+       if (empty($setting->getAuth())) {
+            $config = config('admin', []);
+            $pageData = array_merge($pageData, $config);
+            $pageData['loginBackgroundImage'] = $config['login_background_image'] ?? '';
         }
         $pageData = json_encode($pageData, 256);
         $html = <<<EOF
