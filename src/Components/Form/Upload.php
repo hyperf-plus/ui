@@ -206,7 +206,7 @@ class Upload extends Component
     public function file()
     {
         $this->type = "file";
-        $this->action = route('upload/file');
+        $this->action = route('/upload/file');
         return $this;
     }
 
