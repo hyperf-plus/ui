@@ -7,6 +7,7 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
+
 namespace HPlus\UI\Components\Form;
 
 
@@ -18,26 +19,30 @@ class WangEditor extends Component
     protected $componentName = 'WangEditor';
 
     protected $menus = [
-        'head',  // 标题
-        'bold',  // 粗体
-        'fontSize',  // 字号
-        'fontName',  // 字体
-        'italic',  // 斜体
-        'underline',  // 下划线
-        'strikeThrough',  // 删除线
-        'foreColor',  // 文字颜色
-        'backColor',  // 背景颜色
-        'link',  // 插入链接
-        'list',  // 列表
-        'justify',  // 对齐方式
-        'quote',  // 引用
-        'emoticon',  // 表情
-        'image',  // 插入图片
-        'table',  // 表格
-        'video',  // 插入视频
-        'code',  // 插入代码
-        'undo',  // 撤销
-        'redo'  // 重复
+        'head',
+        'bold',
+        'fontSize',
+        'fontName',
+        'italic',
+        'underline',
+        'strikeThrough',
+        'indent',
+        'lineHeight',
+        'foreColor',
+        'backColor',
+        'link',
+        'list',
+        'todo',
+        'justify',
+        'quote',
+        'emoticon',
+        'image',
+        'video',
+        'table',
+        'code',
+        'splitLine',
+        'undo',
+        'redo'
     ];
 
     protected $zIndex = 0;
@@ -52,6 +57,13 @@ class WangEditor extends Component
 
     protected $component;
 
+    protected $showFullScreen = true;
+    /**
+     * 开启html、word样式过滤
+     * @var bool
+     */
+    protected $pasteFilterStyle = true;
+
     static public function make($value = null)
     {
         return new Wangeditor($value);
@@ -65,6 +77,28 @@ class WangEditor extends Component
     public function menus(array $menus)
     {
         $this->menus = $menus;
+        return $this;
+    }
+
+    /**
+     * 关闭样式过滤
+     * @param bool $showFullScreen
+     * @return $this
+     */
+    public function pasteFilterStyle(bool $pasteFilterStyle = false)
+    {
+        $this->pasteFilterStyle = $pasteFilterStyle;
+        return $this;
+    }
+
+    /**
+     * 开启全屏按钮
+     * @param bool $showFullScreen
+     * @return $this
+     */
+    public function showFullScreen(bool $showFullScreen = true)
+    {
+        $this->showFullScreen = $showFullScreen;
         return $this;
     }
 
@@ -132,8 +166,6 @@ class WangEditor extends Component
         $this->component = $component;
         return $this;
     }
-
-
 
 
 }

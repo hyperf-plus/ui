@@ -7,9 +7,11 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
+
 namespace HPlus\UI\Components\Widgets;
 
 
+use App\Components\SubForm;
 use HPlus\UI\Actions\BaseAction;
 use HPlus\UI\Exception\BusinessException;
 
@@ -25,6 +27,8 @@ class Button extends BaseAction
     const HANDLER_REQUEST = "request";
 
     protected $uri;
+    protected $subFormEmit;
+    protected $subForm = [];
     protected $handler;
 
 
@@ -71,6 +75,13 @@ class Button extends BaseAction
     {
         $this->uri = $uri;
         $this->handler = self::HANDLER_ROUTE;
+        return $this;
+    }
+
+    public function addSubItem(SubForm $formItems)
+    {
+        $this->subFormEmit = $formItems->getSubFormEmit();
+        $this->subForm = $formItems->getFormItems();
         return $this;
     }
 }

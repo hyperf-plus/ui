@@ -5,13 +5,12 @@ import lodash from 'lodash'
 import router from '@/router'
 import store from '@/store'
 
-
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI, { size: 'small' });
 
 import VueProgressBar from 'vue-progressbar'
-
+require('promise.prototype.finally').shim();
 const options = {
     color: "#409EFF",
     failedColor:"#F56C6C",
