@@ -27,9 +27,7 @@
     "hyperf/db-connection": "^2.0.0",
     "hyperf/model-cache": "^2.0.0",
     "hyperf/filesystem": "^2.0.0",
-    "hyperf-plus/validate": "^2.0.0"
-  },
-  "require-dev": {
+    "hyperf-plus/validate": "^2.0.0",
     "phper666/generate-file": "~1.0"
   },
   "autoload": {
