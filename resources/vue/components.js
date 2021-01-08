@@ -78,6 +78,8 @@ Vue.component("AntvLine", () => import("@/components/antv/AntvLine"));
 Vue.component("AntvArea", () => import("@/components/antv/AntvArea"));
 Vue.component("AntvStepLine", () => import("@/components/antv/AntvStepLine"));
 Vue.component("AntvColumn", () => import("@/components/antv/AntvColumn"));
+Vue.component("AntvPie", () => import("@/components/antv/AntvPie"));
+Vue.component("AntvFunnel", () => import("@/components/antv/AntvFunnel"));
 
 Vue.component("MenuManage", () => import("@/pages/menu/MenuManage"));
 Vue.component("Scaffold", require("@/components/devtool/Scaffold").default);
