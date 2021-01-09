@@ -364,6 +364,20 @@ class Form extends Component
     }
 
     /**
+     * 设置清除模型缓存
+     * @param bool $cachePut
+     * @return self
+     */
+    public function cachePut(bool $cachePut = true)
+    {
+        if (property_exists($this->model, 'useCacheBuilder')) {
+            $this->model->useCacheBuilder = $cachePut;
+        }
+        
+        return $this;
+    }
+
+    /**
      * 获取表单是否是编辑模式
      * @return bool
      */
