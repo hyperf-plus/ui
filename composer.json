@@ -53,7 +53,7 @@
       "@php ./bin/hyperf.php ui:init"
     ],
     "post-update-cmd": [
-      "@php ./bin/hyperf.php ui:publish"
+      "@php ./bin/hyperf.php ui:update"
     ]
   }
 }
