@@ -35,6 +35,7 @@
             <el-form-item>
               <el-button type="primary" @click="onFilterSubmit">搜索</el-button>
               <el-button @click="onFilterReset">重置</el-button>
+              <el-button v-if="attrs.simpleExport||false" @click="onSimpleExportReset">导出</el-button>
             </el-form-item>
           </el-form>
         </div>
@@ -289,7 +290,7 @@ export default {
     });
     this.$nextTick(() => {
       this.topViewHeight = this.$refs.topView.offsetHeight;
-      this.toolbarsViewHeight = this.$refs.toolbarsView?this.$refs.toolbarsView.offsetHeight:0;
+      this.toolbarsViewHeight = this.$refs.toolbarsView ? this.$refs.toolbarsView.offsetHeight : 0;
       this.pageViewHeight = this.$refs.pageView ? this.$refs.pageView.offsetHeight : 0;
       this.bottomComponentViewHeight = this.$refs.bottomComponentView.offsetHeight;
     });
@@ -318,6 +319,32 @@ export default {
       this.filterFormData = this._.cloneDeep(this.attrs.filter.filterFormData);
       this.quickSearch = null;
       this.getData();
+    },
+    urlEncode(param, key, encode) {
+      if (param == null) return '';
+      let paramStr = '';
+      let t = typeof (param);
+      if (t == 'string' || t == 'number' || t == 'boolean') {
+        paramStr += '&' + key + '=' + ((encode == null || encode) ? encodeURIComponent(param) : param);
+      } else {
+        for (var i in param) {
+          let k = key == null ? i : key + (param instanceof Array ? '[' + i + ']' : '.' + i);
+          paramStr += this.urlEncode(param[i], k, encode);
+        }
+      }
+      return paramStr;
+    },
+    //跳转到导出接口，权限需自行判断
+    onSimpleExportReset() {
+      let params = {
+        export: true,
+        ...this.sort,
+        ...this.q_search,
+        ...this.filterFormData,
+        ...this.tabsSelectdata,
+        ...this.$route.query,
+      };
+      window.location.href = (this.attrs.exportPath || '') + "?" + this.urlEncode(params).substr(1);
     },
     //获取数据
     getData() {
@@ -460,22 +487,27 @@ export default {
   .bottom-border {
     border-bottom: 1px solid #ebeef5;
   }
+
   .grid-top-container {
     padding: 8px;
     display: flex;
     justify-content: space-between;
     min-height: 32px;
+
     .grid-top-container-left {
       display: flex;
       align-items: center;
     }
+
     .grid-top-container-right {
       display: flex;
       align-items: center;
+
       .icon-actions {
         display: flex;
         align-items: center;
         margin-left: 5px;
+
         i {
           font-size: 20px;
           margin-right: 10px;
@@ -483,33 +515,41 @@ export default {
       }
     }
   }
+
   .el-tabs__header {
     padding: 0;
     margin: 0;
   }
+
   .el-tabs__item {
     padding: 0 15px;
     height: 50px;
     line-height: 50px;
   }
+
   .el-tabs--top .el-tabs__item.is-top:nth-child(2) {
     padding-left: 15px;
   }
+
   .el-tabs__nav-wrap::after {
     height: 1px;
     background-color: #ebeef5;
   }
+
   .filter-form {
     padding: 10px 10px 0 10px;
     background-color: #ffffff;
+
     .el-form-item {
       margin-bottom: 10px;
+
       .el-form-item__label {
         padding: 0;
       }
     }
   }
 }
+
 // showOverflowTooltip
 .el-tooltip__popper.is-null {
   background: #303133;

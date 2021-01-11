@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace HPlus\UI;
 
+use HPlus\UI\Grid\Concerns\HasExport;
 use \Hyperf\Database\Model\Builder;
 use \Hyperf\Database\Model\Model as Eloquent;
 use \Hyperf\Database\Model\Relations;
@@ -32,7 +33,7 @@ use HPlus\UI\Layout\Content;
 
 class Grid extends Component
 {
-    use HasGridAttributes, HasPageAttributes, HasDefaultSort, HasQuickSearch, HasFilter;
+    use HasGridAttributes, HasPageAttributes, HasDefaultSort, HasQuickSearch,HasExport, HasFilter;
 
     /**
      * 组件名称
@@ -433,6 +434,8 @@ class Grid extends Component
             $viewData['columnAttributes'] = $this->columnAttributes;
             $viewData['attributes'] = (array)$this->attributes;
             $viewData['dataUrl'] = $this->dataUrl;
+            $viewData['simpleExport'] = $this->simpleExport;
+            $viewData['exportPath'] = $this->exportPath;
             $viewData['method'] = $this->method;
             $viewData['hidePage'] = $this->isHidePage();
             $viewData['pageSizes'] = $this->pageSizes;
