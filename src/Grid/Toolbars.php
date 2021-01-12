@@ -35,7 +35,6 @@ class Toolbars extends AdminJsonBuilder
         $this->grid = $grid;
 
         $this->createButton = new CreateButton();
-
         $this->createButton->content("添加")->icon("el-icon-plus");
     }
 
@@ -56,7 +55,6 @@ class Toolbars extends AdminJsonBuilder
         $this->show = false;
         return $this;
     }
-
 
 
     /**
@@ -85,7 +83,6 @@ class Toolbars extends AdminJsonBuilder
 
     public function builderData()
     {
-
         $left = collect($this->left);
         $right = collect($this->right);
         if (!$this->hideCreateButton) {
@@ -100,12 +97,12 @@ class Toolbars extends AdminJsonBuilder
             $right->prepend($addRight);
         }
 
-        if($this->grid->getDialogForm()){
+        if ($this->grid->getDialogForm()) {
             $this->createButton->isDialog(true);
         }
 
         return [
-            "show"=>$this->show,
+            "show" => $this->show,
             "left" => $left,
             "right" => $right
         ];

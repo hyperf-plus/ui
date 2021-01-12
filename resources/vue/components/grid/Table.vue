@@ -285,6 +285,10 @@ export default {
       this.loading = status;
     });
     this.$bus.on("showDialogGridFrom", ({isShow, key}) => {
+      if (this.$refs["DialogGridFrom"] === undefined){
+        console.log("GridDialog 冲突了，后续处理")
+        return
+      }
       this.$refs["DialogGridFrom"].dialogVisible = isShow;
       this.$refs["DialogGridFrom"].key = key;
     });
@@ -544,7 +548,7 @@ export default {
       margin-bottom: 10px;
 
       .el-form-item__label {
-        padding: 0;
+        padding: 0 10px 0 0;
       }
     }
   }

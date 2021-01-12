@@ -589,8 +589,8 @@ class FormItem extends Component
      */
     public function vif($key, $values, $anyValue = false)
     {
-        $values = is_string($values) ? [$values] : $values;
-        
+        $values = !is_array($values) ? [$values] : $values;
+
         $this->vif = [
             'key' => $key,
             'value' => $values,
