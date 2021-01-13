@@ -20,7 +20,7 @@ export default {
 
       if (key) {
         let cValue = window._.get(this.formData, key);
-        if (value.indexOf(cValue) !== -1 || (cValue && anyValue)) {
+        if (cValue == value || (cValue && anyValue)) {
           return true;
         } else {
           return false;

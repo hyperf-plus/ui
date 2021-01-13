@@ -142,6 +142,7 @@ export default {
                 if (code == 200) {
                   this.attrs.emits.map((item) => {
                     this.$bus.emit(item.name, item.data);
+                    this.$bus.emit('pageReload')
                   });
                 }
               })

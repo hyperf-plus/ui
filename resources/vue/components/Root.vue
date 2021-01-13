@@ -1,53 +1,15 @@
 <template>
   <div class="admin-main">
     <el-container class="admin-layout">
-      <el-aside
-        ref="contentSide"
-        class="content-side"
-        :class="{ 'content-side-fixed': fixedSide, 'side-dark': isDark }"
-        :width="isCollapsed ? '64px' : '200px'"
-      >
+      <el-aside ref="contentSide" class="content-side" :class="{ 'content-side-fixed': fixedSide, 'side-dark': isDark }" :width="isCollapsed ? '64px' : '200px'">
         <div class="content-side-logo">
-          <template v-if="pageData.logoShow">
-            <template v-if="isDark">
-              <template v-if="pageData.logoLight">
-                <img v-if="isCollapsed" :src="pageData.logoMiniLight" />
-                <img v-else :src="pageData.logoLight" />
-              </template>
-              <template v-else>
-                <img v-if="isCollapsed" src="../assets/logo-mini-light.svg" />
-                <img v-else src="../assets/logo-light.svg" />
-              </template>
-            </template>
-            <template v-else>
-              <template v-if="pageData.logo">
-                <img v-if="isCollapsed" :src="pageData.logoMini" />
-                <img v-else :src="pageData.logo" />
-              </template>
-              <template v-else>
-                <img v-if="isCollapsed" src="../assets/logo-mini.svg" />
-                <img v-else src="../assets/logo.svg" />
-              </template>
-            </template>
-          </template>
+          <img v-if="isCollapsed" :src="pageData.logo" />
           <h1 v-if="!isCollapsed && pageData.name">{{ pageData.name }}</h1>
         </div>
         <el-scrollbar wrap-class="scrollbar-wrapper">
-          <el-menu
-            :default-active="route"
-            :collapse="isCollapsed"
-            :background-color="isDark ? '#1d1e23' : ''"
-            :text-color="isDark ? '#ffffff' : ''"
-            :collapse-transition="false"
-            :unique-opened="pageData.uniqueOpened"
-            :router="true"
-          >
+          <el-menu :default-active="route" :collapse="isCollapsed" :background-color="isDark ? '#1d1e23' : ''" :text-color="isDark ? '#ffffff' : ''" :collapse-transition="false" :unique-opened="pageData.uniqueOpened" :router="true">
             <template v-for="menu in pageData.menu">
-              <el-submenu
-                :index="menu.route"
-                :key="menu.id"
-                v-if="menu.children && menu.children.length > 0"
-              >
+              <el-submenu :index="menu.route" :key="menu.id" v-if="menu.children && menu.children.length > 0">
                 <template slot="title">
                   <i :class="'iconfont icon' + menu.icon" v-if="menu.icon"></i>
                   <span slot="title">{{ menu.title }}</span>
@@ -84,22 +46,21 @@
             <div class="layout-header-trigger hover" @click="collapsedSide">
               <i class="el-icon-s-fold fs-20 menu-icon" :class="{ 'rotate-icon': isCollapsed }" />
             </div>
-            <div class="layout-header-breadcrumb">
-              <el-breadcrumb separator="/">
-                <el-breadcrumb-item :to="{ path: this.homeUrl  }">首页</el-breadcrumb-item>
-                <template v-for="menu in pageData.menuList">
-                  <el-breadcrumb-item v-if="menu.route == route" :key="menu.route">{{ menu.title }}</el-breadcrumb-item>
-                </template>
-              </el-breadcrumb>
-            </div>
+            <transition name="el-fade-in-linear">
+              <div class="layout-header-breadcrumb" v-show="isCollapsed">
+                <el-breadcrumb separator="/">
+                  <el-breadcrumb-item :to="{ path: this.homeUrl }">首页</el-breadcrumb-item>
+                  <template v-for="menu in pageData.menuList">
+                    <el-breadcrumb-item v-if="menu.route == route" :key="menu.route">{{ menu.title }}</el-breadcrumb-item>
+                  </template>
+                </el-breadcrumb>
+              </div>
+            </transition>
           </div>
           <div class="layout-header-r">
             <div class="flex align-center"></div>
-            <el-tooltip class="item" effect="dark" content="刷新">
-              <div
-                @click="pageReload"
-                class="layout-header-trigger layout-header-trigger-min hover"
-              >
+            <el-tooltip class="item layout-header-refresh" effect="dark" content="刷新">
+              <div @click="pageReload" class="layout-header-trigger layout-header-trigger-min hover">
                 <i class="el-icon-refresh-right icon-btn"></i>
               </div>
             </el-tooltip>
@@ -108,9 +69,7 @@
                 <div class="layout-header-user">
                   <el-avatar :src="pageData.user.avatar" :size="25" />
                   <span class="layout-header-user-name">
-                    {{
-                    pageData.user.name
-                    }}
+                    {{ pageData.user.name }}
                   </span>
                 </div>
                 <el-dropdown-menu slot="dropdown">
@@ -123,10 +82,7 @@
                 </el-dropdown-menu>
               </el-dropdown>
             </div>
-            <div
-              @click="showAdminSet = true"
-              class="layout-header-trigger layout-header-trigger-min hover"
-            >
+            <div @click="showAdminSet = true" class="layout-header-trigger layout-header-trigger-min hover layout-header-setting">
               <i class="el-icon-setting icon-btn"></i>
             </div>
           </div>
@@ -139,14 +95,7 @@
         <el-footer class="admin-footer" height="auto">
           <div ref="rootFooter">
             <div class="footer-links">
-              <el-link
-                v-for="(item, index) in pageData.footerLinks"
-                :key="index"
-                type="text"
-                :href="item.href"
-                target="_blank"
-                :underline="false"
-              >{{ item.title }}</el-link>
+              <el-link v-for="(item, index) in pageData.footerLinks" :key="index" type="text" :href="item.href" target="_blank" :underline="false">{{ item.title }}</el-link>
             </div>
             <div v-html="pageData.copyright"></div>
           </div>
@@ -155,7 +104,7 @@
     </el-container>
     <el-backtop></el-backtop>
     <el-drawer :visible.sync="showAdminSet" size="250px">
-      <div style="padding:0 10px;">
+      <div style="padding: 0 10px">
         <el-divider>主题风格</el-divider>
         <div>
           <el-badge type="success" is-dot :hidden="isDark">
@@ -210,7 +159,7 @@
 </template>
 
 <script>
-import { flattenDeepChild } from "../utils";
+import { flattenDeepChild } from '../utils'
 
 export default {
   props: {
@@ -218,100 +167,89 @@ export default {
   },
   data() {
     return {
-      fixedSide: localStorage.getItem("fixedSide")
-        ? localStorage.getItem("fixedSide") == "true"
-        : true,
-      fixedHeader: localStorage.getItem("fixedHeader")
-        ? localStorage.getItem("fixedHeader") == "true"
-        : true,
-      isCollapsed: localStorage.getItem("isCollapsed")
-        ? localStorage.getItem("isCollapsed") == "true"
-        : false,
-      isDark: localStorage.getItem("isDark")
-        ? localStorage.getItem("isDark") == "true"
-        : false,
-      isDarkHeader: localStorage.getItem("isDarkHeader")
-        ? localStorage.getItem("isDarkHeader") == "true"
-        : false,
+      fixedSide: localStorage.getItem('fixedSide') ? localStorage.getItem('fixedSide') == 'true' : true,
+      fixedHeader: localStorage.getItem('fixedHeader') ? localStorage.getItem('fixedHeader') == 'true' : true,
+      isCollapsed: localStorage.getItem('isCollapsed') ? localStorage.getItem('isCollapsed') == 'true' : false,
+      isDark: localStorage.getItem('isDark') ? localStorage.getItem('isDark') == 'true' : true,
+      isDarkHeader: localStorage.getItem('isDarkHeader') ? localStorage.getItem('isDarkHeader') == 'true' : true,
       showAdminSet: false,
-      route: "/",
+      route: '/',
       homeUrl: window.config.homeUrl,
       query: {},
-    };
+    }
   },
   mounted() {
     //监听路由变动
-    this.$bus.on("route-after", (to) => {
-      this.route = to.path;
-      this.query = to.query;
-      let queryKey = [];
+    this.$bus.on('route-after', (to) => {
+      this.route = to.path
+      this.query = to.query
+      let queryKey = []
       _.forEach(this.query, function (value, key) {
-        queryKey.push(key + "=" + value);
-      });
-      this.route =
-        this.route + (queryKey.length > 0 ? "?" : "") + queryKey.join("&");
+        queryKey.push(key + '=' + value)
+      })
+      this.route = this.route + (queryKey.length > 0 ? '?' : '') + queryKey.join('&')
       let checkLength = this.menuRoutes.filter((item) => {
-        return this.route == item;
-      }).length;
+        return this.route == item
+      }).length
       if (checkLength <= 0) {
         this.menuRoutes.map((item) => {
           if (to.path.indexOf(item) >= 0) {
-            this.route = item;
+            this.route = item
           }
-        });
+        })
       }
-    });
+    })
     //监听message事件
-    this.$bus.on("message", ({ type, message }) => {
-      this.$message[type](message);
-    });
+    this.$bus.on('message', ({ type, message }) => {
+      this.$message[type](message)
+    })
     this.$nextTick(() => {
-      window.rootFooterHeight = this.$refs.rootFooter.offsetHeight +20;
-    });
+      window.rootFooterHeight = this.$refs.rootFooter.offsetHeight + 20
+    })
   },
   destroyed() {
-    this.$bus.off("route-after");
-    this.$bus.off("message");
+    this.$bus.off('route-after')
+    this.$bus.off('message')
   },
   computed: {
     menuitemClasses() {
-      return ["menu-item", this.isCollapsed ? "collapsed-menu" : ""];
+      return ['menu-item', this.isCollapsed ? 'collapsed-menu' : '']
     },
     menuRoutes() {
-      return flattenDeepChild(this.pageData.menu, "children", "route");
+      return flattenDeepChild(this.pageData.menu, 'children', 'route')
     },
   },
   methods: {
     pageReload() {
-      this.$bus.emit("pageReload");
+      this.$bus.emit('pageReload')
     },
     collapsedSide() {
-      this.isCollapsed = !this.isCollapsed;
+      this.isCollapsed = !this.isCollapsed
     },
     onLogout() {
-      this.$confirm("您确定退出登录当前账户吗？", "退出登陆确认").then(() => {
-        window.location.href = this.pageData.url.logout;
-      });
+      this.$confirm('您确定退出登录当前账户吗？', '退出登陆确认').then(() => {
+        window.location.href = this.pageData.url.logout
+      })
     },
   },
   watch: {
     fixedSide(val) {
-      localStorage.setItem("fixedSide", val);
+      localStorage.setItem('fixedSide', val)
     },
     fixedHeader(val) {
-      localStorage.setItem("fixedHeader", val);
+      localStorage.setItem('fixedHeader', val)
     },
     isCollapsed(val) {
-      localStorage.setItem("isCollapsed", val);
+      localStorage.setItem('isCollapsed', val)
     },
     isDark(val) {
-      localStorage.setItem("isDark", val);
+      localStorage.setItem('isDark', val)
     },
     isDarkHeader(val) {
-      localStorage.setItem("isDarkHeader", val);
+      localStorage.setItem('isDarkHeader', val)
     },
   },
-};
+}
 </script>
 
 <style lang="scss">
@@ -341,14 +279,13 @@ $header-bar-height: 55px;
   .el-menu {
     border-right: none;
 
-    [class^=iconfont] {
+    [class^='iconfont'] {
       margin-right: 5px;
       width: 24px;
       text-align: center;
       font-size: 22px;
       vertical-align: middle;
     }
-
   }
 
   .content-side-logo {
@@ -367,8 +304,9 @@ $header-bar-height: 55px;
       margin: 0 0 0 5px;
       color: #666;
       font-weight: 600;
-      font-size: 20px;
+      font-size: 16px;
       vertical-align: middle;
+      text-align: center;
       animation: fade-in;
       animation-duration: 0.3s;
     }
@@ -568,5 +506,19 @@ $header-bar-height: 55px;
 }
 .el-drawer__header {
   margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .layout-header-setting {
+    display: none !important;
+  }
+  .layout-header-refresh {
+    display: none !important;
+  }
+  .layout-header-user-name {
+    max-width: 42px;
+    overflow: hidden;
+    height: 55px;
+    line-height: 55px;
+  }
 }
 </style>

@@ -195,6 +195,7 @@ export default {
                     } else {
                       this.successRefData();
                     }
+                    this.$bus.emit('pageReload')
                   }
                 })
                 .finally(() => {
@@ -211,6 +212,7 @@ export default {
                     } else {
                       this.successRefData();
                     }
+                    this.$bus.emit('pageReload')
                   }
                 })
                 .finally(() => {
