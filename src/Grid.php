@@ -272,7 +272,7 @@ class Grid extends Component
         //快捷搜索
         $this->applyQuickSearch();
 
-        //  $this->applyFilter(false);
+        $this->applyFilter(false);
     }
 
     /**
