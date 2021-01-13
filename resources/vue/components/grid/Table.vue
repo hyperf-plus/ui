@@ -91,7 +91,7 @@
                   <el-dropdown-item>全部</el-dropdown-item>
                 </a>
                 <a @click="onExport('where')">
-                  <el-dropdown-item>搜索条件</el-dropdown-item>
+                  <el-dropdown-item>搜索结果</el-dropdown-item>
                 </a>
                 <a @click="onExport('selected')">
                   <el-dropdown-item>选择行</el-dropdown-item>

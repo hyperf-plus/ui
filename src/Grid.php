@@ -110,8 +110,8 @@ class Grid extends Component
         $this->attributes = new Attributes();
         $this->dataUrl = admin_api_url(request()->path()) . '/list';
         $this->model = new Model($model, $this);
-        $this->table = $model->getTable();
         if ($model) {
+            $this->table = $model->getTable();
             $this->keyName = $model->getKeyName();
             $this->defaultSort($model->getKeyName(), "asc");
         }
