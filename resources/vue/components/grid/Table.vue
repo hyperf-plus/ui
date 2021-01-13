@@ -35,7 +35,6 @@
             <el-form-item>
               <el-button type="primary" @click="onFilterSubmit">搜索</el-button>
               <el-button @click="onFilterReset">重置</el-button>
-              <el-button v-if="attrs.simpleExport||false" @click="onSimpleExportReset">导出</el-button>
             </el-form-item>
           </el-form>
         </div>
@@ -83,6 +82,23 @@
                 :attrs="component"
             />
             <el-divider direction="vertical" v-if="!attrs.attributes.hideCreateButton"></el-divider>
+            <el-dropdown size="mini" v-if="attrs.export">
+              <el-button>
+                导出<i class="el-icon-arrow-down el-icon--right"></i>
+              </el-button>
+              <el-dropdown-menu slot="dropdown">
+                <a @click="onExport('all')">
+                  <el-dropdown-item>全部</el-dropdown-item>
+                </a>
+                <a @click="onExport('where')">
+                  <el-dropdown-item>搜索条件</el-dropdown-item>
+                </a>
+                <a @click="onExport('selected')">
+                  <el-dropdown-item>选择行</el-dropdown-item>
+                </a>
+              </el-dropdown-menu>
+            </el-dropdown>
+
             <div class="icon-actions">
               <el-dropdown trigger="click">
                 <el-tooltip class="item" effect="dark" content="密度" placement="top">
@@ -215,6 +231,7 @@ import Actions from "./Actions/Index";
 import BatchActions from "./BatchActions/Index";
 import ItemDisplay from "../form/ItemDisplay";
 import DialogForm from "./DialogForm";
+
 export default {
   mixins: [BaseComponent],
   components: {
@@ -285,7 +302,7 @@ export default {
       this.loading = status;
     });
     this.$bus.on("showDialogGridFrom", ({isShow, key}) => {
-      if (this.$refs["DialogGridFrom"] === undefined){
+      if (this.$refs["DialogGridFrom"] === undefined) {
         console.log("GridDialog 冲突了，后续处理")
         return
       }
@@ -339,16 +356,27 @@ export default {
       return paramStr;
     },
     //跳转到导出接口，权限需自行判断
-    onSimpleExportReset() {
-      let params = {
-        export: true,
-        ...this.sort,
-        ...this.q_search,
-        ...this.filterFormData,
-        ...this.tabsSelectdata,
-        ...this.$route.query,
-      };
-      window.location.href = (this.attrs.exportPath || '') + "?" + this.urlEncode(params).substr(1);
+    onExport(type) {
+      if (type === 'selected') {
+        if (this.keys === '') {
+          this.$notify.info({
+            message: '请先选择要导出的行'
+          });
+          return;
+        }
+        type += ':' + this.keys;
+      }
+      if (type === 'where') {
+        let params = {
+          ...this.sort,
+          ...this.q_search,
+          ...this.filterFormData,
+          ...this.tabsSelectdata,
+          ...this.$route.query,
+        };
+       type += "&" + this.urlEncode(params).substr(1);
+      }
+      window.location.href = this.attrs.dataUrl + "?_export_=" + type;
     },
     //获取数据
     getData() {
