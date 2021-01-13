@@ -67,7 +67,6 @@ trait HasQuickSearch
         if (!$this->quickSearch) {
             return;
         }
-
         if (!$query = request()->query($this->quickSearch->searchKey)) {
             return;
         }

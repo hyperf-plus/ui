@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace HPlus\UI;
 
+use HPlus\UI\Grid\Concerns\CanExportGrid;
 use HPlus\UI\Grid\Concerns\HasExport;
 use \Hyperf\Database\Model\Builder;
 use \Hyperf\Database\Model\Model as Eloquent;
@@ -33,7 +34,7 @@ use HPlus\UI\Layout\Content;
 
 class Grid extends Component
 {
-    use HasGridAttributes, HasPageAttributes, HasDefaultSort, HasQuickSearch,HasExport, HasFilter;
+    use HasGridAttributes, HasPageAttributes, HasDefaultSort, HasQuickSearch, HasExport, CanExportGrid, HasFilter;
 
     /**
      * 组件名称
@@ -49,7 +50,7 @@ class Grid extends Component
      * 组件字段
      * @var Column[]
      */
-    protected $columns = [];
+    public $columns = [];
     protected $rows;
     /**
      * 组件字段属性
@@ -78,6 +79,7 @@ class Grid extends Component
     private $toolbars;
     private $top;
     private $bottom;
+    private $table = '';
 
     /**
      * 请求方式
@@ -106,8 +108,9 @@ class Grid extends Component
     public function __construct(Eloquent $model = null)
     {
         $this->attributes = new Attributes();
-        $this->dataUrl = admin_api_url(request()->path()).'/list';
+        $this->dataUrl = admin_api_url(request()->path()) . '/list';
         $this->model = new Model($model, $this);
+        $this->table = $model->getTable();
         if ($model) {
             $this->keyName = $model->getKeyName();
             $this->defaultSort($model->getKeyName(), "asc");
@@ -264,13 +267,12 @@ class Grid extends Component
         return $this->columns;
     }
 
-    protected function applyQuery()
+    public function applyQuery()
     {
         //快捷搜索
         $this->applyQuickSearch();
 
-        $this->applyFilter(false);
-
+        //  $this->applyFilter(false);
     }
 
     /**
@@ -329,7 +331,7 @@ class Grid extends Component
     public function dialogForm(Form $dialogForm, $width = '750px', $title = ['添加', '修改'])
     {
         $this->dialogForm = $dialogForm;
-       // $this->dialogForm->labelPosition('right')->labelWidth('90px');
+        // $this->dialogForm->labelPosition('right')->labelWidth('90px');
         $this->dialogFormWidth = $width;
         $this->dialogTitle = $title;
         return $this;
@@ -434,8 +436,7 @@ class Grid extends Component
             $viewData['columnAttributes'] = $this->columnAttributes;
             $viewData['attributes'] = (array)$this->attributes;
             $viewData['dataUrl'] = $this->dataUrl;
-            $viewData['simpleExport'] = $this->simpleExport;
-            $viewData['exportPath'] = $this->exportPath;
+            $viewData['export'] = $this->enableExport;
             $viewData['method'] = $this->method;
             $viewData['hidePage'] = $this->isHidePage();
             $viewData['pageSizes'] = $this->pageSizes;
@@ -479,5 +480,10 @@ class Grid extends Component
     public function setGetData(bool $isGetData): void
     {
         $this->isGetData = $isGetData;
+    }
+
+    public function getTable()
+    {
+        return $this->table;
     }
 }

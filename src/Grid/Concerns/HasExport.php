@@ -16,6 +16,8 @@ use HPlus\UI\Grid\Model;
 use HPlus\UI\Grid\Tools\QuickSearch;
 
 /**
+ * 简单导出已废弃，请使用 Exporter
+ * @deprecated
  * @method  Model model()
  */
 trait HasExport

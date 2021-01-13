@@ -7,6 +7,7 @@ declare(strict_types=1);
  * @contact  4213509@qq.com
  * @license  https://github.com/lphkxd/hyperf-plus/blob/master/LICENSE
  */
+
 namespace HPlus\UI\Grid;
 
 
@@ -142,6 +143,21 @@ class Filter
         return $this;
     }
 
+    /**
+     * @param callable $callback
+     * @param int $count
+     *
+     * @return bool
+     */
+    public function chunk(callable $callback, $count = 100)
+    {
+        $conditions = array_merge(
+            $this->conditions(),
+            $this->scopeConditions()
+        );
+        return $this->model->addConditions($conditions)->chunk($callback, $count);
+    }
+
     public function execute($toArray = true)
     {
         if (method_exists($this->model->eloquent(), 'paginate')) {
@@ -159,7 +175,7 @@ class Filter
 
     public function getCurrentScope()
     {
-        $key = request(Scope::QUERY_NAME);
+        $key = request()->query(Scope::QUERY_NAME);
 
         return $this->scopes->first(function ($scope) use ($key) {
             return $scope->key == $key;

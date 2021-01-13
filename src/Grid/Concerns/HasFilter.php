@@ -20,11 +20,18 @@ trait HasFilter
      */
     protected $filter;
 
-
+    /**
+     * Get filter of Table.
+     *
+     * @return Filter
+     */
+    public function getFilter()
+    {
+        return $this->filter;
+    }
 
     public function applyFilter($toArray = true)
     {
-
         return $this->filter->execute($toArray);
     }
 
