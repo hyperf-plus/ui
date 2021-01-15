@@ -24,11 +24,11 @@ trait CanExportGrid
      */
     public function handleExportRequest()
     {
-        if (!$this->enableExport) {
-            throw new BusinessException(403, "未开启导出功能！");
-        }
         if (!$scope = request()->query(Exporter::$queryName)) {
             return;
+        }
+        if (!$this->enableExport) {
+            throw new BusinessException(403, "未开启导出功能！");
         }
         $this->hidePage();
         return $this->getExporter($scope)->export();
