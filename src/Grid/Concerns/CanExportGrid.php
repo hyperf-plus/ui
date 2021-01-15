@@ -2,6 +2,7 @@
 
 namespace HPlus\UI\Grid\Concerns;
 
+use HPlus\Admin\Exception\BusinessException;
 use HPlus\UI\Grid\Exporter;
 use HPlus\UI\Grid\Exporters\AbstractExporter;
 
@@ -23,6 +24,9 @@ trait CanExportGrid
      */
     public function handleExportRequest()
     {
+        if (!$this->enableExport) {
+            throw new BusinessException(403, "未开启导出功能！");
+        }
         if (!$scope = request()->query(Exporter::$queryName)) {
             return;
         }

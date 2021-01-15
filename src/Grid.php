@@ -267,6 +267,12 @@ class Grid extends Component
         return $this->columns;
     }
 
+    public function applyWhere()
+    {
+        //快捷搜索
+        $this->applyQuickSearch();
+    }
+
     public function applyQuery()
     {
         //快捷搜索

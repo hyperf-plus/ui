@@ -61,7 +61,7 @@ trait HasQuickSearch
      *
      * @return mixed|void
      */
-    protected function applyQuickSearch()
+    public function applyQuickSearch()
     {
 
         if (!$this->quickSearch) {

@@ -25,7 +25,7 @@ class Exporter
      *
      * @var array
      */
-    protected static $drivers = [];
+    protected $drivers = [];
 
     /**
      * Export query name.
@@ -37,7 +37,7 @@ class Exporter
     /**
      * @var Table\Exporters\AbstractExporter
      */
-    protected static $exporter;
+    protected $exporter;
 
     /**
      * Create a new Exporter instance.
@@ -96,17 +96,15 @@ class Exporter
      */
     protected function getExporter($driver)
     {
-
-        if (static::$exporter) {
-            return static::$exporter;
+        if ($this->exporter) {
+            return $this->exporter;
         }
 
-
-        if (!array_key_exists($driver, static::$drivers)) {
-            return static::$exporter = $this->getDefaultExporter();
+        if (!array_key_exists($driver, $this->drivers)) {
+            return $this->exporter = $this->getDefaultExporter();
         }
 
-        return static::$exporter = new static::$drivers[$driver]($this->grid);
+        return $this->exporter = new $this->drivers[$driver]($this->grid);
     }
 
     /**

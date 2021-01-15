@@ -58,19 +58,18 @@ abstract class AbstractExporter implements ExporterInterface
 
     /**
      * @param callable $callback
-     * @param int      $count
+     * @param int $count
      *
      * @return bool
      */
     public function chunk(callable $callback, $count = 100)
     {
-        $this->grid->applyQuery();
-
+        //加上快速搜索条件
         return $this->grid->getFilter()->chunk($callback, $count);
     }
 
     /**
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function getCollection()
     {
@@ -78,7 +77,7 @@ abstract class AbstractExporter implements ExporterInterface
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
+     * @return Builder|Model
      */
     public function getQuery()
     {
@@ -89,8 +88,7 @@ abstract class AbstractExporter implements ExporterInterface
         // Export data of giving page number.
         if ($this->page) {
             $keyName = $this->grid->getKeyName();
-            $perPage = request($model->getPerPageName(), $model->getPerPage());
-
+            $perPage = request()->query($model->getPerPageName(), $model->getPerPage());
             $scope = (clone $queryBuilder)
                 ->select([$keyName])
                 ->setEagerLoads([])
@@ -111,7 +109,12 @@ abstract class AbstractExporter implements ExporterInterface
      */
     public function withScope($scope)
     {
-        if ($scope == Grid\Exporter::SCOPE_ALL || $scope == Grid\Exporter::SCOPE_WHERE) {
+        if ($scope == Grid\Exporter::SCOPE_ALL) {
+            return $this;
+        }
+
+        if ($scope == Grid\Exporter::SCOPE_WHERE) {
+            $this->grid->applyWhere();
             return $this;
         }
 

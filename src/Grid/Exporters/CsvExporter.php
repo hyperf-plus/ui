@@ -146,19 +146,16 @@ class CsvExporter extends AbstractExporter
         $items = collect();
         $columns = $this->grid->getColumns();
         $csv = '';
-        ob_start();
-        $handle = fopen('php://output', 'w');
-        $this->chunk(function ($data, $page) use ($handle, $items, $columns, &$titles, &$csv) {
+        $this->chunk(function ($data, $page) use ($items, $columns, &$titles, &$csv) {
             $original = $data->toArray();
             if (empty($titles)) {
-                fputcsv($handle, $titles = $this->getVisiableTitles());
+                $csv .= implode(",", $titles = $this->getVisiableTitles()) . PHP_EOL;
             }
             // Write rows
             foreach ($original as $index => $record) {
-                fputcsv($handle, $this->getVisiableFields($record, $original[$index]));
+                $csv .= implode(",", $this->getVisiableFields($record, $original[$index])) . PHP_EOL;
             }
         }, 100);
-        fclose($handle);
         if (!$this->filename) {
             $this->filename = $this->grid->getTable() . ".csv";
         }
@@ -168,7 +165,7 @@ class CsvExporter extends AbstractExporter
         $response = $response->withHeader('Pragma', 'public');
         $response = $response->withHeader('Content-Transfer-Encoding', 'binary');
         $response = $response->withHeader('Content-Disposition', 'attachment;filename=' . $this->filename);
-        return $response->withBody(new SwooleStream(ob_get_clean()));
+        return $response->withBody(new SwooleStream($csv));
     }
 
     /**

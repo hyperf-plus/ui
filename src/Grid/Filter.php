@@ -87,7 +87,6 @@ class Filter
     {
         $inputs = Arr::dot(request()->all());
 
-
         $inputs = array_filter($inputs, function ($input) {
             return $input !== '' && !is_null($input);
         });
@@ -111,7 +110,6 @@ class Filter
         foreach ($this->filters() as $filter) {
             $conditions[] = $filter->condition($params);
         }
-
 
         return tap(array_filter($conditions), function ($conditions) {
             if (!empty($conditions)) {
