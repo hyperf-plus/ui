@@ -145,12 +145,9 @@ class CsvExporter extends AbstractExporter
         $titles = [];
         $items = collect();
         $columns = $this->grid->getColumns();
-        $csv = '';
-        $this->chunk(function ($data, $page) use ($items, $columns, &$titles, &$csv) {
+        $csv = implode(",", $this->getVisiableTitles()) . PHP_EOL;
+        $this->chunk(function ($data, $page) use ($items, $columns, &$csv) {
             $original = $data->toArray();
-            if (empty($titles)) {
-                $csv .= implode(",", $titles = $this->getVisiableTitles()) . PHP_EOL;
-            }
             // Write rows
             foreach ($original as $index => $record) {
                 $csv .= implode(",", $this->getVisiableFields($record, $original[$index])) . PHP_EOL;
