@@ -19,6 +19,8 @@ use HPlus\UI\Components\Widgets\Html;
 use HPlus\UI\Layout\Content;
 use HPlus\UI\StorageFactory;
 use Psr\Http\Message\ServerRequestInterface;
+use Hyperf\Redis\RedisFactory;
+
 
 if (!function_exists('Storage')) {
     /**
