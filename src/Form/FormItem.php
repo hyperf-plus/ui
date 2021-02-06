@@ -35,7 +35,7 @@ class FormItem extends Component
     protected $inlineMessage;
     protected $size;
     protected $help;
-    protected $defaultValue;
+    protected $defaultValue = null;
     protected $copyProp;
     protected $relationName;
     protected $relationValueKey;
@@ -79,6 +79,7 @@ class FormItem extends Component
 
     /**
      * FormItem constructor.
+     *
      * @param $prop
      * @param $label
      * @param $field
@@ -93,7 +94,7 @@ class FormItem extends Component
         }
 
         if (Str::contains($prop, '.')) {
-            list($relationName, $relationValueKey) = explode('.', $prop);
+            [$relationName, $relationValueKey] = explode('.', $prop);
             $this->relationName = $relationName;
             $this->relationValueKey = $relationValueKey;
         }
@@ -138,7 +139,9 @@ class FormItem extends Component
 
     /**
      * 设置头部组件
+     *
      * @param $component
+     *
      * @return $this
      */
     public function topComponent($component)
@@ -153,7 +156,9 @@ class FormItem extends Component
 
     /**
      * 表单域组件上面附加组件
+     *
      * @param $component
+     *
      * @return $this
      */
     public function componentTopComponent($component)
@@ -168,7 +173,9 @@ class FormItem extends Component
 
     /**
      * 表单域组件下面附加组件
+     *
      * @param $component
+     *
      * @return $this
      */
     public function componentBottomComponent($component)
@@ -183,7 +190,9 @@ class FormItem extends Component
 
     /**
      * 表单域组件左边附加组件
+     *
      * @param $component
+     *
      * @return $this
      */
     public function componentLeftComponent($component)
@@ -198,7 +207,9 @@ class FormItem extends Component
 
     /**
      * 表单域组件右边附加组件
+     *
      * @param $component
+     *
      * @return $this
      */
     public function componentRightComponent($component)
@@ -214,7 +225,9 @@ class FormItem extends Component
 
     /**
      * 设置底部组件
+     *
      * @param $component
+     *
      * @return $this
      * @deprecated
      */
@@ -230,7 +243,9 @@ class FormItem extends Component
 
     /**
      * 设置底部组件
+     *
      * @param $component
+     *
      * @return $this
      */
     public function bottomComponent($component)
@@ -245,7 +260,9 @@ class FormItem extends Component
 
     /**
      * 设置组件
+     *
      * @param $component
+     *
      * @return $this
      */
     public function component($component)
@@ -289,7 +306,9 @@ class FormItem extends Component
 
     /**
      * 后端验证规则
+     *
      * @param string|array $serveRules
+     *
      * @return $this
      */
     public function serveRules($serveRules)
@@ -300,6 +319,7 @@ class FormItem extends Component
 
     /**
      * @param mixed $serveCreationRules
+     *
      * @return FormItem
      */
     public function serveCreationRules($serveCreationRules)
@@ -310,6 +330,7 @@ class FormItem extends Component
 
     /**
      * @param mixed $serveUpdateRules
+     *
      * @return FormItem
      */
     public function serveUpdateRules($serveUpdateRules)
@@ -320,6 +341,7 @@ class FormItem extends Component
 
     /**
      * @param mixed $serveRulesMessage
+     *
      * @return FormItem
      */
     public function serveRulesMessage($serveRulesMessage)
@@ -330,7 +352,9 @@ class FormItem extends Component
 
     /**
      * 设置默认值
+     *
      * @param mixed $defaultValue
+     *
      * @return $this
      */
     public function defaultValue($defaultValue)
@@ -347,12 +371,14 @@ class FormItem extends Component
      */
     public function getDefaultValue()
     {
-        return $this->defaultValue ? $this->defaultValue : $this->component->getComponentValue();
+        return $this->defaultValue !== null ? $this->defaultValue : $this->component->getComponentValue();
     }
 
     /**
      * 复制其他组件的值
+     *
      * @param string $copyProp
+     *
      * @return $this
      */
     public function copyValue($copyProp)
@@ -392,7 +418,7 @@ class FormItem extends Component
 
         if (request()->isMethod('POST')) {
             $rules = $this->serveCreationRules ?: $this->serveRules;
-        } elseif (request()->isMethod('PUT')) {
+        } else if (request()->isMethod('PUT')) {
             $rules = $this->serveUpdateRules ?: $this->serveRules;
         } else {
             $rules = $this->rules;
@@ -435,7 +461,9 @@ class FormItem extends Component
 
     /**
      * 表单域标签的的宽度，例如 '50px'。支持 auto
+     *
      * @param mixed $labelWidth
+     *
      * @return $this
      */
     public function labelWidth($labelWidth)
@@ -447,7 +475,9 @@ class FormItem extends Component
 
     /**
      * 表单域输入区域宽度  1 - 24
+     *
      * @param int $inputWidth
+     *
      * @return $this
      */
     public function inputWidth(int $inputWidth)
@@ -458,9 +488,11 @@ class FormItem extends Component
 
     /**
      * 是否必填，如不设置，则会根据校验规则自动生成
-     * @param null $message
+     *
+     * @param null   $message
      * @param string $type
      * @param string $trigger
+     *
      * @return $this
      */
     public function required($type = "string", $message = null, $trigger = "blur")
@@ -480,6 +512,7 @@ class FormItem extends Component
 
     /**
      * @param mixed $rules
+     *
      * @return $this
      * @deprecated
      * 表单验证规则, 请使用 vueRule ，多条规则可设置多次
@@ -492,10 +525,12 @@ class FormItem extends Component
 
     /**
      * 表单验证规则，多条规则可设置多次
-     * @param bool $required
+     *
+     * @param bool   $required
      * @param string $type
-     * @param null $message
+     * @param null   $message
      * @param string $trigger
+     *
      * @return $this
      */
     public function vueRule(bool $required = true, $type = "string", $message = null, $trigger = "blur")
@@ -507,7 +542,9 @@ class FormItem extends Component
 
     /**
      * 表单验证规则原生写法，多条规则可设置多次
+     *
      * @param array $raw
+     *
      * @return $this
      */
     public function vueRuleRaw(array $raw)
@@ -527,7 +564,9 @@ class FormItem extends Component
 
     /**
      * 表单域验证错误信息, 设置该值会使表单验证状态变为error，并显示该错误信息
+     *
      * @param string $error
+     *
      * @return $this
      */
     public function error($error)
@@ -538,7 +577,9 @@ class FormItem extends Component
 
     /**
      * 是否显示校验错误信息
+     *
      * @param bool $showMessage
+     *
      * @return $this
      */
     public function showMessage(bool $showMessage = true)
@@ -549,7 +590,9 @@ class FormItem extends Component
 
     /**
      * 以行内形式展示校验信息
+     *
      * @param bool $inlineMessage
+     *
      * @return $this
      */
     public function inlineMessage($inlineMessage = true)
@@ -561,7 +604,9 @@ class FormItem extends Component
     /**
      * 用于控制该表单域下组件的尺寸
      * medium / small / mini
+     *
      * @param mixed $size
+     *
      * @return $this
      */
     public function size($size)
@@ -572,7 +617,9 @@ class FormItem extends Component
 
     /**
      * 帮助信息，支持html
+     *
      * @param $help
+     *
      * @return $this
      */
     public function help($help)
@@ -582,9 +629,10 @@ class FormItem extends Component
     }
 
     /**
-     * @param $key
+     * @param              $key
      * @param string|array $values
-     * @param bool $anyValue
+     * @param bool         $anyValue
+     *
      * @return $this
      */
     public function vif($key, $values, $anyValue = false)
@@ -601,6 +649,7 @@ class FormItem extends Component
 
     /**
      * @param \Closure $closure
+     *
      * @return FormItem
      */
     public function vifEval(\Closure $closure)
@@ -616,6 +665,7 @@ class FormItem extends Component
 
     /**
      * @param string $tab
+     *
      * @return FormItem
      * @deprecated 已抛弃，设置无效
      * 设置字段所属tab名称
@@ -655,7 +705,9 @@ class FormItem extends Component
 
     /**
      * 传递当前组件所在模式
+     *
      * @param string $value
+     *
      * @return $this
      */
     public function hiddenMode($value = '')
@@ -720,7 +772,7 @@ class FormItem extends Component
             'vifEval' => $this->vifEval,
             'tab' => $this->tab,
             'ignoreEmpty' => $this->ignoreEmpty,
-            'hiddenMode' => $this->hiddenMode,
+            'hidden' => $this->form->isMode($this->hiddenMode),
             'ref' => $this->ref,
             'refData' => $this->refData
         ];

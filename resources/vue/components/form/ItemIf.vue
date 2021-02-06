@@ -1,5 +1,5 @@
 <template>
-  <div v-if="ifVif && ivEval">
+  <div v-if="ifVif && ivEval && formHide">
     <slot></slot>
   </div>
 </template>
@@ -13,6 +13,9 @@ export default {
   mounted() {
   },
   computed: {
+    formHide(){
+      return  !this.formItem.hidden;
+    },
     ifVif() {
       let key = this.formItem.vif.key;
       let value = this.formItem.vif.value;

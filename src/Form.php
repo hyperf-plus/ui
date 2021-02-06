@@ -49,6 +49,7 @@ class Form extends Component
     protected $id = 0;
 
     protected $formItemsAttr = [];
+    protected $formItemsHide = [];
     protected $formItemsValue = [];
     protected $formValue = [];
     protected $formRules = [];
@@ -120,9 +121,11 @@ class Form extends Component
 
     /**
      * 快捷生成字段
-     * @param $prop
+     *
+     * @param        $prop
      * @param string $label
      * @param string $field
+     *
      * @return FormItem
      */
     public function item($prop, $label = '', $field = '')
@@ -136,9 +139,11 @@ class Form extends Component
 
     /**
      * 多列布局字段
-     * @param $prop
+     *
+     * @param        $prop
      * @param string $label
      * @param string $field
+     *
      * @return FormItem
      */
     public function rowItem($prop, $label = '', $field = '')
@@ -149,7 +154,9 @@ class Form extends Component
 
     /**
      * 表单自定义布局
+     *
      * @param \Closure $closure
+     *
      * @return $this
      */
     public function row(\Closure $closure)
@@ -167,8 +174,10 @@ class Form extends Component
 
     /**
      * 自定义tab布局
-     * @param $tabName
+     *
+     * @param          $tabName
      * @param \Closure $closure
+     *
      * @return $this
      */
     public function tab($tabName, \Closure $closure)
@@ -189,7 +198,9 @@ class Form extends Component
 
     /**
      * tab位置
+     *
      * @param $tabPosition
+     *
      * @return $this
      */
     public function tabPosition($tabPosition)
@@ -202,6 +213,7 @@ class Form extends Component
      * @param $prop
      * @param $label
      * @param $field
+     *
      * @return FormItem
      */
     protected function addItem($prop, $label, $field)
@@ -225,23 +237,27 @@ class Form extends Component
         })->flatten()->all();
 
         // 根据所处模式抛弃组件
-        $this->formItemsAttr = collect($items)->filter(function (FormItem $item) {
-            return !$this->isMode($item->gethiddenMode());
+        $this->formItemsHide = collect($items)->filter(function (FormItem $item) {
+            return $this->isMode($item->gethiddenMode());
         })->map(function (FormItem $item) {
-            return $item->getAttrs();
+            return $item->getProp();
         });
+
         /**@var FormItem $item */
         foreach ($items as $item) {
             Arr::set($this->formItemsValue, $item->getProp(), $item->getDefaultValue());
             Arr::set($this->formRules, $item->getProp(), $item->getRules());
         }
 
+
     }
 
 
     /**
      * 自定义表单动作
+     *
      * @param $closure
+     *
      * @return $this
      */
     public function actions(\Closure $closure)
@@ -252,7 +268,9 @@ class Form extends Component
 
     /**
      * 表单头部组件
+     *
      * @param $closure
+     *
      * @return $this
      */
     public function top($closure)
@@ -264,7 +282,9 @@ class Form extends Component
 
     /**
      * 表单底部组件
+     *
      * @param $closure
+     *
      * @return $this
      */
     public function bottom($closure)
@@ -295,7 +315,9 @@ class Form extends Component
 
     /**
      * 设置表单编辑模式获取编辑数据地址
+     *
      * @param string $dataUrl
+     *
      * @return $this
      */
     public function dataUrl(string $dataUrl)
@@ -307,7 +329,9 @@ class Form extends Component
 
     /**
      * 设置表单提交地址
+     *
      * @param string $action
+     *
      * @return $this
      */
     public function action($action)
@@ -365,7 +389,9 @@ class Form extends Component
 
     /**
      * 设置清除模型缓存
+     *
      * @param bool $cachePut
+     *
      * @return self
      */
     public function cachePut(bool $cachePut = true)
@@ -373,7 +399,7 @@ class Form extends Component
         if (property_exists($this->model, 'useCacheBuilder')) {
             $this->model->useCacheBuilder = $cachePut;
         }
-        
+
         return $this;
     }
 
@@ -388,7 +414,9 @@ class Form extends Component
 
     /**
      * 获取表单是否是编辑模式
+     *
      * @param bool $isEdit
+     *
      * @return void
      */
     public function setEdit($isEdit = false)
@@ -398,8 +426,10 @@ class Form extends Component
 
     /**
      * 添加表单验证规则
+     *
      * @param $rules
      * @param $message
+     *
      * @return $this
      */
     public function addValidatorRule($rules, $message = [])
@@ -412,6 +442,7 @@ class Form extends Component
 
     /**
      * @param $data
+     *
      * @return string
      */
     protected function validatorData($data)
@@ -424,7 +455,7 @@ class Form extends Component
             if (empty($formItem->getServeRole())) {
                 continue;
             }
-            $field[$formItem->getField()] =$formItem->getLabel();
+            $field[$formItem->getField()] = $formItem->getLabel();
             $rules[$formItem->getField()] = $formItem->getServeRole();
             $messages = $formItem->getServeRulesMessage();
             if (is_array($messages)) {
@@ -513,7 +544,7 @@ class Form extends Component
         foreach (Arr::flatten($columns) as $column) {
 
             if (Str::contains($column, '.')) {
-                list($relation) = explode('.', $column);
+                [$relation] = explode('.', $column);
 
                 if (method_exists($this->model, $relation) &&
                     $this->model->$relation() instanceof Relation
@@ -521,7 +552,7 @@ class Form extends Component
 
                     $relations[] = $relation;
                 }
-            } elseif (method_exists($this->model, $column)) {
+            } else if (method_exists($this->model, $column)) {
                 $relations[] = $column;
             }
         }
@@ -563,7 +594,9 @@ class Form extends Component
 
     /**
      * 编辑
+     *
      * @param $id
+     *
      * @return array|string
      */
     public function edit($id = 0)
@@ -592,7 +625,9 @@ class Form extends Component
 
     /**
      * 模型删除
+     *
      * @param $id
+     *
      * @return mixed
      */
     public function destroy($id)
@@ -621,8 +656,9 @@ class Form extends Component
     }
 
     /**
-     * @param $id
+     * @param      $id
      * @param null $data
+     *
      * @return \Illuminate\Http\JsonResponse
      * @throws \Throwable
      */
@@ -808,7 +844,9 @@ class Form extends Component
 
     /**
      * 获取编辑数据
+     *
      * @param $id
+     *
      * @return array
      */
     public function editData($id)
@@ -857,7 +895,9 @@ class Form extends Component
 
     /**
      * 设置是否加载数据
+     *
      * @param bool $isGetData
+     *
      * @return $this
      */
     public function isGetData(bool $isGetData)
@@ -872,12 +912,11 @@ class Form extends Component
      */
     public function jsonSerialize()
     {
-        if (count($this->formItemsAttr) <= 0) {
-            $this->items($this->formItems);
-        }
         if ($this->isGetData) {
             return $this->editData($this->getResourceId());
         }
+
+        $this->items($this->formItems);
 
         return array_filter([
             'componentName' => $this->componentName,
@@ -886,6 +925,7 @@ class Form extends Component
             'mode' => $this->getMode(),
             'attrs' => $this->attrs,
             'ignoreEmptyProps' => $this->ignoreEmptyProps,
+            'hideProps' => $this->formItemsHide,
             'formItemLayout' => $this->formItemLayout,
             'tabPosition' => $this->tabPosition,
             'defaultValues' => (object)array_merge($this->formItemsValue, $this->formValue),
@@ -901,8 +941,10 @@ class Form extends Component
 
     /**
      * 填充表单默认值
-     * @param $name
+     *
+     * @param        $name
      * @param string $value
+     *
      * @return $this
      */
     public function setFormValue($name, $value = '')

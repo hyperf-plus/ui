@@ -13,6 +13,9 @@ export default {
     };
   },
   mounted() {
+
+    console.log(this.attrs.config)
+
     this.antv = new Pie(this.attrs.canvasId, {
       data: this.attrs.data,
       ...this.attrs.config

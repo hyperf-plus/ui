@@ -27,7 +27,7 @@
     "hyperf/db-connection": "^2.0",
     "hyperf/model-cache": "^2.0",
     "hyperf/filesystem": "^2.0",
-    "hyperf-plus/validate": "^2.0",
+    "hyperf-plus/validate": "^2.0|dev-master",
     "phper666/generate-file": "~1.0"
   },
   "autoload": {
@@ -52,8 +52,6 @@
     "post-install-cmd": [
       "@php ./bin/hyperf.php ui:init"
     ],
-    "post-update-cmd": [
-      "@php ./bin/hyperf.php ui:update"
-    ]
+    "post-update-cmd": "HPlus\\UI\\Commands\\initCommand::handle"
   }
 }
