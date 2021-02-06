@@ -49,7 +49,6 @@ class Form extends Component
     protected $id = 0;
 
     protected $formItemsAttr = [];
-    protected $formItemsHide = [];
     protected $formItemsValue = [];
     protected $formValue = [];
     protected $formRules = [];
@@ -237,7 +236,7 @@ class Form extends Component
         })->flatten()->all();
 
         // 根据所处模式抛弃组件
-        $this->formItemsHide = collect($items)->filter(function (FormItem $item) {
+        $this->formItemsAttr = collect($items)->filter(function (FormItem $item) {
             return $this->isMode($item->gethiddenMode());
         })->map(function (FormItem $item) {
             return $item->getProp();
@@ -925,7 +924,6 @@ class Form extends Component
             'mode' => $this->getMode(),
             'attrs' => $this->attrs,
             'ignoreEmptyProps' => $this->ignoreEmptyProps,
-            'hideProps' => $this->formItemsHide,
             'formItemLayout' => $this->formItemLayout,
             'tabPosition' => $this->tabPosition,
             'defaultValues' => (object)array_merge($this->formItemsValue, $this->formValue),
