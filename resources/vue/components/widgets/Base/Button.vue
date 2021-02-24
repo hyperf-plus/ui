@@ -116,6 +116,18 @@ export default {
     onClick() {
       if (this.attrs.dialog) {
         this.dialogTableVisible = true;
+        if (this.attrs.dialog.url !== '') {
+          let uri = this._.replace(this.attrs.dialog.url, "{{key}}", this.$attrs.value);
+          this.loading = true;
+          let that = this;
+          this.$http.get(uri)
+              .then((res) => {
+                that.attrs.dialog.slot = res
+              })
+              .finally(() => {
+                this.loading = false;
+              });
+        }
         return;
       }
 
@@ -128,7 +140,7 @@ export default {
       }
 
       if (this.attrs.subFormEmit) {
-        this.$bus.emit(this.attrs.subFormEmit,this.attrs.subForm);
+        this.$bus.emit(this.attrs.subFormEmit, this.attrs.subForm);
         return;
       }
 

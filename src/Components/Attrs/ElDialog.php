@@ -27,6 +27,17 @@ trait ElDialog
     protected $showClose = true;
     protected $center = false;
     protected $destroyOnClose = false;
+    protected $url = '';
+
+    /**
+     * 动态创建dialog的配置地址
+     *
+     * @param null $url
+     */
+    public function setUrl($url): void
+    {
+        $this->url = $url;
+    }
 
 
     protected $slot;

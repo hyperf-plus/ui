@@ -118,6 +118,13 @@ class Form extends Component
         $this->actions = new FormActions($this);
     }
 
+    public static function make($model = null)
+    {
+        $form = new static($model);
+        $form->action(admin_api_url(request()->path().'?'.\http_build_query(request()->query())));
+        return $form;
+    }
+
     /**
      * 快捷生成字段
      *
@@ -308,8 +315,7 @@ class Form extends Component
         if ($this->isMode(static::MODE_CREATE)) {
             return $this->resource(-1);
         }
-
-        return '';
+        return admin_api_url(request()->path());
     }
 
     /**
