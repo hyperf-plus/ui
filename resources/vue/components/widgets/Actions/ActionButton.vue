@@ -84,7 +84,24 @@ export default {
   methods: {
     onClick() {
       if (this.action.dialog) {
-        this.dialogTableVisible = true;
+        if (this.action.dialog.url !== '') {
+          let uri = this.action.dialog.url;
+          this._.forEach(this.row, (value, key) => {
+            uri = this._.replace(uri, "{" + key + "}", value);
+          });
+          this.loading = true;
+          let that = this;
+          this.$http.get(uri)
+              .then((res) => {
+                that.action.dialog.slot = res
+              })
+              .finally(() => {
+                this.loading = false;
+                this.dialogTableVisible = true;
+              });
+        }else{
+          this.dialogTableVisible = true;
+        }
         return;
       }
       //判断操作响应类型

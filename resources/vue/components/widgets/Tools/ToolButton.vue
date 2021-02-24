@@ -87,7 +87,20 @@ export default {
   methods: {
     onClick() {
       if (this.attrs.dialog) {
-        this.dialogTableVisible = true;
+        if (this.attrs.dialog.url !== '') {
+          this.loading = true;
+          let that = this;
+          this.$http.get(this.attrs.dialog.url)
+              .then((res) => {
+                that.attrs.dialog.slot = res
+              })
+              .finally(() => {
+                this.loading = false;
+                this.dialogTableVisible = true;
+              });
+        }else{
+          this.dialogTableVisible = true;
+        }
         return;
       }
       switch (this.attrs.handler) {

@@ -115,9 +115,17 @@ export default {
   methods: {
     onClick() {
       if (this.attrs.dialog) {
-        this.dialogTableVisible = true;
         if (this.attrs.dialog.url !== '') {
-          let uri = this._.replace(this.attrs.dialog.url, "{{key}}", this.$attrs.value);
+          let row;
+          if (this.$attrs.row === undefined) {
+            row = this.$attrs['form-data'];
+          } else {
+            row = this.$attrs.row;
+          }
+          let uri = this.attrs.dialog.url;
+          this._.forEach(row, (value, key) => {
+            uri = this._.replace(uri, "{" + key + "}", value);
+          });
           this.loading = true;
           let that = this;
           this.$http.get(uri)
@@ -126,7 +134,10 @@ export default {
               })
               .finally(() => {
                 this.loading = false;
+                this.dialogTableVisible = true;
               });
+        }else{
+          this.dialogTableVisible = true;
         }
         return;
       }
