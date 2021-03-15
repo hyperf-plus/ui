@@ -2,12 +2,13 @@
 ## HPlus，基于hyperf、element UI 插件式快速开发框架
 
 ## UI插件文档
-- https://www.yuque.com/hyperf-plus/ui/hplus-ui
+- https://doc.hyperf.plus
 
 ### HPlus UI 以插件形式接入，基于此插件可实现各种页面功能开发 ，也可以自定义组件、
 - UI插件  composer require hyperf-plus/ui:~1.0
 - 后台插件 composer require hyperf-plus/admin:~2.0
 - 更多开发中...
+
 
 ### 安装方法：
 ``` bash
@@ -29,7 +30,7 @@
 ```php
     php bin/hyperf.php gen:ui-demo  创建UI控制器演示文件。
 ```
-#####   (2)、启动hyperf 访问 http://127.0.0.1:9501/ui/index#/index/system
+#####   (2)、启动hyperf 访问 http://127.0.0.1:9501/ui/index
 
 #### 2、或者手动创建请求入口（一个项目只需创建一次即可）
 ```php
@@ -101,7 +102,7 @@
     }
 ```
 可以用 <a href="https://github.com/lphkxd/hyperf-ui-plugin/blob/master/demo.php">demo.php</a> 创建个控制器 /app/Controller/IndexController.php 体验一下
-### 访问 http://127.0.0.1:9501/index/index#/index/system
+### 访问 http://127.0.0.1:9501/index/inde
 
 ### demo控制器例子
 <a href="https://github.com/lphkxd/hyperf-ui-plugin/blob/master/demo.php">查看例子源码</a>
@@ -112,7 +113,7 @@
 ![Image 注解](./screenshot/4.png)
 ![Image 注解](./screenshot/5.png)
 
-官网： http://hyperf.plus（建设中）
+官网： http://www.hyperf.plus
 
 #### 欢迎加入hyperf.plus交流群，群聊号码：512465490
 点击链接加入群聊【hyperf-plus交流群】：<a href="https://qm.qq.com/cgi-bin/qm/qr?k=pCkT8bLR-scfzGhiLYAu2AuEu5pzOfdD&authKey=0L9w5QrmZJQpDdaH9R5WpPK5mUPyh1RiM3nqcRggpMpM8heAgBBXWdzuk9zkyRko&noverify=0">群聊号码：512465490</a>
