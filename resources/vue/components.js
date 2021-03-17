@@ -12,7 +12,7 @@ Vue.component("Form", require("@/components/form/Form").default);
 Vue.component("FormItem", require("@/components/form/FormItem").default);
 Vue.component("BaseForm", require("@/components/form/BaseForm").default);
 Vue.component("MenuItem", require("@/components/layout/MenuItem").default);
-Vue.component("SubForm", require("./components/form/SubForm").default);
+//Vue.component("SubForm", require("./components/form/SubForm").default);
 
 
 //Form
@@ -81,6 +81,6 @@ Vue.component("AntvColumn", () => import("@/components/antv/AntvColumn"));
 Vue.component("AntvPie", () => import("@/components/antv/AntvPie"));
 Vue.component("AntvFunnel", () => import("@/components/antv/AntvFunnel"));
 
-Vue.component("MenuManage", () => import("@/pages/menu/MenuManage"));
-Vue.component("Scaffold", require("@/components/devtool/Scaffold").default);
-Vue.component("SkuInput", require("@/components/widgets/Form/SkuInput").default);
+//Vue.component("MenuManage", () => import("@/pages/menu/MenuManage"));
+//Vue.component("Scaffold", require("@/components/devtool/Scaffold").default);
+//Vue.component("SkuInput", require("@/components/widgets/Form/SkuInput").default);
