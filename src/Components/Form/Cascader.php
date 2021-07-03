@@ -219,7 +219,7 @@ class Cascader extends Component
      * @param string $lazyUrl
      * @return $this
      */
-    public function lazy($layz = true, $lazyUrl)
+    public function lazy($layz = true, $lazyUrl = '')
     {
         $this->props->lazy = $layz;
         $this->props->lazyUrl = $lazyUrl;
