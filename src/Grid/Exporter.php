@@ -76,7 +76,7 @@ class Exporter
      *
      * @param string $driver
      *
-     * @return Grid\Exporters\AbstractExporter
+     * @return CsvExporter
      */
     public function resolve($driver)
     {
