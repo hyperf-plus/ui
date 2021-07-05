@@ -76,12 +76,13 @@ class Exporter
      *
      * @param string $driver
      *
-     * @return CsvExporter
+     * @return Grid\Exporters\AbstractExporter
      */
     public function resolve($driver)
     {
         if ($driver instanceof Grid\Exporters\AbstractExporter) {
-            return $driver->setGrid($this->grid);
+            $driver->setGrid($this->grid);
+            return $driver;
         }
 
         return $this->getExporter($driver);

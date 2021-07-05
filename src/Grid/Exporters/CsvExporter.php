@@ -144,13 +144,19 @@ class CsvExporter extends AbstractExporter
         }
         $titles = [];
         $items = collect();
+
         $columns = $this->grid->getColumns();
-        $csv = implode(",", $this->getVisiableTitles()) . PHP_EOL;
+        //增加一个bom头避免再微软office下打开乱码
+        $csv = "\xEF\xBB\xBF";
+        $csv .= implode(",", $this->getVisiableTitles()) . PHP_EOL;
         $this->chunk(function ($data, $page) use ($items, $columns, &$csv) {
             $original = $data->toArray();
             // Write rows
             foreach ($original as $index => $record) {
-                $csv .= implode(",", $this->getVisiableFields($record, $original[$index])) . PHP_EOL;
+                $cols = $this->getVisiableFields($record, $original[$index]);
+                foreach ($cols as $k => $col)
+                    $cols[$k] = '"'.$col.'"';//避免字段中遇到,以及换行符，直接以文本格式处理
+                $csv .= implode(",",$cols). PHP_EOL;
             }
         }, 100);
         if (!$this->filename) {
