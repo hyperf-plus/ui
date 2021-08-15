@@ -39,7 +39,7 @@ class Card extends Component
 
     /**
      * 设置 body 的样式
-     * @param string $bodyStyle
+     * @param string|array $bodyStyle
      * @return $this
      */
     public function bodyStyle($bodyStyle)
