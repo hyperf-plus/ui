@@ -28,7 +28,7 @@ class Card extends Component
 
     /**
      * 设置 header
-     * @param string $header
+     * @param string|\Closure $header
      * @return $this
      */
     public function header($header)
