@@ -15,8 +15,6 @@ trait CanExportGrid
      */
     protected $exporter;
 
-    private $csvExportCallback;
-
     protected $enableExport = false;
 
     /**
@@ -43,7 +41,7 @@ trait CanExportGrid
      */
     protected function getExporter($scope)
     {
-        return (new Exporter($this))->resolve($this->exporter)->withScope($scope)->setCallback($this->csvExportCallback);
+        return (new Exporter($this))->resolve($this->exporter)->withScope($scope);
     }
 
     /**
@@ -88,7 +86,9 @@ trait CanExportGrid
         if (!$scope = request()->query(Exporter::$queryName)) {
             return;
         }
-        $this->csvExportCallback = $callback;
+
+        $this->getExporter($scope)->setCallback($callback);
+
         return $this;
     }
 }
