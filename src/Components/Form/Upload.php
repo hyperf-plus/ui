@@ -15,6 +15,7 @@ use Hyperf\Utils\Arr;
 use HPlus\UI\Components\Component;
 use HPlus\UI\Form;
 use HPlus\UI\Form\FormItem;
+use Hyperf\Filesystem\Version;
 
 class Upload extends Component
 {
@@ -69,8 +70,10 @@ class Upload extends Component
             }
             if (!empty($file)){
                 $path = parse_url($file)['path'] ?? '';
-                if ($storage->has($path)) {
-                    $storage->delete($path);
+                if (Version::isV2()) {
+                    $storage->fileExists() && $storage->delete($path);
+                } else {
+                    $storage->has($path) && $storage->delete($path);
                 }
             }
         });
