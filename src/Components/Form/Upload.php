@@ -70,11 +70,8 @@ class Upload extends Component
             }
             if (!empty($file)){
                 $path = parse_url($file)['path'] ?? '';
-                if (Version::isV2()) {
-                    $storage->fileExists($path) && $storage->delete($path);
-                } else {
-                    $storage->has($path) && $storage->delete($path);
-                }
+                $action = Version::isV2() ? 'fileExists' : 'has';
+                $storage->{$action}($path) && $storage->delete($path);
             }
         });
     }
