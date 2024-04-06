@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Card 卡片渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/card
+ * Card 卡片渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/card.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Card extends BaseRenderer
@@ -17,6 +26,7 @@ class Card extends BaseRenderer
 
     /**
      * 底部按钮集合。
+     * @param mixed $value
      */
     public function actions($value = '')
     {
@@ -25,6 +35,7 @@ class Card extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -32,7 +43,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -40,7 +52,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -48,7 +61,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -56,7 +70,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -64,7 +79,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 头部配置
+     * 头部配置.
+     * @param mixed $value
      */
     public function header($value = '')
     {
@@ -72,7 +88,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -80,7 +97,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -88,7 +106,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -97,6 +116,7 @@ class Card extends BaseRenderer
 
     /**
      * 多媒体区域
+     * @param mixed $value
      */
     public function media($value = '')
     {
@@ -104,7 +124,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -112,7 +133,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 次要说明
+     * 次要说明.
+     * @param mixed $value
      */
     public function secondary($value = '')
     {
@@ -120,7 +142,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -128,7 +151,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -136,7 +160,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -144,7 +169,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -152,7 +178,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -160,7 +187,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -168,7 +196,7 @@ class Card extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -176,7 +204,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -184,7 +213,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 工具栏按钮
+     * 工具栏按钮.
+     * @param mixed $value
      */
     public function toolbar($value = '')
     {
@@ -192,7 +222,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 指定为 card 类型
+     * 指定为 card 类型.
+     * @param mixed $value
      */
     public function type($value = 'card')
     {
@@ -200,7 +231,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 卡片内容区的表单项label是否使用Card内部的样式，默认为true
+     * 卡片内容区的表单项label是否使用Card内部的样式，默认为true.
+     * @param mixed $value
      */
     public function useCardLabel($value = true)
     {
@@ -208,7 +240,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -216,7 +249,8 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -224,12 +258,11 @@ class Card extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

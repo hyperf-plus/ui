@@ -1,13 +1,22 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 use HPlus\UI\Traits\HasUploadTrait;
 
 /**
- * Image 图片上传控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/image
+ * Image 图片上传控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/image.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class ImageControl extends BaseRenderer
@@ -23,6 +32,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 配置接收的图片类型建议直接填写文件后缀 如：.txt,.csv多个类型用逗号隔开。
+     * @param mixed $value
      */
     public function accept($value = '')
     {
@@ -31,6 +41,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 默认都是通过用户选择图片后上传返回图片地址，如果开启此选项，则可以允许用户图片地址。
+     * @param mixed $value
      */
     public function allowInput($value = true)
     {
@@ -39,6 +50,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 上传后把其他字段同步到表单内部。
+     * @param mixed $value
      */
     public function autoFill($value = '')
     {
@@ -46,7 +58,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否自动开始上传
+     * 是否自动开始上传.
+     * @param mixed $value
      */
     public function autoUpload($value = true)
     {
@@ -54,7 +67,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 选择图片按钮的 CSS 类名
+     * 选择图片按钮的 CSS 类名.
+     * @param mixed $value
      */
     public function btnClassName($value = '')
     {
@@ -62,7 +76,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 上传按钮的 CSS 类名
+     * 上传按钮的 CSS 类名.
+     * @param mixed $value
      */
     public function btnUploadClassName($value = '')
     {
@@ -70,7 +85,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 可配置移动端的拍照功能，比如配置 `camera` 移动端只能拍照，等
+     * 可配置移动端的拍照功能，比如配置 `camera` 移动端只能拍照，等.
+     * @param mixed $value
      */
     public function capture($value = '')
     {
@@ -78,7 +94,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -86,7 +103,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉.
+     * @param mixed $value
      */
     public function clearValueOnHidden($value = true)
     {
@@ -94,7 +112,7 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function compress($value = true)
     {
@@ -102,7 +120,7 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function compressOptions($value = '')
     {
@@ -110,7 +128,7 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function crop($value = '')
     {
@@ -118,7 +136,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 裁剪后的图片类型
+     * 裁剪后的图片类型.
+     * @param mixed $value
      */
     public function cropFormat($value = '')
     {
@@ -126,7 +145,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 裁剪后的质量
+     * 裁剪后的质量.
+     * @param mixed $value
      */
     public function cropQuality($value = '')
     {
@@ -134,7 +154,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 分割符
+     * 分割符.
+     * @param mixed $value
      */
     public function delimiter($value = '')
     {
@@ -142,7 +163,7 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function desc($value = '')
     {
@@ -151,6 +172,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 描述内容，支持 Html 片段。
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -158,7 +180,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 配置描述上的 className
+     * 配置描述上的 className.
+     * @param mixed $value
      */
     public function descriptionClassName($value = '')
     {
@@ -166,7 +189,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -174,7 +198,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -182,7 +207,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否可拖拽排序
+     * 是否可拖拽排序.
+     * @param mixed $value
      */
     public function draggable($value = true)
     {
@@ -191,6 +217,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 可拖拽排序的提示信息。
+     * @param mixed $value
      */
     public function draggableTip($value = '')
     {
@@ -198,7 +225,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 图片上传完毕是否进入裁剪模式
+     * 图片上传完毕是否进入裁剪模式.
+     * @param mixed $value
      */
     public function dropCrop($value = true)
     {
@@ -206,7 +234,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -214,7 +243,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来.
+     * @param mixed $value
      */
     public function extraName($value = '')
     {
@@ -223,6 +253,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+     * @param mixed $value
      */
     public function extractValue($value = true)
     {
@@ -230,7 +261,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否开启固定尺寸
+     * 是否开启固定尺寸.
+     * @param mixed $value
      */
     public function fixedSize($value = true)
     {
@@ -238,7 +270,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 固定尺寸的 CSS类名
+     * 固定尺寸的 CSS类名.
+     * @param mixed $value
      */
     public function fixedSizeClassName($value = '')
     {
@@ -247,6 +280,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 默认占位图图片地址
+     * @param mixed $value
      */
     public function frameImage($value = '')
     {
@@ -254,7 +288,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -262,7 +297,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -270,7 +306,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏上传按钮
+     * 是否隐藏上传按钮.
+     * @param mixed $value
      */
     public function hideUploadButton($value = true)
     {
@@ -278,7 +315,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 输入提示，聚焦的时候显示
+     * 输入提示，聚焦的时候显示.
+     * @param mixed $value
      */
     public function hint($value = '')
     {
@@ -287,6 +325,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 当配置为水平布局的时候，用来配置具体的左右分配。
+     * @param mixed $value
      */
     public function horizontal($value = '')
     {
@@ -294,7 +333,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -302,7 +342,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 默认展示图片的类名
+     * 默认展示图片的类名.
+     * @param mixed $value
      */
     public function imageClassName($value = '')
     {
@@ -311,6 +352,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 初始化时是否把其他字段同步到表单内部。
+     * @param mixed $value
      */
     public function initAutoFill($value = true)
     {
@@ -318,7 +360,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 初始化时是否打开裁剪模式
+     * 初始化时是否打开裁剪模式.
+     * @param mixed $value
      */
     public function initCrop($value = true)
     {
@@ -327,6 +370,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 表单 control 是否为 inline 模式。
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -334,7 +378,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 配置 input className
+     * 配置 input className.
+     * @param mixed $value
      */
     public function inputClassName($value = '')
     {
@@ -343,6 +388,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
+     * @param mixed $value
      */
     public function joinValues($value = true)
     {
@@ -350,7 +396,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -358,7 +405,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -366,7 +414,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 配置 label className
+     * 配置 label className.
+     * @param mixed $value
      */
     public function labelClassName($value = '')
     {
@@ -374,7 +423,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -382,7 +432,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * label自定义宽度，默认单位为px
+     * label自定义宽度，默认单位为px.
+     * @param mixed $value
      */
     public function labelWidth($value = '')
     {
@@ -391,6 +442,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 限制图片大小，超出不让上传。
+     * @param mixed $value
      */
     public function limit($value = '')
     {
@@ -398,7 +450,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 最多的个数
+     * 最多的个数.
+     * @param mixed $value
      */
     public function maxLength($value = '')
     {
@@ -407,6 +460,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 默认没有限制，当设置后，文件大小大于此值将不允许上传。
+     * @param mixed $value
      */
     public function maxSize($value = '')
     {
@@ -414,7 +468,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 配置当前表单项展示模式 可选值: normal | inline | horizontal
+     * 配置当前表单项展示模式 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -422,7 +477,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否为多选
+     * 是否为多选.
+     * @param mixed $value
      */
     public function multiple($value = true)
     {
@@ -430,7 +486,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -438,7 +495,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -446,7 +504,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -455,6 +514,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 是否允许二次裁剪。
+     * @param mixed $value
      */
     public function reCropable($value = true)
     {
@@ -462,7 +522,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否只读
+     * 是否只读.
+     * @param mixed $value
      */
     public function readOnly($value = true)
     {
@@ -470,7 +531,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 只读条件
+     * 只读条件.
+     * @param mixed $value
      */
     public function readOnlyOn($value = '')
     {
@@ -479,6 +541,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 默认 `/api/upload` 如果想自己存储，请设置此选项。
+     * @param mixed $value
      */
     public function receiver($value = '')
     {
@@ -486,7 +549,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容.
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -494,7 +558,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否为必填
+     * 是否为必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -503,6 +568,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 清除时设置的值
+     * @param mixed $value
      */
     public function resetValue($value = '')
     {
@@ -511,6 +577,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 默认为 false, 开启后，允许用户输入压缩选项。
+     * @param mixed $value
      */
     public function showCompressOptions($value = true)
     {
@@ -518,7 +585,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 表单项大小 可选值: xs | sm | md | lg | full
+     * 表单项大小 可选值: xs | sm | md | lg | full.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -526,7 +594,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 默认展示图片的链接
+     * 默认展示图片的链接.
+     * @param mixed $value
      */
     public function src($value = '')
     {
@@ -534,7 +603,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -542,7 +612,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -550,7 +621,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -558,7 +630,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -566,7 +639,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -574,7 +648,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -582,7 +657,7 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -590,7 +665,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -599,6 +675,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 当修改完的时候是否提交表单。
+     * @param mixed $value
      */
     public function submitOnChange($value = true)
     {
@@ -606,7 +683,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 缩路图展示模式 可选值: w-full | h-full | contain | cover
+     * 缩路图展示模式 可选值: w-full | h-full | contain | cover.
+     * @param mixed $value
      */
     public function thumbMode($value = '')
     {
@@ -614,7 +692,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 缩路图展示比率。 可选值: 1:1 | 4:3 | 16:9
+     * 缩路图展示比率。 可选值: 1:1 | 4:3 | 16:9.
+     * @param mixed $value
      */
     public function thumbRatio($value = '')
     {
@@ -622,7 +701,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 指定为图片上传控件
+     * 指定为图片上传控件.
+     * @param mixed $value
      */
     public function type($value = 'input-image')
     {
@@ -630,7 +710,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 上传按钮文案
+     * 上传按钮文案.
+     * @param mixed $value
      */
     public function uploadBtnText($value = '')
     {
@@ -638,7 +719,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -646,7 +728,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 远端校验表单项接口
+     * 远端校验表单项接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -655,6 +738,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+     * @param mixed $value
      */
     public function validateOnChange($value = true)
     {
@@ -662,7 +746,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 验证失败的提示信息
+     * 验证失败的提示信息.
+     * @param mixed $value
      */
     public function validationErrors($value = '')
     {
@@ -670,7 +755,7 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -679,6 +764,7 @@ class ImageControl extends BaseRenderer
 
     /**
      * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -686,7 +772,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -694,7 +781,8 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -702,12 +790,11 @@ class ImageControl extends BaseRenderer
     }
 
     /**
-     * 在Table中调整宽度
+     * 在Table中调整宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

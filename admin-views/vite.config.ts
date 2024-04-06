@@ -6,6 +6,7 @@ import {createViteProxy} from './src/utils/proxy'
 // https://vitejs.dev/config/
 export default defineConfig(configEnv => {
     const viteEnv = loadEnv(configEnv.mode, process.cwd())
+
     return {
         base: viteEnv.VITE_BASE_URL,
         resolve: {
@@ -28,11 +29,10 @@ export default defineConfig(configEnv => {
         server: {
             host: '0.0.0.0',
             port: 3200,
-            open: false,
+            open: true,
             proxy: createViteProxy(viteEnv),
         },
         build: {
-            outDir: viteEnv.VITE_OUT_DIR,
             sourcemap: false,
             reportCompressedSize: false,
             rollupOptions: {

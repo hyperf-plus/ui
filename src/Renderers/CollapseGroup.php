@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * CollapseGroup 折叠渲染器，格式说明。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/collapse
+ * CollapseGroup 折叠渲染器，格式说明。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/collapse.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class CollapseGroup extends BaseRenderer
@@ -16,7 +25,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 手风琴模式
+     * 手风琴模式.
+     * @param mixed $value
      */
     public function accordion($value = true)
     {
@@ -25,6 +35,7 @@ class CollapseGroup extends BaseRenderer
 
     /**
      * 激活面板
+     * @param mixed $value
      */
     public function activeKey($value = '')
     {
@@ -33,6 +44,7 @@ class CollapseGroup extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -40,7 +52,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -48,7 +61,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -56,7 +70,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -64,7 +79,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -72,7 +88,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 当Collapse作为Form组件的子元素时，开启该属性后组件样式设置为FieldSet组件的样式，默认开启
+     * 当Collapse作为Form组件的子元素时，开启该属性后组件样式设置为FieldSet组件的样式，默认开启.
+     * @param mixed $value
      */
     public function enableFieldSetStyle($value = true)
     {
@@ -80,7 +97,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 自定义切换图标
+     * 自定义切换图标.
+     * @param mixed $value
      */
     public function expandIcon($value = '')
     {
@@ -88,7 +106,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 设置图标位置 可选值: left | right
+     * 设置图标位置 可选值: left | right.
+     * @param mixed $value
      */
     public function expandIconPosition($value = '')
     {
@@ -96,7 +115,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -104,7 +124,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -112,7 +133,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -120,7 +142,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -128,7 +151,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -136,7 +160,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -144,7 +169,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -152,7 +178,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -160,7 +187,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -168,7 +196,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -176,7 +205,7 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -184,7 +213,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -192,7 +222,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 指定为折叠器类型
+     * 指定为折叠器类型.
+     * @param mixed $value
      */
     public function type($value = 'collapse-group')
     {
@@ -200,7 +231,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -208,7 +240,8 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -216,12 +249,11 @@ class CollapseGroup extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

@@ -39,7 +39,6 @@ const Admin = () => {
                         ...antdToken,
                         algorithm: store.getState().settings.system_theme_setting.darkTheme ? theme.darkAlgorithm : theme.defaultAlgorithm
                     }}>
-                    {/*// @ts-ignore*/}
                     <AliveScope>
                         <GlobalContext.Provider value={contextValue}>
                             <Switch>

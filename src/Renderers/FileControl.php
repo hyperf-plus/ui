@@ -1,13 +1,22 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 use HPlus\UI\Traits\HasUploadTrait;
 
 /**
- * File 文件上传控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/file
+ * File 文件上传控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/file.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class FileControl extends BaseRenderer
@@ -23,6 +32,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认只支持纯文本，要支持其他类型，请配置此属性。建议直接填写文件后缀 如：.txt,.csv多个类型用逗号隔开。
+     * @param mixed $value
      */
     public function accept($value = '')
     {
@@ -31,6 +41,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 如果上传的文件比较小可以设置此选项来简单的把文件 base64 的值给 form 一起提交，目前不支持多选。
+     * @param mixed $value
      */
     public function asBase64($value = true)
     {
@@ -39,6 +50,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 如果不希望 File 组件上传，可以配置 `asBlob` 或者 `asBase64`，采用这种方式后，组件不再自己上传了，而是直接把文件数据作为表单项的值，文件内容会在 Form 表单提交的接口里面一起带上。
+     * @param mixed $value
      */
     public function asBlob($value = true)
     {
@@ -47,6 +59,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 上传后把其他字段同步到表单内部。
+     * @param mixed $value
      */
     public function autoFill($value = '')
     {
@@ -54,7 +67,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否自动开始上传
+     * 是否自动开始上传.
+     * @param mixed $value
      */
     public function autoUpload($value = true)
     {
@@ -62,7 +76,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 按钮 CSS 类名
+     * 按钮 CSS 类名.
+     * @param mixed $value
      */
     public function btnClassName($value = '')
     {
@@ -70,7 +85,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 上传文件按钮说明
+     * 上传文件按钮说明.
+     * @param mixed $value
      */
     public function btnLabel($value = '')
     {
@@ -78,7 +94,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 上传按钮 CSS 类名
+     * 上传按钮 CSS 类名.
+     * @param mixed $value
      */
     public function btnUploadClassName($value = '')
     {
@@ -87,6 +104,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 控制 input 标签的 capture 属性，用于移动端拍照或录像。
+     * @param mixed $value
      */
     public function capture($value = '')
     {
@@ -95,6 +113,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认 `/api/upload/chunk` 想自己存储时才需要关注。
+     * @param mixed $value
      */
     public function chunkApi($value = '')
     {
@@ -103,6 +122,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 分块大小，默认为 5M.
+     * @param mixed $value
      */
     public function chunkSize($value = '')
     {
@@ -110,7 +130,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -118,7 +139,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉.
+     * @param mixed $value
      */
     public function clearValueOnHidden($value = true)
     {
@@ -126,7 +148,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 分块上传的并发数
+     * 分块上传的并发数.
+     * @param mixed $value
      */
     public function concurrency($value = '')
     {
@@ -134,7 +157,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 分割符
+     * 分割符.
+     * @param mixed $value
      */
     public function delimiter($value = '')
     {
@@ -142,7 +166,7 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function desc($value = '')
     {
@@ -151,6 +175,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 描述内容，支持 Html 片段。
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -158,7 +183,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 配置描述上的 className
+     * 配置描述上的 className.
+     * @param mixed $value
      */
     public function descriptionClassName($value = '')
     {
@@ -166,7 +192,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -174,7 +201,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -182,7 +210,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 说明文档链接配置
+     * 说明文档链接配置.
+     * @param mixed $value
      */
     public function documentLink($value = '')
     {
@@ -190,7 +219,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 说明文档内容配置
+     * 说明文档内容配置.
+     * @param mixed $value
      */
     public function documentation($value = '')
     {
@@ -199,6 +229,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认显示文件路径的时候会支持直接下载， 可以支持加前缀如：`http://xx.dom/filename=` ， 如果不希望这样，可以把当前配置项设置为 `false`。1.1.6 版本开始将支持变量 ${xxx} 来自己拼凑个下载地址，并且支持配置成 post.
+     * @param mixed $value
      */
     public function downloadUrl($value = '')
     {
@@ -206,7 +237,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否为拖拽上传
+     * 是否为拖拽上传.
+     * @param mixed $value
      */
     public function drag($value = true)
     {
@@ -214,7 +246,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -222,7 +255,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来.
+     * @param mixed $value
      */
     public function extraName($value = '')
     {
@@ -231,6 +265,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+     * @param mixed $value
      */
     public function extractValue($value = true)
     {
@@ -239,6 +274,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认 `file`, 如果你不想自己存储，则可以忽略此属性。
+     * @param mixed $value
      */
     public function fileField($value = '')
     {
@@ -247,6 +283,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认 `/api/upload/finishChunkApi` 想自己存储时才需要关注。
+     * @param mixed $value
      */
     public function finishChunkApi($value = '')
     {
@@ -254,7 +291,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -262,7 +300,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -270,7 +309,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏上传按钮
+     * 是否隐藏上传按钮.
+     * @param mixed $value
      */
     public function hideUploadButton($value = true)
     {
@@ -278,7 +318,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 输入提示，聚焦的时候显示
+     * 输入提示，聚焦的时候显示.
+     * @param mixed $value
      */
     public function hint($value = '')
     {
@@ -287,6 +328,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 当配置为水平布局的时候，用来配置具体的左右分配。
+     * @param mixed $value
      */
     public function horizontal($value = '')
     {
@@ -294,7 +336,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -303,6 +346,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 初始化时是否把其他字段同步到表单内部。
+     * @param mixed $value
      */
     public function initAutoFill($value = true)
     {
@@ -311,6 +355,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 表单 control 是否为 inline 模式。
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -318,7 +363,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 配置 input className
+     * 配置 input className.
+     * @param mixed $value
      */
     public function inputClassName($value = '')
     {
@@ -327,6 +373,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 1. 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交， 否则，整个选项对象都会作为该表单项的值提交。 2. 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来， 否则直接将以数组的形式提交值。
+     * @param mixed $value
      */
     public function joinValues($value = true)
     {
@@ -334,7 +381,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -342,7 +390,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -350,7 +399,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 配置 label className
+     * 配置 label className.
+     * @param mixed $value
      */
     public function labelClassName($value = '')
     {
@@ -358,7 +408,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -366,7 +417,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * label自定义宽度，默认单位为px
+     * label自定义宽度，默认单位为px.
+     * @param mixed $value
      */
     public function labelWidth($value = '')
     {
@@ -374,7 +426,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 最多的个数
+     * 最多的个数.
+     * @param mixed $value
      */
     public function maxLength($value = '')
     {
@@ -383,6 +436,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认没有限制，当设置后，文件大小大于此值将不允许上传。
+     * @param mixed $value
      */
     public function maxSize($value = '')
     {
@@ -390,7 +444,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 配置当前表单项展示模式 可选值: normal | inline | horizontal
+     * 配置当前表单项展示模式 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -398,7 +453,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否为多选
+     * 是否为多选.
+     * @param mixed $value
      */
     public function multiple($value = true)
     {
@@ -406,7 +462,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -414,7 +471,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 接口返回的数据中，哪个用来展示文件名
+     * 接口返回的数据中，哪个用来展示文件名.
+     * @param mixed $value
      */
     public function nameField($value = '')
     {
@@ -422,7 +480,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -430,7 +489,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -438,7 +498,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否只读
+     * 是否只读.
+     * @param mixed $value
      */
     public function readOnly($value = true)
     {
@@ -446,7 +507,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 只读条件
+     * 只读条件.
+     * @param mixed $value
      */
     public function readOnlyOn($value = '')
     {
@@ -455,6 +517,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认 `/api/upload/file` 如果想自己存储，请设置此选项。
+     * @param mixed $value
      */
     public function receiver($value = '')
     {
@@ -462,7 +525,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容.
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -470,7 +534,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否为必填
+     * 是否为必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -479,6 +544,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 清除时设置的值
+     * @param mixed $value
      */
     public function resetValue($value = '')
     {
@@ -486,7 +552,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 表单项大小 可选值: xs | sm | md | lg | full
+     * 表单项大小 可选值: xs | sm | md | lg | full.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -495,6 +562,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认 `/api/upload/startChunk` 想自己存储时才需要关注。
+     * @param mixed $value
      */
     public function startChunkApi($value = '')
     {
@@ -503,6 +571,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 按钮状态文案配置。
+     * @param mixed $value
      */
     public function stateTextMap($value = '')
     {
@@ -510,7 +579,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -518,7 +588,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -526,7 +597,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -534,7 +606,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -542,7 +615,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -550,7 +624,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -558,7 +633,7 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -566,7 +641,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -575,6 +651,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 当修改完的时候是否提交表单。
+     * @param mixed $value
      */
     public function submitOnChange($value = true)
     {
@@ -583,6 +660,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 模板下载地址
+     * @param mixed $value
      */
     public function templateUrl($value = '')
     {
@@ -590,7 +668,7 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function testid($value = '')
     {
@@ -598,7 +676,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 指定为文件上传
+     * 指定为文件上传.
+     * @param mixed $value
      */
     public function type($value = 'input-file')
     {
@@ -607,6 +686,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 接口返回的数据中哪个用来作为下载地址。
+     * @param mixed $value
      */
     public function urlField($value = '')
     {
@@ -615,6 +695,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认为 'auto' amis 所在服务器，限制了文件上传大小不得超出10M，所以 amis 在用户选择大文件的时候，自动会改成分块上传模式。
+     * @param mixed $value
      */
     public function useChunk($value = '')
     {
@@ -622,7 +703,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -630,7 +712,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 远端校验表单项接口
+     * 远端校验表单项接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -639,6 +722,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+     * @param mixed $value
      */
     public function validateOnChange($value = true)
     {
@@ -646,7 +730,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 验证失败的提示信息
+     * 验证失败的提示信息.
+     * @param mixed $value
      */
     public function validationErrors($value = '')
     {
@@ -654,7 +739,7 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -663,6 +748,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -671,6 +757,7 @@ class FileControl extends BaseRenderer
 
     /**
      * 接口返回的数据中，哪个用来当做值
+     * @param mixed $value
      */
     public function valueField($value = '')
     {
@@ -678,7 +765,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -686,7 +774,8 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -694,12 +783,11 @@ class FileControl extends BaseRenderer
     }
 
     /**
-     * 在Table中调整宽度
+     * 在Table中调整宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

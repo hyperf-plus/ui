@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * 图片集展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/images
+ * 图片集展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/images.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Images extends BaseRenderer
@@ -16,7 +25,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 外层 CSS 类名
+     * 外层 CSS 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -25,6 +35,7 @@ class Images extends BaseRenderer
 
     /**
      * 默认图片地址
+     * @param mixed $value
      */
     public function defaultImage($value = '')
     {
@@ -32,7 +43,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 配置值的连接符
+     * 配置值的连接符.
+     * @param mixed $value
      */
     public function delimiter($value = '')
     {
@@ -40,7 +52,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -48,7 +61,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -56,7 +70,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -65,6 +80,7 @@ class Images extends BaseRenderer
 
     /**
      * 是否启动放大功能。
+     * @param mixed $value
      */
     public function enlargeAble($value = true)
     {
@@ -72,7 +88,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 放大时是否显示图片集
+     * 放大时是否显示图片集.
+     * @param mixed $value
      */
     public function enlargetWithImages($value = true)
     {
@@ -80,7 +97,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -88,7 +106,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -96,7 +115,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -104,7 +124,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 放大详情图 CSS 类名
+     * 放大详情图 CSS 类名.
+     * @param mixed $value
      */
     public function imageGallaryClassName($value = '')
     {
@@ -112,7 +133,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 列表 CSS 类名
+     * 列表 CSS 类名.
+     * @param mixed $value
      */
     public function listClassName($value = '')
     {
@@ -120,7 +142,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 关联字段名，也可以直接配置 src
+     * 关联字段名，也可以直接配置 src.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -128,7 +151,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -136,7 +160,7 @@ class Images extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function options($value = '')
     {
@@ -144,7 +168,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 大图地址，不设置用 src 属性，如果不是请配置，如：${imageOriginUrl}
+     * 大图地址，不设置用 src 属性，如果不是请配置，如：${imageOriginUrl}.
+     * @param mixed $value
      */
     public function originalSrc($value = '')
     {
@@ -152,7 +177,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 列表为空时显示
+     * 列表为空时显示.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -161,6 +187,7 @@ class Images extends BaseRenderer
 
     /**
      * 是否显示尺寸。
+     * @param mixed $value
      */
     public function showDimensions($value = true)
     {
@@ -168,7 +195,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 是否展示图片工具栏
+     * 是否展示图片工具栏.
+     * @param mixed $value
      */
     public function showToolbar($value = true)
     {
@@ -176,7 +204,7 @@ class Images extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -184,7 +212,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 图片地址，默认读取数据中的 image 属性，如果不是请配置 ,如  ${imageUrl}
+     * 图片地址，默认读取数据中的 image 属性，如果不是请配置 ,如  ${imageUrl}.
+     * @param mixed $value
      */
     public function src($value = '')
     {
@@ -192,7 +221,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -200,7 +230,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -208,7 +239,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -216,7 +248,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -224,7 +257,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -232,7 +266,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -240,7 +275,7 @@ class Images extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -248,7 +283,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -256,7 +292,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 预览图模式 可选值: w-full | h-full | contain | cover
+     * 预览图模式 可选值: w-full | h-full | contain | cover.
+     * @param mixed $value
      */
     public function thumbMode($value = '')
     {
@@ -264,7 +301,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 预览图比率 可选值: 1:1 | 4:3 | 16:9
+     * 预览图比率 可选值: 1:1 | 4:3 | 16:9.
+     * @param mixed $value
      */
     public function thumbRatio($value = '')
     {
@@ -272,7 +310,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 工具栏配置
+     * 工具栏配置.
+     * @param mixed $value
      */
     public function toolbarActions($value = '')
     {
@@ -280,7 +319,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 指定为图片集渲染器 可选值: images | static-images
+     * 指定为图片集渲染器 可选值: images | static-images.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -288,7 +328,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -296,7 +337,7 @@ class Images extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -304,7 +345,8 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -312,12 +354,11 @@ class Images extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

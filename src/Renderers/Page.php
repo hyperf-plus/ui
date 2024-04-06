@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * amis Page 渲染器。详情请见：https://aisuda.bce.baidu.com/amis/zh-CN/components/page
+ * amis Page 渲染器。详情请见：https://aisuda.bce.baidu.com/amis/zh-CN/components/page.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Page extends BaseRenderer
@@ -17,6 +26,7 @@ class Page extends BaseRenderer
 
     /**
      * 边栏区域
+     * @param mixed $value
      */
     public function aside($value = '')
     {
@@ -24,7 +34,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 边栏区 css 类名
+     * 边栏区 css 类名.
+     * @param mixed $value
      */
     public function asideClassName($value = '')
     {
@@ -32,7 +43,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 边栏最小宽度
+     * 边栏最小宽度.
+     * @param mixed $value
      */
     public function asideMaxWidth($value = '')
     {
@@ -40,7 +52,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 边栏最小宽度
+     * 边栏最小宽度.
+     * @param mixed $value
      */
     public function asideMinWidth($value = '')
     {
@@ -48,7 +61,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 边栏是否允许拖动
+     * 边栏是否允许拖动.
+     * @param mixed $value
      */
     public function asideResizor($value = true)
     {
@@ -57,6 +71,7 @@ class Page extends BaseRenderer
 
     /**
      * 边栏内容是否粘住，即不跟随滚动。
+     * @param mixed $value
      */
     public function asideSticky($value = true)
     {
@@ -65,6 +80,7 @@ class Page extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -72,7 +88,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 内容区 css 类名
+     * 内容区 css 类名.
+     * @param mixed $value
      */
     public function bodyClassName($value = '')
     {
@@ -80,7 +97,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 配置容器 className
+     * 配置容器 className.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -88,7 +106,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 自定义页面级别样式表
+     * 自定义页面级别样式表.
+     * @param mixed $value
      */
     public function css($value = '')
     {
@@ -96,7 +115,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * css 变量
+     * css 变量.
+     * @param mixed $value
      */
     public function cssVars($value = '')
     {
@@ -104,7 +124,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 页面级别的初始数据
+     * 页面级别的初始数据.
+     * @param mixed $value
      */
     public function data($value = '')
     {
@@ -112,7 +133,7 @@ class Page extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function definitions($value = '')
     {
@@ -120,7 +141,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -128,7 +150,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -136,7 +159,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -144,7 +168,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 配置 header 容器 className
+     * 配置 header 容器 className.
+     * @param mixed $value
      */
     public function headerClassName($value = '')
     {
@@ -152,7 +177,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -160,7 +186,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -168,7 +195,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -177,6 +205,7 @@ class Page extends BaseRenderer
 
     /**
      * 页面初始化的时候，可以设置一个 API 让其取拉取，发送数据会携带当前 data 数据（包含地址栏参数），获取得数据会合并到 data 中，供组件内使用。
+     * @param mixed $value
      */
     public function initApi($value = '')
     {
@@ -185,6 +214,7 @@ class Page extends BaseRenderer
 
     /**
      * 是否默认就拉取？
+     * @param mixed $value
      */
     public function initFetch($value = true)
     {
@@ -192,7 +222,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否默认就拉取表达式
+     * 是否默认就拉取表达式.
+     * @param mixed $value
      */
     public function initFetchOn($value = '')
     {
@@ -201,6 +232,7 @@ class Page extends BaseRenderer
 
     /**
      * 配置轮询间隔，配置后 initApi 将轮询加载。
+     * @param mixed $value
      */
     public function interval($value = '')
     {
@@ -208,7 +240,7 @@ class Page extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function loadingConfig($value = '')
     {
@@ -216,7 +248,7 @@ class Page extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function messages($value = '')
     {
@@ -224,7 +256,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 移动端下的样式表
+     * 移动端下的样式表.
+     * @param mixed $value
      */
     public function mobileCSS($value = '')
     {
@@ -232,7 +265,7 @@ class Page extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -240,7 +273,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -248,7 +282,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 下拉刷新配置
+     * 下拉刷新配置.
+     * @param mixed $value
      */
     public function pullRefresh($value = '')
     {
@@ -257,6 +292,7 @@ class Page extends BaseRenderer
 
     /**
      * 默认不设置自动感觉内容来决定要不要展示这些区域 如果配置了，以配置为主。
+     * @param mixed $value
      */
     public function regions($value = '')
     {
@@ -265,6 +301,7 @@ class Page extends BaseRenderer
 
     /**
      * 页面描述, 标题旁边会出现个小图标，放上去会显示这个属性配置的内容。
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -273,6 +310,7 @@ class Page extends BaseRenderer
 
     /**
      * 是否显示错误信息，默认是显示的。
+     * @param mixed $value
      */
     public function showErrorMsg($value = true)
     {
@@ -280,7 +318,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否要静默加载，也就是说不显示进度
+     * 是否要静默加载，也就是说不显示进度.
+     * @param mixed $value
      */
     public function silentPolling($value = true)
     {
@@ -288,7 +327,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -296,7 +336,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -304,7 +345,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -312,7 +354,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -320,7 +363,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -328,7 +372,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -336,7 +381,7 @@ class Page extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -345,6 +390,7 @@ class Page extends BaseRenderer
 
     /**
      * 配置停止轮询的条件。
+     * @param mixed $value
      */
     public function stopAutoRefreshWhen($value = '')
     {
@@ -352,7 +398,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 自定义样式
+     * 自定义样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -360,7 +407,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 页面副标题
+     * 页面副标题.
+     * @param mixed $value
      */
     public function subTitle($value = '')
     {
@@ -368,7 +416,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 页面标题
+     * 页面标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -377,6 +426,7 @@ class Page extends BaseRenderer
 
     /**
      * 页面顶部区域，当存在 title 时在右上角显示。
+     * @param mixed $value
      */
     public function toolbar($value = '')
     {
@@ -384,7 +434,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 配置 toolbar 容器 className
+     * 配置 toolbar 容器 className.
+     * @param mixed $value
      */
     public function toolbarClassName($value = '')
     {
@@ -393,6 +444,7 @@ class Page extends BaseRenderer
 
     /**
      * 指定为 page 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'page')
     {
@@ -400,7 +452,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -408,7 +461,8 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -416,12 +470,11 @@ class Page extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

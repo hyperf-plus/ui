@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Tab
+ * Tab.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Tab extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 徽标
+     * 徽标.
+     * @param mixed $value
      */
     public function badge($value = '')
     {
@@ -25,7 +33,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 内容
+     * 内容.
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -33,7 +42,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -41,7 +51,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 是否可关闭，优先级高于 tabs 的 closable
+     * 是否可关闭，优先级高于 tabs 的 closable.
+     * @param mixed $value
      */
     public function closable($value = true)
     {
@@ -49,7 +60,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -57,7 +69,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -65,7 +78,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -73,7 +87,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 设置以后将跟url的hash对应
+     * 设置以后将跟url的hash对应.
+     * @param mixed $value
      */
     public function hash($value = '')
     {
@@ -81,7 +96,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -89,7 +105,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -98,6 +115,7 @@ class Tab extends BaseRenderer
 
     /**
      * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+     * @param mixed $value
      */
     public function horizontal($value = '')
     {
@@ -105,7 +123,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 按钮图标
+     * 按钮图标.
+     * @param mixed $value
      */
     public function icon($value = '')
     {
@@ -113,7 +132,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     *  可选值: left | right
+     *  可选值: left | right.
+     * @param mixed $value
      */
     public function iconPosition($value = '')
     {
@@ -121,7 +141,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -129,7 +150,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 配置子表单项默认的展示方式。 可选值: normal | inline | horizontal
+     * 配置子表单项默认的展示方式。 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -137,7 +159,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 点开时才加载卡片内容
+     * 点开时才加载卡片内容.
+     * @param mixed $value
      */
     public function mountOnEnter($value = true)
     {
@@ -145,7 +168,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -153,7 +177,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 设置以后内容每次都会重新渲染
+     * 设置以后内容每次都会重新渲染.
+     * @param mixed $value
      */
     public function reload($value = true)
     {
@@ -161,7 +186,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -169,7 +195,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -177,7 +204,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -185,7 +213,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -193,7 +222,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -201,7 +231,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -209,7 +240,7 @@ class Tab extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -217,7 +248,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -225,7 +257,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 内容
+     * 内容.
+     * @param mixed $value
      */
     public function tab($value = '')
     {
@@ -233,7 +266,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * Tab 标题
+     * Tab 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -242,6 +276,7 @@ class Tab extends BaseRenderer
 
     /**
      * 卡片隐藏就销毁卡片节点。
+     * @param mixed $value
      */
     public function unmountOnExit($value = true)
     {
@@ -249,7 +284,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -257,7 +293,8 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -265,12 +302,11 @@ class Tab extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

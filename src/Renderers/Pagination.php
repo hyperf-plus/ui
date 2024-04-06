@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Pagination
+ * Pagination.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Pagination extends BaseRenderer
@@ -16,7 +25,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 当前页数
+     * 当前页数.
+     * @param mixed $value
      */
     public function activePage($value = '')
     {
@@ -24,7 +34,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -40,7 +52,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -48,7 +61,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -56,7 +70,7 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function hasNext($value = true)
     {
@@ -64,7 +78,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -72,7 +87,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -80,7 +96,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -88,7 +105,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 通过控制layout属性的顺序，调整分页结构 total,perPage,pager,go
+     * 通过控制layout属性的顺序，调整分页结构 total,perPage,pager,go.
+     * @param mixed $value
      */
     public function layout($value = '')
     {
@@ -97,6 +115,7 @@ class Pagination extends BaseRenderer
 
     /**
      * 最多显示多少个分页按钮。
+     * @param mixed $value
      */
     public function maxButtons($value = '')
     {
@@ -105,6 +124,7 @@ class Pagination extends BaseRenderer
 
     /**
      * 模式，默认normal，如果只想简单显示可以配置成 `simple`。
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -112,7 +132,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -120,7 +141,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 每页显示条数
+     * 每页显示条数.
+     * @param mixed $value
      */
     public function perPage($value = '')
     {
@@ -129,6 +151,7 @@ class Pagination extends BaseRenderer
 
     /**
      * 指定每页可以显示多少条
+     * @param mixed $value
      */
     public function perPageAvailable($value = true)
     {
@@ -136,7 +159,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 弹层挂载节点
+     * 弹层挂载节点.
+     * @param mixed $value
      */
     public function popOverContainerSelector($value = '')
     {
@@ -144,7 +168,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否显示快速跳转输入框
+     * 是否显示快速跳转输入框.
+     * @param mixed $value
      */
     public function showPageInput($value = true)
     {
@@ -152,7 +177,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否展示分页切换，也同时受layout控制
+     * 是否展示分页切换，也同时受layout控制.
+     * @param mixed $value
      */
     public function showPerPage($value = true)
     {
@@ -160,7 +186,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -168,7 +195,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -176,7 +204,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -184,7 +213,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -192,7 +222,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -200,7 +231,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -208,7 +240,7 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -216,7 +248,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -224,7 +257,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 总条数
+     * 总条数.
+     * @param mixed $value
      */
     public function total($value = '')
     {
@@ -232,7 +266,7 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function type($value = 'pagination')
     {
@@ -240,7 +274,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -248,7 +283,8 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -256,12 +292,11 @@ class Pagination extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

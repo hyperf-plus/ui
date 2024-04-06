@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * InputTimeRange 时间范围
+ * InputTimeRange 时间范围.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class InputTimeRange extends BaseRenderer
@@ -16,7 +25,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 数据录入配置，自动填充或者参照录入
+     * 数据录入配置，自动填充或者参照录入.
+     * @param mixed $value
      */
     public function autoFill($value = '')
     {
@@ -24,7 +34,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 表单最外层类名
+     * 表单最外层类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -33,6 +44,7 @@ class InputTimeRange extends BaseRenderer
 
     /**
      * 是否可清除。
+     * @param mixed $value
      */
     public function clearable($value = true)
     {
@@ -40,7 +52,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 表单项描述
+     * 表单项描述.
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -48,7 +61,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -56,7 +70,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 当前表单项是否禁用的条件
+     * 当前表单项是否禁用的条件.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -65,6 +80,7 @@ class InputTimeRange extends BaseRenderer
 
     /**
      * 是否内联模式。
+     * @param mixed $value
      */
     public function embed($value = true)
     {
@@ -72,7 +88,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 时间范围选择器值格式
+     * 时间范围选择器值格式.
+     * @param mixed $value
      */
     public function format($value = '')
     {
@@ -80,7 +97,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 是否内联
+     * 是否内联.
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -88,7 +106,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 表单控制器类名
+     * 表单控制器类名.
+     * @param mixed $value
      */
     public function inputClassName($value = '')
     {
@@ -96,7 +115,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 时间范围选择器显示格式
+     * 时间范围选择器显示格式.
+     * @param mixed $value
      */
     public function inputFormat($value = '')
     {
@@ -104,7 +124,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 表单项标签
+     * 表单项标签.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -112,7 +133,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
+     * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -120,7 +142,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * label 的类名
+     * label 的类名.
+     * @param mixed $value
      */
     public function labelClassName($value = '')
     {
@@ -128,7 +151,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 表单项标签描述
+     * 表单项标签描述.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -136,7 +160,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 字段名，指定该表单项提交时的 key
+     * 字段名，指定该表单项提交时的 key.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -144,7 +169,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 占位文本
+     * 占位文本.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -152,7 +178,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 是否必填
+     * 是否必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -161,6 +188,7 @@ class InputTimeRange extends BaseRenderer
 
     /**
      * 通过表达式来配置当前表单项是否为必填。
+     * @param mixed $value
      */
     public function requiredOn($value = '')
     {
@@ -169,6 +197,7 @@ class InputTimeRange extends BaseRenderer
 
     /**
      * 是否该表单项值发生变化时就提交当前表单。
+     * @param mixed $value
      */
     public function submitOnChange($value = true)
     {
@@ -176,7 +205,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 时间范围选择器值格式
+     * 时间范围选择器值格式.
+     * @param mixed $value
      */
     public function timeFormat($value = '')
     {
@@ -185,6 +215,7 @@ class InputTimeRange extends BaseRenderer
 
     /**
      * 指定为 input-time-range 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'input-time-range')
     {
@@ -192,7 +223,8 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 表单校验接口
+     * 表单校验接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -201,6 +233,7 @@ class InputTimeRange extends BaseRenderer
 
     /**
      * 表单项值格式验证，支持设置多个，多个规则用英文逗号隔开。
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -209,6 +242,7 @@ class InputTimeRange extends BaseRenderer
 
     /**
      * 表单默认值
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -217,6 +251,7 @@ class InputTimeRange extends BaseRenderer
 
     /**
      * 是否可见
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -224,12 +259,11 @@ class InputTimeRange extends BaseRenderer
     }
 
     /**
-     * 当前表单项是否禁用的条件
+     * 当前表单项是否禁用的条件.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

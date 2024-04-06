@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * CRUDCards
+ * CRUDCards.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class CRUDCards extends BaseRenderer
@@ -17,7 +26,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否固底
+     * 是否固底.
+     * @param mixed $value
      */
     public function affixFooter($value = true)
     {
@@ -25,7 +35,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否固顶
+     * 是否固顶.
+     * @param mixed $value
      */
     public function affixHeader($value = true)
     {
@@ -34,6 +45,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 默认只有当分页数大于 1 是才显示，如果总是想显示请配置。
+     * @param mixed $value
      */
     public function alwaysShowPagination($value = true)
     {
@@ -41,7 +53,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 初始化数据 API
+     * 初始化数据 API.
+     * @param mixed $value
      */
     public function api($value = '')
     {
@@ -49,7 +62,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 内容区域占满屏幕剩余空间
+     * 内容区域占满屏幕剩余空间.
+     * @param mixed $value
      */
     public function autoFillHeight($value = '')
     {
@@ -57,7 +71,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 开启查询区域，会根据列元素的searchable属性值，自动生成查询条件表单
+     * 开启查询区域，会根据列元素的searchable属性值，自动生成查询条件表单.
+     * @param mixed $value
      */
     public function autoGenerateFilter($value = '')
     {
@@ -66,6 +81,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 是否自动跳顶部，当切分页的时候。
+     * @param mixed $value
      */
     public function autoJumpToTopOnPagerChange($value = true)
     {
@@ -73,7 +89,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 批量操作
+     * 批量操作.
+     * @param mixed $value
      */
     public function bulkActions($value = '')
     {
@@ -81,7 +98,7 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function card($value = '')
     {
@@ -90,6 +107,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 点击卡片的时候是否勾选卡片。
+     * @param mixed $value
      */
     public function checkOnItemClick($value = true)
     {
@@ -97,7 +115,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -105,7 +124,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 可以默认给定初始参数如： {"perPage": 24}
+     * 可以默认给定初始参数如： {"perPage": 24}.
+     * @param mixed $value
      */
     public function defaultParams($value = '')
     {
@@ -114,6 +134,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 懒加载 API，当行数据中用 defer: true 标记了，则其孩子节点将会用这个 API 来拉取数据。
+     * @param mixed $value
      */
     public function deferApi($value = '')
     {
@@ -121,7 +142,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -129,7 +151,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -137,7 +160,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否可通过拖拽排序
+     * 是否可通过拖拽排序.
+     * @param mixed $value
      */
     public function draggable($value = true)
     {
@@ -145,7 +169,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否可通过拖拽排序，通过表达式来配置
+     * 是否可通过拖拽排序，通过表达式来配置.
+     * @param mixed $value
      */
     public function draggableOn($value = '')
     {
@@ -153,7 +178,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -162,6 +188,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 如果时内嵌模式，可以通过这个来配置默认的展开选项。
+     * @param mixed $value
      */
     public function expandConfig($value = '')
     {
@@ -169,7 +196,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 过滤器表单
+     * 过滤器表单.
+     * @param mixed $value
      */
     public function filter($value = '')
     {
@@ -177,7 +205,7 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function filterDefaultVisible($value = true)
     {
@@ -185,7 +213,7 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function filterTogglable($value = true)
     {
@@ -194,6 +222,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 底部区域
+     * @param mixed $value
      */
     public function footer($value = '')
     {
@@ -201,7 +230,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 底部 CSS 类名
+     * 底部 CSS 类名.
+     * @param mixed $value
      */
     public function footerClassName($value = '')
     {
@@ -209,7 +239,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 底部工具栏
+     * 底部工具栏.
+     * @param mixed $value
      */
     public function footerToolbar($value = '')
     {
@@ -218,6 +249,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 顶部区域
+     * @param mixed $value
      */
     public function header($value = '')
     {
@@ -225,7 +257,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 头部 CSS 类名
+     * 头部 CSS 类名.
+     * @param mixed $value
      */
     public function headerClassName($value = '')
     {
@@ -233,7 +266,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 顶部工具栏
+     * 顶部工具栏.
+     * @param mixed $value
      */
     public function headerToolbar($value = '')
     {
@@ -241,7 +275,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -249,7 +284,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -257,7 +293,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否隐藏勾选框
+     * 是否隐藏勾选框.
+     * @param mixed $value
      */
     public function hideCheckToggler($value = true)
     {
@@ -266,6 +303,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 是否隐藏快速编辑的按钮。
+     * @param mixed $value
      */
     public function hideQuickSaveBtn($value = true)
     {
@@ -273,7 +311,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -281,7 +320,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 初始是否拉取
+     * 初始是否拉取.
+     * @param mixed $value
      */
     public function initFetch($value = true)
     {
@@ -290,6 +330,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 初始是否拉取，用表达式来配置。
+     * @param mixed $value
      */
     public function initFetchOn($value = '')
     {
@@ -297,7 +338,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 配置内部 DOM 的 className
+     * 配置内部 DOM 的 className.
+     * @param mixed $value
      */
     public function innerClassName($value = '')
     {
@@ -305,7 +347,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 设置自动刷新时间
+     * 设置自动刷新时间.
+     * @param mixed $value
      */
     public function interval($value = '')
     {
@@ -313,7 +356,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 单条操作
+     * 单条操作.
+     * @param mixed $value
      */
     public function itemActions($value = '')
     {
@@ -321,7 +365,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 配置某项是否可以点选
+     * 配置某项是否可以点选.
+     * @param mixed $value
      */
     public function itemCheckableOn($value = '')
     {
@@ -329,7 +374,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 卡片 CSS 类名
+     * 卡片 CSS 类名.
+     * @param mixed $value
      */
     public function itemClassName($value = '')
     {
@@ -337,7 +383,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 配置某项是否可拖拽排序，前提是要开启拖拽功能
+     * 配置某项是否可拖拽排序，前提是要开启拖拽功能.
+     * @param mixed $value
      */
     public function itemDraggableOn($value = '')
     {
@@ -346,6 +393,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 分页的时候是否保留用户选择。
+     * @param mixed $value
      */
     public function keepItemSelectionOnPageChange($value = true)
     {
@@ -354,6 +402,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 当配置 keepItemSelectionOnPageChange 时有用，用来配置已勾选项的文案。
+     * @param mixed $value
      */
     public function labelTpl($value = '')
     {
@@ -362,6 +411,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 是否为前端单次加载模式，可以用来实现前端分页。
+     * @param mixed $value
      */
     public function loadDataOnce($value = true)
     {
@@ -369,7 +419,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 在开启loadDataOnce时，当修改过滤条件时是否重新请求api如果没有配置，当查询条件表单触发的会重新请求 api，当是列过滤或者是 search-box 触发的则不重新请求 api 如果配置为 true，则不管是什么触发都会重新请求 api 如果配置为 false 则不管是什么触发都不会重新请求 api
+     * 在开启loadDataOnce时，当修改过滤条件时是否重新请求api如果没有配置，当查询条件表单触发的会重新请求 api，当是列过滤或者是 search-box 触发的则不重新请求 api 如果配置为 true，则不管是什么触发都会重新请求 api 如果配置为 false 则不管是什么触发都不会重新请求 api.
+     * @param mixed $value
      */
     public function loadDataOnceFetchOnFilter($value = true)
     {
@@ -377,7 +428,7 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function loadingConfig($value = '')
     {
@@ -386,6 +437,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 是否为瀑布流布局？
+     * @param mixed $value
      */
     public function masonryLayout($value = true)
     {
@@ -393,7 +445,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 自定义搜索匹配函数，当开启loadDataOnce时，会基于该函数计算的匹配结果进行过滤，主要用于处理列字段类型较为复杂或者字段值格式和后端返回不一致的场景
+     * 自定义搜索匹配函数，当开启loadDataOnce时，会基于该函数计算的匹配结果进行过滤，主要用于处理列字段类型较为复杂或者字段值格式和后端返回不一致的场景.
+     * @param mixed $value
      */
     public function matchFunc($value = '')
     {
@@ -401,7 +454,7 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function messages($value = '')
     {
@@ -410,6 +463,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 指定内容区的展示模式。
+     * @param mixed $value
      */
     public function mode($value = 'cards')
     {
@@ -417,7 +471,7 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -425,7 +479,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -433,7 +488,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 默认排序字段
+     * 默认排序字段.
+     * @param mixed $value
      */
     public function orderBy($value = '')
     {
@@ -441,7 +497,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 默认排序方向 可选值: asc | desc
+     * 默认排序方向 可选值: asc | desc.
+     * @param mixed $value
      */
     public function orderDir($value = '')
     {
@@ -450,6 +507,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 设置用来确定位置的字段名，设置后新的顺序将被赋值到该字段中。
+     * @param mixed $value
      */
     public function orderField($value = '')
     {
@@ -458,6 +516,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 设置分页方向的字段名。单位简单分页时清楚时向前还是向后翻页。
+     * @param mixed $value
      */
     public function pageDirectionField($value = '')
     {
@@ -466,6 +525,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 设置分页页码字段名。
+     * @param mixed $value
      */
     public function pageField($value = '')
     {
@@ -474,6 +534,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 是否开启Query信息转换，开启后将会对url中的Query进行转换，默认开启，默认仅转化布尔值
+     * @param mixed $value
      */
     public function parsePrimitiveQuery($value = '')
     {
@@ -482,6 +543,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 每页个数，默认为 10，如果不是请设置。
+     * @param mixed $value
      */
     public function perPage($value = '')
     {
@@ -490,6 +552,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 每页显示多少个空间成员的配置如： [10, 20, 50, 100]。
+     * @param mixed $value
      */
     public function perPageAvailable($value = true)
     {
@@ -498,6 +561,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 设置分页一页显示的多少条数据的字段名。
+     * @param mixed $value
      */
     public function perPageField($value = '')
     {
@@ -505,7 +569,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 无数据提示
+     * 无数据提示.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -513,7 +578,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 快速编辑后用来批量保存的 API
+     * 快速编辑后用来批量保存的 API.
+     * @param mixed $value
      */
     public function quickSaveApi($value = '')
     {
@@ -521,7 +587,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 快速编辑配置成及时保存时使用的 API
+     * 快速编辑配置成及时保存时使用的 API.
+     * @param mixed $value
      */
     public function quickSaveItemApi($value = '')
     {
@@ -529,7 +596,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 保存排序的 api
+     * 保存排序的 api.
+     * @param mixed $value
      */
     public function saveOrderApi($value = '')
     {
@@ -537,7 +605,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否显示底部
+     * 是否显示底部.
+     * @param mixed $value
      */
     public function showFooter($value = true)
     {
@@ -545,7 +614,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否显示头部
+     * 是否显示头部.
+     * @param mixed $value
      */
     public function showHeader($value = true)
     {
@@ -553,7 +623,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 静默拉取
+     * 静默拉取.
+     * @param mixed $value
      */
     public function silentPolling($value = true)
     {
@@ -562,6 +633,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 也可以直接从环境变量中读取，但是不太推荐。
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -569,7 +641,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -577,7 +650,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -585,7 +659,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -593,7 +668,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -601,7 +677,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -609,7 +686,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -617,7 +695,7 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -625,7 +703,7 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function stopAutoRefreshWhen($value = '')
     {
@@ -633,7 +711,7 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function stopAutoRefreshWhenModalIsOpen($value = true)
     {
@@ -641,7 +719,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -649,7 +728,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否将过滤条件的参数同步到地址栏,默认为true
+     * 是否将过滤条件的参数同步到地址栏,默认为true.
+     * @param mixed $value
      */
     public function syncLocation($value = true)
     {
@@ -658,6 +738,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 是否将接口返回的内容自动同步到地址栏，前提是开启了同步地址栏。
+     * @param mixed $value
      */
     public function syncResponse2Query($value = true)
     {
@@ -665,7 +746,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 标题
+     * 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -674,6 +756,7 @@ class CRUDCards extends BaseRenderer
 
     /**
      * 指定为 CRUD 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'crud')
     {
@@ -681,7 +764,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -689,7 +773,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 可以用来作为值的字段
+     * 可以用来作为值的字段.
+     * @param mixed $value
      */
     public function valueField($value = '')
     {
@@ -697,7 +782,8 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -705,12 +791,11 @@ class CRUDCards extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

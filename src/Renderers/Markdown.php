@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Markdown 渲染
+ * Markdown 渲染.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Markdown extends BaseRenderer
@@ -16,7 +25,8 @@ class Markdown extends BaseRenderer
     }
 
     /**
-     * 类名
+     * 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Markdown extends BaseRenderer
     }
 
     /**
-     * 名称
+     * 名称.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -33,6 +44,7 @@ class Markdown extends BaseRenderer
 
     /**
      * 外部地址
+     * @param mixed $value
      */
     public function src($value = '')
     {
@@ -41,6 +53,7 @@ class Markdown extends BaseRenderer
 
     /**
      * 指定为 markdown 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'markdown')
     {
@@ -49,11 +62,10 @@ class Markdown extends BaseRenderer
 
     /**
      * 静态值
+     * @param mixed $value
      */
     public function value($value = '')
     {
         return $this->set('value', $value);
     }
-
-
 }

@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * CRUD2Cards
+ * CRUD2Cards.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class CRUD2Cards extends BaseRenderer
@@ -17,7 +26,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否固底
+     * 是否固底.
+     * @param mixed $value
      */
     public function affixFooter($value = true)
     {
@@ -25,7 +35,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否固顶
+     * 是否固顶.
+     * @param mixed $value
      */
     public function affixHeader($value = true)
     {
@@ -33,7 +44,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 初始化数据 API
+     * 初始化数据 API.
+     * @param mixed $value
      */
     public function api($value = '')
     {
@@ -41,7 +53,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 内容区域占满屏幕剩余空间
+     * 内容区域占满屏幕剩余空间.
+     * @param mixed $value
      */
     public function autoFillHeight($value = true)
     {
@@ -50,6 +63,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 是否自动跳顶部，当切分页的时候。
+     * @param mixed $value
      */
     public function autoJumpToTopOnPagerChange($value = true)
     {
@@ -57,7 +71,7 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function card($value = '')
     {
@@ -66,6 +80,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 点击卡片的时候是否勾选卡片。
+     * @param mixed $value
      */
     public function checkOnItemClick($value = true)
     {
@@ -73,7 +88,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -81,7 +97,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -89,7 +106,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -97,7 +115,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -106,6 +125,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 底部区域
+     * @param mixed $value
      */
     public function footer($value = '')
     {
@@ -113,7 +133,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 底部 CSS 类名
+     * 底部 CSS 类名.
+     * @param mixed $value
      */
     public function footerClassName($value = '')
     {
@@ -122,6 +143,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 底部区域
+     * @param mixed $value
      */
     public function footerToolbar($value = '')
     {
@@ -129,7 +151,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 底部区域CSS类名
+     * 底部区域CSS类名.
+     * @param mixed $value
      */
     public function footerToolbarClassName($value = '')
     {
@@ -138,6 +161,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 顶部区域
+     * @param mixed $value
      */
     public function header($value = '')
     {
@@ -145,7 +169,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 头部 CSS 类名
+     * 头部 CSS 类名.
+     * @param mixed $value
      */
     public function headerClassName($value = '')
     {
@@ -154,6 +179,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 顶部区域
+     * @param mixed $value
      */
     public function headerToolbar($value = '')
     {
@@ -161,7 +187,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 顶部区域CSS类名
+     * 顶部区域CSS类名.
+     * @param mixed $value
      */
     public function headerToolbarClassName($value = '')
     {
@@ -169,7 +196,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -177,7 +205,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -185,7 +214,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否隐藏勾选框
+     * 是否隐藏勾选框.
+     * @param mixed $value
      */
     public function hideCheckToggler($value = true)
     {
@@ -194,6 +224,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 是否隐藏快速编辑的按钮。
+     * @param mixed $value
      */
     public function hideQuickSaveBtn($value = true)
     {
@@ -201,7 +232,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -209,7 +241,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 设置自动刷新时间
+     * 设置自动刷新时间.
+     * @param mixed $value
      */
     public function interval($value = '')
     {
@@ -217,7 +250,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 配置某项是否可以点选
+     * 配置某项是否可以点选.
+     * @param mixed $value
      */
     public function itemCheckableOn($value = '')
     {
@@ -225,7 +259,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 卡片 CSS 类名
+     * 卡片 CSS 类名.
+     * @param mixed $value
      */
     public function itemClassName($value = '')
     {
@@ -233,7 +268,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 配置某项是否可拖拽排序，前提是要开启拖拽功能
+     * 配置某项是否可拖拽排序，前提是要开启拖拽功能.
+     * @param mixed $value
      */
     public function itemDraggableOn($value = '')
     {
@@ -241,7 +277,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 翻页时是否保留用户已选的数据
+     * 翻页时是否保留用户已选的数据.
+     * @param mixed $value
      */
     public function keepItemSelectionOnPageChange($value = true)
     {
@@ -250,6 +287,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 是否为前端单次加载模式，可以用来实现前端分页。
+     * @param mixed $value
      */
     public function loadDataOnce($value = true)
     {
@@ -257,7 +295,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 数据展示模式 无限加载 or 分页 可选值: more | pagination
+     * 数据展示模式 无限加载 or 分页 可选值: more | pagination.
+     * @param mixed $value
      */
     public function loadType($value = '')
     {
@@ -265,7 +304,7 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function loadingConfig($value = '')
     {
@@ -274,6 +313,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 是否为瀑布流布局？
+     * @param mixed $value
      */
     public function masonryLayout($value = true)
     {
@@ -282,6 +322,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 指定内容区的展示模式。
+     * @param mixed $value
      */
     public function mode($value = 'cards')
     {
@@ -289,7 +330,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否可以多选数据，仅当selectable为 true 时生效
+     * 是否可以多选数据，仅当selectable为 true 时生效.
+     * @param mixed $value
      */
     public function multiple($value = true)
     {
@@ -297,7 +339,7 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -305,7 +347,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -314,6 +357,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 设置分页页码字段名。
+     * @param mixed $value
      */
     public function pageField($value = '')
     {
@@ -322,6 +366,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 是否开启Query信息转换，开启后将会对url中的Query进行转换，默认开启，默认仅转化布尔值
+     * @param mixed $value
      */
     public function parsePrimitiveQuery($value = '')
     {
@@ -329,7 +374,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 无限加载时，根据此项设置其每页加载数量，可以不限制
+     * 无限加载时，根据此项设置其每页加载数量，可以不限制.
+     * @param mixed $value
      */
     public function perPage($value = '')
     {
@@ -338,6 +384,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 设置分页一页显示的多少条数据的字段名。
+     * @param mixed $value
      */
     public function perPageField($value = '')
     {
@@ -345,7 +392,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 无数据提示
+     * 无数据提示.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -353,7 +401,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 行标识符，默认为id
+     * 行标识符，默认为id.
+     * @param mixed $value
      */
     public function primaryField($value = '')
     {
@@ -361,7 +410,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 快速编辑后用来批量保存的 API
+     * 快速编辑后用来批量保存的 API.
+     * @param mixed $value
      */
     public function quickSaveApi($value = '')
     {
@@ -369,7 +419,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 快速编辑配置成及时保存时使用的 API
+     * 快速编辑配置成及时保存时使用的 API.
+     * @param mixed $value
      */
     public function quickSaveItemApi($value = '')
     {
@@ -377,7 +428,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 保存排序的 api
+     * 保存排序的 api.
+     * @param mixed $value
      */
     public function saveOrderApi($value = '')
     {
@@ -385,7 +437,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否可以选择数据，外部事件动作
+     * 是否可以选择数据，外部事件动作.
+     * @param mixed $value
      */
     public function selectable($value = true)
     {
@@ -393,7 +446,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否显示底部
+     * 是否显示底部.
+     * @param mixed $value
      */
     public function showFooter($value = true)
     {
@@ -401,7 +455,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否显示头部
+     * 是否显示头部.
+     * @param mixed $value
      */
     public function showHeader($value = true)
     {
@@ -409,7 +464,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否展示已选数据区域，仅当selectable为 true 时生效
+     * 是否展示已选数据区域，仅当selectable为 true 时生效.
+     * @param mixed $value
      */
     public function showSelection($value = true)
     {
@@ -417,7 +473,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 静默拉取
+     * 静默拉取.
+     * @param mixed $value
      */
     public function silentPolling($value = true)
     {
@@ -426,6 +483,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 也可以直接从环境变量中读取，但是不太推荐。
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -433,7 +491,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -441,7 +500,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -449,7 +509,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -457,7 +518,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -465,7 +527,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -473,7 +536,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -481,7 +545,7 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -489,7 +553,7 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function stopAutoRefreshWhen($value = '')
     {
@@ -497,7 +561,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -505,7 +570,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否将过滤条件的参数同步到地址栏,默认为true
+     * 是否将过滤条件的参数同步到地址栏,默认为true.
+     * @param mixed $value
      */
     public function syncLocation($value = true)
     {
@@ -514,6 +580,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 是否将接口返回的内容自动同步到地址栏，前提是开启了同步地址栏。
+     * @param mixed $value
      */
     public function syncResponse2Query($value = true)
     {
@@ -521,7 +588,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 标题
+     * 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -530,6 +598,7 @@ class CRUD2Cards extends BaseRenderer
 
     /**
      * 指定为 CRUD2 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'crud2')
     {
@@ -537,7 +606,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -545,7 +615,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 可以用来作为值的字段
+     * 可以用来作为值的字段.
+     * @param mixed $value
      */
     public function valueField($value = '')
     {
@@ -553,7 +624,8 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -561,12 +633,11 @@ class CRUD2Cards extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

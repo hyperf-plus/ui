@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Text 文本输入框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/text
+ * Text 文本输入框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/text.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class TextControl extends BaseRenderer
@@ -16,7 +25,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 添加时调用的接口
+     * 添加时调用的接口.
+     * @param mixed $value
      */
     public function addApi($value = '')
     {
@@ -25,6 +35,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 新增时的表单项。
+     * @param mixed $value
      */
     public function addControls($value = '')
     {
@@ -32,7 +43,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 控制新增弹框设置项
+     * 控制新增弹框设置项.
+     * @param mixed $value
      */
     public function addDialog($value = '')
     {
@@ -40,7 +52,7 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function addOn($value = '')
     {
@@ -49,6 +61,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 自动完成 API，当输入部分文字的时候，会将这些文字通过 ${term} 可以取到，发送给接口。 接口可以返回匹配到的选项，帮助用户输入。
+     * @param mixed $value
      */
     public function autoComplete($value = '')
     {
@@ -57,6 +70,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+     * @param mixed $value
      */
     public function autoFill($value = '')
     {
@@ -64,7 +78,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 边框模式，全边框，还是半边框，或者没边框。 可选值: full | half | none
+     * 边框模式，全边框，还是半边框，或者没边框。 可选值: full | half | none.
+     * @param mixed $value
      */
     public function borderMode($value = '')
     {
@@ -72,7 +87,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -81,6 +97,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 在内容为空的时候清除值
+     * @param mixed $value
      */
     public function clearValueOnEmpty($value = true)
     {
@@ -88,7 +105,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉.
+     * @param mixed $value
      */
     public function clearValueOnHidden($value = true)
     {
@@ -97,6 +115,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 是否可清除。
+     * @param mixed $value
      */
     public function clearable($value = true)
     {
@@ -104,7 +123,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否可以新增
+     * 是否可以新增.
+     * @param mixed $value
      */
     public function creatable($value = true)
     {
@@ -112,7 +132,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 新增文字
+     * 新增文字.
+     * @param mixed $value
      */
     public function createBtnLabel($value = '')
     {
@@ -121,6 +142,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
+     * @param mixed $value
      */
     public function deferApi($value = '')
     {
@@ -128,7 +150,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 懒加载字段
+     * 懒加载字段.
+     * @param mixed $value
      */
     public function deferField($value = '')
     {
@@ -136,7 +159,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 选项删除 API
+     * 选项删除 API.
+     * @param mixed $value
      */
     public function deleteApi($value = '')
     {
@@ -145,6 +169,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 选项删除提示文字。
+     * @param mixed $value
      */
     public function deleteConfirmText($value = '')
     {
@@ -152,7 +177,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 分割符
+     * 分割符.
+     * @param mixed $value
      */
     public function delimiter($value = '')
     {
@@ -160,7 +186,7 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function desc($value = '')
     {
@@ -169,6 +195,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 描述内容，支持 Html 片段。
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -176,7 +203,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 配置描述上的 className
+     * 配置描述上的 className.
+     * @param mixed $value
      */
     public function descriptionClassName($value = '')
     {
@@ -184,7 +212,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -192,7 +221,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -200,7 +230,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 编辑时调用的 API
+     * 编辑时调用的 API.
+     * @param mixed $value
      */
     public function editApi($value = '')
     {
@@ -208,7 +239,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 选项修改的表单项
+     * 选项修改的表单项.
+     * @param mixed $value
      */
     public function editControls($value = '')
     {
@@ -216,7 +248,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 控制编辑弹框设置项
+     * 控制编辑弹框设置项.
+     * @param mixed $value
      */
     public function editDialog($value = '')
     {
@@ -224,7 +257,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否可以编辑
+     * 是否可以编辑.
+     * @param mixed $value
      */
     public function editable($value = true)
     {
@@ -232,7 +266,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -240,7 +275,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来.
+     * @param mixed $value
      */
     public function extraName($value = '')
     {
@@ -249,6 +285,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+     * @param mixed $value
      */
     public function extractValue($value = true)
     {
@@ -256,7 +293,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -264,7 +302,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -272,7 +311,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 输入提示，聚焦的时候显示
+     * 输入提示，聚焦的时候显示.
+     * @param mixed $value
      */
     public function hint($value = '')
     {
@@ -281,6 +321,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 当配置为水平布局的时候，用来配置具体的左右分配。
+     * @param mixed $value
      */
     public function horizontal($value = '')
     {
@@ -288,7 +329,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -296,7 +338,7 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function initAutoFill($value = '')
     {
@@ -305,6 +347,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 配置 source 接口初始拉不拉取。
+     * @param mixed $value
      */
     public function initFetch($value = true)
     {
@@ -312,7 +355,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 用表达式来配置 source 接口初始要不要拉取
+     * 用表达式来配置 source 接口初始要不要拉取.
+     * @param mixed $value
      */
     public function initFetchOn($value = '')
     {
@@ -321,6 +365,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 表单 control 是否为 inline 模式。
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -328,7 +373,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 配置 input className
+     * 配置 input className.
+     * @param mixed $value
      */
     public function inputClassName($value = '')
     {
@@ -336,7 +382,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * control节点的CSS类名
+     * control节点的CSS类名.
+     * @param mixed $value
      */
     public function inputControlClassName($value = '')
     {
@@ -345,6 +392,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
+     * @param mixed $value
      */
     public function joinValues($value = true)
     {
@@ -352,7 +400,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -360,7 +409,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -368,7 +418,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 配置 label className
+     * 配置 label className.
+     * @param mixed $value
      */
     public function labelClassName($value = '')
     {
@@ -376,7 +427,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -384,7 +436,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * label自定义宽度，默认单位为px
+     * label自定义宽度，默认单位为px.
+     * @param mixed $value
      */
     public function labelWidth($value = '')
     {
@@ -392,7 +445,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 限制文字最大输入个数
+     * 限制文字最大输入个数.
+     * @param mixed $value
      */
     public function maxLength($value = '')
     {
@@ -400,7 +454,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 限制文字最小输入个数
+     * 限制文字最小输入个数.
+     * @param mixed $value
      */
     public function minLength($value = '')
     {
@@ -408,7 +463,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 配置当前表单项展示模式 可选值: normal | inline | horizontal
+     * 配置当前表单项展示模式 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -416,7 +472,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否为多选模式
+     * 是否为多选模式.
+     * @param mixed $value
      */
     public function multiple($value = true)
     {
@@ -424,7 +481,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -432,7 +490,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 配置原生 input 的 autoComplete 属性
+     * 配置原生 input 的 autoComplete 属性.
+     * @param mixed $value
      */
     public function nativeAutoComplete($value = '')
     {
@@ -440,7 +499,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 原生input标签的CSS类名
+     * 原生input标签的CSS类名.
+     * @param mixed $value
      */
     public function nativeInputClassName($value = '')
     {
@@ -448,7 +508,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -456,7 +517,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 选项集合
+     * 选项集合.
+     * @param mixed $value
      */
     public function options($value = '')
     {
@@ -464,7 +526,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -473,6 +536,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 前缀
+     * @param mixed $value
      */
     public function prefix($value = '')
     {
@@ -480,7 +544,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否只读
+     * 是否只读.
+     * @param mixed $value
      */
     public function readOnly($value = true)
     {
@@ -488,7 +553,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 只读条件
+     * 只读条件.
+     * @param mixed $value
      */
     public function readOnlyOn($value = '')
     {
@@ -496,7 +562,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容.
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -504,7 +571,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否可删除
+     * 是否可删除.
+     * @param mixed $value
      */
     public function removable($value = true)
     {
@@ -512,7 +580,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否为必填
+     * 是否为必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -521,6 +590,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 点清除按钮时，将表单项设置成当前配置的值。
+     * @param mixed $value
      */
     public function resetValue($value = '')
     {
@@ -529,6 +599,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 默认选择选项第一个值。
+     * @param mixed $value
      */
     public function selectFirst($value = true)
     {
@@ -536,7 +607,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否显示计数
+     * 是否显示计数.
+     * @param mixed $value
      */
     public function showCounter($value = true)
     {
@@ -544,7 +616,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 表单项大小 可选值: xs | sm | md | lg | full
+     * 表单项大小 可选值: xs | sm | md | lg | full.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -553,6 +626,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 可用来通过 API 拉取 options。
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -560,7 +634,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -568,7 +643,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -576,7 +652,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -584,7 +661,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -592,7 +670,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -600,7 +679,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -608,7 +688,7 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -616,7 +696,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -625,6 +706,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 当修改完的时候是否提交表单。
+     * @param mixed $value
      */
     public function submitOnChange($value = true)
     {
@@ -633,6 +715,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 后缀
+     * @param mixed $value
      */
     public function suffix($value = '')
     {
@@ -640,7 +723,7 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function testid($value = '')
     {
@@ -649,6 +732,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 自动转换值
+     * @param mixed $value
      */
     public function transform($value = '')
     {
@@ -657,6 +741,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 是否去除首尾空白文本。
+     * @param mixed $value
      */
     public function trimContents($value = true)
     {
@@ -664,7 +749,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 表单项类型 可选值: input-text | input-email | input-url | input-password | native-date | native-time | native-number
+     * 表单项类型 可选值: input-text | input-email | input-url | input-password | native-date | native-time | native-number.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -672,7 +758,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -680,7 +767,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 远端校验表单项接口
+     * 远端校验表单项接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -689,6 +777,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+     * @param mixed $value
      */
     public function validateOnChange($value = true)
     {
@@ -696,7 +785,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 验证失败的提示信息
+     * 验证失败的提示信息.
+     * @param mixed $value
      */
     public function validationErrors($value = '')
     {
@@ -704,7 +794,7 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -713,6 +803,7 @@ class TextControl extends BaseRenderer
 
     /**
      * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -720,7 +811,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 多选模式，值太多时是否避免折行
+     * 多选模式，值太多时是否避免折行.
+     * @param mixed $value
      */
     public function valuesNoWrap($value = true)
     {
@@ -728,7 +820,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -736,7 +829,8 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -744,12 +838,11 @@ class TextControl extends BaseRenderer
     }
 
     /**
-     * 在Table中调整宽度
+     * 在Table中调整宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

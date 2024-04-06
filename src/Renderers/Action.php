@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Action 行为按钮 https://aisuda.bce.baidu.com/amis/zh-CN/components/action
+ * Action 行为按钮 https://aisuda.bce.baidu.com/amis/zh-CN/components/action.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Action extends BaseRenderer
@@ -17,6 +26,7 @@ class Action extends BaseRenderer
 
     /**
      * 【必填】这是 action 最核心的配置，来指定该 action 的作用类型，支持：ajax、link、url、drawer、dialog、confirm、cancel、prev、next、copy、close。
+     * @param mixed $value
      */
     public function actionType($value = '')
     {
@@ -25,6 +35,7 @@ class Action extends BaseRenderer
 
     /**
      * 给按钮高亮添加类名。
+     * @param mixed $value
      */
     public function activeClassName($value = '')
     {
@@ -33,6 +44,7 @@ class Action extends BaseRenderer
 
     /**
      * 按钮高亮时的样式，配置支持同level。
+     * @param mixed $value
      */
     public function activeLevel($value = '')
     {
@@ -40,7 +52,7 @@ class Action extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function api($value = '')
     {
@@ -49,6 +61,7 @@ class Action extends BaseRenderer
 
     /**
      * 添加类名。
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -57,6 +70,7 @@ class Action extends BaseRenderer
 
     /**
      * 当action配置在dialog或drawer的actions中时，配置为true指定此次操作完后关闭当前dialog或drawer。当值为字符串，并且是祖先层弹框的名字的时候，会把祖先弹框关闭掉。
+     * @param mixed $value
      */
     public function close($value = '')
     {
@@ -65,6 +79,7 @@ class Action extends BaseRenderer
 
     /**
      * 当设置后，操作在开始前会询问用户。可用 '$[xxx]' 取值。
+     * @param mixed $value
      */
     public function confirmText($value = '')
     {
@@ -73,6 +88,7 @@ class Action extends BaseRenderer
 
     /**
      * 被禁用后鼠标停留时弹出该段文字，也可以配置对象类型：字段为title和content。可用 '$[xxx]' 取值。
+     * @param mixed $value
      */
     public function disabledTip($value = '')
     {
@@ -81,6 +97,7 @@ class Action extends BaseRenderer
 
     /**
      * 设置图标，例如fa fa-plus。
+     * @param mixed $value
      */
     public function icon($value = '')
     {
@@ -89,6 +106,7 @@ class Action extends BaseRenderer
 
     /**
      * 给图标上添加类名。
+     * @param mixed $value
      */
     public function iconClassName($value = '')
     {
@@ -97,6 +115,7 @@ class Action extends BaseRenderer
 
     /**
      * 按钮文本。可用 '$[xxx]' 取值。
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -105,6 +124,7 @@ class Action extends BaseRenderer
 
     /**
      * 按钮样式，支持：link /primary/secondary/info/success/warning/danger/light/dark/default。
+     * @param mixed $value
      */
     public function level($value = '')
     {
@@ -112,7 +132,7 @@ class Action extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function link($value = '')
     {
@@ -121,6 +141,7 @@ class Action extends BaseRenderer
 
     /**
      * 指定此次操作完后，需要刷新的目标组件名字（组件的name值，自己配置的），多个请用, 号隔开。
+     * @param mixed $value
      */
     public function reload($value = '')
     {
@@ -129,6 +150,7 @@ class Action extends BaseRenderer
 
     /**
      * 配置字符串数组，指定在form中进行操作之前，需要指定的字段名的表单项通过验证
+     * @param mixed $value
      */
     public function required($value = '')
     {
@@ -137,6 +159,7 @@ class Action extends BaseRenderer
 
     /**
      * 在按钮文本右侧设置图标，例如fa fa-plus。
+     * @param mixed $value
      */
     public function rightIcon($value = '')
     {
@@ -145,6 +168,7 @@ class Action extends BaseRenderer
 
     /**
      * 给右侧图标上添加类名。
+     * @param mixed $value
      */
     public function rightIconClassName($value = '')
     {
@@ -153,6 +177,7 @@ class Action extends BaseRenderer
 
     /**
      * 按钮大小，支持：xs、sm、md、lg。
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -161,6 +186,7 @@ class Action extends BaseRenderer
 
     /**
      * 鼠标停留时弹出该段文字，也可以配置对象类型：字段为title和content。可用 '$[xxx]' 取值。
+     * @param mixed $value
      */
     public function tooltip($value = '')
     {
@@ -169,6 +195,7 @@ class Action extends BaseRenderer
 
     /**
      * 如果配置了tooltip或者disabledTip，指定提示信息位置，可配置top、bottom、left、right。
+     * @param mixed $value
      */
     public function tooltipPlacement($value = '')
     {
@@ -177,11 +204,10 @@ class Action extends BaseRenderer
 
     /**
      * 指定为 action 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'action')
     {
         return $this->set('type', $value);
     }
-
-
 }

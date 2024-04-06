@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Each 循环功能渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/each
+ * Each 循环功能渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/each.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Each extends BaseRenderer
@@ -16,7 +25,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -32,7 +43,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -40,7 +52,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -48,7 +61,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -56,7 +70,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -64,7 +79,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -72,7 +88,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 用来控制通过什么字段读取序号，考虑到可能多层嵌套 如果名字一样会读取不到上层变量，所以这里可以指定一下
+     * 用来控制通过什么字段读取序号，考虑到可能多层嵌套 如果名字一样会读取不到上层变量，所以这里可以指定一下.
+     * @param mixed $value
      */
     public function indexKeyName($value = '')
     {
@@ -80,7 +97,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 用来控制通过什么字段读取成员数据，考虑到可能多层嵌套 如果名字一样会读取不到上层变量，所以这里可以指定一下
+     * 用来控制通过什么字段读取成员数据，考虑到可能多层嵌套 如果名字一样会读取不到上层变量，所以这里可以指定一下.
+     * @param mixed $value
      */
     public function itemKeyName($value = '')
     {
@@ -88,7 +106,7 @@ class Each extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function items($value = '')
     {
@@ -96,7 +114,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 关联字段名
+     * 关联字段名.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -104,7 +123,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -112,7 +132,7 @@ class Each extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -120,7 +140,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 关联字段名 支持数据映射
+     * 关联字段名 支持数据映射.
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -128,7 +149,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -136,7 +158,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -144,7 +167,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -152,7 +176,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -160,7 +185,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -168,7 +194,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -176,7 +203,7 @@ class Each extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -184,7 +211,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -192,7 +220,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 指定为each展示类型
+     * 指定为each展示类型.
+     * @param mixed $value
      */
     public function type($value = 'each')
     {
@@ -200,7 +229,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -208,7 +238,8 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -216,12 +247,11 @@ class Each extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

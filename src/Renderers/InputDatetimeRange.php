@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * InputDatetimeRange 日期时间范围
+ * InputDatetimeRange 日期时间范围.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class InputDatetimeRange extends BaseRenderer
@@ -16,7 +25,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 数据录入配置，自动填充或者参照录入
+     * 数据录入配置，自动填充或者参照录入.
+     * @param mixed $value
      */
     public function autoFill($value = '')
     {
@@ -24,7 +34,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 表单最外层类名
+     * 表单最外层类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 是否可清除
+     * 是否可清除.
+     * @param mixed $value
      */
     public function clearable($value = true)
     {
@@ -40,7 +52,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 表单项描述
+     * 表单项描述.
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -48,7 +61,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -56,7 +70,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 当前表单项是否禁用的条件
+     * 当前表单项是否禁用的条件.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -64,7 +79,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 日期时间选择器值格式
+     * 日期时间选择器值格式.
+     * @param mixed $value
      */
     public function format($value = '')
     {
@@ -72,7 +88,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 是否内联
+     * 是否内联.
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -80,7 +97,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 表单控制器类名
+     * 表单控制器类名.
+     * @param mixed $value
      */
     public function inputClassName($value = '')
     {
@@ -88,7 +106,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 日期时间选择器显示格式
+     * 日期时间选择器显示格式.
+     * @param mixed $value
      */
     public function inputFormat($value = '')
     {
@@ -96,7 +115,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 表单项标签
+     * 表单项标签.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -104,7 +124,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
+     * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -112,7 +133,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * label 的类名
+     * label 的类名.
+     * @param mixed $value
      */
     public function labelClassName($value = '')
     {
@@ -120,7 +142,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 表单项标签描述
+     * 表单项标签描述.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -128,7 +151,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 限制最大日期时间，用法同 限制范围
+     * 限制最大日期时间，用法同 限制范围.
+     * @param mixed $value
      */
     public function maxDate($value = '')
     {
@@ -136,7 +160,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 限制最小日期时间，用法同 限制范围
+     * 限制最小日期时间，用法同 限制范围.
+     * @param mixed $value
      */
     public function minDate($value = '')
     {
@@ -144,7 +169,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 字段名，指定该表单项提交时的 key
+     * 字段名，指定该表单项提交时的 key.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -152,7 +178,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 表单项描述
+     * 表单项描述.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -160,7 +187,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 日期范围快捷键
+     * 日期范围快捷键.
+     * @param mixed $value
      */
     public function ranges($value = '')
     {
@@ -168,7 +196,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 是否必填
+     * 是否必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -177,6 +206,7 @@ class InputDatetimeRange extends BaseRenderer
 
     /**
      * 通过表达式来配置当前表单项是否为必填。
+     * @param mixed $value
      */
     public function requiredOn($value = '')
     {
@@ -185,6 +215,7 @@ class InputDatetimeRange extends BaseRenderer
 
     /**
      * 是否该表单项值发生变化时就提交当前表单。
+     * @param mixed $value
      */
     public function submitOnChange($value = true)
     {
@@ -193,6 +224,7 @@ class InputDatetimeRange extends BaseRenderer
 
     /**
      * 指定为 input-datetime-range 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'input-datetime-range')
     {
@@ -201,6 +233,7 @@ class InputDatetimeRange extends BaseRenderer
 
     /**
      * 保存 UTC 值
+     * @param mixed $value
      */
     public function utc($value = true)
     {
@@ -208,7 +241,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 表单校验接口
+     * 表单校验接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -217,6 +251,7 @@ class InputDatetimeRange extends BaseRenderer
 
     /**
      * 表单项值格式验证，支持设置多个，多个规则用英文逗号隔开。
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -225,6 +260,7 @@ class InputDatetimeRange extends BaseRenderer
 
     /**
      * 表单默认值
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -232,7 +268,8 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -240,12 +277,11 @@ class InputDatetimeRange extends BaseRenderer
     }
 
     /**
-     * 当前表单项是否禁用的条件
+     * 当前表单项是否禁用的条件.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

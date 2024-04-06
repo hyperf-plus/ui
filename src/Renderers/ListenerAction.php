@@ -1,23 +1,30 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * ListenerAction
+ * ListenerAction.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class ListenerAction extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function actionType($value = '')
     {
@@ -25,7 +32,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function args($value = '')
     {
@@ -33,7 +40,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function componentId($value = '')
     {
@@ -41,7 +48,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function componentName($value = '')
     {
@@ -49,7 +56,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function data($value = '')
     {
@@ -57,7 +64,8 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *  可选值: merge | override
+     *  可选值: merge | override.
+     * @param mixed $value
      */
     public function dataMergeMode($value = '')
     {
@@ -65,7 +73,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -73,7 +81,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function execOn($value = '')
     {
@@ -81,7 +89,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function expression($value = '')
     {
@@ -89,7 +97,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function ignoreError($value = true)
     {
@@ -97,7 +105,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function outputVar($value = '')
     {
@@ -105,7 +113,7 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function preventDefault($value = true)
     {
@@ -113,12 +121,10 @@ class ListenerAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function stopPropagation($value = true)
     {
         return $this->set('stopPropagation', $value);
     }
-
-
 }

@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Expandable
+ * Expandable.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Expandable extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 行是否可展开表达式
+     * 行是否可展开表达式.
+     * @param mixed $value
      */
     public function expandableOn($value = '')
     {
@@ -25,7 +33,8 @@ class Expandable extends BaseRenderer
     }
 
     /**
-     * 展开行自定义样式表达式
+     * 展开行自定义样式表达式.
+     * @param mixed $value
      */
     public function expandedRowClassNameExpr($value = '')
     {
@@ -34,6 +43,7 @@ class Expandable extends BaseRenderer
 
     /**
      * 已展开的key值
+     * @param mixed $value
      */
     public function expandedRowKeys($value = '')
     {
@@ -41,7 +51,8 @@ class Expandable extends BaseRenderer
     }
 
     /**
-     * 已展开的key值表达式
+     * 已展开的key值表达式.
+     * @param mixed $value
      */
     public function expandedRowKeysExpr($value = '')
     {
@@ -50,6 +61,7 @@ class Expandable extends BaseRenderer
 
     /**
      * 对应数据源的key值
+     * @param mixed $value
      */
     public function keyField($value = '')
     {
@@ -57,12 +69,11 @@ class Expandable extends BaseRenderer
     }
 
     /**
-     * 对应渲染器类型
+     * 对应渲染器类型.
+     * @param mixed $value
      */
     public function type($value = '')
     {
         return $this->set('type', $value);
     }
-
-
 }

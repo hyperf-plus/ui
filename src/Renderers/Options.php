@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Options 选择器表单项
+ * Options 选择器表单项.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Options extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 数据录入配置，自动填充或者参照录入
+     * 数据录入配置，自动填充或者参照录入.
+     * @param mixed $value
      */
     public function autoFill($value = '')
     {
@@ -25,7 +33,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 表单最外层类名
+     * 表单最外层类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -33,7 +42,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 表单项描述
+     * 表单项描述.
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -41,7 +51,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -49,7 +60,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 当前表单项是否禁用的条件
+     * 当前表单项是否禁用的条件.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -57,7 +69,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 是否把选中的值从数组中提取出来，只有当 joinValues 为 true 时生效
+     * 是否把选中的值从数组中提取出来，只有当 joinValues 为 true 时生效.
+     * @param mixed $value
      */
     public function extractValue($value = true)
     {
@@ -65,7 +78,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 是否内联
+     * 是否内联.
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -73,7 +87,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 表单控制器类名
+     * 表单控制器类名.
+     * @param mixed $value
      */
     public function inputClassName($value = '')
     {
@@ -81,7 +96,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 每个选项的高度，用于虚拟渲染
+     * 每个选项的高度，用于虚拟渲染.
+     * @param mixed $value
      */
     public function itemHeight($value = '')
     {
@@ -89,7 +105,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 多选时，是否把选中的值用逗号拼接成字符串
+     * 多选时，是否把选中的值用逗号拼接成字符串.
+     * @param mixed $value
      */
     public function joinValues($value = true)
     {
@@ -97,7 +114,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 表单项标签
+     * 表单项标签.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -105,7 +123,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
+     * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -113,7 +132,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * label 的类名
+     * label 的类名.
+     * @param mixed $value
      */
     public function labelClassName($value = '')
     {
@@ -122,6 +142,7 @@ class Options extends BaseRenderer
 
     /**
      * 标识选项中哪个字段是label值
+     * @param mixed $value
      */
     public function labelField($value = '')
     {
@@ -129,7 +150,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 表单项标签描述
+     * 表单项标签描述.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -137,7 +159,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 是否支持多选
+     * 是否支持多选.
+     * @param mixed $value
      */
     public function multiple($value = true)
     {
@@ -145,7 +168,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 字段名，指定该表单项提交时的 key
+     * 字段名，指定该表单项提交时的 key.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -153,7 +177,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 选项组，供用户选择
+     * 选项组，供用户选择.
+     * @param mixed $value
      */
     public function options($value = '')
     {
@@ -161,7 +186,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 是否必填
+     * 是否必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -170,6 +196,7 @@ class Options extends BaseRenderer
 
     /**
      * 通过表达式来配置当前表单项是否为必填。
+     * @param mixed $value
      */
     public function requiredOn($value = '')
     {
@@ -178,6 +205,7 @@ class Options extends BaseRenderer
 
     /**
      * 选项组源，可通过数据映射获取当前数据域变量、或者配置 API 对象
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -186,6 +214,7 @@ class Options extends BaseRenderer
 
     /**
      * 是否该表单项值发生变化时就提交当前表单。
+     * @param mixed $value
      */
     public function submitOnChange($value = true)
     {
@@ -193,7 +222,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 表单校验接口
+     * 表单校验接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -202,6 +232,7 @@ class Options extends BaseRenderer
 
     /**
      * 表单项值格式验证，支持设置多个，多个规则用英文逗号隔开。
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -210,6 +241,7 @@ class Options extends BaseRenderer
 
     /**
      * 表单默认值
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -218,6 +250,7 @@ class Options extends BaseRenderer
 
     /**
      * 标识选项中哪个字段是value值
+     * @param mixed $value
      */
     public function valueField($value = '')
     {
@@ -226,6 +259,7 @@ class Options extends BaseRenderer
 
     /**
      * 默认情况下多选所有选项都会显示，通过这个可以最多显示一行，超出的部分变成 ...
+     * @param mixed $value
      */
     public function valuesNoWrap($value = true)
     {
@@ -233,7 +267,8 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 在选项数量超过多少时开启虚拟渲染
+     * 在选项数量超过多少时开启虚拟渲染.
+     * @param mixed $value
      */
     public function virtualThreshold($value = '')
     {
@@ -242,6 +277,7 @@ class Options extends BaseRenderer
 
     /**
      * 是否可见
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -249,12 +285,11 @@ class Options extends BaseRenderer
     }
 
     /**
-     * 当前表单项是否禁用的条件
+     * 当前表单项是否禁用的条件.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

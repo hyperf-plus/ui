@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Dialog 弹框渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/dialog
+ * Dialog 弹框渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/dialog.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Dialog extends BaseRenderer
@@ -17,6 +26,7 @@ class Dialog extends BaseRenderer
 
     /**
      * 默认不用填写，自动会创建确认和取消按钮。
+     * @param mixed $value
      */
     public function actions($value = '')
     {
@@ -25,6 +35,7 @@ class Dialog extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -32,7 +43,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 配置 Body 容器 className
+     * 配置 Body 容器 className.
+     * @param mixed $value
      */
     public function bodyClassName($value = '')
     {
@@ -40,7 +52,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -48,7 +61,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否支持按 ESC 关闭 Dialog
+     * 是否支持按 ESC 关闭 Dialog.
+     * @param mixed $value
      */
     public function closeOnEsc($value = true)
     {
@@ -56,7 +70,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否支持点其它区域关闭 Dialog
+     * 是否支持点其它区域关闭 Dialog.
+     * @param mixed $value
      */
     public function closeOnOutside($value = true)
     {
@@ -65,6 +80,7 @@ class Dialog extends BaseRenderer
 
     /**
      * 影响自动生成的按钮，如果自己配置了按钮这个配置无效。
+     * @param mixed $value
      */
     public function confirm($value = true)
     {
@@ -72,7 +88,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 弹框类型 confirm 确认弹框
+     * 弹框类型 confirm 确认弹框.
+     * @param mixed $value
      */
     public function dialogType($value = 'confirm')
     {
@@ -80,7 +97,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -88,7 +106,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -96,7 +115,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 可拖拽
+     * 可拖拽.
+     * @param mixed $value
      */
     public function draggable($value = true)
     {
@@ -104,7 +124,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -112,7 +133,7 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function footer($value = '')
     {
@@ -120,7 +141,7 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function header($value = '')
     {
@@ -128,7 +149,7 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function headerClassName($value = '')
     {
@@ -136,7 +157,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * Dialog 高度
+     * Dialog 高度.
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -144,7 +166,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -152,7 +175,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -160,7 +184,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -168,7 +193,7 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -176,7 +201,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -185,6 +211,7 @@ class Dialog extends BaseRenderer
 
     /**
      * 是否显示蒙层
+     * @param mixed $value
      */
     public function overlay($value = true)
     {
@@ -192,7 +219,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否显示关闭按钮
+     * 是否显示关闭按钮.
+     * @param mixed $value
      */
     public function showCloseButton($value = true)
     {
@@ -200,7 +228,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否显示错误信息
+     * 是否显示错误信息.
+     * @param mixed $value
      */
     public function showErrorMsg($value = true)
     {
@@ -208,7 +237,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否显示 spinner
+     * 是否显示 spinner.
+     * @param mixed $value
      */
     public function showLoading($value = true)
     {
@@ -216,7 +246,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * Dialog 大小 可选值: xs | sm | md | lg | xl | full
+     * Dialog 大小 可选值: xs | sm | md | lg | xl | full.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -224,7 +255,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -232,7 +264,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -240,7 +273,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -248,7 +282,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -256,7 +291,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -264,7 +300,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -272,7 +309,7 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -280,7 +317,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -288,7 +326,7 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function testid($value = '')
     {
@@ -296,7 +334,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 请通过配置 title 设置标题
+     * 请通过配置 title 设置标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -304,7 +343,7 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function type($value = 'dialog')
     {
@@ -312,7 +351,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -320,7 +360,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -328,7 +369,8 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -336,12 +378,11 @@ class Dialog extends BaseRenderer
     }
 
     /**
-     * Dialog 宽度
+     * Dialog 宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

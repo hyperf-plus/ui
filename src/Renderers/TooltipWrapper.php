@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * TooltipWrapper
+ * TooltipWrapper.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class TooltipWrapper extends BaseRenderer
@@ -17,6 +26,7 @@ class TooltipWrapper extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -24,7 +34,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 内容区CSS类名
+     * 内容区CSS类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 文字提示内容，兼容 tooltip，但建议通过 content 来实现提示内容
+     * 文字提示内容，兼容 tooltip，但建议通过 content 来实现提示内容.
+     * @param mixed $value
      */
     public function content($value = '')
     {
@@ -40,7 +52,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否禁用提示
+     * 是否禁用提示.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -48,7 +61,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -56,7 +70,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -64,7 +79,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否可以移入浮层中, 默认true
+     * 是否可以移入浮层中, 默认true.
+     * @param mixed $value
      */
     public function enterable($value = true)
     {
@@ -72,7 +88,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -80,7 +97,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -88,7 +106,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -96,7 +115,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 内容区是否内联显示，默认为false
+     * 内容区是否内联显示，默认为false.
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -104,7 +124,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 浮层延迟显示时间, 单位 ms
+     * 浮层延迟显示时间, 单位 ms.
+     * @param mixed $value
      */
     public function mouseEnterDelay($value = '')
     {
@@ -112,7 +133,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 浮层延迟隐藏时间, 单位 ms
+     * 浮层延迟隐藏时间, 单位 ms.
+     * @param mixed $value
      */
     public function mouseLeaveDelay($value = '')
     {
@@ -120,7 +142,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 浮层位置相对偏移量
+     * 浮层位置相对偏移量.
+     * @param mixed $value
      */
     public function offset($value = '')
     {
@@ -128,7 +151,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -136,7 +160,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 文字提示浮层出现位置，默认为top 可选值: top | right | bottom | left
+     * 文字提示浮层出现位置，默认为top 可选值: top | right | bottom | left.
+     * @param mixed $value
      */
     public function placement($value = '')
     {
@@ -144,7 +169,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否点击非内容区域关闭提示，默认为true
+     * 是否点击非内容区域关闭提示，默认为true.
+     * @param mixed $value
      */
     public function rootClose($value = true)
     {
@@ -152,7 +178,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否展示浮层指向箭头
+     * 是否展示浮层指向箭头.
+     * @param mixed $value
      */
     public function showArrow($value = true)
     {
@@ -160,7 +187,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -168,7 +196,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -176,7 +205,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -184,7 +214,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -192,7 +223,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -200,7 +232,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -208,7 +241,7 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -216,7 +249,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 内容区自定义样式
+     * 内容区自定义样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -224,7 +258,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 文字提示标题
+     * 文字提示标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -232,7 +267,7 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function tooltip($value = '')
     {
@@ -240,7 +275,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 文字提示浮层CSS类名
+     * 文字提示浮层CSS类名.
+     * @param mixed $value
      */
     public function tooltipClassName($value = '')
     {
@@ -248,7 +284,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 自定义提示浮层样式
+     * 自定义提示浮层样式.
+     * @param mixed $value
      */
     public function tooltipStyle($value = '')
     {
@@ -256,7 +293,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 主题样式， 默认为light 可选值: light | dark
+     * 主题样式， 默认为light 可选值: light | dark.
+     * @param mixed $value
      */
     public function tooltipTheme($value = '')
     {
@@ -264,7 +302,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 浮层触发方式，默认为hover
+     * 浮层触发方式，默认为hover.
+     * @param mixed $value
      */
     public function trigger($value = '')
     {
@@ -272,7 +311,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 文字提示容器
+     * 文字提示容器.
+     * @param mixed $value
      */
     public function type($value = 'tooltip-wrapper')
     {
@@ -280,7 +320,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -288,7 +329,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -296,7 +338,8 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -304,12 +347,11 @@ class TooltipWrapper extends BaseRenderer
     }
 
     /**
-     * 内容区包裹标签
+     * 内容区包裹标签.
+     * @param mixed $value
      */
     public function wrapperComponent($value = '')
     {
         return $this->set('wrapperComponent', $value);
     }
-
-
 }

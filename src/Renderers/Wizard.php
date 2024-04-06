@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * 表单向导 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/wizard
+ * 表单向导 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/wizard.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Wizard extends BaseRenderer
@@ -16,7 +25,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 配置按钮 className
+     * 配置按钮 className.
+     * @param mixed $value
      */
     public function actionClassName($value = '')
     {
@@ -24,7 +34,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 完成按钮的文字描述
+     * 完成按钮的文字描述.
+     * @param mixed $value
      */
     public function actionFinishLabel($value = '')
     {
@@ -32,7 +43,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 下一步按钮的文字描述
+     * 下一步按钮的文字描述.
+     * @param mixed $value
      */
     public function actionNextLabel($value = '')
     {
@@ -40,7 +52,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 下一步并且保存按钮的文字描述
+     * 下一步并且保存按钮的文字描述.
+     * @param mixed $value
      */
     public function actionNextSaveLabel($value = '')
     {
@@ -48,7 +61,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 上一步按钮的文字描述
+     * 上一步按钮的文字描述.
+     * @param mixed $value
      */
     public function actionPrevLabel($value = '')
     {
@@ -57,6 +71,7 @@ class Wizard extends BaseRenderer
 
     /**
      * 是否将底部按钮固定在底部。
+     * @param mixed $value
      */
     public function affixFooter($value = '')
     {
@@ -64,7 +79,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * Wizard 用来保存数据的 api。 [详情](https://baidu.github.io/amis/docs/api#wizard)
+     * Wizard 用来保存数据的 api。 [详情](https://baidu.github.io/amis/docs/api#wizard).
+     * @param mixed $value
      */
     public function api($value = '')
     {
@@ -72,7 +88,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 表单区域css类
+     * 表单区域css类.
+     * @param mixed $value
      */
     public function bodyClassName($value = '')
     {
@@ -80,7 +97,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否合并后再提交
+     * 是否合并后再提交.
+     * @param mixed $value
      */
     public function bulkSubmit($value = true)
     {
@@ -88,7 +106,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -96,7 +115,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -104,7 +124,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -112,7 +133,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -120,7 +142,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 底部操作栏的css类
+     * 底部操作栏的css类.
+     * @param mixed $value
      */
     public function footerClassName($value = '')
     {
@@ -128,7 +151,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -136,7 +160,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -144,7 +169,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -153,6 +179,7 @@ class Wizard extends BaseRenderer
 
     /**
      * Wizard 用来获取初始数据的 api。
+     * @param mixed $value
      */
     public function initApi($value = '')
     {
@@ -160,7 +187,7 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function loadingConfig($value = '')
     {
@@ -168,7 +195,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 展示模式 可选值: vertical | horizontal
+     * 展示模式 可选值: vertical | horizontal.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -176,7 +204,7 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -184,7 +212,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -193,6 +222,7 @@ class Wizard extends BaseRenderer
 
     /**
      * 是否为只读模式。
+     * @param mixed $value
      */
     public function readOnly($value = true)
     {
@@ -200,7 +230,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 保存完后，可以指定跳转地址，支持相对路径和组内绝对路径，同时可以通过 $xxx 使用变量
+     * 保存完后，可以指定跳转地址，支持相对路径和组内绝对路径，同时可以通过 $xxx 使用变量.
+     * @param mixed $value
      */
     public function redirect($value = '')
     {
@@ -208,7 +239,7 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function reload($value = '')
     {
@@ -216,7 +247,7 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function startStep($value = '')
     {
@@ -224,7 +255,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -232,7 +264,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -240,7 +273,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -248,7 +282,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -256,7 +291,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -264,7 +300,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -272,7 +309,7 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -280,7 +317,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * step + body区域css类
+     * step + body区域css类.
+     * @param mixed $value
      */
     public function stepClassName($value = '')
     {
@@ -288,7 +326,7 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function steps($value = '')
     {
@@ -296,7 +334,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 步骤条区域css类
+     * 步骤条区域css类.
+     * @param mixed $value
      */
     public function stepsClassName($value = '')
     {
@@ -304,7 +343,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -313,6 +353,7 @@ class Wizard extends BaseRenderer
 
     /**
      * 默认表单提交自己会通过发送 api 保存数据，但是也可以设定另外一个 form 的 name 值，或者另外一个 `CRUD` 模型的 name 值。 如果 target 目标是一个 `Form` ，则目标 `Form` 会重新触发 `initApi` 和 `schemaApi`，api 可以拿到当前 form 数据。如果目标是一个 `CRUD` 模型，则目标模型会重新触发搜索，参数为当前 Form 数据。
+     * @param mixed $value
      */
     public function target($value = '')
     {
@@ -321,6 +362,7 @@ class Wizard extends BaseRenderer
 
     /**
      * 指定为表单向导
+     * @param mixed $value
      */
     public function type($value = 'wizard')
     {
@@ -328,7 +370,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -336,7 +379,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -344,7 +388,8 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -352,12 +397,11 @@ class Wizard extends BaseRenderer
     }
 
     /**
-     * 是否用panel包裹
+     * 是否用panel包裹.
+     * @param mixed $value
      */
     public function wrapWithPanel($value = true)
     {
         return $this->set('wrapWithPanel', $value);
     }
-
-
 }

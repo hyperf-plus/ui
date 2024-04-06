@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Avatar
+ * Avatar.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Avatar extends BaseRenderer
@@ -18,6 +27,7 @@ class Avatar extends BaseRenderer
 
     /**
      * 图片无法显示时的替换文字地址
+     * @param mixed $value
      */
     public function alt($value = '')
     {
@@ -25,7 +35,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 角标
+     * 角标.
+     * @param mixed $value
      */
     public function badge($value = '')
     {
@@ -33,7 +44,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 类名
+     * 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -41,7 +53,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 图片CORS属性 可选值: anonymous | use-credentials |
+     * 图片CORS属性 可选值: anonymous | use-credentials |.
+     * @param mixed $value
      */
     public function crossOrigin($value = '')
     {
@@ -49,7 +62,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 默认头像
+     * 默认头像.
+     * @param mixed $value
      */
     public function defaultAvatar($value = '')
     {
@@ -57,7 +71,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -65,7 +80,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -73,7 +89,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 图片是否允许拖动
+     * 图片是否允许拖动.
+     * @param mixed $value
      */
     public function draggable($value = true)
     {
@@ -81,7 +98,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -89,7 +107,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 图片相对于容器的缩放方式 可选值: fill | contain | cover | none | scale-down
+     * 图片相对于容器的缩放方式 可选值: fill | contain | cover | none | scale-down.
+     * @param mixed $value
      */
     public function fit($value = '')
     {
@@ -97,7 +116,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 字符类型距离左右两侧边界单位像素
+     * 字符类型距离左右两侧边界单位像素.
+     * @param mixed $value
      */
     public function gap($value = '')
     {
@@ -105,7 +125,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -113,7 +134,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -121,7 +143,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 图标
+     * 图标.
+     * @param mixed $value
      */
     public function icon($value = '')
     {
@@ -129,7 +152,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -137,7 +161,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 图片加载失败的是否默认处理，字符串函数
+     * 图片加载失败的是否默认处理，字符串函数.
+     * @param mixed $value
      */
     public function onError($value = '')
     {
@@ -145,7 +170,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -153,7 +179,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 形状 可选值: circle | square | rounded
+     * 形状 可选值: circle | square | rounded.
+     * @param mixed $value
      */
     public function shape($value = '')
     {
@@ -161,7 +188,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 大小
+     * 大小.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -170,6 +198,7 @@ class Avatar extends BaseRenderer
 
     /**
      * 图片地址
+     * @param mixed $value
      */
     public function src($value = '')
     {
@@ -177,7 +206,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -185,7 +215,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -193,7 +224,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -201,7 +233,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -209,7 +242,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -217,7 +251,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -225,7 +260,7 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -233,7 +268,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 自定义样式
+     * 自定义样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -241,7 +277,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 文本
+     * 文本.
+     * @param mixed $value
      */
     public function text($value = '')
     {
@@ -249,7 +286,7 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function type($value = 'avatar')
     {
@@ -257,7 +294,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -265,7 +303,8 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -273,12 +312,11 @@ class Avatar extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

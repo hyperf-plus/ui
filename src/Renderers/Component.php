@@ -1,9 +1,19 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * 万能组件
+ * 万能组件.
  *
  * 可以组合出任意组件<br/>
  * 使用setType(), 设置组件类型<br/>

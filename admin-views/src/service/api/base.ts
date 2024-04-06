@@ -1,15 +1,16 @@
-import {request,requestAmis} from "../request"
+import {request} from '../request'
 
 /**
  * 初始化页面结构
  * @param path
+ * @param pageSign
  */
-export const initPageSchema = function(path: string){
-    return request.get(path,{
-        headers:{
-                "layout":true
-        }
-    })
+export const initPageSchema = (path: string, pageSign?: string) => {
+    if (pageSign) {
+        return request.get('/page_schema?sign=' + pageSign)
+    }
+
+    return request.get(path)
 }
 
 /**
@@ -18,15 +19,15 @@ export const initPageSchema = function(path: string){
  * @param method
  * @param data
  */
-export const amisRequest = (url, method, data) => requestAmis[method](url, data)
+export const amisRequest = (url, method, data) => request[method](url, data)
 
 /**
  * 获取设置
  */
-export const fetchSettings = () => request.get("/setting/config")
+export const fetchSettings = () => request.get('/setting/config')
 
 /**
  * 保存设置
  * @param data 格式：{key1: value1, key2: value2, ...}
  */
-export const saveSettings = (data: any) => request.put("/setting", data)
+export const saveSettings = (data: any) => request.post('/setting/config', data)

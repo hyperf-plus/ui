@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Code 代码高亮
+ * Code 代码高亮.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Code extends BaseRenderer
@@ -16,7 +25,8 @@ class Code extends BaseRenderer
     }
 
     /**
-     * 外层 CSS 类名
+     * 外层 CSS 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Code extends BaseRenderer
     }
 
     /**
-     * 主题，还有 'vs-dark'
+     * 主题，还有 'vs-dark'.
+     * @param mixed $value
      */
     public function editorTheme($value = '')
     {
@@ -32,7 +43,8 @@ class Code extends BaseRenderer
     }
 
     /**
-     * 所使用的高亮语言，默认是 plaintext
+     * 所使用的高亮语言，默认是 plaintext.
+     * @param mixed $value
      */
     public function language($value = '')
     {
@@ -40,7 +52,8 @@ class Code extends BaseRenderer
     }
 
     /**
-     * 在其他组件中，时，用作变量映射
+     * 在其他组件中，时，用作变量映射.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -48,7 +61,8 @@ class Code extends BaseRenderer
     }
 
     /**
-     * 默认 tab 大小
+     * 默认 tab 大小.
+     * @param mixed $value
      */
     public function tabSize($value = '')
     {
@@ -57,6 +71,7 @@ class Code extends BaseRenderer
 
     /**
      * 指定为 code 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'code')
     {
@@ -65,6 +80,7 @@ class Code extends BaseRenderer
 
     /**
      * 显示的颜色值
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -72,12 +88,11 @@ class Code extends BaseRenderer
     }
 
     /**
-     * 是否折行
+     * 是否折行.
+     * @param mixed $value
      */
     public function wordWrap($value = true)
     {
         return $this->set('wordWrap', $value);
     }
-
-
 }

@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * 分页容器功能性渲染器。详情请见：https://aisuda.bce.baidu.com/amis/zh-CN/components/pagination-wrapper
+ * 分页容器功能性渲染器。详情请见：https://aisuda.bce.baidu.com/amis/zh-CN/components/pagination-wrapper.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class PaginationWrapper extends BaseRenderer
@@ -17,6 +26,7 @@ class PaginationWrapper extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -24,7 +34,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -40,7 +52,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -48,7 +61,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -56,7 +70,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -64,7 +79,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -72,7 +88,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -80,7 +97,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 输入字段名
+     * 输入字段名.
+     * @param mixed $value
      */
     public function inputName($value = '')
     {
@@ -89,6 +107,7 @@ class PaginationWrapper extends BaseRenderer
 
     /**
      * 最多显示多少个分页按钮。
+     * @param mixed $value
      */
     public function maxButtons($value = '')
     {
@@ -96,7 +115,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -104,7 +124,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 输出字段名
+     * 输出字段名.
+     * @param mixed $value
      */
     public function outputName($value = '')
     {
@@ -113,6 +134,7 @@ class PaginationWrapper extends BaseRenderer
 
     /**
      * 每页显示多条数据。
+     * @param mixed $value
      */
     public function perPage($value = '')
     {
@@ -120,7 +142,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 分页显示位置，如果配置为 none 则需要自己在内容区域配置 pagination 组件，否则不显示。 可选值: top | bottom | none
+     * 分页显示位置，如果配置为 none 则需要自己在内容区域配置 pagination 组件，否则不显示。 可选值: top | bottom | none.
+     * @param mixed $value
      */
     public function position($value = '')
     {
@@ -128,7 +151,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 是否显示快速跳转输入框
+     * 是否显示快速跳转输入框.
+     * @param mixed $value
      */
     public function showPageInput($value = true)
     {
@@ -136,7 +160,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -144,7 +169,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -152,7 +178,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -160,7 +187,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -168,7 +196,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -176,7 +205,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -184,7 +214,7 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -192,7 +222,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -200,7 +231,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 指定为分页容器功能性渲染器
+     * 指定为分页容器功能性渲染器.
+     * @param mixed $value
      */
     public function type($value = 'pagination-wrapper')
     {
@@ -208,7 +240,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -216,7 +249,8 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -224,12 +258,11 @@ class PaginationWrapper extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

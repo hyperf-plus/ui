@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * GridNav 宫格导航
+ * GridNav 宫格导航.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class GridNav extends BaseRenderer
@@ -16,7 +25,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 是否显示列表项边框
+     * 是否显示列表项边框.
+     * @param mixed $value
      */
     public function border($value = true)
     {
@@ -24,7 +34,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 是否将列表项内容居中显示
+     * 是否将列表项内容居中显示.
+     * @param mixed $value
      */
     public function center($value = true)
     {
@@ -32,7 +43,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 外层 CSS 类名
+     * 外层 CSS 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -40,7 +52,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 列数
+     * 列数.
+     * @param mixed $value
      */
     public function columnNum($value = '')
     {
@@ -48,7 +61,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 列表项内容排列的方向，可选值为 horizontal 、vertical
+     * 列表项内容排列的方向，可选值为 horizontal 、vertical.
+     * @param mixed $value
      */
     public function direction($value = '')
     {
@@ -56,7 +70,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 列表项之间的间距，默认单位为px
+     * 列表项之间的间距，默认单位为px.
+     * @param mixed $value
      */
     public function gutter($value = '')
     {
@@ -64,7 +79,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 图标宽度占比，单位%
+     * 图标宽度占比，单位%.
+     * @param mixed $value
      */
     public function iconRatio($value = '')
     {
@@ -72,7 +88,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 列表项 css 类名
+     * 列表项 css 类名.
+     * @param mixed $value
      */
     public function itemClassName($value = '')
     {
@@ -80,7 +97,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 列表项图标
+     * 列表项图标.
+     * @param mixed $value
      */
     public function options($value = '')
     {
@@ -88,7 +106,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 是否调换图标和文本的位置
+     * 是否调换图标和文本的位置.
+     * @param mixed $value
      */
     public function reverse($value = true)
     {
@@ -96,7 +115,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 数据源
+     * 数据源.
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -104,7 +124,8 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 是否将列表项固定为正方形
+     * 是否将列表项固定为正方形.
+     * @param mixed $value
      */
     public function square($value = true)
     {
@@ -113,6 +134,7 @@ class GridNav extends BaseRenderer
 
     /**
      * 指定为 grid-nav 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'grid-nav')
     {
@@ -120,12 +142,11 @@ class GridNav extends BaseRenderer
     }
 
     /**
-     * 图片数组
+     * 图片数组.
+     * @param mixed $value
      */
     public function value($value = '')
     {
         return $this->set('value', $value);
     }
-
-
 }

@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Log 实时日志
+ * Log 实时日志.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Log extends BaseRenderer
@@ -16,7 +25,8 @@ class Log extends BaseRenderer
     }
 
     /**
-     * 是否自动滚动到底部
+     * 是否自动滚动到底部.
+     * @param mixed $value
      */
     public function autoScroll($value = '')
     {
@@ -24,7 +34,8 @@ class Log extends BaseRenderer
     }
 
     /**
-     * 外层 CSS 类名
+     * 外层 CSS 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -33,6 +44,7 @@ class Log extends BaseRenderer
 
     /**
      * 关闭 ANSI 颜色支持
+     * @param mixed $value
      */
     public function disableColor($value = '')
     {
@@ -41,6 +53,7 @@ class Log extends BaseRenderer
 
     /**
      * 返回内容的字符编码
+     * @param mixed $value
      */
     public function encoding($value = '')
     {
@@ -48,7 +61,8 @@ class Log extends BaseRenderer
     }
 
     /**
-     * 展示区域高度
+     * 展示区域高度.
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -56,7 +70,8 @@ class Log extends BaseRenderer
     }
 
     /**
-     * 最大显示行数
+     * 最大显示行数.
+     * @param mixed $value
      */
     public function maxLength($value = '')
     {
@@ -64,7 +79,8 @@ class Log extends BaseRenderer
     }
 
     /**
-     * 可选日志操作：['stop', 'clear', 'showLineNumber', 'filter']
+     * 可选日志操作：['stop', 'clear', 'showLineNumber', 'filter'].
+     * @param mixed $value
      */
     public function operation($value = '')
     {
@@ -72,7 +88,8 @@ class Log extends BaseRenderer
     }
 
     /**
-     * 加载中的文字
+     * 加载中的文字.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -80,7 +97,8 @@ class Log extends BaseRenderer
     }
 
     /**
-     * 设置每行高度，将会开启虚拟渲染
+     * 设置每行高度，将会开启虚拟渲染.
+     * @param mixed $value
      */
     public function rowHeight($value = '')
     {
@@ -88,7 +106,8 @@ class Log extends BaseRenderer
     }
 
     /**
-     * 接口
+     * 接口.
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -97,11 +116,10 @@ class Log extends BaseRenderer
 
     /**
      * 指定为 log 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'log')
     {
         return $this->set('type', $value);
     }
-
-
 }

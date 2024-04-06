@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * SchemaApi
+ * SchemaApi.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class SchemaApi extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 如果 method 为 get 的接口，设置了 data 信息。 默认 data 会自动附带在 query 里面发送给后端。如果想通过 body 发送给后端，那么请把这个配置成 false。但是，浏览器还不支持啊，设置了只是摆设。除非服务端支持 method-override
+     * 如果 method 为 get 的接口，设置了 data 信息。 默认 data 会自动附带在 query 里面发送给后端。如果想通过 body 发送给后端，那么请把这个配置成 false。但是，浏览器还不支持啊，设置了只是摆设。除非服务端支持 method-override.
+     * @param mixed $value
      */
     public function attachDataToQuery($value = true)
     {
@@ -26,6 +34,7 @@ class SchemaApi extends BaseRenderer
 
     /**
      * 是否自动刷新，当 url 中的取值结果变化时，自动刷新数据。
+     * @param mixed $value
      */
     public function autoRefresh($value = true)
     {
@@ -34,6 +43,7 @@ class SchemaApi extends BaseRenderer
 
     /**
      * 如果设置了值，同一个接口，相同参数，指定的时间（单位：ms）内请求将直接走缓存。
+     * @param mixed $value
      */
     public function cache($value = '')
     {
@@ -41,7 +51,8 @@ class SchemaApi extends BaseRenderer
     }
 
     /**
-     * 默认数据映射中的key如果带点，或者带大括号，会转成对象比如：{   'a.b': '123' }经过数据映射后变成 {  a: {   b: '123  } }如果想要关闭此功能，请设置 convertKeyToPath 为 false
+     * 默认数据映射中的key如果带点，或者带大括号，会转成对象比如：{   'a.b': '123' }经过数据映射后变成 {  a: {   b: '123  } }如果想要关闭此功能，请设置 convertKeyToPath 为 false.
+     * @param mixed $value
      */
     public function convertKeyToPath($value = true)
     {
@@ -50,6 +61,7 @@ class SchemaApi extends BaseRenderer
 
     /**
      * 用来控制携带数据. 当key 为 `&` 值为 `$$` 时, 将所有原始数据打平设置到 data 中. 当值为 $$ 将所有原始数据赋值到对应的 key 中. 当值为 $ 打头时, 将变量值设置到 key 中.
+     * @param mixed $value
      */
     public function data($value = '')
     {
@@ -57,7 +69,8 @@ class SchemaApi extends BaseRenderer
     }
 
     /**
-     * 发送体的格式 可选值: json | form-data | form
+     * 发送体的格式 可选值: json | form-data | form.
+     * @param mixed $value
      */
     public function dataType($value = '')
     {
@@ -65,7 +78,8 @@ class SchemaApi extends BaseRenderer
     }
 
     /**
-     * 文件下载时，指定文件名
+     * 文件下载时，指定文件名.
+     * @param mixed $value
      */
     public function downloadFileName($value = '')
     {
@@ -74,6 +88,7 @@ class SchemaApi extends BaseRenderer
 
     /**
      * 强制将数据附加在 query，默认只有 api 地址中没有用变量的时候 crud 查询接口才会 自动附加数据到 query 部分，如果想强制附加请设置这个属性。 对于那种临时加了个变量但是又不想全部参数写一遍的时候配置很有用。
+     * @param mixed $value
      */
     public function forceAppendDataToQuery($value = true)
     {
@@ -82,6 +97,7 @@ class SchemaApi extends BaseRenderer
 
     /**
      * 携带 headers，用法和 data 一样，可以用变量。
+     * @param mixed $value
      */
     public function headers($value = '')
     {
@@ -89,7 +105,8 @@ class SchemaApi extends BaseRenderer
     }
 
     /**
-     * API 发送类型 可选值: get | post | put | delete | patch | jsonp | js
+     * API 发送类型 可选值: get | post | put | delete | patch | jsonp | js.
+     * @param mixed $value
      */
     public function method($value = '')
     {
@@ -97,7 +114,8 @@ class SchemaApi extends BaseRenderer
     }
 
     /**
-     * qs 配置项
+     * qs 配置项.
+     * @param mixed $value
      */
     public function qsOptions($value = '')
     {
@@ -105,7 +123,8 @@ class SchemaApi extends BaseRenderer
     }
 
     /**
-     * 默认都是追加模式，如果想完全替换把这个配置成 true
+     * 默认都是追加模式，如果想完全替换把这个配置成 true.
+     * @param mixed $value
      */
     public function replaceData($value = true)
     {
@@ -114,6 +133,7 @@ class SchemaApi extends BaseRenderer
 
     /**
      * 用来做接口返回的数据映射。
+     * @param mixed $value
      */
     public function responseData($value = '')
     {
@@ -122,6 +142,7 @@ class SchemaApi extends BaseRenderer
 
     /**
      * 如果是文件下载接口，请配置这个。
+     * @param mixed $value
      */
     public function responseType($value = 'blob')
     {
@@ -129,7 +150,8 @@ class SchemaApi extends BaseRenderer
     }
 
     /**
-     * 设置发送条件
+     * 设置发送条件.
+     * @param mixed $value
      */
     public function sendOn($value = '')
     {
@@ -137,7 +159,8 @@ class SchemaApi extends BaseRenderer
     }
 
     /**
-     * autoFill 是否显示自动填充错误提示
+     * autoFill 是否显示自动填充错误提示.
+     * @param mixed $value
      */
     public function silent($value = true)
     {
@@ -146,6 +169,7 @@ class SchemaApi extends BaseRenderer
 
     /**
      * 当开启自动刷新的时候，默认是 api 的 url 来自动跟踪变量变化的。 如果你希望监控 url 外的变量，请配置 trackExpression。
+     * @param mixed $value
      */
     public function trackExpression($value = '')
     {
@@ -154,11 +178,10 @@ class SchemaApi extends BaseRenderer
 
     /**
      * API 发送目标地址
+     * @param mixed $value
      */
     public function url($value = '')
     {
         return $this->set('url', $value);
     }
-
-
 }

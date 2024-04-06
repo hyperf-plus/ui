@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Watermark
+ * Watermark.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Watermark extends BaseRenderer
@@ -16,7 +25,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 内容
+     * 内容.
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -24,7 +34,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 设置类名
+     * 设置类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 水印文字内容
+     * 水印文字内容.
+     * @param mixed $value
      */
     public function content($value = '')
     {
@@ -40,7 +52,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 文字样式
+     * 文字样式.
+     * @param mixed $value
      */
     public function font($value = '')
     {
@@ -48,7 +61,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 水印之间的间距, 默认: [100, 100]
+     * 水印之间的间距, 默认: [100, 100].
+     * @param mixed $value
      */
     public function gap($value = '')
     {
@@ -56,7 +70,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 水印的高度，content 的默认值为自身的高度, 默认: 64
+     * 水印的高度，content 的默认值为自身的高度, 默认: 64.
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -64,7 +79,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 图片源，建议导出 2 倍或 3 倍图，优先级高 (支持 base64 格式)
+     * 图片源，建议导出 2 倍或 3 倍图，优先级高 (支持 base64 格式).
+     * @param mixed $value
      */
     public function image($value = '')
     {
@@ -72,7 +88,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 是否将水印传导给弹出组件如 Modal、Drawer
+     * 是否将水印传导给弹出组件如 Modal、Drawer.
+     * @param mixed $value
      */
     public function inherit($value = true)
     {
@@ -80,7 +97,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 水印距离容器左上角的偏移量，默认为 gap/2
+     * 水印距离容器左上角的偏移量，默认为 gap/2.
+     * @param mixed $value
      */
     public function offset($value = '')
     {
@@ -88,7 +106,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 水印绘制时，旋转的角度，单位 °, 默认: -22
+     * 水印绘制时，旋转的角度，单位 °, 默认: -22.
+     * @param mixed $value
      */
     public function rotate($value = '')
     {
@@ -96,7 +115,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 指定为 watermark 渲染器。文档: https://ant-design.antgroup.com/components/watermark-cn#watermark
+     * 指定为 watermark 渲染器。文档: https://ant-design.antgroup.com/components/watermark-cn#watermark.
+     * @param mixed $value
      */
     public function type($value = 'custom-watermark')
     {
@@ -104,7 +124,8 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 水印的宽度，content 的默认值为自身的宽度, 默认: 120
+     * 水印的宽度，content 的默认值为自身的宽度, 默认: 120.
+     * @param mixed $value
      */
     public function width($value = '')
     {
@@ -112,12 +133,11 @@ class Watermark extends BaseRenderer
     }
 
     /**
-     * 追加的水印元素的 z-index, 默认: 9
+     * 追加的水印元素的 z-index, 默认: 9.
+     * @param mixed $value
      */
     public function zIndex($value = '')
     {
         return $this->set('zIndex', $value);
     }
-
-
 }

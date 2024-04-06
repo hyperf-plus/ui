@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Custom 自定义组件
+ * Custom 自定义组件.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Custom extends BaseRenderer
@@ -16,7 +25,8 @@ class Custom extends BaseRenderer
     }
 
     /**
-     * 节点 class
+     * 节点 class.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Custom extends BaseRenderer
     }
 
     /**
-     * 初始化节点 html
+     * 初始化节点 html.
+     * @param mixed $value
      */
     public function html($value = '')
     {
@@ -32,7 +43,8 @@ class Custom extends BaseRenderer
     }
 
     /**
-     * 节点 id
+     * 节点 id.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -40,7 +52,8 @@ class Custom extends BaseRenderer
     }
 
     /**
-     * 默认使用 div 标签，如果 true 就使用 span 标签
+     * 默认使用 div 标签，如果 true 就使用 span 标签.
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -48,7 +61,8 @@ class Custom extends BaseRenderer
     }
 
     /**
-     * 节点 名称
+     * 节点 名称.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -56,7 +70,8 @@ class Custom extends BaseRenderer
     }
 
     /**
-     * 节点初始化之后调的用函数
+     * 节点初始化之后调的用函数.
+     * @param mixed $value
      */
     public function onMount($value = '')
     {
@@ -64,7 +79,8 @@ class Custom extends BaseRenderer
     }
 
     /**
-     * 节点销毁的时候调用的函数
+     * 节点销毁的时候调用的函数.
+     * @param mixed $value
      */
     public function onUnmount($value = '')
     {
@@ -72,7 +88,8 @@ class Custom extends BaseRenderer
     }
 
     /**
-     * 数据有更新的时候调用的函数
+     * 数据有更新的时候调用的函数.
+     * @param mixed $value
      */
     public function onUpdate($value = '')
     {
@@ -81,11 +98,10 @@ class Custom extends BaseRenderer
 
     /**
      * 指定为 custom 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'custom')
     {
         return $this->set('type', $value);
     }
-
-
 }

@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * MultilineText
+ * MultilineText.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class MultilineText extends BaseRenderer
@@ -16,7 +25,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 收起按钮文本
+     * 收起按钮文本.
+     * @param mixed $value
      */
     public function collapseButtonText($value = '')
     {
@@ -32,7 +43,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -40,7 +52,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -48,7 +61,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -56,7 +70,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 展开按钮文本
+     * 展开按钮文本.
+     * @param mixed $value
      */
     public function expendButtonText($value = '')
     {
@@ -64,7 +79,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -72,7 +88,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -80,7 +97,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -88,7 +106,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 最大行数
+     * 最大行数.
+     * @param mixed $value
      */
     public function maxRows($value = '')
     {
@@ -96,7 +115,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -104,7 +124,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -112,7 +133,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -120,7 +142,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -128,7 +151,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -136,7 +160,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -144,7 +169,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -152,7 +178,7 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -160,7 +186,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -168,7 +195,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 文本
+     * 文本.
+     * @param mixed $value
      */
     public function text($value = '')
     {
@@ -176,7 +204,7 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function type($value = 'multiline-text')
     {
@@ -184,7 +212,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -192,7 +221,8 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -200,12 +230,11 @@ class MultilineText extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

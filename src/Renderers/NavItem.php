@@ -1,23 +1,30 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * NavItem
+ * NavItem.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class NavItem extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function active($value = true)
     {
@@ -25,7 +32,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function children($value = '')
     {
@@ -33,7 +40,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -41,7 +48,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function defer($value = true)
     {
@@ -49,7 +56,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function deferApi($value = '')
     {
@@ -57,7 +64,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -65,7 +72,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -73,7 +81,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function disabledTip($value = '')
     {
@@ -81,7 +89,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -89,7 +98,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -97,7 +107,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -106,6 +117,7 @@ class NavItem extends BaseRenderer
 
     /**
      * 图标类名，参考 fontawesome 4。
+     * @param mixed $value
      */
     public function icon($value = '')
     {
@@ -113,7 +125,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -121,7 +134,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function key($value = '')
     {
@@ -129,7 +142,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 文字说明
+     * 文字说明.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -137,7 +151,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -145,7 +159,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -153,7 +168,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -161,7 +177,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -169,7 +186,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -177,7 +195,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -185,7 +204,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -193,7 +213,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -201,7 +222,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -209,7 +230,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -217,7 +239,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function target($value = '')
     {
@@ -225,7 +247,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function to($value = '')
     {
@@ -233,7 +255,7 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function unfolded($value = true)
     {
@@ -241,7 +263,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -249,7 +272,8 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -257,12 +281,11 @@ class NavItem extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

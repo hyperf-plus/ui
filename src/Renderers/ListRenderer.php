@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * List 列表展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/card
+ * List 列表展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/card.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class ListRenderer extends BaseRenderer
@@ -16,7 +25,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否固底
+     * 是否固底.
+     * @param mixed $value
      */
     public function affixFooter($value = true)
     {
@@ -24,7 +34,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否固顶
+     * 是否固顶.
+     * @param mixed $value
      */
     public function affixHeader($value = true)
     {
@@ -32,7 +43,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 点击列表单行时，是否选择
+     * 点击列表单行时，是否选择.
+     * @param mixed $value
      */
     public function checkOnItemClick($value = true)
     {
@@ -40,7 +52,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -48,7 +61,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -56,7 +70,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -64,7 +79,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -73,6 +89,7 @@ class ListRenderer extends BaseRenderer
 
     /**
      * 底部区域
+     * @param mixed $value
      */
     public function footer($value = '')
     {
@@ -80,7 +97,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 底部区域类名
+     * 底部区域类名.
+     * @param mixed $value
      */
     public function footerClassName($value = '')
     {
@@ -89,6 +107,7 @@ class ListRenderer extends BaseRenderer
 
     /**
      * 顶部区域
+     * @param mixed $value
      */
     public function header($value = '')
     {
@@ -96,7 +115,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 顶部区域类名
+     * 顶部区域类名.
+     * @param mixed $value
      */
     public function headerClassName($value = '')
     {
@@ -104,7 +124,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -112,7 +133,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -120,7 +142,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否隐藏勾选框
+     * 是否隐藏勾选框.
+     * @param mixed $value
      */
     public function hideCheckToggler($value = true)
     {
@@ -128,7 +151,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -136,7 +160,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 点击列表项的行为
+     * 点击列表项的行为.
+     * @param mixed $value
      */
     public function itemAction($value = '')
     {
@@ -144,7 +169,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 配置某项是否可以点选
+     * 配置某项是否可以点选.
+     * @param mixed $value
      */
     public function itemCheckableOn($value = '')
     {
@@ -152,7 +178,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 配置某项是否可拖拽排序，前提是要开启拖拽功能
+     * 配置某项是否可拖拽排序，前提是要开启拖拽功能.
+     * @param mixed $value
      */
     public function itemDraggableOn($value = '')
     {
@@ -160,7 +187,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 单条数据展示内容配置
+     * 单条数据展示内容配置.
+     * @param mixed $value
      */
     public function listItem($value = '')
     {
@@ -168,7 +196,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -176,7 +205,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 无数据提示
+     * 无数据提示.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -184,7 +214,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否显示底部
+     * 是否显示底部.
+     * @param mixed $value
      */
     public function showFooter($value = true)
     {
@@ -192,7 +223,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否显示头部
+     * 是否显示头部.
+     * @param mixed $value
      */
     public function showHeader($value = true)
     {
@@ -200,7 +232,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 大小 可选值: sm | base
+     * 大小 可选值: sm | base.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -208,7 +241,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 数据源: 绑定当前环境变量
+     * 数据源: 绑定当前环境变量.
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -216,7 +250,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -224,7 +259,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -232,7 +268,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -240,7 +277,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -248,7 +286,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -256,7 +295,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -264,7 +304,7 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -272,7 +312,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -280,7 +321,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 标题
+     * 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -288,7 +330,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 指定为 List 列表展示控件。 可选值: list | static-list
+     * 指定为 List 列表展示控件。 可选值: list | static-list.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -296,7 +339,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -304,7 +348,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 可以用来作为值的字段
+     * 可以用来作为值的字段.
+     * @param mixed $value
      */
     public function valueField($value = '')
     {
@@ -312,7 +357,8 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -320,12 +366,11 @@ class ListRenderer extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

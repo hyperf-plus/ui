@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * AnchorNav 锚点导航渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
+ * AnchorNav 锚点导航渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class AnchorNav extends BaseRenderer
@@ -17,6 +26,7 @@ class AnchorNav extends BaseRenderer
 
     /**
      * 被激活（定位）的楼层
+     * @param mixed $value
      */
     public function active($value = '')
     {
@@ -24,7 +34,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 样式名
+     * 样式名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     *  可选值: vertical | horizontal
+     *  可选值: vertical | horizontal.
+     * @param mixed $value
      */
     public function direction($value = '')
     {
@@ -40,7 +52,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -48,7 +61,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -56,7 +70,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -64,7 +79,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -72,7 +88,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -80,7 +97,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -88,7 +106,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 导航样式名
+     * 导航样式名.
+     * @param mixed $value
      */
     public function linkClassName($value = '')
     {
@@ -96,7 +115,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 楼层集合
+     * 楼层集合.
+     * @param mixed $value
      */
     public function links($value = '')
     {
@@ -104,7 +124,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -112,7 +133,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 楼层样式名
+     * 楼层样式名.
+     * @param mixed $value
      */
     public function sectionClassName($value = '')
     {
@@ -120,7 +142,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -128,7 +151,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -136,7 +160,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -144,7 +169,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -152,7 +178,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -160,7 +187,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -168,7 +196,7 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -176,7 +204,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -184,7 +213,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 指定为 AnchorNav 锚点导航渲染器
+     * 指定为 AnchorNav 锚点导航渲染器.
+     * @param mixed $value
      */
     public function type($value = 'anchor-nav')
     {
@@ -192,7 +222,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -200,7 +231,8 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -208,12 +240,11 @@ class AnchorNav extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

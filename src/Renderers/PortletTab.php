@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * 栏目容器渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/portlet
+ * 栏目容器渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/portlet.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class PortletTab extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 内容
+     * 内容.
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -25,7 +33,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -33,7 +42,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -41,7 +51,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -49,7 +60,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -57,7 +69,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -65,7 +78,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -73,7 +87,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 按钮图标
+     * 按钮图标.
+     * @param mixed $value
      */
     public function icon($value = '')
     {
@@ -81,7 +96,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     *  可选值: left | right
+     *  可选值: left | right.
+     * @param mixed $value
      */
     public function iconPosition($value = '')
     {
@@ -89,7 +105,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -97,7 +114,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 点开时才加载卡片内容
+     * 点开时才加载卡片内容.
+     * @param mixed $value
      */
     public function mountOnEnter($value = true)
     {
@@ -105,7 +123,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -113,7 +132,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 设置以后内容每次都会重新渲染
+     * 设置以后内容每次都会重新渲染.
+     * @param mixed $value
      */
     public function reload($value = true)
     {
@@ -121,7 +141,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -129,7 +150,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -137,7 +159,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -145,7 +168,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -153,7 +177,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -161,7 +186,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -169,7 +195,7 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -177,7 +203,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -185,7 +212,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 内容
+     * 内容.
+     * @param mixed $value
      */
     public function tab($value = '')
     {
@@ -193,7 +221,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * Tab 标题
+     * Tab 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -201,7 +230,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 可以在右侧配置点其他功能按钮，随着tab切换而切换
+     * 可以在右侧配置点其他功能按钮，随着tab切换而切换.
+     * @param mixed $value
      */
     public function toolbar($value = '')
     {
@@ -210,6 +240,7 @@ class PortletTab extends BaseRenderer
 
     /**
      * 卡片隐藏就销毁卡片节点。
+     * @param mixed $value
      */
     public function unmountOnExit($value = true)
     {
@@ -217,7 +248,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -225,7 +257,8 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -233,12 +266,11 @@ class PortletTab extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

@@ -1,13 +1,22 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 use HPlus\UI\Traits\HasUploadTrait;
 
 /**
- * WangEditor
+ * WangEditor.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class WangEditor extends BaseRenderer
@@ -22,7 +31,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 自动填充
+     * 自动填充.
+     * @param mixed $value
      */
     public function autoFill($value = '')
     {
@@ -30,7 +40,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 自动获取焦点
+     * 自动获取焦点.
+     * @param mixed $value
      */
     public function autoFocus($value = true)
     {
@@ -38,7 +49,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 设置类名
+     * 设置类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -47,6 +59,7 @@ class WangEditor extends BaseRenderer
 
     /**
      * 当前表单项隐藏时是否清除值
+     * @param mixed $value
      */
     public function clearValueOnHidden($value = true)
     {
@@ -54,7 +67,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 描述
+     * 描述.
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -62,7 +76,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -70,7 +85,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 当前表单项是否禁用的条件
+     * 当前表单项是否禁用的条件.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -78,7 +94,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 排除按钮
+     * 排除按钮.
+     * @param mixed $value
      */
     public function excludeKeys($value = '')
     {
@@ -86,7 +103,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 编辑器高度 px
+     * 编辑器高度 px.
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -94,7 +112,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 插入按钮
+     * 插入按钮.
+     * @param mixed $value
      */
     public function insertKeys($value = '')
     {
@@ -102,7 +121,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 字段标签
+     * 字段标签.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -110,7 +130,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
+     * 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -118,7 +139,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 表单项标签描述
+     * 表单项标签描述.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -126,7 +148,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 最大长度
+     * 最大长度.
+     * @param mixed $value
      */
     public function maxLength($value = '')
     {
@@ -134,7 +157,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 字段名
+     * 字段名.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -142,7 +166,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -150,7 +175,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 备注
+     * 备注.
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -158,7 +184,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 是否必填
+     * 是否必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -166,7 +193,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 是否必填的条件
+     * 是否必填的条件.
+     * @param mixed $value
      */
     public function requiredOn($value = '')
     {
@@ -174,7 +202,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -182,7 +211,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 工具栏按钮
+     * 工具栏按钮.
+     * @param mixed $value
      */
     public function toolbarKeys($value = '')
     {
@@ -191,6 +221,7 @@ class WangEditor extends BaseRenderer
 
     /**
      * 指定为 wang-editor 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'custom-wang-editor')
     {
@@ -198,7 +229,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 上传图片的最大数量 默认 100
+     * 上传图片的最大数量 默认 100.
+     * @param mixed $value
      */
     public function uploadImageMaxNumber($value = '')
     {
@@ -206,7 +238,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 上传图片的最大大小 单位: K 默认 2M
+     * 上传图片的最大大小 单位: K 默认 2M.
+     * @param mixed $value
      */
     public function uploadImageMaxSize($value = '')
     {
@@ -215,6 +248,7 @@ class WangEditor extends BaseRenderer
 
     /**
      * 上传图片的服务器地址
+     * @param mixed $value
      */
     public function uploadImageServer($value = '')
     {
@@ -222,7 +256,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 上传视频的最大数量 默认 5
+     * 上传视频的最大数量 默认 5.
+     * @param mixed $value
      */
     public function uploadVideoMaxNumber($value = '')
     {
@@ -230,7 +265,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 上传视频的最大大小 单位: K 默认 10M
+     * 上传视频的最大大小 单位: K 默认 10M.
+     * @param mixed $value
      */
     public function uploadVideoMaxSize($value = '')
     {
@@ -239,6 +275,7 @@ class WangEditor extends BaseRenderer
 
     /**
      * 上传视频的服务器地址
+     * @param mixed $value
      */
     public function uploadVideoServer($value = '')
     {
@@ -246,7 +283,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 校验接口
+     * 校验接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -254,7 +292,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 校验错误信息
+     * 校验错误信息.
+     * @param mixed $value
      */
     public function validationErrors($value = '')
     {
@@ -262,7 +301,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 校验规则
+     * 校验规则.
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -271,6 +311,7 @@ class WangEditor extends BaseRenderer
 
     /**
      * 默认值
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -278,7 +319,8 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -286,12 +328,11 @@ class WangEditor extends BaseRenderer
     }
 
     /**
-     * 当前表单项是否显示的条件
+     * 当前表单项是否显示的条件.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

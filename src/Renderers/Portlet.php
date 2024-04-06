@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Portlet
+ * Portlet.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Portlet extends BaseRenderer
@@ -16,7 +25,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 内容类名
+     * 内容类名.
+     * @param mixed $value
      */
     public function contentClassName($value = '')
     {
@@ -32,7 +43,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 标题右侧的描述
+     * 标题右侧的描述.
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -40,7 +52,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -48,7 +61,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -57,6 +71,7 @@ class Portlet extends BaseRenderer
 
     /**
      * header和内容是否展示分割线
+     * @param mixed $value
      */
     public function divider($value = true)
     {
@@ -64,7 +79,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -72,7 +88,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -80,7 +97,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -88,7 +106,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 隐藏头部
+     * 隐藏头部.
+     * @param mixed $value
      */
     public function hideHeader($value = true)
     {
@@ -96,7 +115,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -104,7 +124,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 链接外层类名
+     * 链接外层类名.
+     * @param mixed $value
      */
     public function linksClassName($value = '')
     {
@@ -113,6 +134,7 @@ class Portlet extends BaseRenderer
 
     /**
      * 卡片是否只有在点开的时候加载？
+     * @param mixed $value
      */
     public function mountOnEnter($value = true)
     {
@@ -120,7 +142,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -128,7 +151,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 是否支持溢出滚动
+     * 是否支持溢出滚动.
+     * @param mixed $value
      */
     public function scrollable($value = true)
     {
@@ -137,6 +161,7 @@ class Portlet extends BaseRenderer
 
     /**
      * 关联已有数据，选项卡直接根据目标数据重复。
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -144,7 +169,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -152,7 +178,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -160,7 +187,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -168,7 +196,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -176,7 +205,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -184,7 +214,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -192,7 +223,7 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -200,7 +231,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 自定义样式
+     * 自定义样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -208,7 +240,7 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function tabs($value = '')
     {
@@ -216,7 +248,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 类名
+     * 类名.
+     * @param mixed $value
      */
     public function tabsClassName($value = '')
     {
@@ -224,7 +257,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 展示形式 可选值:  | line | card | radio | vertical | tiled
+     * 展示形式 可选值:  | line | card | radio | vertical | tiled.
+     * @param mixed $value
      */
     public function tabsMode($value = '')
     {
@@ -232,7 +266,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 可以在右侧配置点其他功能按钮。不会随着tab切换
+     * 可以在右侧配置点其他功能按钮。不会随着tab切换.
+     * @param mixed $value
      */
     public function toolbar($value = '')
     {
@@ -240,7 +275,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 指定为 portlet 类型
+     * 指定为 portlet 类型.
+     * @param mixed $value
      */
     public function type($value = 'portlet')
     {
@@ -248,7 +284,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 卡片隐藏的时候是否销毁卡片内容
+     * 卡片隐藏的时候是否销毁卡片内容.
+     * @param mixed $value
      */
     public function unmountOnExit($value = true)
     {
@@ -256,7 +293,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -264,7 +302,8 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -272,12 +311,11 @@ class Portlet extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Date 展示渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/date
+ * Date 展示渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/date.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Date extends BaseRenderer
@@ -16,7 +25,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -32,7 +43,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -40,7 +52,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 展示的时间格式，参考 moment 中的格式说明。（新：同format）
+     * 展示的时间格式，参考 moment 中的格式说明。（新：同format）.
+     * @param mixed $value
      */
     public function displayFormat($value = '')
     {
@@ -48,7 +61,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 时区
+     * 时区.
+     * @param mixed $value
      */
     public function displayTimeZone($value = '')
     {
@@ -56,7 +70,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -65,6 +80,7 @@ class Date extends BaseRenderer
 
     /**
      * 展示的时间格式，参考 moment 中的格式说明。
+     * @param mixed $value
      */
     public function format($value = '')
     {
@@ -72,7 +88,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 显示成相对时间，比如1分钟前
+     * 显示成相对时间，比如1分钟前.
+     * @param mixed $value
      */
     public function fromNow($value = true)
     {
@@ -80,7 +97,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -88,7 +106,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -96,7 +115,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -104,7 +124,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -112,7 +133,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -120,7 +142,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -128,7 +151,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -136,7 +160,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -144,7 +169,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -152,7 +178,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -160,7 +187,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -168,7 +196,7 @@ class Date extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -176,7 +204,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -184,7 +213,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 指定为日期展示类型 可选值: date | datetime | time | static-date | static-datetime | static-time
+     * 指定为日期展示类型 可选值: date | datetime | time | static-date | static-datetime | static-time.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -193,6 +223,7 @@ class Date extends BaseRenderer
 
     /**
      * 更新频率， 默认为1分钟
+     * @param mixed $value
      */
     public function updateFrequency($value = '')
     {
@@ -200,7 +231,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -209,6 +241,7 @@ class Date extends BaseRenderer
 
     /**
      * 值的时间格式，参考 moment 中的格式说明。
+     * @param mixed $value
      */
     public function valueFormat($value = '')
     {
@@ -216,7 +249,8 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -224,12 +258,11 @@ class Date extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

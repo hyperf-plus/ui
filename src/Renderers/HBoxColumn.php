@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * HBoxColumn
+ * HBoxColumn.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class HBoxColumn extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 内容区
+     * 内容区.
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -25,7 +33,8 @@ class HBoxColumn extends BaseRenderer
     }
 
     /**
-     * 列上 CSS 类名
+     * 列上 CSS 类名.
+     * @param mixed $value
      */
     public function columnClassName($value = '')
     {
@@ -33,7 +42,8 @@ class HBoxColumn extends BaseRenderer
     }
 
     /**
-     * 高度
+     * 高度.
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -42,6 +52,7 @@ class HBoxColumn extends BaseRenderer
 
     /**
      * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+     * @param mixed $value
      */
     public function horizontal($value = '')
     {
@@ -49,7 +60,8 @@ class HBoxColumn extends BaseRenderer
     }
 
     /**
-     * 配置子表单项默认的展示方式。 可选值: normal | inline | horizontal
+     * 配置子表单项默认的展示方式。 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -57,7 +69,8 @@ class HBoxColumn extends BaseRenderer
     }
 
     /**
-     * 其他样式
+     * 其他样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -65,7 +78,8 @@ class HBoxColumn extends BaseRenderer
     }
 
     /**
-     * 垂直对齐方式 可选值: top | middle | bottom | between
+     * 垂直对齐方式 可选值: top | middle | bottom | between.
+     * @param mixed $value
      */
     public function valign($value = '')
     {
@@ -73,7 +87,8 @@ class HBoxColumn extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -81,7 +96,8 @@ class HBoxColumn extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -89,12 +105,11 @@ class HBoxColumn extends BaseRenderer
     }
 
     /**
-     * 宽度
+     * 宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

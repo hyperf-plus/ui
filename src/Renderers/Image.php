@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * 图片展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/image
+ * 图片展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/image.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Image extends BaseRenderer
@@ -16,7 +25,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 图片无法显示时的替换文本
+     * 图片无法显示时的替换文本.
+     * @param mixed $value
      */
     public function alt($value = '')
     {
@@ -25,6 +35,7 @@ class Image extends BaseRenderer
 
     /**
      * 是否新窗口打开
+     * @param mixed $value
      */
     public function blank($value = true)
     {
@@ -32,7 +43,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 图片说明文字
+     * 图片说明文字.
+     * @param mixed $value
      */
     public function caption($value = '')
     {
@@ -40,7 +52,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 外层 css 类名
+     * 外层 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -49,6 +62,7 @@ class Image extends BaseRenderer
 
     /**
      * 默认图片地址
+     * @param mixed $value
      */
     public function defaultImage($value = '')
     {
@@ -56,7 +70,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -64,7 +79,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -72,7 +88,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -81,6 +98,7 @@ class Image extends BaseRenderer
 
     /**
      * 是否启动放大功能。
+     * @param mixed $value
      */
     public function enlargeAble($value = true)
     {
@@ -88,7 +106,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 放大时是否显示图片集
+     * 放大时是否显示图片集.
+     * @param mixed $value
      */
     public function enlargeWithGallary($value = true)
     {
@@ -96,7 +115,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 高度
+     * 高度.
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -104,7 +124,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -112,7 +133,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -121,6 +143,7 @@ class Image extends BaseRenderer
 
     /**
      * 链接地址
+     * @param mixed $value
      */
     public function href($value = '')
     {
@@ -128,7 +151,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 链接的 target
+     * 链接的 target.
+     * @param mixed $value
      */
     public function htmlTarget($value = '')
     {
@@ -136,7 +160,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -144,7 +169,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 图片描述信息
+     * 图片描述信息.
+     * @param mixed $value
      */
     public function imageCaption($value = '')
     {
@@ -152,7 +178,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 图片 css 类名
+     * 图片 css 类名.
+     * @param mixed $value
      */
     public function imageClassName($value = '')
     {
@@ -160,7 +187,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 放大详情图 CSS 类名
+     * 放大详情图 CSS 类名.
+     * @param mixed $value
      */
     public function imageGallaryClassName($value = '')
     {
@@ -168,7 +196,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 图片展示模式，默认为缩略图模式、可以配置成原图模式 可选值: thumb | original
+     * 图片展示模式，默认为缩略图模式、可以配置成原图模式 可选值: thumb | original.
+     * @param mixed $value
      */
     public function imageMode($value = '')
     {
@@ -176,7 +205,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 组件内层 css 类名
+     * 组件内层 css 类名.
+     * @param mixed $value
      */
     public function innerClassName($value = '')
     {
@@ -184,7 +214,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 关联字段名，也可以直接配置 src
+     * 关联字段名，也可以直接配置 src.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -192,7 +223,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -200,7 +232,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 大图地址，不设置用 src
+     * 大图地址，不设置用 src.
+     * @param mixed $value
      */
     public function originalSrc($value = '')
     {
@@ -208,7 +241,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 是否展示图片工具栏
+     * 是否展示图片工具栏.
+     * @param mixed $value
      */
     public function showToolbar($value = true)
     {
@@ -217,6 +251,7 @@ class Image extends BaseRenderer
 
     /**
      * 图片地址，如果配置了 name，这个属性不用配置。
+     * @param mixed $value
      */
     public function src($value = '')
     {
@@ -224,7 +259,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -232,7 +268,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -240,7 +277,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -248,7 +286,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -256,7 +295,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -264,7 +304,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -272,7 +313,7 @@ class Image extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -280,7 +321,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -288,7 +330,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 图片缩略图外层 css 类名
+     * 图片缩略图外层 css 类名.
+     * @param mixed $value
      */
     public function thumbClassName($value = '')
     {
@@ -296,7 +339,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 预览图模式 可选值: w-full | h-full | contain | cover
+     * 预览图模式 可选值: w-full | h-full | contain | cover.
+     * @param mixed $value
      */
     public function thumbMode($value = '')
     {
@@ -304,7 +348,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 预览图比率 可选值: 1:1 | 4:3 | 16:9
+     * 预览图比率 可选值: 1:1 | 4:3 | 16:9.
+     * @param mixed $value
      */
     public function thumbRatio($value = '')
     {
@@ -312,7 +357,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 图片标题
+     * 图片标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -320,7 +366,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 工具栏配置
+     * 工具栏配置.
+     * @param mixed $value
      */
     public function toolbarActions($value = '')
     {
@@ -328,7 +375,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 指定为图片展示类型 可选值: image | static-image
+     * 指定为图片展示类型 可选值: image | static-image.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -336,7 +384,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -344,7 +393,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -352,7 +402,8 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -360,12 +411,11 @@ class Image extends BaseRenderer
     }
 
     /**
-     * 宽度
+     * 宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

@@ -1,23 +1,30 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * QRCodeImageSettings
+ * QRCodeImageSettings.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class QRCodeImageSettings extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function excavate($value = true)
     {
@@ -25,7 +32,7 @@ class QRCodeImageSettings extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -33,7 +40,7 @@ class QRCodeImageSettings extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function src($value = '')
     {
@@ -41,7 +48,7 @@ class QRCodeImageSettings extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function width($value = '')
     {
@@ -49,7 +56,7 @@ class QRCodeImageSettings extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function x($value = '')
     {
@@ -57,12 +64,10 @@ class QRCodeImageSettings extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function y($value = '')
     {
         return $this->set('y', $value);
     }
-
-
 }

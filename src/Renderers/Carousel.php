@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Carousel 轮播图渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/carousel
+ * Carousel 轮播图渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/carousel.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Carousel extends BaseRenderer
@@ -16,7 +25,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否一直显示箭头
+     * 是否一直显示箭头.
+     * @param mixed $value
      */
     public function alwaysShowArrow($value = true)
     {
@@ -24,7 +34,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 动画类型 可选值: fade | slide
+     * 动画类型 可选值: fade | slide.
+     * @param mixed $value
      */
     public function animation($value = '')
     {
@@ -32,7 +43,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否自动播放
+     * 是否自动播放.
+     * @param mixed $value
      */
     public function auto($value = true)
     {
@@ -40,7 +52,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -48,7 +61,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 配置控件内容
+     * 配置控件内容.
+     * @param mixed $value
      */
     public function controls($value = '')
     {
@@ -56,7 +70,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     *  可选值: light | dark
+     *  可选值: light | dark.
+     * @param mixed $value
      */
     public function controlsTheme($value = '')
     {
@@ -64,7 +79,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -72,7 +88,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -81,6 +98,7 @@ class Carousel extends BaseRenderer
 
     /**
      * 动画时长
+     * @param mixed $value
      */
     public function duration($value = '')
     {
@@ -88,7 +106,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -96,7 +115,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 设置高度
+     * 设置高度.
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -104,7 +124,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -112,7 +133,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -120,7 +142,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 自定义箭头图标
+     * 自定义箭头图标.
+     * @param mixed $value
      */
     public function icons($value = '')
     {
@@ -128,7 +151,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -136,7 +160,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 轮播间隔时间
+     * 轮播间隔时间.
+     * @param mixed $value
      */
     public function interval($value = '')
     {
@@ -145,6 +170,7 @@ class Carousel extends BaseRenderer
 
     /**
      * 配置单条呈现模板
+     * @param mixed $value
      */
     public function itemSchema($value = '')
     {
@@ -152,7 +178,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 多图模式配置项
+     * 多图模式配置项.
+     * @param mixed $value
      */
     public function multiple($value = '')
     {
@@ -160,7 +187,7 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -168,7 +195,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -177,6 +205,7 @@ class Carousel extends BaseRenderer
 
     /**
      * 配置固定值
+     * @param mixed $value
      */
     public function options($value = '')
     {
@@ -184,7 +213,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 占位
+     * 占位.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -192,7 +222,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -200,7 +231,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -208,7 +240,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -216,7 +249,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -224,7 +258,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -232,7 +267,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -240,7 +276,7 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -248,7 +284,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -256,7 +293,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 预览图模式 可选值: contain | cover
+     * 预览图模式 可选值: contain | cover.
+     * @param mixed $value
      */
     public function thumbMode($value = '')
     {
@@ -264,7 +302,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 指定为轮播图类型
+     * 指定为轮播图类型.
+     * @param mixed $value
      */
     public function type($value = 'carousel')
     {
@@ -272,7 +311,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -280,7 +320,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -288,7 +329,8 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -296,12 +338,11 @@ class Carousel extends BaseRenderer
     }
 
     /**
-     * 设置宽度
+     * 设置宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

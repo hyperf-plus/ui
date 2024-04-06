@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Select 下拉选择框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/select
+ * Select 下拉选择框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/select.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class SelectControl extends BaseRenderer
@@ -16,7 +25,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 添加时调用的接口
+     * 添加时调用的接口.
+     * @param mixed $value
      */
     public function addApi($value = '')
     {
@@ -25,6 +35,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 新增时的表单项。
+     * @param mixed $value
      */
     public function addControls($value = '')
     {
@@ -32,7 +43,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 控制新增弹框设置项
+     * 控制新增弹框设置项.
+     * @param mixed $value
      */
     public function addDialog($value = '')
     {
@@ -40,7 +52,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否自动选中子节点
+     * 是否自动选中子节点.
+     * @param mixed $value
      */
     public function autoCheckChildren($value = '')
     {
@@ -49,6 +62,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 自动完成 API，当输入部分文字的时候，会将这些文字通过 ${term} 可以取到，发送给接口。 接口可以返回匹配到的选项，帮助用户输入。
+     * @param mixed $value
      */
     public function autoComplete($value = '')
     {
@@ -57,6 +71,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+     * @param mixed $value
      */
     public function autoFill($value = '')
     {
@@ -64,7 +79,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 边框模式，全边框，还是半边框，或者没边框。 可选值: full | half | none
+     * 边框模式，全边框，还是半边框，或者没边框。 可选值: full | half | none.
+     * @param mixed $value
      */
     public function borderMode($value = '')
     {
@@ -72,7 +88,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 可多选条件下，是否可全选
+     * 可多选条件下，是否可全选.
+     * @param mixed $value
      */
     public function checkAll($value = true)
     {
@@ -80,7 +97,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 可多选条件下，全选项文案，默认 ”全选“
+     * 可多选条件下，全选项文案，默认 ”全选“.
+     * @param mixed $value
      */
     public function checkAllLabel($value = '')
     {
@@ -88,7 +106,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -96,7 +115,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉.
+     * @param mixed $value
      */
     public function clearValueOnHidden($value = true)
     {
@@ -105,6 +125,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 是否可清除。
+     * @param mixed $value
      */
     public function clearable($value = true)
     {
@@ -113,6 +134,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 当 selectMode 为 table 时定义表格列信息。
+     * @param mixed $value
      */
     public function columns($value = '')
     {
@@ -120,7 +142,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否可以新增
+     * 是否可以新增.
+     * @param mixed $value
      */
     public function creatable($value = true)
     {
@@ -128,7 +151,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 新增文字
+     * 新增文字.
+     * @param mixed $value
      */
     public function createBtnLabel($value = '')
     {
@@ -137,6 +161,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 可多选条件下，是否默认全选中所有值
+     * @param mixed $value
      */
     public function defaultCheckAll($value = true)
     {
@@ -145,6 +170,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
+     * @param mixed $value
      */
     public function deferApi($value = '')
     {
@@ -152,7 +178,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 懒加载字段
+     * 懒加载字段.
+     * @param mixed $value
      */
     public function deferField($value = '')
     {
@@ -160,7 +187,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 选项删除 API
+     * 选项删除 API.
+     * @param mixed $value
      */
     public function deleteApi($value = '')
     {
@@ -169,6 +197,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 选项删除提示文字。
+     * @param mixed $value
      */
     public function deleteConfirmText($value = '')
     {
@@ -176,7 +205,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 分割符
+     * 分割符.
+     * @param mixed $value
      */
     public function delimiter($value = '')
     {
@@ -184,7 +214,7 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function desc($value = '')
     {
@@ -193,6 +223,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 描述内容，支持 Html 片段。
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -200,7 +231,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 配置描述上的 className
+     * 配置描述上的 className.
+     * @param mixed $value
      */
     public function descriptionClassName($value = '')
     {
@@ -208,7 +240,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -216,7 +249,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -224,7 +258,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 编辑时调用的 API
+     * 编辑时调用的 API.
+     * @param mixed $value
      */
     public function editApi($value = '')
     {
@@ -232,7 +267,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 选项修改的表单项
+     * 选项修改的表单项.
+     * @param mixed $value
      */
     public function editControls($value = '')
     {
@@ -240,7 +276,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 控制编辑弹框设置项
+     * 控制编辑弹框设置项.
+     * @param mixed $value
      */
     public function editDialog($value = '')
     {
@@ -248,7 +285,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否可以编辑
+     * 是否可以编辑.
+     * @param mixed $value
      */
     public function editable($value = true)
     {
@@ -256,7 +294,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -264,7 +303,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来.
+     * @param mixed $value
      */
     public function extraName($value = '')
     {
@@ -273,6 +313,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+     * @param mixed $value
      */
     public function extractValue($value = true)
     {
@@ -280,7 +321,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -288,7 +330,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -296,7 +339,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 输入提示，聚焦的时候显示
+     * 输入提示，聚焦的时候显示.
+     * @param mixed $value
      */
     public function hint($value = '')
     {
@@ -305,6 +349,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 当配置为水平布局的时候，用来配置具体的左右分配。
+     * @param mixed $value
      */
     public function horizontal($value = '')
     {
@@ -312,7 +357,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -320,7 +366,7 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function initAutoFill($value = '')
     {
@@ -329,6 +375,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 配置 source 接口初始拉不拉取。
+     * @param mixed $value
      */
     public function initFetch($value = true)
     {
@@ -336,7 +383,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 用表达式来配置 source 接口初始要不要拉取
+     * 用表达式来配置 source 接口初始要不要拉取.
+     * @param mixed $value
      */
     public function initFetchOn($value = '')
     {
@@ -345,6 +393,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 表单 control 是否为 inline 模式。
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -352,7 +401,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 配置 input className
+     * 配置 input className.
+     * @param mixed $value
      */
     public function inputClassName($value = '')
     {
@@ -360,7 +410,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 单个选项的高度，主要用于虚拟渲染
+     * 单个选项的高度，主要用于虚拟渲染.
+     * @param mixed $value
      */
     public function itemHeight($value = '')
     {
@@ -369,6 +420,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
+     * @param mixed $value
      */
     public function joinValues($value = true)
     {
@@ -376,7 +428,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -384,7 +437,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -392,7 +446,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 配置 label className
+     * 配置 label className.
+     * @param mixed $value
      */
     public function labelClassName($value = '')
     {
@@ -400,7 +455,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 设置label字段
+     * 设置label字段.
+     * @param mixed $value
      */
     public function labelField($value = '')
     {
@@ -408,7 +464,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -416,7 +473,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * label自定义宽度，默认单位为px
+     * label自定义宽度，默认单位为px.
+     * @param mixed $value
      */
     public function labelWidth($value = '')
     {
@@ -424,7 +482,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 当 selectMode 为 associated 时用来定义左侧的选择模式 可选值: tree | list
+     * 当 selectMode 为 associated 时用来定义左侧的选择模式 可选值: tree | list.
+     * @param mixed $value
      */
     public function leftMode($value = '')
     {
@@ -432,7 +491,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 当 selectMode 为 associated 时用来定义左侧的选项
+     * 当 selectMode 为 associated 时用来定义左侧的选项.
+     * @param mixed $value
      */
     public function leftOptions($value = '')
     {
@@ -440,7 +500,7 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function loadingConfig($value = '')
     {
@@ -448,7 +508,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效
+     * 标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效.
+     * @param mixed $value
      */
     public function maxTagCount($value = '')
     {
@@ -457,6 +518,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 可以自定义菜单展示。
+     * @param mixed $value
      */
     public function menuTpl($value = '')
     {
@@ -464,7 +526,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 配置当前表单项展示模式 可选值: normal | inline | horizontal
+     * 配置当前表单项展示模式 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -472,7 +535,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否为多选模式
+     * 是否为多选模式.
+     * @param mixed $value
      */
     public function multiple($value = true)
     {
@@ -480,7 +544,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -488,7 +553,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -496,7 +562,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 选项的自定义CSS类名
+     * 选项的自定义CSS类名.
+     * @param mixed $value
      */
     public function optionClassName($value = '')
     {
@@ -504,7 +571,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 选项集合
+     * 选项集合.
+     * @param mixed $value
      */
     public function options($value = '')
     {
@@ -512,7 +580,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 收纳标签的Popover配置
+     * 收纳标签的Popover配置.
+     * @param mixed $value
      */
     public function overflowTagPopover($value = '')
     {
@@ -520,7 +589,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 下拉框 Popover 设置
+     * 下拉框 Popover 设置.
+     * @param mixed $value
      */
     public function overlay($value = '')
     {
@@ -528,7 +598,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -536,7 +607,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否只读
+     * 是否只读.
+     * @param mixed $value
      */
     public function readOnly($value = true)
     {
@@ -544,7 +616,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 只读条件
+     * 只读条件.
+     * @param mixed $value
      */
     public function readOnlyOn($value = '')
     {
@@ -552,7 +625,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容.
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -560,7 +634,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否可删除
+     * 是否可删除.
+     * @param mixed $value
      */
     public function removable($value = true)
     {
@@ -568,7 +643,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否为必填
+     * 是否为必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -577,6 +653,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 点清除按钮时，将表单项设置成当前配置的值。
+     * @param mixed $value
      */
     public function resetValue($value = '')
     {
@@ -584,7 +661,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 当 selectMode 为 associated 时用来定义右侧的选择模式 可选值: table | list | tree | chained
+     * 当 selectMode 为 associated 时用来定义右侧的选择模式 可选值: table | list | tree | chained.
+     * @param mixed $value
      */
     public function rightMode($value = '')
     {
@@ -592,7 +670,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 搜索 API
+     * 搜索 API.
+     * @param mixed $value
      */
     public function searchApi($value = '')
     {
@@ -601,6 +680,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 当 searchResultMode 为 table 时定义表格列信息。
+     * @param mixed $value
      */
     public function searchResultColumns($value = '')
     {
@@ -608,7 +688,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 搜索结果展示模式 可选值: table | list | tree | chained
+     * 搜索结果展示模式 可选值: table | list | tree | chained.
+     * @param mixed $value
      */
     public function searchResultMode($value = '')
     {
@@ -616,7 +697,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否可搜索
+     * 是否可搜索.
+     * @param mixed $value
      */
     public function searchable($value = true)
     {
@@ -625,6 +707,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 默认选择选项第一个值。
+     * @param mixed $value
      */
     public function selectFirst($value = true)
     {
@@ -632,7 +715,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 勾选展示模式 可选值: table | group | tree | chained | associated
+     * 勾选展示模式 可选值: table | group | tree | chained | associated.
+     * @param mixed $value
      */
     public function selectMode($value = '')
     {
@@ -640,7 +724,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 当在value值未匹配到当前options中的选项时，是否value值对应文本飘红显示
+     * 当在value值未匹配到当前options中的选项时，是否value值对应文本飘红显示.
+     * @param mixed $value
      */
     public function showInvalidMatch($value = true)
     {
@@ -648,7 +733,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 表单项大小 可选值: xs | sm | md | lg | full
+     * 表单项大小 可选值: xs | sm | md | lg | full.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -657,6 +743,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 可用来通过 API 拉取 options。
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -664,7 +751,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -672,7 +760,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -680,7 +769,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -688,7 +778,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -696,7 +787,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -704,7 +796,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -712,7 +805,7 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -720,7 +813,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -729,6 +823,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 当修改完的时候是否提交表单。
+     * @param mixed $value
      */
     public function submitOnChange($value = true)
     {
@@ -736,7 +831,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 表单项类型 可选值: select | multi-select
+     * 表单项类型 可选值: select | multi-select.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -744,7 +840,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -752,7 +849,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 远端校验表单项接口
+     * 远端校验表单项接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -761,6 +859,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+     * @param mixed $value
      */
     public function validateOnChange($value = true)
     {
@@ -768,7 +867,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 验证失败的提示信息
+     * 验证失败的提示信息.
+     * @param mixed $value
      */
     public function validationErrors($value = '')
     {
@@ -776,7 +876,7 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -785,6 +885,7 @@ class SelectControl extends BaseRenderer
 
     /**
      * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -792,7 +893,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 设置value字段
+     * 设置value字段.
+     * @param mixed $value
      */
     public function valueField($value = '')
     {
@@ -800,7 +902,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 多选模式，值太多时是否避免折行
+     * 多选模式，值太多时是否避免折行.
+     * @param mixed $value
      */
     public function valuesNoWrap($value = true)
     {
@@ -808,7 +911,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 在选项数量达到多少时开启虚拟渲染
+     * 在选项数量达到多少时开启虚拟渲染.
+     * @param mixed $value
      */
     public function virtualThreshold($value = '')
     {
@@ -816,7 +920,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -824,7 +929,8 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -832,12 +938,11 @@ class SelectControl extends BaseRenderer
     }
 
     /**
-     * 在Table中调整宽度
+     * 在Table中调整宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

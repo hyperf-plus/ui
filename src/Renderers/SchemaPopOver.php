@@ -1,23 +1,30 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * SchemaPopOver
+ * SchemaPopOver.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class SchemaPopOver extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -25,7 +32,8 @@ class SchemaPopOver extends BaseRenderer
     }
 
     /**
-     * 类名
+     * 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -33,7 +41,8 @@ class SchemaPopOver extends BaseRenderer
     }
 
     /**
-     * 弹出模式 可选值: dialog | drawer | popOver
+     * 弹出模式 可选值: dialog | drawer | popOver.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -41,7 +50,8 @@ class SchemaPopOver extends BaseRenderer
     }
 
     /**
-     * 偏移量
+     * 偏移量.
+     * @param mixed $value
      */
     public function offset($value = '')
     {
@@ -49,7 +59,8 @@ class SchemaPopOver extends BaseRenderer
     }
 
     /**
-     * 弹框外层类名
+     * 弹框外层类名.
+     * @param mixed $value
      */
     public function popOverClassName($value = '')
     {
@@ -57,7 +68,8 @@ class SchemaPopOver extends BaseRenderer
     }
 
     /**
-     * 配置当前行是否启动，要用表达式
+     * 配置当前行是否启动，要用表达式.
+     * @param mixed $value
      */
     public function popOverEnableOn($value = '')
     {
@@ -65,7 +77,8 @@ class SchemaPopOver extends BaseRenderer
     }
 
     /**
-     * 弹出位置 可选值: center | left-top | left-top-left-top | left-top-left-center | left-top-left-bottom | left-top-center-top | left-top-center-center | left-top-center-bottom | left-top-right-top | left-top-right-center | left-top-right-bottom | right-top | right-top-left-top | right-top-left-center | right-top-left-bottom | right-top-center-top | right-top-center-center | right-top-center-bottom | right-top-right-top | right-top-right-center | right-top-right-bottom | left-bottom | left-bottom-left-top | left-bottom-left-center | left-bottom-left-bottom | left-bottom-center-top | left-bottom-center-center | left-bottom-center-bottom | left-bottom-right-top | left-bottom-right-center | left-bottom-right-bottom | right-bottom | right-bottom-left-top | right-bottom-left-center | right-bottom-left-bottom | right-bottom-center-top | right-bottom-center-center | right-bottom-center-bottom | right-bottom-right-top | right-bottom-right-center | right-bottom-right-bottom | fixed-center | fixed-left-top | fixed-right-top | fixed-left-bottom | fixed-right-bottom
+     * 弹出位置 可选值: center | left-top | left-top-left-top | left-top-left-center | left-top-left-bottom | left-top-center-top | left-top-center-center | left-top-center-bottom | left-top-right-top | left-top-right-center | left-top-right-bottom | right-top | right-top-left-top | right-top-left-center | right-top-left-bottom | right-top-center-top | right-top-center-center | right-top-center-bottom | right-top-right-top | right-top-right-center | right-top-right-bottom | left-bottom | left-bottom-left-top | left-bottom-left-center | left-bottom-left-bottom | left-bottom-center-top | left-bottom-center-center | left-bottom-center-bottom | left-bottom-right-top | left-bottom-right-center | left-bottom-right-bottom | right-bottom | right-bottom-left-top | right-bottom-left-center | right-bottom-left-bottom | right-bottom-center-top | right-bottom-center-center | right-bottom-center-bottom | right-bottom-right-top | right-bottom-right-center | right-bottom-right-bottom | fixed-center | fixed-left-top | fixed-right-top | fixed-left-bottom | fixed-right-bottom.
+     * @param mixed $value
      */
     public function position($value = '')
     {
@@ -74,6 +87,7 @@ class SchemaPopOver extends BaseRenderer
 
     /**
      * 是否显示查看更多的 icon，通常是放大图标。
+     * @param mixed $value
      */
     public function showIcon($value = true)
     {
@@ -81,7 +95,8 @@ class SchemaPopOver extends BaseRenderer
     }
 
     /**
-     * 是弹窗形式的时候有用。 可选值: sm | md | lg | xl
+     * 是弹窗形式的时候有用。 可选值: sm | md | lg | xl.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -89,7 +104,8 @@ class SchemaPopOver extends BaseRenderer
     }
 
     /**
-     * 标题
+     * 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -97,12 +113,11 @@ class SchemaPopOver extends BaseRenderer
     }
 
     /**
-     * 触发条件，默认是 click 可选值: click | hover
+     * 触发条件，默认是 click 可选值: click | hover.
+     * @param mixed $value
      */
     public function trigger($value = '')
     {
         return $this->set('trigger', $value);
     }
-
-
 }

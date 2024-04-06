@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * EmailAction
+ * EmailAction.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class EmailAction extends BaseRenderer
@@ -17,7 +26,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 指定为打开邮箱行为
+     * 指定为打开邮箱行为.
+     * @param mixed $value
      */
     public function actionType($value = 'email')
     {
@@ -25,7 +35,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 激活状态时的类名
+     * 激活状态时的类名.
+     * @param mixed $value
      */
     public function activeClassName($value = '')
     {
@@ -33,7 +44,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 激活状态时的样式
+     * 激活状态时的样式.
+     * @param mixed $value
      */
     public function activeLevel($value = '')
     {
@@ -41,7 +53,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 角标
+     * 角标.
+     * @param mixed $value
      */
     public function badge($value = '')
     {
@@ -49,7 +62,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 匿名抄送邮箱
+     * 匿名抄送邮箱.
+     * @param mixed $value
      */
     public function bcc($value = '')
     {
@@ -58,6 +72,7 @@ class EmailAction extends BaseRenderer
 
     /**
      * 是否为块状展示，默认为内联。
+     * @param mixed $value
      */
     public function block($value = true)
     {
@@ -65,7 +80,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 邮件正文
+     * 邮件正文.
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -73,7 +89,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 抄送邮箱
+     * 抄送邮箱.
+     * @param mixed $value
      */
     public function cc($value = '')
     {
@@ -81,7 +98,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -90,6 +108,7 @@ class EmailAction extends BaseRenderer
 
     /**
      * 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
+     * @param mixed $value
      */
     public function close($value = '')
     {
@@ -98,6 +117,7 @@ class EmailAction extends BaseRenderer
 
     /**
      * 提示文字，配置了操作前会要求用户确认。
+     * @param mixed $value
      */
     public function confirmText($value = '')
     {
@@ -105,7 +125,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 点击后的禁止倒计时（秒）
+     * 点击后的禁止倒计时（秒）.
+     * @param mixed $value
      */
     public function countDown($value = '')
     {
@@ -113,7 +134,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 倒计时文字自定义
+     * 倒计时文字自定义.
+     * @param mixed $value
      */
     public function countDownTpl($value = '')
     {
@@ -121,7 +143,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -129,7 +152,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -138,6 +162,7 @@ class EmailAction extends BaseRenderer
 
     /**
      * 禁用时的文案提示。
+     * @param mixed $value
      */
     public function disabledTip($value = '')
     {
@@ -145,7 +170,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -153,7 +179,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -161,7 +188,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -169,7 +197,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 键盘快捷键
+     * 键盘快捷键.
+     * @param mixed $value
      */
     public function hotKey($value = '')
     {
@@ -177,7 +206,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 按钮图标， iconfont 的类名
+     * 按钮图标， iconfont 的类名.
+     * @param mixed $value
      */
     public function icon($value = '')
     {
@@ -185,7 +215,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * icon 上的css 类名
+     * icon 上的css 类名.
+     * @param mixed $value
      */
     public function iconClassName($value = '')
     {
@@ -193,7 +224,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 主要用于用户行为跟踪里区分是哪个按钮
+     * 主要用于用户行为跟踪里区分是哪个按钮.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -201,7 +233,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 按钮文字
+     * 按钮文字.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -209,7 +242,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 按钮样式 可选值: info | success | warning | danger | link | primary | dark | light | secondary
+     * 按钮样式 可选值: info | success | warning | danger | link | primary | dark | light | secondary.
+     * @param mixed $value
      */
     public function level($value = '')
     {
@@ -217,7 +251,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * loading 上的css 类名
+     * loading 上的css 类名.
+     * @param mixed $value
      */
     public function loadingClassName($value = '')
     {
@@ -225,7 +260,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 是否显示loading效果
+     * 是否显示loading效果.
+     * @param mixed $value
      */
     public function loadingOn($value = '')
     {
@@ -234,6 +270,7 @@ class EmailAction extends BaseRenderer
 
     /**
      * 是否将弹框中数据 merge 到父级作用域。
+     * @param mixed $value
      */
     public function mergeData($value = true)
     {
@@ -241,7 +278,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 自定义事件处理函数
+     * 自定义事件处理函数.
+     * @param mixed $value
      */
     public function onClick($value = '')
     {
@@ -249,7 +287,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -257,7 +296,7 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function primary($value = true)
     {
@@ -266,6 +305,7 @@ class EmailAction extends BaseRenderer
 
     /**
      * 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
+     * @param mixed $value
      */
     public function requireSelected($value = true)
     {
@@ -274,6 +314,7 @@ class EmailAction extends BaseRenderer
 
     /**
      * 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
+     * @param mixed $value
      */
     public function required($value = '')
     {
@@ -281,7 +322,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 右侧按钮图标， iconfont 的类名
+     * 右侧按钮图标， iconfont 的类名.
+     * @param mixed $value
      */
     public function rightIcon($value = '')
     {
@@ -289,7 +331,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 右侧 icon 上的 css 类名
+     * 右侧 icon 上的 css 类名.
+     * @param mixed $value
      */
     public function rightIconClassName($value = '')
     {
@@ -297,7 +340,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 按钮大小 可选值: xs | sm | md | lg
+     * 按钮大小 可选值: xs | sm | md | lg.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -305,7 +349,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -313,7 +358,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -321,7 +367,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -329,7 +376,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -337,7 +385,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -345,7 +394,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -353,7 +403,7 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -361,7 +411,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -369,7 +420,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 邮件主题
+     * 邮件主题.
+     * @param mixed $value
      */
     public function subject($value = '')
     {
@@ -378,6 +430,7 @@ class EmailAction extends BaseRenderer
 
     /**
      * 可以指定让谁来触发这个动作。
+     * @param mixed $value
      */
     public function target($value = '')
     {
@@ -385,7 +438,7 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function testid($value = '')
     {
@@ -393,7 +446,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 收件人邮箱
+     * 收件人邮箱.
+     * @param mixed $value
      */
     public function to($value = '')
     {
@@ -401,7 +455,7 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function tooltip($value = '')
     {
@@ -409,7 +463,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     *  可选值: top | right | bottom | left
+     *  可选值: top | right | bottom | left.
+     * @param mixed $value
      */
     public function tooltipPlacement($value = '')
     {
@@ -417,7 +472,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 指定按钮类型，支持 button、submit或者reset三种类型。 可选值: button | submit | reset
+     * 指定按钮类型，支持 button、submit或者reset三种类型。 可选值: button | submit | reset.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -425,7 +481,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -433,7 +490,8 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -441,12 +499,11 @@ class EmailAction extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

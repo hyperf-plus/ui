@@ -1,23 +1,30 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * ListItem
+ * ListItem.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class ListItem extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function actions($value = '')
     {
@@ -25,7 +32,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 操作位置，默认在右侧，可以设置成左侧。 可选值: left | right
+     * 操作位置，默认在右侧，可以设置成左侧。 可选值: left | right.
+     * @param mixed $value
      */
     public function actionsPosition($value = '')
     {
@@ -34,6 +42,7 @@ class ListItem extends BaseRenderer
 
     /**
      * 图片地址
+     * @param mixed $value
      */
     public function avatar($value = '')
     {
@@ -42,6 +51,7 @@ class ListItem extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -49,7 +59,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -57,7 +68,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 描述
+     * 描述.
+     * @param mixed $value
      */
     public function desc($value = '')
     {
@@ -65,7 +77,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -73,7 +86,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -81,7 +95,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -89,7 +104,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -97,7 +113,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -105,7 +122,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -113,7 +131,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -121,7 +140,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * tooltip 说明
+     * tooltip 说明.
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -129,7 +149,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -137,7 +158,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -145,7 +167,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -153,7 +176,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -161,7 +185,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -169,7 +194,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -177,7 +203,7 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -185,7 +211,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -193,7 +220,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 副标题
+     * 副标题.
+     * @param mixed $value
      */
     public function subTitle($value = '')
     {
@@ -201,7 +229,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 标题
+     * 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -209,7 +238,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -217,7 +247,8 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -225,12 +256,11 @@ class ListItem extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

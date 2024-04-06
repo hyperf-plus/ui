@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * SparkLine
+ * SparkLine.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class SparkLine extends BaseRenderer
@@ -16,7 +25,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * css 类名
+     * css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 点击行为
+     * 点击行为.
+     * @param mixed $value
      */
     public function clickAction($value = '')
     {
@@ -32,7 +43,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -40,7 +52,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -48,7 +61,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -56,7 +70,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 高度
+     * 高度.
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -64,7 +79,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -72,7 +88,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -80,7 +97,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -89,6 +107,7 @@ class SparkLine extends BaseRenderer
 
     /**
      * 关联数据变量。
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -96,7 +115,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -104,7 +124,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 空数据时显示的内容
+     * 空数据时显示的内容.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -112,7 +133,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -120,7 +142,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -128,7 +151,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -136,7 +160,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -144,7 +169,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -152,7 +178,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -160,7 +187,7 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -168,7 +195,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -176,7 +204,7 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function type($value = 'sparkline')
     {
@@ -184,7 +212,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -192,7 +221,7 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -200,7 +229,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -208,7 +238,8 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -216,12 +247,11 @@ class SparkLine extends BaseRenderer
     }
 
     /**
-     * 宽度
+     * 宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

@@ -36,17 +36,20 @@ const DefaultLogin = () => {
             setError('')
             setLoading(true)
         },
-        onSuccess(data:any, params: any) {
-            params = params[0]
-            const _data = params.remember ? {username: params.username, password: params.password} : {}
-            window.$owl.afterLoginSuccess(_data, data.token)
+        onSuccess(res, params: any) {
+            const {status, data} = res
+            if (status === 0) {
+                params = params[0]
+
+                const _data = params.remember ? {username: params.username, password: params.password} : {}
+                window.$owl.afterLoginSuccess(_data, data.token)
+            } else {
+                setLoading(false)
+                getCaptcha.run()
+                setError(res.data.msg)
+                formRef.current.setFieldsValue({captcha: ''})
+            }
         },
-        onError(e: Error, params: any) {
-            setLoading(false)
-            getCaptcha.run()
-            setError(e.message)
-            formRef.current.setFieldsValue({captcha: ''})
-        }
     })
 
     const submit = (values) => {

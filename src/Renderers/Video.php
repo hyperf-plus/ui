@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * 视频播放器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/video
+ * 视频播放器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/video.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Video extends BaseRenderer
@@ -16,7 +25,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 视频比率 可选值: auto | 4:3 | 16:9
+     * 视频比率 可选值: auto | 4:3 | 16:9.
+     * @param mixed $value
      */
     public function aspectRatio($value = '')
     {
@@ -24,7 +34,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否自动播放
+     * 是否自动播放.
+     * @param mixed $value
      */
     public function autoPlay($value = true)
     {
@@ -32,7 +43,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -40,7 +52,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 如果显示切帧，通过此配置项可以控制每行显示多少帧
+     * 如果显示切帧，通过此配置项可以控制每行显示多少帧.
+     * @param mixed $value
      */
     public function columnsCount($value = '')
     {
@@ -48,7 +61,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -56,7 +70,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -64,7 +79,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -72,7 +88,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 设置后，可以显示切帧.点击帧的时候会将视频跳到对应时间。frames: {  '01:22': 'http://domain/xxx.jpg' }
+     * 设置后，可以显示切帧.点击帧的时候会将视频跳到对应时间。frames: {  '01:22': 'http://domain/xxx.jpg' }.
+     * @param mixed $value
      */
     public function frames($value = '')
     {
@@ -80,7 +97,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 配置帧列表容器className
+     * 配置帧列表容器className.
+     * @param mixed $value
      */
     public function framesClassName($value = '')
     {
@@ -88,7 +106,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -96,7 +115,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -104,7 +124,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -112,7 +133,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 如果是实时的，请标记一下
+     * 如果是实时的，请标记一下.
+     * @param mixed $value
      */
     public function isLive($value = true)
     {
@@ -121,6 +143,7 @@ class Video extends BaseRenderer
 
     /**
      * 跳转到帧时，往前多少秒。
+     * @param mixed $value
      */
     public function jumpBufferDuration($value = '')
     {
@@ -128,7 +151,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 点击帧画面时是否跳转视频对应的点
+     * 点击帧画面时是否跳转视频对应的点.
+     * @param mixed $value
      */
     public function jumpFrame($value = true)
     {
@@ -136,7 +160,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否循环播放
+     * 是否循环播放.
+     * @param mixed $value
      */
     public function loop($value = true)
     {
@@ -144,7 +169,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否初始静音
+     * 是否初始静音.
+     * @param mixed $value
      */
     public function muted($value = true)
     {
@@ -152,7 +178,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -160,7 +187,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 配置播放器 className
+     * 配置播放器 className.
+     * @param mixed $value
      */
     public function playerClassName($value = '')
     {
@@ -169,6 +197,7 @@ class Video extends BaseRenderer
 
     /**
      * 视频封面地址
+     * @param mixed $value
      */
     public function poster($value = '')
     {
@@ -176,7 +205,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 视频速率
+     * 视频速率.
+     * @param mixed $value
      */
     public function rates($value = '')
     {
@@ -184,7 +214,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否将视频和封面分开显示
+     * 是否将视频和封面分开显示.
+     * @param mixed $value
      */
     public function splitPoster($value = true)
     {
@@ -193,6 +224,7 @@ class Video extends BaseRenderer
 
     /**
      * 视频播放地址
+     * @param mixed $value
      */
     public function src($value = '')
     {
@@ -200,7 +232,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -208,7 +241,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -216,7 +250,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -224,7 +259,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -232,7 +268,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -240,7 +277,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -248,7 +286,7 @@ class Video extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -257,6 +295,7 @@ class Video extends BaseRenderer
 
     /**
      * 默认播放的时候到了下一帧会继续播放，同时高亮下一帧。 如果配置这个则会停止播放，等待用户选择新的区间再播放。
+     * @param mixed $value
      */
     public function stopOnNextFrame($value = true)
     {
@@ -264,7 +303,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -272,7 +312,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 指定为视频类型
+     * 指定为视频类型.
+     * @param mixed $value
      */
     public function type($value = 'video')
     {
@@ -280,7 +321,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -288,7 +330,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 视频类型如： video/x-flv
+     * 视频类型如： video/x-flv.
+     * @param mixed $value
      */
     public function videoType($value = '')
     {
@@ -296,7 +339,8 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -304,12 +348,11 @@ class Video extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

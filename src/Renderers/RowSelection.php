@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * RowSelection
+ * RowSelection.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class RowSelection extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 已选择的key值表达式
+     * 已选择的key值表达式.
+     * @param mixed $value
      */
     public function columnWidth($value = '')
     {
@@ -25,7 +33,8 @@ class RowSelection extends BaseRenderer
     }
 
     /**
-     * 行是否禁用表达式
+     * 行是否禁用表达式.
+     * @param mixed $value
      */
     public function disableOn($value = '')
     {
@@ -34,6 +43,7 @@ class RowSelection extends BaseRenderer
 
     /**
      * 对应数据源的key值
+     * @param mixed $value
      */
     public function keyField($value = '')
     {
@@ -41,7 +51,8 @@ class RowSelection extends BaseRenderer
     }
 
     /**
-     * 是否点击行触发选中或取消选中
+     * 是否点击行触发选中或取消选中.
+     * @param mixed $value
      */
     public function rowClick($value = true)
     {
@@ -50,6 +61,7 @@ class RowSelection extends BaseRenderer
 
     /**
      * 已选择的key值
+     * @param mixed $value
      */
     public function selectedRowKeys($value = '')
     {
@@ -57,7 +69,8 @@ class RowSelection extends BaseRenderer
     }
 
     /**
-     * 已选择的key值表达式
+     * 已选择的key值表达式.
+     * @param mixed $value
      */
     public function selectedRowKeysExpr($value = '')
     {
@@ -65,7 +78,8 @@ class RowSelection extends BaseRenderer
     }
 
     /**
-     * 自定义选择菜单
+     * 自定义选择菜单.
+     * @param mixed $value
      */
     public function selections($value = '')
     {
@@ -73,12 +87,11 @@ class RowSelection extends BaseRenderer
     }
 
     /**
-     * 选择类型 单选/多选
+     * 选择类型 单选/多选.
+     * @param mixed $value
      */
     public function type($value = '')
     {
         return $this->set('type', $value);
     }
-
-
 }

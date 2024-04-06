@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Table 表格渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/table
+ * Table 表格渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/table.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Table extends BaseRenderer
@@ -16,7 +25,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否固底
+     * 是否固底.
+     * @param mixed $value
      */
     public function affixFooter($value = true)
     {
@@ -24,7 +34,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否固定表头
+     * 是否固定表头.
+     * @param mixed $value
      */
     public function affixHeader($value = true)
     {
@@ -32,7 +43,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 底部总结行
+     * 底部总结行.
+     * @param mixed $value
      */
     public function affixRow($value = '')
     {
@@ -40,7 +52,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 表格自动计算高度
+     * 表格自动计算高度.
+     * @param mixed $value
      */
     public function autoFillHeight($value = '')
     {
@@ -48,7 +61,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 开启查询区域，会根据列元素的searchable属性值，自动生成查询条件表单
+     * 开启查询区域，会根据列元素的searchable属性值，自动生成查询条件表单.
+     * @param mixed $value
      */
     public function autoGenerateFilter($value = '')
     {
@@ -56,7 +70,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 表格是否可以获取父级数据域值，默认为false
+     * 表格是否可以获取父级数据域值，默认为false.
+     * @param mixed $value
      */
     public function canAccessSuperData($value = true)
     {
@@ -64,7 +79,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -72,7 +88,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 表格的列信息
+     * 表格的列信息.
+     * @param mixed $value
      */
     public function columns($value = '')
     {
@@ -80,7 +97,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 展示列显示开关，自动即：列数量大于或等于5个时自动开启
+     * 展示列显示开关，自动即：列数量大于或等于5个时自动开启.
+     * @param mixed $value
      */
     public function columnsTogglable($value = true)
     {
@@ -89,6 +107,7 @@ class Table extends BaseRenderer
 
     /**
      * 合并单元格配置，配置从第几列开始合并。
+     * @param mixed $value
      */
     public function combineFromIndex($value = '')
     {
@@ -97,6 +116,7 @@ class Table extends BaseRenderer
 
     /**
      * 合并单元格配置，配置数字表示从左到右的多少列自动合并单元格。
+     * @param mixed $value
      */
     public function combineNum($value = '')
     {
@@ -104,7 +124,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 设置数据
+     * 设置数据.
+     * @param mixed $value
      */
     public function data($value = '')
     {
@@ -113,6 +134,7 @@ class Table extends BaseRenderer
 
     /**
      * 懒加载 API，当行数据中用 defer: true 标记了，则其孩子节点将会用这个 API 来拉取数据。
+     * @param mixed $value
      */
     public function deferApi($value = '')
     {
@@ -120,7 +142,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -128,7 +151,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -136,7 +160,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -144,7 +169,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否开启底部展示功能，适合移动端展示
+     * 是否开启底部展示功能，适合移动端展示.
+     * @param mixed $value
      */
     public function footable($value = true)
     {
@@ -152,7 +178,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 底部外层 CSS 类名
+     * 底部外层 CSS 类名.
+     * @param mixed $value
      */
     public function footerClassName($value = '')
     {
@@ -160,7 +187,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 顶部外层 CSS 类名
+     * 顶部外层 CSS 类名.
+     * @param mixed $value
      */
     public function headerClassName($value = '')
     {
@@ -168,7 +196,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -176,7 +205,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -184,7 +214,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -192,7 +223,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 行角标
+     * 行角标.
+     * @param mixed $value
      */
     public function itemBadge($value = '')
     {
@@ -200,7 +232,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -208,7 +241,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -216,7 +250,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 顶部总结行
+     * 顶部总结行.
+     * @param mixed $value
      */
     public function prefixRow($value = '')
     {
@@ -224,7 +259,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否可调整列宽
+     * 是否可调整列宽.
+     * @param mixed $value
      */
     public function resizable($value = true)
     {
@@ -232,7 +268,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 行样式表表达式
+     * 行样式表表达式.
+     * @param mixed $value
      */
     public function rowClassNameExpr($value = '')
     {
@@ -240,7 +277,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否显示底部
+     * 是否显示底部.
+     * @param mixed $value
      */
     public function showFooter($value = true)
     {
@@ -248,7 +286,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否显示头部
+     * 是否显示头部.
+     * @param mixed $value
      */
     public function showHeader($value = true)
     {
@@ -256,7 +295,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 数据源：绑定当前环境变量
+     * 数据源：绑定当前环境变量.
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -264,7 +304,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -272,7 +313,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -280,7 +322,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -288,7 +331,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -296,7 +340,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -304,7 +349,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -312,7 +358,7 @@ class Table extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -320,7 +366,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -328,7 +375,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 表格 CSS 类名
+     * 表格 CSS 类名.
+     * @param mixed $value
      */
     public function tableClassName($value = '')
     {
@@ -336,7 +384,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * table layout 可选值: fixed | auto
+     * table layout 可选值: fixed | auto.
+     * @param mixed $value
      */
     public function tableLayout($value = '')
     {
@@ -344,7 +393,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 标题
+     * 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -352,7 +402,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 工具栏 CSS 类名
+     * 工具栏 CSS 类名.
+     * @param mixed $value
      */
     public function toolbarClassName($value = '')
     {
@@ -360,7 +411,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 指定为表格渲染器。 可选值: table | static-table
+     * 指定为表格渲染器。 可选值: table | static-table.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -368,7 +420,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -376,7 +429,8 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -384,12 +438,11 @@ class Table extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

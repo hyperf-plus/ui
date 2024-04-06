@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * 进度展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/progress
+ * 进度展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/progress.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Progress extends BaseRenderer
@@ -17,7 +26,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否显示动画（只有在开启的时候才能看出来）
+     * 是否显示动画（只有在开启的时候才能看出来）.
+     * @param mixed $value
      */
     public function animate($value = true)
     {
@@ -25,7 +35,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -33,7 +44,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -41,7 +53,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -49,7 +62,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -57,7 +71,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 仪表盘进度条缺口角度，可取值 0 ~ 295
+     * 仪表盘进度条缺口角度，可取值 0 ~ 295.
+     * @param mixed $value
      */
     public function gapDegree($value = '')
     {
@@ -65,7 +80,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 仪表盘进度条缺口位置 可选值: top | bottom | left | right
+     * 仪表盘进度条缺口位置 可选值: top | bottom | left | right.
+     * @param mixed $value
      */
     public function gapPosition($value = '')
     {
@@ -73,7 +89,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -81,7 +98,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -89,7 +107,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -97,7 +116,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 配置不同的值段，用不同的样式提示用户
+     * 配置不同的值段，用不同的样式提示用户.
+     * @param mixed $value
      */
     public function map($value = '')
     {
@@ -105,7 +125,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 进度条类型 可选值: line | circle | dashboard
+     * 进度条类型 可选值: line | circle | dashboard.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -113,7 +134,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 关联字段名
+     * 关联字段名.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -121,7 +143,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -129,7 +152,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -137,7 +161,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 进度条 CSS 类名
+     * 进度条 CSS 类名.
+     * @param mixed $value
      */
     public function progressClassName($value = '')
     {
@@ -146,6 +171,7 @@ class Progress extends BaseRenderer
 
     /**
      * 是否显示值
+     * @param mixed $value
      */
     public function showLabel($value = true)
     {
@@ -154,6 +180,7 @@ class Progress extends BaseRenderer
 
     /**
      * 是否显示阈值数值
+     * @param mixed $value
      */
     public function showThresholdText($value = true)
     {
@@ -161,7 +188,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -169,7 +197,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -177,7 +206,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -185,7 +215,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -193,7 +224,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -201,7 +233,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -209,7 +242,7 @@ class Progress extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -217,7 +250,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否显示背景间隔
+     * 是否显示背景间隔.
+     * @param mixed $value
      */
     public function stripe($value = true)
     {
@@ -225,7 +259,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 进度条线的宽度
+     * 进度条线的宽度.
+     * @param mixed $value
      */
     public function strokeWidth($value = '')
     {
@@ -233,7 +268,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -242,6 +278,7 @@ class Progress extends BaseRenderer
 
     /**
      * 阈值
+     * @param mixed $value
      */
     public function threshold($value = '')
     {
@@ -249,7 +286,7 @@ class Progress extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function type($value = 'progress')
     {
@@ -257,7 +294,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -266,6 +304,7 @@ class Progress extends BaseRenderer
 
     /**
      * 进度值
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -273,7 +312,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 内容的模板函数
+     * 内容的模板函数.
+     * @param mixed $value
      */
     public function valueTpl($value = '')
     {
@@ -281,7 +321,8 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -289,12 +330,11 @@ class Progress extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Chart 图表渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/carousel
+ * Chart 图表渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/carousel.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Chart extends BaseRenderer
@@ -16,7 +25,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 图表配置接口
+     * 图表配置接口.
+     * @param mixed $value
      */
     public function api($value = '')
     {
@@ -24,7 +34,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * Chart 主题配置
+     * Chart 主题配置.
+     * @param mixed $value
      */
     public function chartTheme($value = '')
     {
@@ -32,7 +43,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -41,6 +53,7 @@ class Chart extends BaseRenderer
 
     /**
      * 点击行为配置，可以用来满足下钻操作等。
+     * @param mixed $value
      */
     public function clickAction($value = '')
     {
@@ -48,7 +61,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 配置echart的config，支持数据映射。如果用了数据映射，为了同步更新，请设置 trackExpression
+     * 配置echart的config，支持数据映射。如果用了数据映射，为了同步更新，请设置 trackExpression.
+     * @param mixed $value
      */
     public function config($value = '')
     {
@@ -56,7 +70,7 @@ class Chart extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function dataFilter($value = '')
     {
@@ -65,6 +79,7 @@ class Chart extends BaseRenderer
 
     /**
      * 默认开启 Config 中的数据映射，如果想关闭，请开启此功能。
+     * @param mixed $value
      */
     public function disableDataMapping($value = true)
     {
@@ -72,7 +87,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -80,7 +96,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -88,7 +105,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -96,7 +114,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 高度设置
+     * 高度设置.
+     * @param mixed $value
      */
     public function height($value = '')
     {
@@ -104,7 +123,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -112,7 +132,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -120,7 +141,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -129,6 +151,7 @@ class Chart extends BaseRenderer
 
     /**
      * 是否初始加载。
+     * @param mixed $value
      */
     public function initFetch($value = true)
     {
@@ -136,7 +159,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 是否初始加载用表达式来配置
+     * 是否初始加载用表达式来配置.
+     * @param mixed $value
      */
     public function initFetchOn($value = '')
     {
@@ -144,7 +168,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 刷新时间
+     * 刷新时间.
+     * @param mixed $value
      */
     public function interval($value = '')
     {
@@ -152,7 +177,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 加载百度地图
+     * 加载百度地图.
+     * @param mixed $value
      */
     public function loadBaiduMap($value = true)
     {
@@ -160,7 +186,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 地图名称
+     * 地图名称.
+     * @param mixed $value
      */
     public function mapName($value = '')
     {
@@ -169,6 +196,7 @@ class Chart extends BaseRenderer
 
     /**
      * 获取 geo json 文件的地址
+     * @param mixed $value
      */
     public function mapURL($value = '')
     {
@@ -176,7 +204,7 @@ class Chart extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -184,7 +212,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -193,6 +222,7 @@ class Chart extends BaseRenderer
 
     /**
      * 默认配置时追加的，如果更新配置想完全替换配置请配置为 true.
+     * @param mixed $value
      */
     public function replaceChartOption($value = true)
     {
@@ -200,7 +230,7 @@ class Chart extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -208,7 +238,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -216,7 +247,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -224,7 +256,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -232,7 +265,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -240,7 +274,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -248,7 +283,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -256,7 +292,7 @@ class Chart extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -264,7 +300,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * style样式
+     * style样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -273,6 +310,7 @@ class Chart extends BaseRenderer
 
     /**
      * 跟踪表达式，如果这个表达式的运行结果发生变化了，则会更新 Echart，当 config 中用了数据映射时有用。
+     * @param mixed $value
      */
     public function trackExpression($value = '')
     {
@@ -280,7 +318,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 指定为 chart 类型
+     * 指定为 chart 类型.
+     * @param mixed $value
      */
     public function type($value = 'chart')
     {
@@ -288,7 +327,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 不可见的时候隐藏
+     * 不可见的时候隐藏.
+     * @param mixed $value
      */
     public function unMountOnHidden($value = true)
     {
@@ -296,7 +336,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -304,7 +345,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -312,7 +354,8 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -320,12 +363,11 @@ class Chart extends BaseRenderer
     }
 
     /**
-     * 宽度设置
+     * 宽度设置.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

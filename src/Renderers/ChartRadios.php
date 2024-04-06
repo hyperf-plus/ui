@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * ChartRadios 图表单选框
+ * ChartRadios 图表单选框.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class ChartRadios extends BaseRenderer
@@ -16,7 +25,8 @@ class ChartRadios extends BaseRenderer
     }
 
     /**
-     * 图表数值字段名
+     * 图表数值字段名.
+     * @param mixed $value
      */
     public function chartValueField($value = '')
     {
@@ -24,7 +34,8 @@ class ChartRadios extends BaseRenderer
     }
 
     /**
-     * 图表配置
+     * 图表配置.
+     * @param mixed $value
      */
     public function config($value = '')
     {
@@ -32,7 +43,8 @@ class ChartRadios extends BaseRenderer
     }
 
     /**
-     * 高亮的时候是否显示 tooltip
+     * 高亮的时候是否显示 tooltip.
+     * @param mixed $value
      */
     public function showTooltipOnHighlight($value = true)
     {
@@ -41,11 +53,10 @@ class ChartRadios extends BaseRenderer
 
     /**
      * 指定为 chart-radios 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'chart-radios')
     {
         return $this->set('type', $value);
     }
-
-
 }

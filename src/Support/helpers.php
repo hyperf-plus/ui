@@ -1,19 +1,18 @@
 <?php
 
-
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 use HPlus\UI\Renderers\Amis;
 use HPlus\UI\Renderers\Component;
 
-function admin_user(){
-
-}
-
-
-if (!function_exists('amis')) {
-    /**
-     * @param $type
-     *
-     */
+if (! function_exists('amis')) {
     function amis($type = null)
     {
         if (check_filled($type)) {
@@ -24,11 +23,7 @@ if (!function_exists('amis')) {
     }
 }
 
-if (!function_exists('admin_url')) {
-    /**
-     * @param $url
-     *
-     */
+if (! function_exists('admin_url')) {
     function admin_url($url = null)
     {
         return $url;
@@ -39,8 +34,7 @@ if (! function_exists('check_filled')) {
     /**
      * Determine if a value is "filled".
      *
-     * @param  mixed  $value
-     * @return bool
+     * @param mixed $value
      */
     function check_filled($value): bool
     {
@@ -52,8 +46,7 @@ if (! function_exists('check_blank')) {
     /**
      * Determine if the given value is "blank".
      *
-     * @param  mixed  $value
-     * @return bool
+     * @param mixed $value
      */
     function check_blank($value): bool
     {

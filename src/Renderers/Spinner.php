@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Spinner
+ * Spinner.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Spinner extends BaseRenderer
@@ -16,7 +25,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 作为容器使用时内容
+     * 作为容器使用时内容.
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -24,7 +34,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 自定义spinner的class
+     * 自定义spinner的class.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 延迟显示
+     * 延迟显示.
+     * @param mixed $value
      */
     public function delay($value = '')
     {
@@ -40,7 +52,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -48,7 +61,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -56,7 +70,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -64,7 +79,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -72,7 +88,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -80,7 +97,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 自定义icon
+     * 自定义icon.
+     * @param mixed $value
      */
     public function icon($value = '')
     {
@@ -88,7 +106,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -96,7 +115,7 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function loadingConfig($value = '')
     {
@@ -104,7 +123,7 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -112,7 +131,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -121,6 +141,7 @@ class Spinner extends BaseRenderer
 
     /**
      * 是否显示遮罩层
+     * @param mixed $value
      */
     public function overlay($value = true)
     {
@@ -128,7 +149,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 控制Spinner显示与隐藏
+     * 控制Spinner显示与隐藏.
+     * @param mixed $value
      */
     public function show($value = true)
     {
@@ -136,7 +158,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * spinner Icon 大小 可选值: sm | lg |
+     * spinner Icon 大小 可选值: sm | lg |.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -144,7 +167,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * spin图标位置包裹元素的自定义class
+     * spin图标位置包裹元素的自定义class.
+     * @param mixed $value
      */
     public function spinnerClassName($value = '')
     {
@@ -152,7 +176,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 作为容器使用时最外层元素的class
+     * 作为容器使用时最外层元素的class.
+     * @param mixed $value
      */
     public function spinnerWrapClassName($value = '')
     {
@@ -160,7 +185,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -168,7 +194,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -176,7 +203,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -184,7 +212,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -192,7 +221,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -200,7 +230,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -208,7 +239,7 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -216,7 +247,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -224,7 +256,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * spinner文案
+     * spinner文案.
+     * @param mixed $value
      */
     public function tip($value = '')
     {
@@ -232,7 +265,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * spinner文案位置 可选值: top | right | bottom | left
+     * spinner文案位置 可选值: top | right | bottom | left.
+     * @param mixed $value
      */
     public function tipPlacement($value = '')
     {
@@ -240,7 +274,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 组件类型
+     * 组件类型.
+     * @param mixed $value
      */
     public function type($value = 'spinner')
     {
@@ -248,7 +283,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -256,7 +292,8 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -264,12 +301,11 @@ class Spinner extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

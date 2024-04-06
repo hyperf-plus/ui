@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Breadcrumb 面包屑 https://aisuda.bce.baidu.com/amis/zh-CN/components/breadcrumb
+ * Breadcrumb 面包屑 https://aisuda.bce.baidu.com/amis/zh-CN/components/breadcrumb.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Breadcrumb extends BaseRenderer
@@ -16,7 +25,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 外层类名
+     * 外层类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 下拉菜单类名
+     * 下拉菜单类名.
+     * @param mixed $value
      */
     public function dropdownClassName($value = '')
     {
@@ -32,7 +43,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 下拉菜单项类名
+     * 下拉菜单项类名.
+     * @param mixed $value
      */
     public function dropdownItemClassName($value = '')
     {
@@ -40,7 +52,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 导航项类名
+     * 导航项类名.
+     * @param mixed $value
      */
     public function itemClassName($value = '')
     {
@@ -48,7 +61,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 文本
+     * 文本.
+     * @param mixed $value
      */
     public function items($value = '')
     {
@@ -56,7 +70,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 最大展示长度
+     * 最大展示长度.
+     * @param mixed $value
      */
     public function labelMaxLength($value = '')
     {
@@ -64,7 +79,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 分隔符
+     * 分隔符.
+     * @param mixed $value
      */
     public function separator($value = '')
     {
@@ -72,7 +88,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 分割符类名
+     * 分割符类名.
+     * @param mixed $value
      */
     public function separatorClassName($value = '')
     {
@@ -80,7 +97,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 动态数据
+     * 动态数据.
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -88,7 +106,8 @@ class Breadcrumb extends BaseRenderer
     }
 
     /**
-     * 浮窗提示位置
+     * 浮窗提示位置.
+     * @param mixed $value
      */
     public function tooltipPosition($value = '')
     {
@@ -97,11 +116,10 @@ class Breadcrumb extends BaseRenderer
 
     /**
      * 指定为 breadcrumb 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'breadcrumb')
     {
         return $this->set('type', $value);
     }
-
-
 }

@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Toast 轻提示
+ * Toast 轻提示.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Toast extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 内容
+     * 内容.
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -25,7 +33,8 @@ class Toast extends BaseRenderer
     }
 
     /**
-     * 是否显示关闭按钮
+     * 是否显示关闭按钮.
+     * @param mixed $value
      */
     public function closeButton($value = true)
     {
@@ -33,7 +42,8 @@ class Toast extends BaseRenderer
     }
 
     /**
-     * 轻提示内容
+     * 轻提示内容.
+     * @param mixed $value
      */
     public function items($value = '')
     {
@@ -41,7 +51,8 @@ class Toast extends BaseRenderer
     }
 
     /**
-     * 展示图标，可选'info'/'success'/'error'/'warning'
+     * 展示图标，可选'info'/'success'/'error'/'warning'.
+     * @param mixed $value
      */
     public function level($value = '')
     {
@@ -49,7 +60,8 @@ class Toast extends BaseRenderer
     }
 
     /**
-     * 提示显示位置，可选值: top-right | top-center | top-left | bottom-center | bottom-left | bottom-right | center
+     * 提示显示位置，可选值: top-right | top-center | top-left | bottom-center | bottom-left | bottom-right | center.
+     * @param mixed $value
      */
     public function position($value = '')
     {
@@ -57,7 +69,8 @@ class Toast extends BaseRenderer
     }
 
     /**
-     * 是否显示图标
+     * 是否显示图标.
+     * @param mixed $value
      */
     public function showIcon($value = true)
     {
@@ -65,7 +78,8 @@ class Toast extends BaseRenderer
     }
 
     /**
-     * 持续时间
+     * 持续时间.
+     * @param mixed $value
      */
     public function timeout($value = '')
     {
@@ -73,12 +87,11 @@ class Toast extends BaseRenderer
     }
 
     /**
-     * 标题
+     * 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
         return $this->set('title', $value);
     }
-
-
 }

@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Steps
+ * Steps.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Steps extends BaseRenderer
@@ -16,7 +25,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -32,7 +43,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -40,7 +52,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -48,7 +61,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -56,7 +70,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -64,7 +79,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -72,7 +88,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 标签放置位置 可选值: horizontal | vertical
+     * 标签放置位置 可选值: horizontal | vertical.
+     * @param mixed $value
      */
     public function labelPlacement($value = '')
     {
@@ -80,7 +97,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 展示模式 可选值: horizontal | vertical
+     * 展示模式 可选值: horizontal | vertical.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -88,7 +106,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 变量映射
+     * 变量映射.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -96,7 +115,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -105,6 +125,7 @@ class Steps extends BaseRenderer
 
     /**
      * 点状步骤条
+     * @param mixed $value
      */
     public function progressDot($value = true)
     {
@@ -112,7 +133,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * API 或 数据映射
+     * API 或 数据映射.
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -120,7 +142,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -128,7 +151,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -136,7 +160,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -144,7 +169,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -152,7 +178,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -160,7 +187,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -168,7 +196,7 @@ class Steps extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -176,7 +204,7 @@ class Steps extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function status($value = '')
     {
@@ -184,7 +212,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 步骤
+     * 步骤.
+     * @param mixed $value
      */
     public function steps($value = '')
     {
@@ -192,7 +221,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -200,7 +230,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 指定为 Steps 步骤条渲染器
+     * 指定为 Steps 步骤条渲染器.
+     * @param mixed $value
      */
     public function type($value = 'steps')
     {
@@ -208,7 +239,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -216,7 +248,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 指定当前步骤
+     * 指定当前步骤.
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -224,7 +257,8 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -232,12 +266,11 @@ class Steps extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

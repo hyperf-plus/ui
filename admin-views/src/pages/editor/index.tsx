@@ -33,7 +33,7 @@ const Editor = () => {
 
     return (
         <div className="h-screen">
-            <Card className="h-full" title="可视化编辑器" bodyStyle={{padding: 0, height: 'calc(100% - 46px)'}} extra={(
+            <Card className="h-full" title={t('amis_editor.editor')} bodyStyle={{padding: 0, height: 'calc(100% - 55px)'}} extra={(
                 <Space>
                     <AmisRender schema={btnSchema}/>
                     <AmisBtn level="primary" onClick={() => setPreview(!preview)}>

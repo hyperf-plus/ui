@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Nav 导航渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/nav
+ * Nav 导航渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/nav.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Nav extends BaseRenderer
@@ -17,6 +26,7 @@ class Nav extends BaseRenderer
 
     /**
      * 手风琴展开 仅垂直inline模式支持
+     * @param mixed $value
      */
     public function accordion($value = true)
     {
@@ -24,7 +34,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 角标
+     * 角标.
+     * @param mixed $value
      */
     public function badge($value = '')
     {
@@ -32,7 +43,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -40,7 +52,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 控制菜单缩起
+     * 控制菜单缩起.
+     * @param mixed $value
      */
     public function collapsed($value = true)
     {
@@ -49,6 +62,7 @@ class Nav extends BaseRenderer
 
     /**
      * 默认展开层级 小于等于该层数的节点默认全部打开
+     * @param mixed $value
      */
     public function defaultOpenLevel($value = '')
     {
@@ -57,6 +71,7 @@ class Nav extends BaseRenderer
 
     /**
      * 懒加载 api，如果不配置复用 source 接口。
+     * @param mixed $value
      */
     public function deferApi($value = '')
     {
@@ -64,7 +79,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -72,7 +88,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -80,7 +97,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 仅允许同层级拖拽
+     * 仅允许同层级拖拽.
+     * @param mixed $value
      */
     public function dragOnSameLevel($value = true)
     {
@@ -88,7 +106,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 可拖拽
+     * 可拖拽.
+     * @param mixed $value
      */
     public function draggable($value = true)
     {
@@ -96,7 +115,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -104,7 +124,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 自定义展开图标
+     * 自定义展开图标.
+     * @param mixed $value
      */
     public function expandIcon($value = '')
     {
@@ -112,7 +133,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 自定义展开图标位置 默认在前面 before after
+     * 自定义展开图标位置 默认在前面 before after.
+     * @param mixed $value
      */
     public function expandPosition($value = '')
     {
@@ -120,7 +142,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -128,7 +151,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -136,7 +160,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -144,7 +169,7 @@ class Nav extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function indentSize($value = '')
     {
@@ -152,7 +177,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 更多操作菜单列表
+     * 更多操作菜单列表.
+     * @param mixed $value
      */
     public function itemActions($value = '')
     {
@@ -160,7 +186,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 角标
+     * 角标.
+     * @param mixed $value
      */
     public function itemBadge($value = '')
     {
@@ -168,7 +195,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 最多展示多少层级
+     * 最多展示多少层级.
+     * @param mixed $value
      */
     public function level($value = '')
     {
@@ -176,7 +204,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 链接地址集合
+     * 链接地址集合.
+     * @param mixed $value
      */
     public function links($value = '')
     {
@@ -184,7 +213,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 垂直模式 非折叠状态下 控制菜单打开方式 可选值: float | inline
+     * 垂直模式 非折叠状态下 控制菜单打开方式 可选值: float | inline.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -192,7 +222,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -200,7 +231,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 横向导航时自动收纳配置
+     * 横向导航时自动收纳配置.
+     * @param mixed $value
      */
     public function overflow($value = '')
     {
@@ -208,7 +240,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 子菜单项展开浮层样式
+     * 子菜单项展开浮层样式.
+     * @param mixed $value
      */
     public function popupClassName($value = '')
     {
@@ -216,7 +249,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 保存排序的 api
+     * 保存排序的 api.
+     * @param mixed $value
      */
     public function saveOrderApi($value = '')
     {
@@ -224,7 +258,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 搜索框相关配置
+     * 搜索框相关配置.
+     * @param mixed $value
      */
     public function searchConfig($value = '')
     {
@@ -232,7 +267,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 是否开启搜索
+     * 是否开启搜索.
+     * @param mixed $value
      */
     public function searchable($value = true)
     {
@@ -240,7 +276,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 控制仅展示指定key菜单下的子菜单项
+     * 控制仅展示指定key菜单下的子菜单项.
+     * @param mixed $value
      */
     public function showKey($value = '')
     {
@@ -249,6 +286,7 @@ class Nav extends BaseRenderer
 
     /**
      * 可以通过 API 拉取。
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -256,7 +294,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * true 为垂直排列，false 为水平排列类似如 tabs。 可选值: 1 |
+     * true 为垂直排列，false 为水平排列类似如 tabs。 可选值: 1 |.
+     * @param mixed $value
      */
     public function stacked($value = true)
     {
@@ -264,7 +303,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -272,7 +312,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -280,7 +321,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -288,7 +330,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -296,7 +339,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -304,7 +348,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -312,7 +357,7 @@ class Nav extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -320,7 +365,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -328,7 +374,7 @@ class Nav extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function testid($value = '')
     {
@@ -336,7 +382,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 主题配色 默认light 可选值: light | dark
+     * 主题配色 默认light 可选值: light | dark.
+     * @param mixed $value
      */
     public function themeColor($value = '')
     {
@@ -344,7 +391,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 指定为 Nav 导航渲染器
+     * 指定为 Nav 导航渲染器.
+     * @param mixed $value
      */
     public function type($value = 'nav')
     {
@@ -352,7 +400,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -360,7 +409,8 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -368,12 +418,11 @@ class Nav extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

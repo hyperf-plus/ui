@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * NavOverflow
+ * NavOverflow.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class NavOverflow extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 是否开启响应式收纳
+     * 是否开启响应式收纳.
+     * @param mixed $value
      */
     public function enable($value = true)
     {
@@ -25,7 +33,8 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * 导航项目宽度
+     * 导航项目宽度.
+     * @param mixed $value
      */
     public function itemWidth($value = '')
     {
@@ -33,7 +42,8 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * 导航横向布局时，开启开启响应式收纳后最大可显示数量，超出此数量的导航将被收纳到下拉菜单中
+     * 导航横向布局时，开启开启响应式收纳后最大可显示数量，超出此数量的导航将被收纳到下拉菜单中.
+     * @param mixed $value
      */
     public function maxVisibleCount($value = '')
     {
@@ -41,7 +51,8 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * 菜单触发按钮CSS类名
+     * 菜单触发按钮CSS类名.
+     * @param mixed $value
      */
     public function overflowClassName($value = '')
     {
@@ -49,7 +60,8 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * 菜单触发按钮的图标
+     * 菜单触发按钮的图标.
+     * @param mixed $value
      */
     public function overflowIndicator($value = '')
     {
@@ -57,7 +69,8 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * 菜单触发按钮的文字
+     * 菜单触发按钮的文字.
+     * @param mixed $value
      */
     public function overflowLabel($value = '')
     {
@@ -65,7 +78,8 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * 菜单外层CSS类名
+     * 菜单外层CSS类名.
+     * @param mixed $value
      */
     public function overflowListClassName($value = '')
     {
@@ -73,7 +87,8 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * Popover浮层CSS类名
+     * Popover浮层CSS类名.
+     * @param mixed $value
      */
     public function overflowPopoverClassName($value = '')
     {
@@ -81,7 +96,8 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * 导航列表后缀节点
+     * 导航列表后缀节点.
+     * @param mixed $value
      */
     public function overflowSuffix($value = '')
     {
@@ -89,7 +105,8 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * 自定义样式
+     * 自定义样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -97,12 +114,11 @@ class NavOverflow extends BaseRenderer
     }
 
     /**
-     * 包裹导航的外层标签名，可以使用其他标签渲染
+     * 包裹导航的外层标签名，可以使用其他标签渲染.
+     * @param mixed $value
      */
     public function wrapperComponent($value = '')
     {
         return $this->set('wrapperComponent', $value);
     }
-
-
 }

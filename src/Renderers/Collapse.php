@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Collapse 折叠渲染器，格式说明。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/collapse
+ * Collapse 折叠渲染器，格式说明。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/collapse.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Collapse extends BaseRenderer
@@ -17,6 +26,7 @@ class Collapse extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -24,7 +34,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 配置 Body 容器 className
+     * 配置 Body 容器 className.
+     * @param mixed $value
      */
     public function bodyClassName($value = '')
     {
@@ -32,7 +43,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -40,7 +52,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 是否可折叠
+     * 是否可折叠.
+     * @param mixed $value
      */
     public function collapsable($value = true)
     {
@@ -48,7 +61,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 收起的标题
+     * 收起的标题.
+     * @param mixed $value
      */
     public function collapseHeader($value = '')
     {
@@ -56,7 +70,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 默认是否折叠
+     * 默认是否折叠.
+     * @param mixed $value
      */
     public function collapsed($value = true)
     {
@@ -64,7 +79,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -72,7 +88,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -81,6 +98,7 @@ class Collapse extends BaseRenderer
 
     /**
      * 标题内容分割线
+     * @param mixed $value
      */
     public function divideLine($value = true)
     {
@@ -88,7 +106,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -96,7 +115,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 自定义切换图标
+     * 自定义切换图标.
+     * @param mixed $value
      */
     public function expandIcon($value = '')
     {
@@ -104,7 +124,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 标题
+     * 标题.
+     * @param mixed $value
      */
     public function header($value = '')
     {
@@ -112,7 +133,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 标题展示位置 可选值: top | bottom
+     * 标题展示位置 可选值: top | bottom.
+     * @param mixed $value
      */
     public function headerPosition($value = '')
     {
@@ -120,7 +142,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 标题 CSS 类名
+     * 标题 CSS 类名.
+     * @param mixed $value
      */
     public function headingClassName($value = '')
     {
@@ -128,7 +151,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -136,7 +160,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -144,7 +169,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -152,7 +178,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 标识
+     * 标识.
+     * @param mixed $value
      */
     public function key($value = '')
     {
@@ -160,7 +187,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 点开时才加载内容
+     * 点开时才加载内容.
+     * @param mixed $value
      */
     public function mountOnEnter($value = true)
     {
@@ -168,7 +196,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -176,7 +205,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 图标是否展示
+     * 图标是否展示.
+     * @param mixed $value
      */
     public function showArrow($value = true)
     {
@@ -184,7 +214,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 控件大小 可选值: xs | sm | md | lg | base
+     * 控件大小 可选值: xs | sm | md | lg | base.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -192,7 +223,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -200,7 +232,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -208,7 +241,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -216,7 +250,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -224,7 +259,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -232,7 +268,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -240,7 +277,7 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -248,7 +285,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -256,7 +294,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 指定为折叠器类型
+     * 指定为折叠器类型.
+     * @param mixed $value
      */
     public function type($value = 'collapse')
     {
@@ -265,6 +304,7 @@ class Collapse extends BaseRenderer
 
     /**
      * 卡片隐藏就销毁内容。
+     * @param mixed $value
      */
     public function unmountOnExit($value = true)
     {
@@ -272,7 +312,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -280,7 +321,8 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -288,12 +330,11 @@ class Collapse extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

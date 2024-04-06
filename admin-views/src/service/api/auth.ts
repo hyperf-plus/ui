@@ -9,7 +9,7 @@ export const fetchLogin = (data: any) => request.post('/user/login', data);
 /**
  * 获取用户信息
  */
-export const fetchUserInfo = () => request.get('/user/info');
+export const fetchUserInfo = () => request.get('/user/current-user');
 
 /**
  * 获取用户路由数据

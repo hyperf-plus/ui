@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Panel渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/panel
+ * Panel渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/panel.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Panel extends BaseRenderer
@@ -16,7 +25,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 按钮集合
+     * 按钮集合.
+     * @param mixed $value
      */
     public function actions($value = '')
     {
@@ -24,7 +34,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 按钮集合外层类名
+     * 按钮集合外层类名.
+     * @param mixed $value
      */
     public function actionsClassName($value = '')
     {
@@ -33,6 +44,7 @@ class Panel extends BaseRenderer
 
     /**
      * 固定底部, 想要把按钮固定在底部的时候配置。
+     * @param mixed $value
      */
     public function affixFooter($value = '')
     {
@@ -41,6 +53,7 @@ class Panel extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -48,7 +61,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 配置 Body 容器 className
+     * 配置 Body 容器 className.
+     * @param mixed $value
      */
     public function bodyClassName($value = '')
     {
@@ -56,7 +70,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -64,7 +79,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -72,7 +88,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -80,7 +97,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -89,6 +107,7 @@ class Panel extends BaseRenderer
 
     /**
      * 底部内容区域
+     * @param mixed $value
      */
     public function footer($value = '')
     {
@@ -96,7 +115,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 配置 footer 容器 className
+     * 配置 footer 容器 className.
+     * @param mixed $value
      */
     public function footerClassName($value = '')
     {
@@ -105,6 +125,7 @@ class Panel extends BaseRenderer
 
     /**
      * footer 和 actions 外层 div 类名。
+     * @param mixed $value
      */
     public function footerWrapClassName($value = '')
     {
@@ -113,6 +134,7 @@ class Panel extends BaseRenderer
 
     /**
      * 头部内容, 和 title 二选一。
+     * @param mixed $value
      */
     public function header($value = '')
     {
@@ -120,7 +142,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 配置 header 容器 className
+     * 配置 header 容器 className.
+     * @param mixed $value
      */
     public function headerClassName($value = '')
     {
@@ -128,7 +151,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -136,7 +160,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -144,7 +169,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -152,7 +178,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -160,7 +187,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -168,7 +196,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -176,7 +205,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -184,7 +214,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -192,7 +223,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -200,7 +232,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -208,7 +241,7 @@ class Panel extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -216,7 +249,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -225,6 +259,7 @@ class Panel extends BaseRenderer
 
     /**
      * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+     * @param mixed $value
      */
     public function subFormHorizontal($value = '')
     {
@@ -232,7 +267,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 配置子表单项默认的展示方式。 可选值: normal | inline | horizontal
+     * 配置子表单项默认的展示方式。 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function subFormMode($value = '')
     {
@@ -240,7 +276,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * Panel 标题
+     * Panel 标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -249,6 +286,7 @@ class Panel extends BaseRenderer
 
     /**
      * 指定为Panel渲染器。
+     * @param mixed $value
      */
     public function type($value = 'panel')
     {
@@ -256,7 +294,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -264,7 +303,8 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -272,12 +312,11 @@ class Panel extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

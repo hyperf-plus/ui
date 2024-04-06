@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Column
+ * Column.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Column extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 内容居左、居中、居右
+     * 内容居左、居中、居右.
+     * @param mixed $value
      */
     public function align($value = '')
     {
@@ -25,7 +33,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 表格列单元格是否可以获取父级数据域值，默认为true，该配置对当前列内单元格生效
+     * 表格列单元格是否可以获取父级数据域值，默认为true，该配置对当前列内单元格生效.
+     * @param mixed $value
      */
     public function canAccessSuperData($value = true)
     {
@@ -33,7 +42,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 表头分组
+     * 表头分组.
+     * @param mixed $value
      */
     public function children($value = '')
     {
@@ -41,7 +51,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 列样式
+     * 列样式.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -49,7 +60,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 单元格样式
+     * 单元格样式.
+     * @param mixed $value
      */
     public function classNameExpr($value = '')
     {
@@ -57,7 +69,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 指定列合并表达式
+     * 指定列合并表达式.
+     * @param mixed $value
      */
     public function colSpanExpr($value = '')
     {
@@ -65,7 +78,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 可复制
+     * 可复制.
+     * @param mixed $value
      */
     public function copyable($value = true)
     {
@@ -73,7 +87,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 兼容table列筛选
+     * 兼容table列筛选.
+     * @param mixed $value
      */
     public function filterable($value = true)
     {
@@ -81,7 +96,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 是否固定在左侧/右侧
+     * 是否固定在左侧/右侧.
+     * @param mixed $value
      */
     public function fixed($value = '')
     {
@@ -89,7 +105,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 指定列唯一标识
+     * 指定列唯一标识.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -97,7 +114,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 配置快速编辑功能
+     * 配置快速编辑功能.
+     * @param mixed $value
      */
     public function quickEdit($value = '')
     {
@@ -105,7 +123,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 列表头提示
+     * 列表头提示.
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -113,7 +132,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 指定行合并表达式
+     * 指定行合并表达式.
+     * @param mixed $value
      */
     public function rowSpanExpr($value = '')
     {
@@ -121,7 +141,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 快速搜索
+     * 快速搜索.
+     * @param mixed $value
      */
     public function searchable($value = true)
     {
@@ -129,7 +150,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 兼容table快速排序
+     * 兼容table快速排序.
+     * @param mixed $value
      */
     public function sortable($value = true)
     {
@@ -137,7 +159,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 快速排序
+     * 快速排序.
+     * @param mixed $value
      */
     public function sorter($value = true)
     {
@@ -145,7 +168,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 指定列标题
+     * 指定列标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -153,7 +177,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 表头单元格样式
+     * 表头单元格样式.
+     * @param mixed $value
      */
     public function titleClassName($value = '')
     {
@@ -161,7 +186,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 当前列是否展示
+     * 当前列是否展示.
+     * @param mixed $value
      */
     public function toggled($value = true)
     {
@@ -169,7 +195,8 @@ class Column extends BaseRenderer
     }
 
     /**
-     * 指定列内容渲染器
+     * 指定列内容渲染器.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -177,12 +204,10 @@ class Column extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

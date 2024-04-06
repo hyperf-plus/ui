@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Mapping 映射展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/mapping
+ * Mapping 映射展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/mapping.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Mapping extends BaseRenderer
@@ -16,7 +25,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -32,7 +43,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -40,7 +52,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -48,7 +61,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -56,7 +70,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -64,7 +79,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -72,7 +88,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 自定义渲染映射值，支持html或schema
+     * 自定义渲染映射值，支持html或schema.
+     * @param mixed $value
      */
     public function itemSchema($value = '')
     {
@@ -80,7 +97,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * map或source为对象数组时，作为label值的字段名
+     * map或source为对象数组时，作为label值的字段名.
+     * @param mixed $value
      */
     public function labelField($value = '')
     {
@@ -89,6 +107,7 @@ class Mapping extends BaseRenderer
 
     /**
      * 配置映射规则，值可以使用模板语法。当 key 为 * 时表示 else，也就是说值没有映射到任何规则时用 * 对应的值展示。
+     * @param mixed $value
      */
     public function map($value = '')
     {
@@ -97,6 +116,7 @@ class Mapping extends BaseRenderer
 
     /**
      * 关联字段名。
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -104,7 +124,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -112,7 +133,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -121,6 +143,7 @@ class Mapping extends BaseRenderer
 
     /**
      * 如果想远程拉取字典，请配置 source 为接口。
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -128,7 +151,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -136,7 +160,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -144,7 +169,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -152,7 +178,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -160,7 +187,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -168,7 +196,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -176,7 +205,7 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -184,7 +213,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -192,7 +222,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 指定为映射展示控件 可选值: map | mapping
+     * 指定为映射展示控件 可选值: map | mapping.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -200,7 +231,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -208,7 +240,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * map或source为对象数组时，作为value值的字段名
+     * map或source为对象数组时，作为value值的字段名.
+     * @param mixed $value
      */
     public function valueField($value = '')
     {
@@ -216,7 +249,8 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -224,12 +258,11 @@ class Mapping extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

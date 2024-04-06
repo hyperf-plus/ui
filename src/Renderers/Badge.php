@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Badge 角标。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/badge
+ * Badge 角标。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/badge.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Badge extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 是否显示动画
+     * 是否显示动画.
+     * @param mixed $value
      */
     public function animation($value = true)
     {
@@ -25,7 +33,7 @@ class Badge extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -33,7 +41,8 @@ class Badge extends BaseRenderer
     }
 
     /**
-     * 提示类型
+     * 提示类型.
+     * @param mixed $value
      */
     public function level($value = '')
     {
@@ -41,7 +50,8 @@ class Badge extends BaseRenderer
     }
 
     /**
-     * 角标类型 可选值: text | dot | ribbon
+     * 角标类型 可选值: text | dot | ribbon.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -49,7 +59,8 @@ class Badge extends BaseRenderer
     }
 
     /**
-     * 角标位置，相对于position的位置进行偏移
+     * 角标位置，相对于position的位置进行偏移.
+     * @param mixed $value
      */
     public function offset($value = '')
     {
@@ -58,6 +69,7 @@ class Badge extends BaseRenderer
 
     /**
      * 封顶的数字值
+     * @param mixed $value
      */
     public function overflowCount($value = '')
     {
@@ -65,7 +77,8 @@ class Badge extends BaseRenderer
     }
 
     /**
-     * 角标位置 可选值: top-right | top-left | bottom-right | bottom-left
+     * 角标位置 可选值: top-right | top-left | bottom-right | bottom-left.
+     * @param mixed $value
      */
     public function position($value = '')
     {
@@ -73,7 +86,8 @@ class Badge extends BaseRenderer
     }
 
     /**
-     * 大小
+     * 大小.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -81,7 +95,8 @@ class Badge extends BaseRenderer
     }
 
     /**
-     * 角标的自定义样式
+     * 角标的自定义样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -89,7 +104,8 @@ class Badge extends BaseRenderer
     }
 
     /**
-     * 文本内容
+     * 文本内容.
+     * @param mixed $value
      */
     public function text($value = '')
     {
@@ -97,12 +113,11 @@ class Badge extends BaseRenderer
     }
 
     /**
-     * 动态控制是否显示
+     * 动态控制是否显示.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

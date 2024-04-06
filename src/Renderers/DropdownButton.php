@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * 下拉按钮渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/dropdown-button
+ * 下拉按钮渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/dropdown-button.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class DropdownButton extends BaseRenderer
@@ -16,7 +25,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 对齐方式 可选值: left | right
+     * 对齐方式 可选值: left | right.
+     * @param mixed $value
      */
     public function align($value = '')
     {
@@ -24,7 +34,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否独占一行 `display: block`
+     * 是否独占一行 `display: block`.
+     * @param mixed $value
      */
     public function block($value = true)
     {
@@ -33,6 +44,7 @@ class DropdownButton extends BaseRenderer
 
     /**
      * 内容区域
+     * @param mixed $value
      */
     public function body($value = '')
     {
@@ -41,6 +53,7 @@ class DropdownButton extends BaseRenderer
 
     /**
      * 给 Button 配置 className。
+     * @param mixed $value
      */
     public function btnClassName($value = '')
     {
@@ -48,7 +61,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 按钮集合，支持分组
+     * 按钮集合，支持分组.
+     * @param mixed $value
      */
     public function buttons($value = '')
     {
@@ -56,7 +70,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -64,7 +79,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 点击内容是否关闭
+     * 点击内容是否关闭.
+     * @param mixed $value
      */
     public function closeOnClick($value = true)
     {
@@ -72,7 +88,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 点击外部是否关闭
+     * 点击外部是否关闭.
+     * @param mixed $value
      */
     public function closeOnOutside($value = true)
     {
@@ -80,7 +97,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -88,7 +106,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -96,7 +115,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -104,7 +124,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -112,7 +133,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -120,7 +142,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否显示下拉按钮
+     * 是否显示下拉按钮.
+     * @param mixed $value
      */
     public function hideCaret($value = true)
     {
@@ -129,6 +152,7 @@ class DropdownButton extends BaseRenderer
 
     /**
      * 是否只显示图标。
+     * @param mixed $value
      */
     public function iconOnly($value = true)
     {
@@ -136,7 +160,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -144,7 +169,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 按钮文字
+     * 按钮文字.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -152,7 +178,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 按钮级别，样式 可选值: info | success | danger | warning | primary | link
+     * 按钮级别，样式 可选值: info | success | danger | warning | primary | link.
+     * @param mixed $value
      */
     public function level($value = '')
     {
@@ -160,7 +187,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 菜单 CSS 样式
+     * 菜单 CSS 样式.
+     * @param mixed $value
      */
     public function menuClassName($value = '')
     {
@@ -168,7 +196,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -176,7 +205,7 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function overlayPlacement($value = '')
     {
@@ -184,7 +213,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 右侧图标
+     * 右侧图标.
+     * @param mixed $value
      */
     public function rightIcon($value = '')
     {
@@ -192,7 +222,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 按钮大小 可选值: xs | sm | md | lg
+     * 按钮大小 可选值: xs | sm | md | lg.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -200,7 +231,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -208,7 +240,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -216,7 +249,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -224,7 +258,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -232,7 +267,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -240,7 +276,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -248,7 +285,7 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -256,7 +293,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -264,7 +302,7 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function testid($value = '')
     {
@@ -272,7 +310,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 触发条件，默认是 click 可选值: click | hover
+     * 触发条件，默认是 click 可选值: click | hover.
+     * @param mixed $value
      */
     public function trigger($value = '')
     {
@@ -280,7 +319,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 指定为 DropDown Button 类型
+     * 指定为 DropDown Button 类型.
+     * @param mixed $value
      */
     public function type($value = 'dropdown-button')
     {
@@ -288,7 +328,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -296,7 +337,8 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -304,12 +346,11 @@ class DropdownButton extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

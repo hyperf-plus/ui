@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Color 颜色选择框 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/color
+ * Color 颜色选择框 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/color.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class InputColorControl extends BaseRenderer
@@ -17,6 +26,7 @@ class InputColorControl extends BaseRenderer
 
     /**
      * 是否允许用户输入颜色。
+     * @param mixed $value
      */
     public function allowCustomColor($value = true)
     {
@@ -24,7 +34,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉.
+     * @param mixed $value
      */
     public function clearValueOnHidden($value = true)
     {
@@ -40,7 +52,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否显示清除按钮
+     * 是否显示清除按钮.
+     * @param mixed $value
      */
     public function clearable($value = true)
     {
@@ -49,6 +62,7 @@ class InputColorControl extends BaseRenderer
 
     /**
      * 选中颜色后是否关闭弹出层。
+     * @param mixed $value
      */
     public function closeOnSelect($value = true)
     {
@@ -56,7 +70,7 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function desc($value = '')
     {
@@ -65,6 +79,7 @@ class InputColorControl extends BaseRenderer
 
     /**
      * 描述内容，支持 Html 片段。
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -72,7 +87,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 配置描述上的 className
+     * 配置描述上的 className.
+     * @param mixed $value
      */
     public function descriptionClassName($value = '')
     {
@@ -80,7 +96,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -88,7 +105,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -96,7 +114,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -104,7 +123,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来.
+     * @param mixed $value
      */
     public function extraName($value = '')
     {
@@ -112,7 +132,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 颜色格式 可选值: hex | rgb | rgba | hsl
+     * 颜色格式 可选值: hex | rgb | rgba | hsl.
+     * @param mixed $value
      */
     public function format($value = '')
     {
@@ -120,7 +141,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -128,7 +150,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -136,7 +159,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 输入提示，聚焦的时候显示
+     * 输入提示，聚焦的时候显示.
+     * @param mixed $value
      */
     public function hint($value = '')
     {
@@ -145,6 +169,7 @@ class InputColorControl extends BaseRenderer
 
     /**
      * 当配置为水平布局的时候，用来配置具体的左右分配。
+     * @param mixed $value
      */
     public function horizontal($value = '')
     {
@@ -152,7 +177,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -161,6 +187,7 @@ class InputColorControl extends BaseRenderer
 
     /**
      * 表单 control 是否为 inline 模式。
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -168,7 +195,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 配置 input className
+     * 配置 input className.
+     * @param mixed $value
      */
     public function inputClassName($value = '')
     {
@@ -176,7 +204,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -184,7 +213,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -192,7 +222,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 配置 label className
+     * 配置 label className.
+     * @param mixed $value
      */
     public function labelClassName($value = '')
     {
@@ -200,7 +231,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -208,7 +240,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * label自定义宽度，默认单位为px
+     * label自定义宽度，默认单位为px.
+     * @param mixed $value
      */
     public function labelWidth($value = '')
     {
@@ -216,7 +249,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 配置当前表单项展示模式 可选值: normal | inline | horizontal
+     * 配置当前表单项展示模式 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -224,7 +258,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -232,7 +267,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -240,7 +276,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -249,6 +286,7 @@ class InputColorControl extends BaseRenderer
 
     /**
      * 预设颜色，用户可以直接从预设中选。
+     * @param mixed $value
      */
     public function presetColors($value = '')
     {
@@ -256,7 +294,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否只读
+     * 是否只读.
+     * @param mixed $value
      */
     public function readOnly($value = true)
     {
@@ -264,7 +303,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 只读条件
+     * 只读条件.
+     * @param mixed $value
      */
     public function readOnlyOn($value = '')
     {
@@ -272,7 +312,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容.
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -280,7 +321,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否为必填
+     * 是否为必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -288,7 +330,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 表单项大小 可选值: xs | sm | md | lg | full
+     * 表单项大小 可选值: xs | sm | md | lg | full.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -296,7 +339,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -304,7 +348,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -312,7 +357,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -320,7 +366,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -328,7 +375,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -336,7 +384,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -344,7 +393,7 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -352,7 +401,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -361,6 +411,7 @@ class InputColorControl extends BaseRenderer
 
     /**
      * 当修改完的时候是否提交表单。
+     * @param mixed $value
      */
     public function submitOnChange($value = true)
     {
@@ -368,7 +419,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 指定为颜色选择框
+     * 指定为颜色选择框.
+     * @param mixed $value
      */
     public function type($value = 'input-color')
     {
@@ -376,7 +428,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -384,7 +437,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 远端校验表单项接口
+     * 远端校验表单项接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -393,6 +447,7 @@ class InputColorControl extends BaseRenderer
 
     /**
      * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+     * @param mixed $value
      */
     public function validateOnChange($value = true)
     {
@@ -400,7 +455,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 验证失败的提示信息
+     * 验证失败的提示信息.
+     * @param mixed $value
      */
     public function validationErrors($value = '')
     {
@@ -408,7 +464,7 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -417,6 +473,7 @@ class InputColorControl extends BaseRenderer
 
     /**
      * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -424,7 +481,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -432,7 +490,8 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -440,12 +499,11 @@ class InputColorControl extends BaseRenderer
     }
 
     /**
-     * 在Table中调整宽度
+     * 在Table中调整宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

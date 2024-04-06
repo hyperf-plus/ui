@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Nested Select 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/nested-select
+ * Nested Select 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/nested-select.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class NestedSelectControl extends BaseRenderer
@@ -16,7 +25,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 添加时调用的接口
+     * 添加时调用的接口.
+     * @param mixed $value
      */
     public function addApi($value = '')
     {
@@ -25,6 +35,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 新增时的表单项。
+     * @param mixed $value
      */
     public function addControls($value = '')
     {
@@ -32,7 +43,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 控制新增弹框设置项
+     * 控制新增弹框设置项.
+     * @param mixed $value
      */
     public function addDialog($value = '')
     {
@@ -41,6 +53,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+     * @param mixed $value
      */
     public function autoFill($value = '')
     {
@@ -48,7 +61,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 边框模式，全边框，还是半边框，或者没边框。 可选值: full | half | none
+     * 边框模式，全边框，还是半边框，或者没边框。 可选值: full | half | none.
+     * @param mixed $value
      */
     public function borderMode($value = '')
     {
@@ -57,6 +71,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 父子之间是否完全独立。
+     * @param mixed $value
      */
     public function cascade($value = true)
     {
@@ -64,7 +79,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -72,7 +88,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+     * 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉.
+     * @param mixed $value
      */
     public function clearValueOnHidden($value = true)
     {
@@ -81,6 +98,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 是否可清除。
+     * @param mixed $value
      */
     public function clearable($value = true)
     {
@@ -88,7 +106,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否可以新增
+     * 是否可以新增.
+     * @param mixed $value
      */
     public function creatable($value = true)
     {
@@ -96,7 +115,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 新增文字
+     * 新增文字.
+     * @param mixed $value
      */
     public function createBtnLabel($value = '')
     {
@@ -105,6 +125,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
+     * @param mixed $value
      */
     public function deferApi($value = '')
     {
@@ -112,7 +133,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 懒加载字段
+     * 懒加载字段.
+     * @param mixed $value
      */
     public function deferField($value = '')
     {
@@ -120,7 +142,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 选项删除 API
+     * 选项删除 API.
+     * @param mixed $value
      */
     public function deleteApi($value = '')
     {
@@ -129,6 +152,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 选项删除提示文字。
+     * @param mixed $value
      */
     public function deleteConfirmText($value = '')
     {
@@ -136,7 +160,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 分割符
+     * 分割符.
+     * @param mixed $value
      */
     public function delimiter($value = '')
     {
@@ -144,7 +169,7 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function desc($value = '')
     {
@@ -153,6 +178,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 描述内容，支持 Html 片段。
+     * @param mixed $value
      */
     public function description($value = '')
     {
@@ -160,7 +186,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 配置描述上的 className
+     * 配置描述上的 className.
+     * @param mixed $value
      */
     public function descriptionClassName($value = '')
     {
@@ -168,7 +195,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -176,7 +204,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -184,7 +213,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 编辑时调用的 API
+     * 编辑时调用的 API.
+     * @param mixed $value
      */
     public function editApi($value = '')
     {
@@ -192,7 +222,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 选项修改的表单项
+     * 选项修改的表单项.
+     * @param mixed $value
      */
     public function editControls($value = '')
     {
@@ -200,7 +231,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 控制编辑弹框设置项
+     * 控制编辑弹框设置项.
+     * @param mixed $value
      */
     public function editDialog($value = '')
     {
@@ -208,7 +240,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否可以编辑
+     * 是否可以编辑.
+     * @param mixed $value
      */
     public function editable($value = true)
     {
@@ -216,7 +249,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -224,7 +258,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+     * 额外的字段名，当为范围组件时可以用来将另外一个值打平出来.
+     * @param mixed $value
      */
     public function extraName($value = '')
     {
@@ -233,6 +268,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+     * @param mixed $value
      */
     public function extractValue($value = true)
     {
@@ -240,7 +276,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -248,7 +285,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -256,7 +294,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否隐藏选择框中已选中节点的祖先节点的文本信息
+     * 是否隐藏选择框中已选中节点的祖先节点的文本信息.
+     * @param mixed $value
      */
     public function hideNodePathLabel($value = true)
     {
@@ -264,7 +303,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 输入提示，聚焦的时候显示
+     * 输入提示，聚焦的时候显示.
+     * @param mixed $value
      */
     public function hint($value = '')
     {
@@ -273,6 +313,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 当配置为水平布局的时候，用来配置具体的左右分配。
+     * @param mixed $value
      */
     public function horizontal($value = '')
     {
@@ -280,7 +321,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -288,7 +330,7 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function initAutoFill($value = '')
     {
@@ -297,6 +339,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 配置 source 接口初始拉不拉取。
+     * @param mixed $value
      */
     public function initFetch($value = true)
     {
@@ -304,7 +347,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 用表达式来配置 source 接口初始要不要拉取
+     * 用表达式来配置 source 接口初始要不要拉取.
+     * @param mixed $value
      */
     public function initFetchOn($value = '')
     {
@@ -313,6 +357,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 表单 control 是否为 inline 模式。
+     * @param mixed $value
      */
     public function inline($value = true)
     {
@@ -320,7 +365,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 配置 input className
+     * 配置 input className.
+     * @param mixed $value
      */
     public function inputClassName($value = '')
     {
@@ -329,6 +375,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
+     * @param mixed $value
      */
     public function joinValues($value = true)
     {
@@ -336,7 +383,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function label($value = '')
     {
@@ -344,7 +392,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 描述标题
+     * 描述标题.
+     * @param mixed $value
      */
     public function labelAlign($value = '')
     {
@@ -352,7 +401,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 配置 label className
+     * 配置 label className.
+     * @param mixed $value
      */
     public function labelClassName($value = '')
     {
@@ -360,7 +410,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起.
+     * @param mixed $value
      */
     public function labelRemark($value = '')
     {
@@ -368,7 +419,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * label自定义宽度，默认单位为px
+     * label自定义宽度，默认单位为px.
+     * @param mixed $value
      */
     public function labelWidth($value = '')
     {
@@ -376,7 +428,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效
+     * 标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效.
+     * @param mixed $value
      */
     public function maxTagCount($value = '')
     {
@@ -384,7 +437,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 弹框的 css 类
+     * 弹框的 css 类.
+     * @param mixed $value
      */
     public function menuClassName($value = '')
     {
@@ -392,7 +446,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 配置当前表单项展示模式 可选值: normal | inline | horizontal
+     * 配置当前表单项展示模式 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function mode($value = '')
     {
@@ -400,7 +455,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否为多选模式
+     * 是否为多选模式.
+     * @param mixed $value
      */
     public function multiple($value = true)
     {
@@ -408,7 +464,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+     * 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c.
+     * @param mixed $value
      */
     public function name($value = '')
     {
@@ -416,7 +473,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -424,7 +482,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 选父级的时候，是否只把子节点的值包含在内
+     * 选父级的时候，是否只把子节点的值包含在内.
+     * @param mixed $value
      */
     public function onlyChildren($value = true)
     {
@@ -432,7 +491,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 只允许选择叶子节点
+     * 只允许选择叶子节点.
+     * @param mixed $value
      */
     public function onlyLeaf($value = true)
     {
@@ -440,7 +500,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 选项集合
+     * 选项集合.
+     * @param mixed $value
      */
     public function options($value = '')
     {
@@ -448,7 +509,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 收纳标签的Popover配置
+     * 收纳标签的Popover配置.
+     * @param mixed $value
      */
     public function overflowTagPopover($value = '')
     {
@@ -456,7 +518,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 占位符
+     * 占位符.
+     * @param mixed $value
      */
     public function placeholder($value = '')
     {
@@ -464,7 +527,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否只读
+     * 是否只读.
+     * @param mixed $value
      */
     public function readOnly($value = true)
     {
@@ -472,7 +536,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 只读条件
+     * 只读条件.
+     * @param mixed $value
      */
     public function readOnlyOn($value = '')
     {
@@ -480,7 +545,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 显示一个小图标, 鼠标放上去的时候显示提示内容
+     * 显示一个小图标, 鼠标放上去的时候显示提示内容.
+     * @param mixed $value
      */
     public function remark($value = '')
     {
@@ -488,7 +554,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否可删除
+     * 是否可删除.
+     * @param mixed $value
      */
     public function removable($value = true)
     {
@@ -496,7 +563,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否为必填
+     * 是否为必填.
+     * @param mixed $value
      */
     public function required($value = true)
     {
@@ -505,6 +573,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 点清除按钮时，将表单项设置成当前配置的值。
+     * @param mixed $value
      */
     public function resetValue($value = '')
     {
@@ -513,6 +582,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 默认选择选项第一个值。
+     * @param mixed $value
      */
     public function selectFirst($value = true)
     {
@@ -520,7 +590,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 表单项大小 可选值: xs | sm | md | lg | full
+     * 表单项大小 可选值: xs | sm | md | lg | full.
+     * @param mixed $value
      */
     public function size($value = '')
     {
@@ -529,6 +600,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 可用来通过 API 拉取 options。
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -536,7 +608,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -544,7 +617,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -552,7 +626,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -560,7 +635,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -568,7 +644,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -576,7 +653,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -584,7 +662,7 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -592,7 +670,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -601,6 +680,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 当修改完的时候是否提交表单。
+     * @param mixed $value
      */
     public function submitOnChange($value = true)
     {
@@ -608,7 +688,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 表单项类型
+     * 表单项类型.
+     * @param mixed $value
      */
     public function type($value = 'nested-select')
     {
@@ -616,7 +697,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -624,7 +706,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 远端校验表单项接口
+     * 远端校验表单项接口.
+     * @param mixed $value
      */
     public function validateApi($value = '')
     {
@@ -633,6 +716,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+     * @param mixed $value
      */
     public function validateOnChange($value = true)
     {
@@ -640,7 +724,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 验证失败的提示信息
+     * 验证失败的提示信息.
+     * @param mixed $value
      */
     public function validationErrors($value = '')
     {
@@ -648,7 +733,7 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function validations($value = '')
     {
@@ -657,6 +742,7 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -664,7 +750,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 多选模式，值太多时是否避免折行
+     * 多选模式，值太多时是否避免折行.
+     * @param mixed $value
      */
     public function valuesNoWrap($value = true)
     {
@@ -672,7 +759,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -680,7 +768,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
@@ -688,7 +777,8 @@ class NestedSelectControl extends BaseRenderer
     }
 
     /**
-     * 在Table中调整宽度
+     * 在Table中调整宽度.
+     * @param mixed $value
      */
     public function width($value = '')
     {
@@ -697,11 +787,10 @@ class NestedSelectControl extends BaseRenderer
 
     /**
      * 选父级的时候是否把子节点的值也包含在内。
+     * @param mixed $value
      */
     public function withChildren($value = true)
     {
         return $this->set('withChildren', $value);
     }
-
-
 }

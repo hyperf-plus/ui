@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 use Hyperf\Macroable\Macroable;
+use JsonSerializable;
 
-class BaseRenderer implements \JsonSerializable
+class BaseRenderer implements JsonSerializable
 {
     use Macroable {
         __call as macroCall;
@@ -13,11 +24,6 @@ class BaseRenderer implements \JsonSerializable
     public string $type;
 
     public array $amisSchema = [];
-
-    public static function make(): static
-    {
-        return new static();
-    }
 
     public function __call($method, $parameters)
     {
@@ -28,10 +34,20 @@ class BaseRenderer implements \JsonSerializable
         return $this->set($method, array_shift($parameters));
     }
 
+    public function __toString(): string
+    {
+        return $this->toJson();
+    }
+
+    public static function make(): static
+    {
+        return new static();
+    }
+
     public function set($name, $value)
     {
         if ($name == 'map' && is_array($value) && array_keys($value) == array_keys(array_keys($value))) {
-            $value = (object)$value;
+            $value = (object) $value;
         }
 
         $this->amisSchema[$name] = $value;
@@ -54,21 +70,15 @@ class BaseRenderer implements \JsonSerializable
         return $this->amisSchema;
     }
 
-
-    public function __toString(): string
-    {
-        return $this->toJson();
-    }
-
     /**
-     * @param string $sign         权限标识
-     * @param mixed  $replaceValue 无权限时替换的值
+     * @param string $sign 权限标识
+     * @param mixed $replaceValue 无权限时替换的值
      *
      * @return $this
      */
     public function permission(string $sign, mixed $replaceValue = '')
     {
-        $this->amisSchema['owl_permission']               = $sign;
+        $this->amisSchema['owl_permission'] = $sign;
         $this->amisSchema['owl_permission_replace_value'] = $replaceValue;
 
         return $this;
@@ -79,7 +89,7 @@ class BaseRenderer implements \JsonSerializable
         $permissionKey = 'owl_permission';
 
         if (key_exists($permissionKey, $this->amisSchema)) {
-            if (!admin_user()->can($this->amisSchema[$permissionKey])) {
+            if (! admin_user()->can($this->amisSchema[$permissionKey])) {
                 return data_get($this->amisSchema, 'owl_permission_replace_value', '');
             }
         }

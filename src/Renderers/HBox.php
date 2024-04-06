@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * Hbox 水平布局渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/hbox
+ * Hbox 水平布局渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/hbox.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class HBox extends BaseRenderer
@@ -16,7 +25,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 水平对齐方式 可选值: left | right | between | center
+     * 水平对齐方式 可选值: left | right | between | center.
+     * @param mixed $value
      */
     public function align($value = '')
     {
@@ -24,7 +34,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,7 @@ class HBox extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function columns($value = '')
     {
@@ -40,7 +51,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -48,7 +60,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -56,7 +69,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -64,7 +78,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 水平间距 可选值: xs | sm | base | none | md | lg
+     * 水平间距 可选值: xs | sm | base | none | md | lg.
+     * @param mixed $value
      */
     public function gap($value = '')
     {
@@ -72,7 +87,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -80,7 +96,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -88,7 +105,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -96,7 +114,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -104,7 +123,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -112,7 +132,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -120,7 +141,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -128,7 +150,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -136,7 +159,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -144,7 +168,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -152,7 +177,7 @@ class HBox extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -160,7 +185,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -169,6 +195,7 @@ class HBox extends BaseRenderer
 
     /**
      * 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+     * @param mixed $value
      */
     public function subFormHorizontal($value = '')
     {
@@ -176,7 +203,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 配置子表单项默认的展示方式。 可选值: normal | inline | horizontal
+     * 配置子表单项默认的展示方式。 可选值: normal | inline | horizontal.
+     * @param mixed $value
      */
     public function subFormMode($value = '')
     {
@@ -184,7 +212,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 指定为each展示类型
+     * 指定为each展示类型.
+     * @param mixed $value
      */
     public function type($value = 'hbox')
     {
@@ -192,7 +221,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -200,7 +230,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 垂直对齐方式 可选值: top | middle | bottom | between
+     * 垂直对齐方式 可选值: top | middle | bottom | between.
+     * @param mixed $value
      */
     public function valign($value = '')
     {
@@ -208,7 +239,8 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -216,12 +248,11 @@ class HBox extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

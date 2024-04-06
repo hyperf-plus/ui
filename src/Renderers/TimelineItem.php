@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * TimelineItem
+ * TimelineItem.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class TimelineItem extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -25,7 +33,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 时间点圆圈颜色
+     * 时间点圆圈颜色.
+     * @param mixed $value
      */
     public function color($value = '')
     {
@@ -33,7 +42,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 详细内容
+     * 详细内容.
+     * @param mixed $value
      */
     public function detail($value = '')
     {
@@ -41,7 +51,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 节点详情的CSS类名（优先级高于统一配置的detailClassName）
+     * 节点详情的CSS类名（优先级高于统一配置的detailClassName）.
+     * @param mixed $value
      */
     public function detailClassName($value = '')
     {
@@ -49,7 +60,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * detail折叠时文案
+     * detail折叠时文案.
+     * @param mixed $value
      */
     public function detailCollapsedText($value = '')
     {
@@ -57,7 +69,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * detail展开时文案
+     * detail展开时文案.
+     * @param mixed $value
      */
     public function detailExpandedText($value = '')
     {
@@ -65,7 +78,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -73,7 +87,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -81,7 +96,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -89,7 +105,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -97,7 +114,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -105,7 +123,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 图标
+     * 图标.
+     * @param mixed $value
      */
     public function icon($value = '')
     {
@@ -113,7 +132,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 图标的CSS类名
+     * 图标的CSS类名.
+     * @param mixed $value
      */
     public function iconClassName($value = '')
     {
@@ -121,7 +141,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -129,7 +150,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -137,7 +159,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -145,7 +168,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -153,7 +177,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -161,7 +186,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -169,7 +195,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -177,7 +204,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -185,7 +213,7 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -193,7 +221,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -201,7 +230,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 时间点
+     * 时间点.
+     * @param mixed $value
      */
     public function time($value = '')
     {
@@ -209,7 +239,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 节点时间的CSS类名（优先级高于统一配置的timeClassName）
+     * 节点时间的CSS类名（优先级高于统一配置的timeClassName）.
+     * @param mixed $value
      */
     public function timeClassName($value = '')
     {
@@ -217,7 +248,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 时间节点标题
+     * 时间节点标题.
+     * @param mixed $value
      */
     public function title($value = '')
     {
@@ -225,7 +257,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 节点标题的CSS类名（优先级高于统一配置的titleClassName）
+     * 节点标题的CSS类名（优先级高于统一配置的titleClassName）.
+     * @param mixed $value
      */
     public function titleClassName($value = '')
     {
@@ -233,7 +266,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -241,7 +275,8 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -249,12 +284,11 @@ class TimelineItem extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

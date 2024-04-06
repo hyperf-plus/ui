@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
  * Flex 布局
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Flex extends BaseRenderer
@@ -16,7 +25,8 @@ class Flex extends BaseRenderer
     }
 
     /**
-     * stretch, start, flex-start, flex-end, end, center, baseline
+     * stretch, start, flex-start, flex-end, end, center, baseline.
+     * @param mixed $value
      */
     public function alignItems($value = '')
     {
@@ -24,7 +34,8 @@ class Flex extends BaseRenderer
     }
 
     /**
-     * css 类名
+     * css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -32,7 +43,8 @@ class Flex extends BaseRenderer
     }
 
     /**
-     * 布局方向: column, row
+     * 布局方向: column, row.
+     * @param mixed $value
      */
     public function direction($value = '')
     {
@@ -40,7 +52,8 @@ class Flex extends BaseRenderer
     }
 
     /**
-     * 子元素, 数组表示多个
+     * 子元素, 数组表示多个.
+     * @param mixed $value
      */
     public function items($value = '')
     {
@@ -48,7 +61,8 @@ class Flex extends BaseRenderer
     }
 
     /**
-     * start, flex-start, center, end, flex-end, space-around, space-between, space-evenly
+     * start, flex-start, center, end, flex-end, space-around, space-between, space-evenly.
+     * @param mixed $value
      */
     public function justify($value = '')
     {
@@ -56,7 +70,8 @@ class Flex extends BaseRenderer
     }
 
     /**
-     * 自定义样式
+     * 自定义样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -65,11 +80,10 @@ class Flex extends BaseRenderer
 
     /**
      * 指定为 flex 渲染器。
+     * @param mixed $value
      */
     public function type($value = 'flex')
     {
         return $this->set('type', $value);
     }
-
-
 }

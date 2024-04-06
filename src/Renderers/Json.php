@@ -1,11 +1,20 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * JSON 数据展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/json
+ * JSON 数据展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/json.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class Json extends BaseRenderer
@@ -16,7 +25,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 容器 css 类名
+     * 容器 css 类名.
+     * @param mixed $value
      */
     public function className($value = '')
     {
@@ -24,7 +34,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否禁用
+     * 是否禁用.
+     * @param mixed $value
      */
     public function disabled($value = true)
     {
@@ -32,7 +43,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否禁用表达式
+     * 是否禁用表达式.
+     * @param mixed $value
      */
     public function disabledOn($value = '')
     {
@@ -40,7 +52,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否显示数据类型
+     * 是否显示数据类型.
+     * @param mixed $value
      */
     public function displayDataTypes($value = true)
     {
@@ -48,7 +61,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 编辑器配置，运行时可以忽略
+     * 编辑器配置，运行时可以忽略.
+     * @param mixed $value
      */
     public function editorSetting($value = '')
     {
@@ -56,7 +70,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 设置字符串的最大展示长度，超出长度阈值的字符串将被截断，点击value可切换字符串展示方式，默认为false
+     * 设置字符串的最大展示长度，超出长度阈值的字符串将被截断，点击value可切换字符串展示方式，默认为false.
+     * @param mixed $value
      */
     public function ellipsisThreshold($value = '')
     {
@@ -64,7 +79,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否可复制
+     * 是否可复制.
+     * @param mixed $value
      */
     public function enableClipboard($value = true)
     {
@@ -72,7 +88,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否隐藏
+     * 是否隐藏.
+     * @param mixed $value
      */
     public function hidden($value = true)
     {
@@ -80,7 +97,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否隐藏表达式
+     * 是否隐藏表达式.
+     * @param mixed $value
      */
     public function hiddenOn($value = '')
     {
@@ -88,7 +106,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 图标风格 可选值: square | circle | triangle
+     * 图标风格 可选值: square | circle | triangle.
+     * @param mixed $value
      */
     public function iconStyle($value = '')
     {
@@ -96,7 +115,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 组件唯一 id，主要用于日志采集
+     * 组件唯一 id，主要用于日志采集.
+     * @param mixed $value
      */
     public function id($value = '')
     {
@@ -104,7 +124,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 默认展开的级别
+     * 默认展开的级别.
+     * @param mixed $value
      */
     public function levelExpand($value = '')
     {
@@ -112,7 +133,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否可修改
+     * 是否可修改.
+     * @param mixed $value
      */
     public function mutable($value = true)
     {
@@ -120,7 +142,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 事件动作配置
+     * 事件动作配置.
+     * @param mixed $value
      */
     public function onEvent($value = '')
     {
@@ -128,7 +151,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否显示键的引号
+     * 是否显示键的引号.
+     * @param mixed $value
      */
     public function quotesOnKeys($value = true)
     {
@@ -136,7 +160,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否为键排序
+     * 是否为键排序.
+     * @param mixed $value
      */
     public function sortKeys($value = true)
     {
@@ -145,6 +170,7 @@ class Json extends BaseRenderer
 
     /**
      * 支持从数据链取值
+     * @param mixed $value
      */
     public function source($value = '')
     {
@@ -152,7 +178,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否静态展示
+     * 是否静态展示.
+     * @param mixed $value
      */
     public function static($value = true)
     {
@@ -160,7 +187,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项类名
+     * 静态展示表单项类名.
+     * @param mixed $value
      */
     public function staticClassName($value = '')
     {
@@ -168,7 +196,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Value类名
+     * 静态展示表单项Value类名.
+     * @param mixed $value
      */
     public function staticInputClassName($value = '')
     {
@@ -176,7 +205,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 静态展示表单项Label类名
+     * 静态展示表单项Label类名.
+     * @param mixed $value
      */
     public function staticLabelClassName($value = '')
     {
@@ -184,7 +214,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否静态展示表达式
+     * 是否静态展示表达式.
+     * @param mixed $value
      */
     public function staticOn($value = '')
     {
@@ -192,7 +223,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 静态展示空值占位
+     * 静态展示空值占位.
+     * @param mixed $value
      */
     public function staticPlaceholder($value = '')
     {
@@ -200,7 +232,7 @@ class Json extends BaseRenderer
     }
 
     /**
-     *
+     * @param mixed $value
      */
     public function staticSchema($value = '')
     {
@@ -208,7 +240,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 组件样式
+     * 组件样式.
+     * @param mixed $value
      */
     public function style($value = '')
     {
@@ -216,7 +249,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 指定为Json展示类型 可选值: json | static-json
+     * 指定为Json展示类型 可选值: json | static-json.
+     * @param mixed $value
      */
     public function type($value = '')
     {
@@ -224,7 +258,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 可以组件级别用来关闭移动端样式
+     * 可以组件级别用来关闭移动端样式.
+     * @param mixed $value
      */
     public function useMobileUI($value = true)
     {
@@ -232,7 +267,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 要展示的 JSON 数据
+     * 要展示的 JSON 数据.
+     * @param mixed $value
      */
     public function value($value = '')
     {
@@ -240,7 +276,8 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否显示
+     * 是否显示.
+     * @param mixed $value
      */
     public function visible($value = true)
     {
@@ -248,12 +285,11 @@ class Json extends BaseRenderer
     }
 
     /**
-     * 是否显示表达式
+     * 是否显示表达式.
+     * @param mixed $value
      */
     public function visibleOn($value = '')
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

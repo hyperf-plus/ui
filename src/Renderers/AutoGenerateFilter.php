@@ -1,23 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace HPlus\UI\Renderers;
 
 /**
- * AutoGenerateFilter
+ * AutoGenerateFilter.
  *
- * @author  slowlyo
  * @version 6.2.2
  */
 class AutoGenerateFilter extends BaseRenderer
 {
     public function __construct()
     {
-
-
     }
 
     /**
-     * 过滤条件单行列数
+     * 过滤条件单行列数.
+     * @param mixed $value
      */
     public function columnsNum($value = '')
     {
@@ -25,7 +33,8 @@ class AutoGenerateFilter extends BaseRenderer
     }
 
     /**
-     * 是否默认收起
+     * 是否默认收起.
+     * @param mixed $value
      */
     public function defaultCollapsed($value = true)
     {
@@ -33,12 +42,11 @@ class AutoGenerateFilter extends BaseRenderer
     }
 
     /**
-     * 是否显示设置查询字段
+     * 是否显示设置查询字段.
+     * @param mixed $value
      */
     public function showBtnToolbar($value = true)
     {
         return $this->set('showBtnToolbar', $value);
     }
-
-
 }
